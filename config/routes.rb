@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+  get 'lessons/new'
+
+  get 'lessons/show'
+
+  get 'lessons/index'
+
+  get 'lessons/create'
+
+  get 'lessons/update'
+
+  get 'lessons/destroy'
+
+  get 'users/new'
+
+  get 'users/show'
+
+  get 'users/index'
+
+  get 'users/create'
+
+  get 'users/update'
+
+  get 'users/destroy'
+
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
