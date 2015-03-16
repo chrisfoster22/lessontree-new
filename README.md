@@ -1,11 +1,5 @@
 # Create new Readme
 
-This is a test.
-
-test from r0xx0r
-
-parker parker
-
 Paper trail for versioning:
 https://github.com/airblade/paper_trail
 
