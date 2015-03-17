@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+body{
+  background: gray;
+}
 .profile-wrapper {
   @include outer-container;
   background: #ddd;
