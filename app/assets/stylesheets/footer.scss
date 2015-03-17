@@ -1,9 +1,10 @@
 .footer {
   ///////////////////////////////////////////////////////////////////////////////////
   @import url(http://fonts.googleapis.com/css?family=Merriweather|Hind:400,600|Dancing+Script);
+  @import "colors";
 
   $base-spacing: 1.5em !default;
-  $base-accent-color: #d95353 !default;
+  $base-accent-color: $dark-header-color !default;
   $medium-screen: em(640) !default;
   $large-screen: em(860) !default;
 

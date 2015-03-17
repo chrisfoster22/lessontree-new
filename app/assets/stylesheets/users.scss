@@ -2,11 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "footer";
+@import "colors";
+@import "modal";
 
 body {
   margin: 0;
 }
-
 
 .nav-wrapper-profile-page li a {
   display: block;
@@ -19,19 +20,31 @@ body {
   list-style: none;
   display: -webkit-flex;
   -webkit-flex-direction: row;
-  -webkit-justify-content: center;
+  -webkit-justify-content: flex-end;
   margin: 0 auto;
 	padding: 20px;
 	width: 100%;
-	background: #d95353;
 	list-style-type: none;
 }
 
-.top-nav-profile-page li {
-	margin: 10px;
+.top-nav-profile-page li,
+.modal-trigger {
+  margin: 10px;
 	border-radius: 10px;
-	background: #70968C;
+	background: $button-bg-color;
 	color: #FFF;
+}
+
+/*
+.top-nav-profile-page li:first-child {
+  background: none;
+  color: $alt-top-bg-color;
+  margin-right: auto;
+}*/
+
+.nav-header-logo h3 {
+  background: none;
+  color: $alt-top-bg-color;
 }
 
 .profile-wrapper {
