@@ -6,11 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-User.create(name: "Martha Washington", location: "New York, NY", school: "Washington Heights Middle School", profile_photo: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT-bIRT5v5o3qJHC2KGYbbjIsBcZ0s2pJQHO2J-_lxtuPUPc6drvg")
-User.create(name: "John Smith", location: "Durham, NC", school: "NCSSM" )
-User.create(name: "Brian Johnson", location: "Raleigh, NC", school: "Duke University" )
-User.create(name: "Kevin Williams", location: "Cary, NC", school: "Campbell University" )
+User.create!(name: "Martha Washington", email: "martha@washington.edu", password: "password", city: "New York", state: "NY", school: "Washington Heights Middle School", profile_photo: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT-bIRT5v5o3qJHC2KGYbbjIsBcZ0s2pJQHO2J-_lxtuPUPc6drvg")
+User.create!(name: "John Smith", email: "john@nccsm.edu", city: "Durham", password: "password", state: "NC", school: "NCSSM" )
+User.create!(name: "Brian Johnson", email: "brian@duke.edu", city: "Raleigh", password: "password", state: "NC", school: "Duke University" )
+User.create!(name: "Kevin Williams", email: "kevin@campbell.edu", city: "Cary", password: "password", state: "NC", school: "Campbell University" )
 
 Document.create(title: "My first document", content: "I am content...blah blah", lesson_id: 1)
 Document.create(title: "My second document", content: "I am also content! YAY!", lesson_id: 2)
