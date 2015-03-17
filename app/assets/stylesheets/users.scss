@@ -1,3 +1,40 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.profile-wrapper {
+  @include outer-container;
+  background: #ddd;
+  padding: 1em 0 1em;
+
+  .user-profile-photo-wrapper { @include span-columns(2); }
+
+  .user-profile-information-wrapper-left {
+    @include span-columns(2);
+    font-family: 'Merriweather', serif;
+    font-weight: bolder;}
+
+  .user-profile-information-wrapper-right {
+    @include span-columns(6);
+    font-family: 'Merriweather', serif;
+  }
+}
+
+.user-profile-information-wrapper-left {
+  margin-left: 1em;
+}
+
+.user-profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin-left: 3em;
+}
+
+.user-profile-information-categories,
+.user-profile-unique-information {
+  list-style: none;
+  line-height: 1.7em;
+}
