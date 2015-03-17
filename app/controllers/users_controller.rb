@@ -12,17 +12,17 @@ class UsersController < ApplicationController
   def create
   end
 
-  def update
-    @user = User.update(user_params)
-  end
+  # def update
+  #   @user = User.update(user_params)
+  # end
 
   def destroy
   end
 
-  private
-
-  def user_params
-    params.require(:user).permit(:name, :email, :password, :city, :state,
-        :school, :avatar)
-  end
+  # private
+  #
+  # def user_params
+  #   params.require(:user).permit(:name, :email, :password, :city, :state,
+  #       :school, :avatar)
+  # end
 end
