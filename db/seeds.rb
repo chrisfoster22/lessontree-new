@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# User.create(name: "John Smith", email: "smith@gmail.com", password: "password", location: "Durham, NC", school: "NCSSM" )
-# User.create(name: "Brian Johnson", email: "johnson@gmail.com", password: "password", location: "Raleigh, NC", school: "Duke University" )
-# User.create(name: "Kevin Williams", email: "williams@gmail.com", password: "password", location: "Cary, NC", school: "Campbell University" )
+User.create(name: "John Smith", email: "smith@gmail.com", location: "Durham, NC", school: "NCSSM" )
+User.create(name: "Brian Johnson", email: "johnson@gmail.com", location: "Raleigh, NC", school: "Duke University" )
+User.create(name: "Kevin Williams", email: "williams@gmail.com", location: "Cary, NC", school: "Campbell University" )
 
 Document.create(title: "My first document", content: "I am content...blah blah", lesson_id: 1)
 Document.create(title: "My second document", content: "I am also content! YAY!", lesson_id: 2)
