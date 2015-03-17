@@ -55,7 +55,7 @@
   .modal-window { // overlay
     @include transition(opacity 0.25s ease);
     @include position(fixed, 0px 0px 0px 0px);
-    background: rgba(0,0,0, 0.85);
+    background: rgba(0,0,0, 0.35);
     opacity: 0;
     padding-top: 0.6em;
     text-align: left;
@@ -158,7 +158,7 @@
   }
 
   .modal-state:checked + .modal-window .modal-inner {
-    top: 0.5em;
+    top: -3.4em;
   }
 }
 
