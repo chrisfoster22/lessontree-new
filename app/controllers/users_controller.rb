@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.all.find_by_id(6)
   end
 
   def index
