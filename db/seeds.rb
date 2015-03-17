@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!(name: "Martha Washington", grade_level_id: 3, email: "martha@washington.edu", password: "password", city: "New York", state: "NY", school: "Washington Heights Middle School", profile_photo: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT-bIRT5v5o3qJHC2KGYbbjIsBcZ0s2pJQHO2J-_lxtuPUPc6drvg")
+User.create!(name: "Martha Washington", grade_level_id: 3, email: "martha@washington.edu", password: "password", city: "New York", state: "NY", school: "Washington Heights Middle School", avatar: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT-bIRT5v5o3qJHC2KGYbbjIsBcZ0s2pJQHO2J-_lxtuPUPc6drvg")
 User.create!(name: "John Smith", grade_level_id: 4, email: "john@nccsm.edu", city: "Durham", password: "password", state: "NC", school: "NCSSM" )
 User.create!(name: "Brian Johnson", grade_level_id: 4, email: "brian@duke.edu", city: "Raleigh", password: "password", state: "NC", school: "Duke University" )
 User.create!(name: "Kevin Williams", grade_level_id: 4, email: "kevin@campbell.edu", city: "Cary", password: "password", state: "NC", school: "Campbell University" )
