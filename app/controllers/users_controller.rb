@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.all.find_by_id(6)
+    @user = User.all.find_by_id(params[:id])
   end
 
   def index
@@ -17,4 +17,8 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
+  # private def user_params
+  #   params.require(:user).permit(:id, :city, :state, :school)
+  # end
 end
