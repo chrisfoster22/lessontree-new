@@ -35,6 +35,17 @@ body {
 	color: #FFF;
 }
 
+.logo-header {
+  position: absolute;
+  left: 90px;
+  top: -40px;
+}
+
+.logo-header h2 {
+  color: $alt-top-bg-color;
+  font-size: 4em;
+}
+
 /*
 .top-nav-profile-page li:first-child {
   background: none;
@@ -54,6 +65,9 @@ body {
   width: 100%;
   max-width: 100em;
   margin: 0;
+  -webkit-box-shadow: 1px 7px 14px -1px rgba(0,0,0,0.21);
+  -moz-box-shadow: 1px 7px 14px -1px rgba(0,0,0,0.21);
+  box-shadow: 1px 7px 14px -1px rgba(0,0,0,0.21);
 }
 
   .user-profile-photo-wrapper {
@@ -79,7 +93,7 @@ body {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 1px solid #ccc;
+  border: 1.5px solid #fff;
   margin-left: 3em;
 }
 
@@ -96,10 +110,40 @@ body {
   -webkit-justify-content: center;
   margin: 1em auto;
   padding: 20px;
-  width: 80%;
+  width: 60%;
   list-style-type: none;
   border-bottom: 1px dashed $alt-gray-color;
 }
+
+.my-lessons-container:hover {
+  background: #eee;
+}
+
+.my-lesson-edit-button-container {
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+  margin: 1em auto;
+}
+
+.my-lesson-edit-button {
+    background-color: $alt-top-bg-color;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    background-clip: padding-box;
+    font-family: "Merriweather", serif;
+    padding: .75em 1em;
+}
+
+.my-lesson-edit-button:hover {
+background: darken($alt-top-bg-color, 10%);
+}
+
 
 .my-lessons-container h3 {
   text-align: center;
@@ -109,10 +153,14 @@ body {
 }
 
 .my-lessons-container p {
-  text-align: center;
+  text-align: justify-content;
   font-family: $maintext-font;
   font-size: 1em;
   color: $dark-header-color;
+}
+
+.my-lesson-container-link {
+  text-decoration: none;
 }
 
 .my-lesson-edit-button {
