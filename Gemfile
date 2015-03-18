@@ -16,6 +16,9 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+gem 'protected_attributes'
 
 # gem 'turbolinks'
 # gem 'therubyracer', platforms: :ruby
