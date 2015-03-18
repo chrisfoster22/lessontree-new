@@ -1,19 +1,27 @@
 CKEDITOR.editorConfig = function( config )
 {
 
-   config.skins = 'office2003';
-
    config.toolbar = 'toolbarLight';
-
+   config.uiColor = '#d95353';
+  //  config.skin = 'office2003';
+    // config.width = 800;
 
     config.toolbar_toolbarLight =
     [
-        ['Cut','Copy','Paste','PasteText','PasteFromWord','-','Scayt'],
-        ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
-        ['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar', 'Link','Unlink','Anchor', 'Maximize'] ,
-        '/',
-        ['Styles','Format','Font','FontSize', 'Bold','Italic','Strike','NumberedList','BulletedList','Outdent','Indent','Blockquote', 'TextColor','BGColor'],
-
+      ['Source','-','Templates'],
+      ['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print', 'SpellChecker', 'Scayt'],
+      ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
+      ['Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'],
+      '/',
+      ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
+      ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
+      ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+      ['Link','Unlink','Anchor'],
+      ['Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'],
+      '/',
+      ['Styles','Format','Font','FontSize'],
+      ['TextColor','BGColor'],
+      ['Maximize', 'ShowBlocks','-','About']
     ];
 
    config.toolbar_Fullx =
