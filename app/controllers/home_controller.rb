@@ -1,11 +1,14 @@
 class HomeController < ApplicationController
-  # def index
-  #   @lessons = Lesson.all.order(:updated_at).reverse
-  #   @search = Lesson.search do
-  #     fulltext params[:search]
-  #   end
-  #   @lessons = @search.results
-  # end
+  def index
+    @lessons = Lesson.all.order(:updated_at).reverse
+    @search = Lesson.search do
+      fulltext params[:search]
+      with(:created_at).less_than(Time.zone.now)
+      facet(:month_created)
+      with(:month_created, params[:month]) if params[:month].present?
+    end
+    @lessons = @search.results
+  end
 
   def show
   end
