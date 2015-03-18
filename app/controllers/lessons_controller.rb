@@ -1,10 +1,15 @@
 class LessonsController < ApplicationController
+<<<<<<< HEAD
   def index
     @lessons = Lesson.order("created_at DESC")
   end
 
   def show
     @lesson = Lesson.find(params[:id])
+=======
+
+  def new
+>>>>>>> 8e37a3923e4b1930fdaa955984a4e0e7f602c6ba
   end
 
   def new
@@ -37,5 +42,16 @@ private
 
   def lesson_params
     params.require(:lesson).permit(:topic, :description)
+  end
+
+  def show
+    @lessons = Lesson.all.order(:updated_at).reverse
+    @search = Lesson.search do
+      fulltext params[:search]
+      with(:created_at).less_than(Time.zone.now)
+      facet(:month_created)
+      with(:month_created, params[:month]) if params[:month].present?
+    end
+    @lessons = @search.results
   end
 end
