@@ -21,6 +21,6 @@
     <%= f.cktext_area :description, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'simple'} } %>
   </div>
   <div>
-    <%= f.submit %>
+    <%= f.submit "Create Lesson", :class => "create-lesson" %>
   </div>
 <% end %>
