@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
+gem 'rails_12factor'
 
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
