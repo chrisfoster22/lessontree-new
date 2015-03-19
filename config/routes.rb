@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :documents
   resources :home
   get 'home/index'
-  get 'home/about'
+  get '/home/about'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
