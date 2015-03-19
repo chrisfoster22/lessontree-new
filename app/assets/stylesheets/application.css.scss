@@ -22,3 +22,28 @@
  @import "about";
  @import "modal";
  @import "login";
+
+
+#new_lesson.new_lesson {
+  display: center;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+
+#lesson-show:after{
+
+  content: ".";
+  display: block;
+  height: 0;
+  overflow:hidden;
+  clear: both;
+  visibility:hidden;
+}
+table {
+  display: block;
+  padding-bottom: 1000px;
+  border: none;
+
+}
