@@ -3,6 +3,7 @@
   ///////////////////////////////////////////////////////////////////////////////////
   @import url(http://fonts.googleapis.com/css?family=Merriweather|Hind:400,600|Dancing+Script);
   @import "colors";
+  @import "fonts";
 
   $base-spacing: 1.5em !default;
   $base-accent-color: $dark-header-color !default;
@@ -23,12 +24,12 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Merriweather', serif;
+    font-family: $headline-font;
     color: #fff;
   }
 
   .footer-logo h2 {
-    font-family: 'Hind', sans-serif;
+    font-family: $cursive-font;
   }
   //////////////////////////////////////////////////////////////////////////////////
 

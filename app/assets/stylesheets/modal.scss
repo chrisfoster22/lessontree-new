@@ -46,10 +46,14 @@
     display: none;
   }
 
-  .modal-trigger {
+  .modal-trigger-login, .modal-trigger-signup, .modal-trigger-about {
     @include button(flat, $base-accent-color);
     padding: 0.8em 1em;
     font-family: $maintext-font;
+  }
+
+  .lessontree-logo{
+    font-family: cursive-font;
   }
 
   .modal-window { // overlay

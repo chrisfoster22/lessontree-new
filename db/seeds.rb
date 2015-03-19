@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user = User.create!(name: "Martha Washington", grade_level_id: 3, email: "martha@washington.edu", password: "password", city: "New York", state: "NY", school: "Washington Heights Middle School", profile_photo: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT-bIRT5v5o3qJHC2KGYbbjIsBcZ0s2pJQHO2J-_lxtuPUPc6drvg")
+user = User.create!(name: "Martha Washington", grade_level_id: 3, email: "martha@washington.edu", password: "password", city: "New York", state: "NY", school: "Washington Heights Middle School")
 
 document = Document.create!(title: "Learning the ABC's", content: "A, B, C, D, E, F, G... You know the rest of the song.", lesson_id: 1)
 
@@ -47,7 +47,7 @@ end
               city: Faker::Address.city,
               state: Faker::Address.state_abbr,
               school: Faker::Company.name,
-              profile_photo: Faker::Avatar.image("Profile-Picture", "150x150"),
+              avatar: Faker::Avatar.image("Profile-Picture", "150x150"),
               grade_level_id: @all_grades.sample)
 end
 

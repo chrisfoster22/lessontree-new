@@ -4,35 +4,73 @@
 @import "footer";
 @import "colors";
 @import "modal";
+@import "fonts";
 
 body {
   margin: 0;
 }
 
-.nav-wrapper-profile-page li a {
+.nav-wrapper-profile-page {
+  list-style: none;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: flex-end;
+  -webkit-flex-wrap: wrap;
+  margin: 0 auto 3em;
+  padding: 20px;
+  width: 100%;
+  list-style-type: none;
+}
+
+.modal-trigger-login a, modal-trigger-signup a, modal-trigger-about a {
   display: block;
 	padding: 15px 25px;
 	text-decoration: none;
   color: #fff;
 }
 
-.top-nav-profile-page{
+.top-nav-profile-page {
   list-style: none;
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-justify-content: flex-end;
+  -webkit-flex-wrap: wrap;
   margin: 0 auto;
 	padding: 20px;
 	width: 100%;
 	list-style-type: none;
 }
 
-.top-nav-profile-page li,
-.modal-trigger {
+.modal-trigger-login, .modal-trigger-signup, .modal-trigger-about {
   margin: 10px;
 	border-radius: 10px;
 	background: $button-bg-color;
 	color: #FFF;
+  vertical-align: text-top;
+}
+
+.lessontree-logo a {
+  text-decoration: none;
+  color: $dark-header-color;
+}
+
+.lessontree-logo {
+  margin-right: auto;
+  margin-top: -.3em;
+  font-family: $cursive-font;
+  font-size: 5em;
+}
+
+
+/*.logo-header {
+  position: absolute;
+  left: 90px;
+  top: -40px;
+}*/
+
+.logo-header h2 {
+  color: $alt-top-bg-color;
+  font-size: 4em;
 }
 
 /*
@@ -54,6 +92,9 @@ body {
   width: 100%;
   max-width: 100em;
   margin: 0;
+  -webkit-box-shadow: 1px 7px 14px -1px rgba(0,0,0,0.21);
+  -moz-box-shadow: 1px 7px 14px -1px rgba(0,0,0,0.21);
+  box-shadow: 1px 7px 14px -1px rgba(0,0,0,0.21);
 }
 
   .user-profile-photo-wrapper {
@@ -68,6 +109,7 @@ body {
   .user-profile-information-wrapper-right {
     @include span-columns(6);
     font-family: 'Merriweather', serif;
+    margin-left: 3em;
   }
 
 
@@ -79,8 +121,9 @@ body {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 1px solid #ccc;
-  margin-left: 3em;
+  border: 1.5px solid #fff;
+  margin: 0 3em 0 3em;
+  display: block;
 }
 
 .user-profile-information-categories,
@@ -96,10 +139,40 @@ body {
   -webkit-justify-content: center;
   margin: 1em auto;
   padding: 20px;
-  width: 80%;
+  width: 60%;
   list-style-type: none;
   border-bottom: 1px dashed $alt-gray-color;
 }
+
+.my-lessons-container:hover {
+  background: #eee;
+}
+
+.my-lesson-edit-button-container {
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: center;
+  margin: 1em auto;
+}
+
+.my-lesson-edit-button {
+    background-color: $alt-top-bg-color;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    background-clip: padding-box;
+    font-family: "Merriweather", serif;
+    padding: .75em 1em;
+}
+
+.my-lesson-edit-button:hover {
+background: darken($alt-top-bg-color, 10%);
+}
+
 
 .my-lessons-container h3 {
   text-align: center;
@@ -109,10 +182,14 @@ body {
 }
 
 .my-lessons-container p {
-  text-align: center;
+  text-align: justify-content;
   font-family: $maintext-font;
   font-size: 1em;
   color: $dark-header-color;
+}
+
+.my-lesson-container-link {
+  text-decoration: none;
 }
 
 .my-lesson-edit-button {
