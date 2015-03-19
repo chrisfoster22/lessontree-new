@@ -2,7 +2,7 @@ CKEDITOR.editorConfig = function( config )
 {
 
    config.toolbar = 'toolbarLight';
-   config.uiColor = '#d95353';
+   config.uiColor = '#b6ded4';
   //  config.skin = 'office2003';
     // config.width = 800;
 
