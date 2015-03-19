@@ -116,26 +116,28 @@
   <article class="my-lessons-preview-area">
     <h3 class="my-lessons-container-title"><%= l.topic %></h3>
     <p class="my-lessons-container-description">
-      l.description
+      <%= l.description %>
     </p>
     <div class="my-lesson-edit-button-container">
-      <a class="my-lesson-edit-button" href="http://www.google.com"><%= button_to "Edit", l %></a>
+      <a class="my-lesson-edit-button" href="http://www.google.com"><%= button_to "Edit", edit_lesson_path %></a>
     </div>
   </article>
 </section></a>
 <% end %>
 
+<%= @user.lessons.each do |l| %>
 <a class="my-lesson-container-link" href="http://www.weather.com"><section class="my-lessons-container">
   <article class="my-lessons-preview-area">
     <h3 class="my-lessons-container-title">Geometic Patterns</h3>
     <p class="my-lessons-container-description">
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
+      <%= l.description %>
     </p>
     <div class="my-lesson-edit-button-container">
-      <a class="my-lesson-edit-button" href="http://www.google.com">Edit</a>
+      <a class="my-lesson-edit-button" href="http://www.google.com"><%= button_to "Edit", edit_lesson_path %></a>
     </div>
   </article>
 </section></a>
+<% end %>
 
 <!-- <section class="login-signup-container">
 	<h2 class="login-signup-form-header">Signup</h2>
