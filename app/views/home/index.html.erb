@@ -3,9 +3,11 @@
   <div class="logo">LessonTree</div>
     <div class="main-container">
       <div class="buttons">
-        <button class="about-button">About</button>
-        <button class="log-in-button">Log In</button>
-        <button class="sign-up-button">Sign Up</button>
+        <%= button_to "About", home_about_path, :class => "about-button" %>
+        <% unless current_user %>
+        <%= button_to "Login", new_user_session_path, :class => "log-in-button" %>
+        <%= button_to "Sign Up", user_registration_path, :class => "sign-up-button" %>
+        <% end %>
       </div>
       <h1>Teacher Lesson Plans<h1>
         <p class="key-words">find, share, edit, plan, save</p>
@@ -14,51 +16,32 @@
 
     <div class="search-container">
       <form>
-        <span><input type="text" class="search" placeholder="search here"></span>
+        <%= form_tag root_path, :method => :get do %>
+          <p>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Search", :name => nil %>
+          </p>
+          <% end %>
       </form>
     </div>
 
- <div class="card-container">
- <div class="cards">
-  <div class="card">
-    <div class="card-image">
-      <h3>1st grade science</h3>
-      <!-- <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt=""> -->
-    </div>
-    <div class="card-header">
-      Description
-    </div>
-    <div class="card-copy">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-image">
-      <h3>5th grade art class</h3>
-      <!-- <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-4.png" alt=""> -->
-    </div>
-    <div class="card-header">
-      Description
-    </div>
-    <div class="card-copy">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+  <div class="card-container">
+    <div class="cards">
+    <%= @lessons.each do |l| %>
+      <div class="card">
+        <div class="card-image">
+          <h3> <%= l.topic %></h3>
+          <!-- <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt=""> -->
+        </div>
+        <div class="card-header">
+          <%= l.description.html_safe + "..." %>
+        </div>
+        <div class="card-copy">
+        </div>
+      </div>
+      <% end %>
     </div>
   </div>
-
-  <div class="card">
-    <div class="card-image">
-      <h3>2nd grade spelling activity</h3>
-      <!-- <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png" alt=""> -->
-    </div>
-    <div class="card-header">
-      Description
-    </div>
-    <div class="card-copy">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    </div>
-  </div>
- </div>
  </div>
 
   </body>
