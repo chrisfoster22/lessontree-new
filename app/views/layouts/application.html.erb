@@ -8,18 +8,6 @@
   <link href='http://fonts.googleapis.com/css?family=Merriweather|Hind:400,600|Dancing+Script' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <nav class="top-nav-profile-page">
-    <span class="lessontree-logo"><a href="/">LessonTree</a></span>
-
-    <% if user_signed_in? %>
-      <span class="current-user"><%= current_user.email %></span>.
-      <%= link_to 'Profile', edit_user_registration_path, :class => 'modal-trigger-login' %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'modal-trigger-login'  %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
-      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-    <% end %>
-  </nav>
 
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
@@ -33,7 +21,7 @@
   <li class="active"><%= link_to "My Profile Page", user_path(current_user) if current_user %></li>
 </ul>
 
-
+<%= render partial: 'header/header' %>
 <%= yield %>
 <%= render partial: 'footer/footer' %>
 

@@ -1,4 +1,4 @@
-<section class="nav-wrapper-profile-page">
+<!-- <section class="nav-wrapper-profile-page">
   <ul class="top-nav-profile-page">
     <li class="lessontree-logo"><a href="/">LessonTree</a></li>
     <div class="modal">
@@ -14,8 +14,8 @@
           <p class="modal-content">Body text lorem ipsum dolor ipsum dolor sit sit possimus amet, consectetur adipisicing elit. Itaque, placeat, explicabo, veniam quos aperiam molestias eriam molestias molestiae suscipit ipsum enim quasi sit possimus quod atque nobis voluptas earum odit accusamus quibusdam. Body text lorem ipsum dolor ipsum dolor sit sit possimus amet.</p>
         </div>
       </div>
-    </div>
-
+    </div> -->
+<!--
     <div class="modal">
       <label for="modal-2">
         <li class="modal-trigger-signup">Sign Up</li>
@@ -53,9 +53,9 @@
             </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="modal">
+    <!-- <div class="modal">
       <label for="modal-3">
         <li class="modal-trigger-about">About</li>
       </label>
@@ -80,7 +80,7 @@
       </div>
     </div>
 	</ul>
-</section>
+</section> -->
 
 <section class="profile-wrapper">
 
@@ -111,17 +111,19 @@
   </aside>
 </section>
 
+<%= @user.lessons.each do |l| %>
 <a class="my-lesson-container-link" href="http://www.weather.com"><section class="my-lessons-container">
   <article class="my-lessons-preview-area">
-    <h3 class="my-lessons-container-title">Battle of Bunker Hill</h3>
+    <h3 class="my-lessons-container-title"><%= l.topic %></h3>
     <p class="my-lessons-container-description">
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
+      l.description
     </p>
     <div class="my-lesson-edit-button-container">
-      <a class="my-lesson-edit-button" href="http://www.google.com">Edit</a>
+      <a class="my-lesson-edit-button" href="http://www.google.com"><%= button_to "Edit", l %></a>
     </div>
   </article>
 </section></a>
+<% end %>
 
 <a class="my-lesson-container-link" href="http://www.weather.com"><section class="my-lessons-container">
   <article class="my-lessons-preview-area">
