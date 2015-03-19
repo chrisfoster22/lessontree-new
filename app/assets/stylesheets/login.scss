@@ -8,17 +8,16 @@
     box-sizing: border-box;
 }
 
-.signup-container {
+.login-container {
  background: #eee;
  width: 60%;
  margin: 0 auto;
  padding: 2em;
  border-radius: .25em;
- font-family: $maintext-font;
 }
 
 
-.signup-form-header {
+.login-form-header {
   color: $button-bg-color;
   font-size: 2em;
   font-family: $maintext-font;
