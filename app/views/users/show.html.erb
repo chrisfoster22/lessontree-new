@@ -1,11 +1,9 @@
 <section class="nav-wrapper-profile-page">
   <ul class="top-nav-profile-page">
-    <div class="logo-header">
-      <h2>LessonTree</h2>
-    </div>
+    <li class="lessontree-logo"><a href="/">LessonTree</a></li>
     <div class="modal">
       <label for="modal-1">
-        <li class="modal-trigger">Login</li>
+        <li class="modal-trigger-login">Login</li>
       </label>
       <input class="modal-state" id="modal-1" type="checkbox" />
       <div class="modal-window">
@@ -20,7 +18,7 @@
 
     <div class="modal">
       <label for="modal-2">
-        <li class="modal-trigger">Sign Up</li>
+        <li class="modal-trigger-signup">Sign Up</li>
       </label>
       <input class="modal-state" id="modal-2" type="checkbox" />
       <div class="modal-window">
@@ -29,43 +27,37 @@
 
           <div class="signup-modal-form">
             <form action="" method="post" class="STYLE-NAME">
-    <h1>Contact Form
-        <span>Please fill all the texts in the fields.</span>
-    </h1>
-    <label>
-        <span>Your Name :</span>
-        <input id="name" type="text" name="name" placeholder="Your Full Name" />
-    </label>
+              <h1>Contact Form
+                  <span>Please fill all the texts in the fields.</span>
+              </h1>
+              <label>
+                <span>Your Name :</span>
+                <input id="name" type="text" name="name" placeholder="Your Full Name" />
+              </label>
 
-    <label>
-        <span>Your Email :</span>
-        <input id="email" type="email" name="email" placeholder="Valid Email Address" />
-    </label>
+              <label>
+                <span>Your Email :</span>
+                <input id="email" type="email" name="email" placeholder="Valid Email Address" />
+            </label>
 
-    <label>
-        <span>Message :</span>
-        <textarea id="message" name="message" placeholder="Your Message to Us"></textarea>
-    </label>
-     <label>
-        <span>Subject :</span><select name="selection">
-        <option value="Job Inquiry">Job Inquiry</option>
-        <option value="General Question">General Question</option>
-        </select>
-    </label>
-     <label>
-        <span>&nbsp;</span>
-        <input type="button" class="button" value="Send" />
-    </label>
-</form>
+              <label>
+                <span>Message :</span>
+                <textarea id="message" name="message" placeholder="Your Message to Us"></textarea>
+              </label>
+
+              <label>
+                <span>&nbsp;</span>
+                <input type="button" class="button" value="Send" />
+              </label>
+            </form>
             </div>
-
         </div>
       </div>
     </div>
 
     <div class="modal">
       <label for="modal-3">
-        <li class="modal-trigger">About</li>
+        <li class="modal-trigger-about">About</li>
       </label>
       <input class="modal-state" id="modal-3" type="checkbox" />
       <div class="modal-window">
@@ -84,8 +76,6 @@
               LessonTree has to offer.
               </p>
             </div>
-
-
         </div>
       </div>
     </div>
@@ -98,6 +88,7 @@
     <%= image_tag @user.avatar.url, class: "user-profile-photo" %>
   </aside>
 
+<!--
   <aside class="user-profile-information-wrapper-left">
     <ul class = "user-profile-information-categories"
       <li>Name:</li>
@@ -107,14 +98,15 @@
       <li>State:</li>
     </ul>
   </aside>
+  -->
 
   <aside class="user-profile-information-wrapper-right">
     <ul class = "user-profile-unique-information">
-      <li><%= @user.name %></li>
-      <li><%= @user.grade %></li>
-      <li><%= @user.school %></li>
-      <li><%= @user.city %></li>
-      <li><%= @user.state %></li>
+      <li><strong>Name:</strong>&nbsp&nbsp<%= @user.name %></li>
+      <li><strong>Grades I Teach:</strong>&nbsp&nbsp<%= @user.grade %></li>
+      <li><strong>My School Name:</strong>&nbsp&nbsp<%= @user.school %></li>
+      <li><strong>School City:</strong>&nbsp&nbsp<%= @user.city %></li>
+      <li><strong>School State:</strong>&nbsp&nbsp<%= @user.state %></li>
     </ul>
   </aside>
 </section>
@@ -142,3 +134,18 @@
     </div>
   </article>
 </section></a>
+
+<section class="login-container">
+	<h2 class="login-form-header">Login</h2>
+	<form method="post" class="minimal">
+		<label for="username">
+			Username:
+      <input type="text" name="username" id="username" placeholder="Username" />
+		</label>
+		<label for="password">
+			Password:
+      <input type="password" name="password" id="password" placeholder="Password must be between 8 and 20 characters" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required">
+		</label>
+		<button type="submit" class="btn-minimal">Sign in</button>
+	</form>
+</section>

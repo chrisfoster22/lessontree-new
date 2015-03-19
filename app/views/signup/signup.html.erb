@@ -1,0 +1,14 @@
+<section class="login-container">
+	<h2 class="login-form-header">Login</h2>
+	<form method="post" class="minimal">
+		<label for="username">
+			Username:
+      <input type="text" name="username" id="username" placeholder="Username" />
+		</label>
+		<label for="password">
+			Password:
+      <input type="password" name="password" id="password" placeholder="Password must be between 8 and 20 characters" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required">
+		</label>
+		<button type="submit" class="btn-minimal">Sign in</button>
+	</form>
+</section>
