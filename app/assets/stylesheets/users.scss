@@ -69,8 +69,10 @@ body {
 }*/
 
 .logo-header h2 {
-  color: $alt-top-bg-color;
+  // color: $alt-top-bg-color;
   font-size: 4em;
+  color: #e8e3e6;
+
 }
 
 /*
@@ -82,7 +84,7 @@ body {
 
 .nav-header-logo h3 {
   background: none;
-  color: $alt-top-bg-color;
+  color: $alt-gray-color;
 }
 
 .profile-wrapper {
