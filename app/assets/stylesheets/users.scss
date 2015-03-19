@@ -4,42 +4,69 @@
 @import "footer";
 @import "colors";
 @import "modal";
+@import "fonts";
 
 body {
   margin: 0;
 }
 
-.nav-wrapper-profile-page li a {
+.nav-wrapper-profile-page {
+  list-style: none;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-justify-content: flex-end;
+  -webkit-flex-wrap: wrap;
+  margin: 0 auto 3em;
+  padding: 20px;
+  width: 100%;
+  list-style-type: none;
+}
+
+.modal-trigger-login a, modal-trigger-signup a, modal-trigger-about a {
   display: block;
 	padding: 15px 25px;
 	text-decoration: none;
   color: #fff;
 }
 
-.top-nav-profile-page{
+.top-nav-profile-page {
   list-style: none;
   display: -webkit-flex;
   -webkit-flex-direction: row;
   -webkit-justify-content: flex-end;
+  -webkit-flex-wrap: wrap;
   margin: 0 auto;
 	padding: 20px;
 	width: 100%;
 	list-style-type: none;
 }
 
-.top-nav-profile-page li,
-.modal-trigger {
+.modal-trigger-login, .modal-trigger-signup, .modal-trigger-about {
   margin: 10px;
 	border-radius: 10px;
 	background: $button-bg-color;
 	color: #FFF;
+  vertical-align: text-top;
 }
 
-.logo-header {
+.lessontree-logo a {
+  text-decoration: none;
+  color: $dark-header-color;
+}
+
+.lessontree-logo {
+  margin-right: auto;
+  margin-top: -.3em;
+  font-family: $cursive-font;
+  font-size: 5em;
+}
+
+
+/*.logo-header {
   position: absolute;
   left: 90px;
   top: -40px;
-}
+}*/
 
 .logo-header h2 {
   color: $alt-top-bg-color;
@@ -82,6 +109,7 @@ body {
   .user-profile-information-wrapper-right {
     @include span-columns(6);
     font-family: 'Merriweather', serif;
+    margin-left: 3em;
   }
 
 
@@ -94,7 +122,8 @@ body {
   height: 150px;
   border-radius: 50%;
   border: 1.5px solid #fff;
-  margin-left: 3em;
+  margin: 0 3em 0 3em;
+  display: block;
 }
 
 .user-profile-information-categories,
