@@ -8,6 +8,7 @@
   <link href='http://fonts.googleapis.com/css?family=Merriweather|Hind:400,600|Dancing+Script' rel='stylesheet' type='text/css'>
 </head>
 <body>
+  <%= render partial: 'header/header' %>
 
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
@@ -21,7 +22,6 @@
   <li class="active"><%= link_to "My Profile Page", user_path(current_user) if current_user %></li>
 </ul>
 
-<%= render partial: 'header/header' %>
 <%= yield %>
 <%= render partial: 'footer/footer' %>
 
