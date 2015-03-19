@@ -1,6 +1,101 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather|Hind:400,600|Dancing+Script);
+@import "colors";
+@import "fonts";
+
 .logo {
   font-family: $cursive-font, cursive;
   font-size: 3.7em;
   font-weight: bold;
-  color: #$header-texts-color;
+  color: $header-texts-color;
+}
+
+
+.buttons {
+  text-align: right;
+}
+
+.about-button {
+  font-family: $headline-font, sans-serif;
+  padding: 0.75em 1.75em;
+  border-radius: 7.5px;
+  background-color: $button-bg-color;
+  font-size: 22px;
+  color: $header-texts-color;
+  display: inline;
+  // margin-top: 4em;
+}
+
+.about-button:active {
+  background-color: $button-bg-color;
+  color: $header-texts-color;
+}
+
+.about-button:hover {
+  background-color: white;
+  color: $button-bg-color;
+}
+
+.log-in-button {
+  font-family: $headline-font, sans-serif;
+  padding: 0.75em 1.75em;
+  border-radius: 7.5px;
+  background-color: $button-bg-color;
+  font-size: 22px;
+  color: $header-texts-color;
+  display: inline;
+  // margin-top: 4em;
+
+}
+
+.log-in-button:active {
+  background-color: $button-bg-color;
+  color: $header-texts-color;
+}
+
+.log-in-button:hover {
+  background-color: white;
+  color: $button-bg-color;
+}
+
+.sign-up-button {
+  font-family: $headline-font, sans-serif;
+  padding: 0.75em 1.75em;
+  border-radius: 7.5px;
+  background-color: $button-bg-color;
+  // margin-right: .95em;
+  font-size: 22px;
+  color: $header-texts-color;
+  display: inline;
+  // margin-top: 4em;
+}
+
+.sign-up-button:active {
+  background-color: $button-bg-color;
+  color: $header-texts-color;
+}
+
+.sign-up-button:hover {
+  background-color: white;
+  color: $button-bg-color;
+}
+
+.go-to-profile {
+  font-family: $headline-font, sans-serif;
+  padding: 0.75em 1.75em;
+  border-radius: 7.5px;
+  background-color: $button-bg-color;
+  margin-right: .95em;
+  font-size: 22px;
+  color: $header-texts-color;
+  display: inline;
+}
+
+.go-to-profile:active {
+  background-color: $button-bg-color;
+  color: $header-texts-color;
+}
+
+.go-to-profile:hover {
+  background-color: white;
+  color: $button-bg-color;
 }
