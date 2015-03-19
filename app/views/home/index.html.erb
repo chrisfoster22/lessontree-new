@@ -1,25 +1,8 @@
 
-  <div class="logo">LessonTree</div>
-    <div class="main-container">
+
 <body>
   <div class="main-container">
-    <!-- <header>
-     <div class="logo">LessonTree</div>
-      <div class="buttons">
 
-        <button class="about-button">About</button>
-        <button class="log-in-button">Log In</button>
-        <button class="sign-up-button">Sign Up</button>
-        <button class="go-to-profile">My Profile</button>
-
-        <%= button_to "About", home_about_path, :class => "about-button" %>
-        <% unless current_user %>
-        <%= button_to "Login", new_user_session_path, :class => "log-in-button" %>
-        <%= button_to "Sign Up", user_registration_path, :class => "sign-up-button" %>
-        <% end %>
-
-      </div>
-    </header> -->
       <h1>Teacher Lesson Plans<h1>
         <p class="key-words">find, share, edit, plan, save</p>
         <h2>all in one place</h2>
@@ -38,7 +21,6 @@
       <div class="card">
         <div class="card-image">
           <h3> <%= l.topic %></h3>
-          <!-- <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt=""> -->
         </div>
         <div class="card-header">
           <%= l.description.html_safe + "..." %>

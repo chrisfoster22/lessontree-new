@@ -10,56 +10,56 @@ body {
   margin: 0;
 }
 
-.nav-wrapper-profile-page {
-  list-style: none;
-  display: -webkit-flex;
-  -webkit-flex-direction: row;
-  -webkit-justify-content: flex-end;
-  -webkit-flex-wrap: wrap;
-  margin: 0 auto 3em;
-  padding: 20px;
-  width: 100%;
-  list-style-type: none;
-}
+// .nav-wrapper-profile-page {
+//   list-style: none;
+//   display: -webkit-flex;
+//   -webkit-flex-direction: row;
+//   -webkit-justify-content: flex-end;
+//   -webkit-flex-wrap: wrap;
+//   margin: 0 auto 3em;
+//   padding: 20px;
+//   width: 100%;
+//   list-style-type: none;
+// }
+//
+// .modal-trigger-login a, modal-trigger-signup a, modal-trigger-about a {
+//   display: block;
+// 	padding: 15px 25px;
+// 	text-decoration: none;
+//   color: #fff;
+// }
+//
+// .top-nav-profile-page {
+//   list-style: none;
+//   display: -webkit-flex;
+//   -webkit-flex-direction: row;
+//   -webkit-justify-content: flex-end;
+//   -webkit-flex-wrap: wrap;
+//   margin: 0 auto;
+// 	padding: 20px;
+// 	width: 100%;
+// 	list-style-type: none;
+// }
+//
+// .modal-trigger-login, .modal-trigger-signup, .modal-trigger-about {
+//   margin: 10px;
+// 	border-radius: 10px;
+// 	background: $button-bg-color;
+// 	color: #FFF;
+//   vertical-align: text-top;
+// }
 
-.modal-trigger-login a, modal-trigger-signup a, modal-trigger-about a {
-  display: block;
-	padding: 15px 25px;
-	text-decoration: none;
-  color: #fff;
-}
-
-.top-nav-profile-page {
-  list-style: none;
-  display: -webkit-flex;
-  -webkit-flex-direction: row;
-  -webkit-justify-content: flex-end;
-  -webkit-flex-wrap: wrap;
-  margin: 0 auto;
-	padding: 20px;
-	width: 100%;
-	list-style-type: none;
-}
-
-.modal-trigger-login, .modal-trigger-signup, .modal-trigger-about {
-  margin: 10px;
-	border-radius: 10px;
-	background: $button-bg-color;
-	color: #FFF;
-  vertical-align: text-top;
-}
-
-.lessontree-logo a {
-  text-decoration: none;
-  color: $dark-header-color;
-}
-
-.lessontree-logo {
-  margin-right: auto;
-  margin-top: -.3em;
-  font-family: $cursive-font;
-  font-size: 5em;
-}
+// .lessontree-logo a {
+//   text-decoration: none;
+//   color: $dark-header-color;
+// }
+//
+// .lessontree-logo {
+//   margin-right: auto;
+//   margin-top: -.3em;
+//   font-family: $cursive-font;
+//   font-size: 5em;
+// }
 
 
 /*.logo-header {
@@ -68,12 +68,12 @@ body {
   top: -40px;
 }*/
 
-.logo-header h2 {
-  // color: $alt-top-bg-color;
-  font-size: 4em;
-  color: #e8e3e6;
-
-}
+// .logo-header h2 {
+//   // color: $alt-top-bg-color;
+//   font-size: 4em;
+//   color: #e8e3e6;
+//
+// }
 
 /*
 .top-nav-profile-page li:first-child {
