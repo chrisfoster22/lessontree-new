@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   has_many :plans
   has_many :lessons
   has_many :grade_levels
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation, :avatar, :city, :state, :school
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

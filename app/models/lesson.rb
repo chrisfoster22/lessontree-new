@@ -1,11 +1,21 @@
 class Lesson < ActiveRecord::Base
-  attr_accessible :topic, :description
+  attr_accessible :topic, :description, :upload
   belongs_to :plan
   belongs_to :subject
   belongs_to :user
   belongs_to :grade_level
   belongs_to :home
   has_many :documents
+
+  has_attached_file :upload, styles: {thumbnail: "60x60#"}
+  validates_attachment :upload, content_type: { content_type: ["application/pdf",
+      "application/vnd.oasis.opendocument.text",
+      "application/vnd.oasis.opendocument.spreadsheet",
+      "application/vnd.oasis.opendocument.presentation",
+      "application/vnd.oasis.opendocument.graphics", "application/vnd.ms-excel",
+      "application/vnd.ms-powerpoint", "application/msword",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "image/jpeg", "image/png"] }
 
   # searchable do
   #   text :topic, :boost => 5
