@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :lessons
   resources :users
   resources :documents
-  resources :home
   get 'home/index'
   get 'home/about'
   post 'home/about'
