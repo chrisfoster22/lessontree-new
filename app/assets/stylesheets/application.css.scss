@@ -24,6 +24,7 @@
  @import "login";
 
 
+
 #new_lesson.new_lesson {
   display: center;
   padding: 20px;
@@ -43,7 +44,14 @@
 }
 table {
   display: block;
-  padding-bottom: 1000px;
   border: none;
+}
 
+.cards:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow:hidden;
+  clear: both;
+  visibility:hidden;
 }

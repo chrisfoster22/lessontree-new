@@ -3,10 +3,18 @@
     <!-- <header>
      <div class="logo">LessonTree</div>
       <div class="buttons">
+
         <button class="about-button">About</button>
         <button class="log-in-button">Log In</button>
         <button class="sign-up-button">Sign Up</button>
         <button class="go-to-profile">My Profile</button>
+
+        <%= button_to "About", home_about_path, :class => "about-button" %>
+        <% unless current_user %>
+        <%= button_to "Login", new_user_session_path, :class => "log-in-button" %>
+        <%= button_to "Sign Up", user_registration_path, :class => "sign-up-button" %>
+        <% end %>
+
       </div>
     </header> -->
       <h1>Teacher Lesson Plans<h1>
@@ -21,66 +29,6 @@
       </form>
     </div>
 
- <div class="card-container">
- <div class="cards">
-  <div class="card">
-    <div class="card-image">
-      <h3>1st grade science</h3>
-    </div>
-    <div class="card-header">
-      Description
-    </div>
-    <div class="card-copy">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-image">
-      <h3>5th grade art class</h3>
-    </div>
-    <div class="card-header">
-      Description
-    </div>
-    <div class="card-copy">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-image">
-      <h3>2nd grade spelling activity</h3>
-    </div>
-    <div class="card-header">
-      Description
-    </div>
-    <div class="card-copy">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-      <form>
-        <%= form_tag root_path, :method => :get do %>
-          <p>
-            <%= text_field_tag :search, params[:search] %>
-            <%= submit_tag "Search", :name => nil %>
-          </p>
-          <% end %>
-          <div id="facets">
-            <h3>Published</h3>
-            <ul>
-              <% for row in @search.facet(:month_created).rows %>
-                <li>
-                  <% if params[:month].blank? %>
-                    <%= link_to row.value, :month => row.value %> (<%= row.count %>)
-                  <% else %>
-                    <strong><%= row.value %></strong> (<%= link_to "remove", :month => nil %>)
-                  <% end %>
-                </li>
-              <% end %>
-            </ul>
-          </div>
-      </form>
-    </div>
-
   <div class="card-container">
     <div class="cards">
     <%= @lessons.each do |l| %>
@@ -90,14 +38,12 @@
           <!-- <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt=""> -->
         </div>
         <div class="card-header">
-          Description
+          <%= l.description.html_safe + "..." %>
         </div>
         <div class="card-copy">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
         </div>
       </div>
       <% end %>
->>>>>>> fa60974efec3e19e7d6a710ee8c47e73bc92eda1
     </div>
   </div>
  </div>
