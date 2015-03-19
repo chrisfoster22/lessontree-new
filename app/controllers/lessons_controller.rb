@@ -5,14 +5,6 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find_by_id(params[:id])
-    @lessons = Lesson.all.order(:updated_at).reverse
-    @search = Lesson.search do
-      fulltext params[:search]
-      with(:created_at).less_than(Time.zone.now)
-      facet(:month_created)
-      with(:month_created, params[:month]) if params[:month].present?
-    end
-    @lessons = @search.results
   end
 
   def new

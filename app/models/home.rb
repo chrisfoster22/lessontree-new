@@ -16,4 +16,5 @@ class Home < ActiveRecord::Base
   def month_created
     created_at.strftime("%B %Y")
   end
+
 end
