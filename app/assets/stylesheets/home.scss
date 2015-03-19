@@ -10,13 +10,15 @@
   background-color: $top-bg-color;
   color: white;
   margin-top: 2.5em;
+  margin-left: 22px;
+
 }
 
 .logo {
   font-family: $cursive-font, cursive;
   font-size: 3.7em;
   font-weight: bold;
-  // margin-left: 20px;
+  // margin-left: 22px;
   // margin-top: 12px;
   // margin-bottom: 12px;
   color: $text-button-color;
@@ -75,7 +77,7 @@
   padding: 0.75em 1.75em;
   border-radius: 7.5px;
   background-color: $button-bg-color;
-  margin-right: .95em;
+  // margin-right: .95em;
   font-size: 22px;
   color: $header-texts-color;
   display: inline;
@@ -88,6 +90,27 @@
 }
 
 .sign-up-button:hover {
+  background-color: white;
+  color: $button-bg-color;
+}
+
+.go-to-profile {
+  font-family: $headline-font, sans-serif;
+  padding: 0.75em 1.75em;
+  border-radius: 7.5px;
+  background-color: $button-bg-color;
+  margin-right: .95em;
+  font-size: 22px;
+  color: $header-texts-color;
+  display: inline;
+}
+
+.go-to-profile:active {
+  background-color: $button-bg-color;
+  color: $header-texts-color;
+}
+
+.go-to-profile:hover {
   background-color: white;
   color: $button-bg-color;
 }
