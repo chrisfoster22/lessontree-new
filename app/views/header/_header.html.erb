@@ -6,8 +6,8 @@
         <%= button_to "My Profile", current_user, :method => 'get', :class => "go-to-profile" %>
         <%= button_to "Logout", destroy_user_session_path, :method => 'delete', :class => "log-in-button" %>
       <% else %>
-        <%= button_to "Login", new_user_session_path, :class => "log-in-button" %>
         <%= button_to "Sign Up", user_registration_path, :class => "sign-up-button" %>
+        <%= button_to "Login", new_user_session_path, :method => 'get', :class => "log-in-button" %>
       <% end %>
   </div>
 </header>
