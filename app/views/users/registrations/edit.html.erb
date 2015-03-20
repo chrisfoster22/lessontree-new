@@ -1,78 +1,28 @@
 <section class="login-signup-container">
 	<h2 class="login-signup-form-header">Edit My Profile</h2>
-	<form method="post" class="minimal">
-		<label for="name">
-			Name:
-      <input type="text" name="name" id="name" placeholder="Your full name" />
-		</label>
-    <label for="grades">
-      Grades:
-      <input type="text" name="grades" id="grades" placeholder="Grades I teach" />
-    </label>
-    <label for="school">
-      My School's Name:
-      <input type="text" name="school" id="school" placeholder="Where I teach" />
-    </label>
-    <label for="school-city">
-      City:
-      <input type="text" name="school-city" id="schoo-cityl" placeholder="My school's city" />
-    </label>
-    <label for="username">
-			Username:
-      <input type="text" name="username" id="username" placeholder="Username" />
-		</label>
-    <label for="current-password">
-      Current Password:
-      <input type="password" name="current-password" id="current-password" placeholder="Please enter your current password" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required">
-    </label>
-    <label for="new-password">
-			New Password:
-      <input type="password" name="new-password" id="new-password" placeholder="Your new password must be between 8 and 20 characters" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required">
-		</label>
-    <label for="confirm-password">
-      Confrim New Password:
-      <input type="password" name="confirm-password" id="confirm-password" placeholder="Please confirm your new password" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required">
-    </label>
-		<button type="submit" class="btn-minimal">Save</button>
-	</form>
-</section>
-
-
-<section class="login-signup-container">
-  <h2 class="login-signup-form-header"><%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, multipart: true) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class:"minimal" }, multipart: true) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    Upload a photo<br />
+
+    <%= f.label "Upload a Profile Photo" %><br />
     <%= f.file_field :avatar %>
-  </div>
 
-  <div class="field">
+
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
+    <%= f.text_field :name, id: 'name', placeholder:"Your full name" %>
 
-  <div class="field">
+
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+    <%= f.email_field :email, autofocus: true, id:"email", placeholder:"e-mail" %>
 
-  <div class="field">
     <%= f.label :school %><br />
-    <%= f.text_field :school %>
-  </div>
+    <%= f.text_field :school, id:"school", placeholder:"Where I teach" %>
 
-  <div class="field">
     <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </div>
+    <%= f.text_field :city, id:"schoo-cityl", placeholder:"My school's city" %>
 
-  <div class="field">
     <%= f.label :state %><br />
-    <%= f.text_field :state %>
-  </div>
+    <%= f.text_field :state, id:"state", placeholder:"State" %>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
