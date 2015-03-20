@@ -1,5 +1,7 @@
 class Lesson < ActiveRecord::Base
   attr_accessible :topic, :description, :upload
+  include PgSearch
+  multisearchable :against => [:topic, :description]
   belongs_to :plan
   belongs_to :subject
   belongs_to :user
@@ -17,22 +19,29 @@ class Lesson < ActiveRecord::Base
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
       "image/jpeg", "image/png"] }
 
+  def self.search(query)
+    if query.present?
+      search(query)
+    else
+      scoped
+    end
+  end
+end
   # searchable do
   #   text :topic, :boost => 5
   #   text :description, :created_at
   # end
 
-  searchable do
-    text :topic, :boost => 5
-    text :description, :month_created
-    text :documents do
-      documents.map(&:description)
-    end
-    time :created_at
-    string :month_created
-  end
+  # searchable do
+  #   text :topic, :boost => 5
+  #   text :description, :month_created
+  #   text :documents do
+  #     documents.map(&:description)
+  #   end
+  #   time :created_at
+  #   string :month_created
+  # end
 
-  def month_created
-    created_at.strftime("%B %Y")
-  end
-end
+  # def month_created
+  #   created_at.strftime("%B %Y")
+  # end
