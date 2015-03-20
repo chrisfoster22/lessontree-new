@@ -38,4 +38,12 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   gem 'spring'
+
+  gem 'minitest-reporters'
+
+  gem 'mini_backtrace'
+
+  gem 'capybara'
+
+  gem 'capybara_minitest_spec'
 end
