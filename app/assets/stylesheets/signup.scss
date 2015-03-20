@@ -8,39 +8,68 @@
     box-sizing: border-box;
 }
 
-.login-signup-container {
- background: #eee;
+.signup-container h2 {
+  font-family: $headline-font;
+  font-size: 1.25em;
+  text-shadow: none;
+  color: $button-bg-color;
+}
+
+li {
+  list-style-type: none;
+}
+
+.signup-container {
  width: 60%;
  margin: 0 auto 1em;
  padding: 2em;
  border-radius: .25em;
+ font-family: Arial;
 }
 
+.signup-container label, .weird {
+  text-align: center;
+  display: block;
+  color: $dark-header-color;
+}
 
-.login-signup-form-header {
-  color: $button-bg-color;
+.signup-form-header h2 {
+  color: $dark-header-color;
   font-size: 2em;
   font-family: $maintext-font;
   margin: 0 0 24px 0;
   text-shadow: none;
   text-align: center;
-  font-family: serif;
-  font-size: 2em;
+  padding: 1em;
+  border-bottom: 1px dashed #444;
 }
+
+.signup-form-rule {
+  width: 70%;
+  text-align: center;
+  color: #444;
+}
+
+.signup-form-error {
+  color: $button-bg-color;
+  font-size: 1em;
+  font-family: $maintext-font;
+  margin: 0 0 24px 0;
+  text-shadow: none;
+  text-align: center;
+  margin-top: 1em;
+}
+
 
 /*BUTTON DESIGN*/
 [class*='btn-'] {
   border: none;
-  border-bottom: 2px solid rgba(0,0,0,.15);
-  border-top: 1px solid rgba(255,255,255,.15);
   border-radius: 3px;
   color: #fff;
-  display: inline-block;
   font: -webkit-small-control;
-  font-size: .7em;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   line-height: 140%;
-  padding: 10px 20px;
+  padding: 12px 22px;
   text-decoration: none;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
   text-transform: uppercase;
@@ -51,18 +80,23 @@
         transition: all 0.1s linear;
 }
 
+.btn-minimal-container {
+  text-align: center;
+}
+
   .btn-minimal {
   background-color: $button-bg-color;
   border-radius: .25em;
   color: white;
   font-family: $headline-font;
-  font-size:1em;
+  font-size:1.5em;
+  font-weight: bolder;
   text-shadow: none;
   border: none;
 }
 
   .btn-minimal:hover {
-    background-color:  #d96354;
+    background-color:  $alt-top-bg-color;
     color: white;
     cursor: pointer;
     text-shadow: none;
@@ -74,18 +108,18 @@
 
 
 /*FORM*/
-form.minimal label {
+form {
   display: block;
-  margin: 6px 0;
+  margin: 0 auto;
   font-family: $headline-font;
 }
 
-  form.minimal input[type="text"],
-  form.minimal input[type="email"],
-  form.minimal input[type="number"],
-  form.minimal input[type="search"],
-  form.minimal input[type="password"],
-  form.minimal textarea {
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="password"],
+  textarea {
 
     background: white;
     border: 1px solid rgb( 186, 186, 186 );
@@ -96,10 +130,10 @@ form.minimal label {
     display: block;
     font-family: $headline-font;
     font-size: 14px;
-    margin: 6px 0 12px 0;
+    margin: 6px auto 12px;
     padding: 8px;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
-    width: 90%;
+    text-shadow: 0 1px 1px white;
+    width: 70%;
 
     -webkit-transition: all 0.1s linear;
     -moz-transition: all 0.1s linear;
@@ -107,23 +141,23 @@ form.minimal label {
       transition: all 0.1s linear;
   }
 
-  form.minimal input[type="text"]:focus,
-  form.minimal input[type="email"]:focus,
-  form.minimal input[type="number"]:focus,
-  form.minimal input[type="search"]:focus,
-  form.minimal input[type="password"]:focus,
-  form.minimal textarea:focus,
-  form.minimal select:focus {
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
 
   }
 
-    form.minimal input[type="text"]:invalid:focus,
-    form.minimal input[type="email"]:invalid:focus,
-    form.minimal input[type="number"]:invalid:focus,
-    form.minimal input[type="search"]:invalid:focus,
-    form.minimal input[type="password"]:invalid:focus,
-    form.minimal textarea:invalid:focus,
-    form.minimal select:invalid:focus {
+    input[type="text"]:invalid:focus,
+    input[type="email"]:invalid:focus,
+    input[type="number"]:invalid:focus,
+    input[type="search"]:invalid:focus,
+    input[type="password"]:invalid:focus,
+    textarea:invalid:focus,
+    select:invalid:focus {
       border-color: rgb(248,66,66);
       -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
       -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
