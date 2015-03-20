@@ -1,29 +1,33 @@
-<h2>Sign up</h2>
-
-<br><%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %></br>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<div class="signup-container">
+  <div class="signup-form-header">
+    <h2>Get Started with LessonTree</h2>
   </div>
 
-  <br><div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div></br>
+  <h3 class="signup-form-error"><%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %></h3>
+  <h3 class="signup-form-error"><%= devise_error_messages! %></h3>
 
-  <br><div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div></br>
+    <div class="form.minimal label">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up", :class => 'devise-sign-up' %>
-  </div>
-<% end %>
+    <br><div class="form.minimal label">
+      <%= f.label :password %>
+      <% if @validatable %>
+      <em class="weird">(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div></br>
+
+    <br><div class="form.minimal label">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div></br>
+
+    <div class="btn-minimal-container">
+      <%= f.submit "Signup", :class => 'btn-minimal' %>
+    </div>
+  <% end %>
+</div>
 
 <%= render "devise/shared/links" %>

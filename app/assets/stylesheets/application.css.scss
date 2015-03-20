@@ -22,6 +22,7 @@
  @import "about";
  @import "modal";
  @import "login";
+ @import "signup";
  @import "header";
  @import "footer";
 
@@ -56,6 +57,7 @@ table {
   clear: both;
   visibility:hidden;
 }
+
 
 // ### I WAS MESSING WITH THE STYLING BELOW HERE FOR YOUR INFO.. -parker ####
 
@@ -107,34 +109,6 @@ table {
 }
 
 .forgot-pass:hover {
-  background-color: white;
-  color: #d95353;
-  .logos {
-    font-family: 'Dancing Script', cursive;
-    font-size: 3.7em;
-    font-weight: bold;
-    // margin-left: 20px;
-    // margin-top: 12px;
-    color: $header-texts-color;
-  }
-}
-
-.devise-sign-up {
-  font-family: $headline-font, sans-serif;
-  padding: 0.75em 1.75em;
-  border-radius: 7.5px;
-  background-color: $button-bg-color;
-  font-size: 22px;
-  color: $header-texts-color;
-  display: inline;
-}
-
-.devise-sign-up:active {
-  background-color: #d95353;
-  color: #e8e3e6;
-}
-
-.devise-sign-up:hover {
   background-color: white;
   color: #d95353;
   .logos {
