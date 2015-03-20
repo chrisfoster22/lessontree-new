@@ -19,8 +19,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
-gem 'sunspot_rails'
-gem 'sunspot_solr'
+# gem 'sunspot_rails'
+# gem 'sunspot_solr'
 gem 'protected_attributes'
 
 
