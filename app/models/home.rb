@@ -5,7 +5,6 @@ class Home < ActiveRecord::Base
   has_many :lessons
   has_many :documents
 
-<<<<<<< HEAD
   def self.search(query)
     if query.present?
       search(query)
@@ -13,7 +12,6 @@ class Home < ActiveRecord::Base
       scoped
     end
   end
-=======
   # searchable do
   #   text :topic, :boost => 5
   #   text :description, :created_at
@@ -27,6 +25,4 @@ class Home < ActiveRecord::Base
   def month_created
     created_at.strftime("%B %Y")
   end
-
->>>>>>> 6515d6b3b69e93fb93fd5eb5f7dc97d6b9657fba
 end
