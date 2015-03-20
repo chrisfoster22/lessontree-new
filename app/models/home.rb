@@ -1,9 +1,10 @@
 class Home < ActiveRecord::Base
   attr_accessible :topic, :description, :content, :title
-  include PgSearch
-  multisearchable :against => [:topic, :description, :content, :title]
   has_many :lessons
   has_many :documents
+  include PgSearch
+  multisearchable :against => [:topic, :description, :content, :title]
+
 
   def self.search(query)
     if query.present?

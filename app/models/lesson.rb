@@ -1,13 +1,14 @@
 class Lesson < ActiveRecord::Base
   attr_accessible :topic, :description, :upload
-  include PgSearch
-  multisearchable :against => [:topic, :description]
   belongs_to :plan
   belongs_to :subject
   belongs_to :user
   belongs_to :grade_level
   belongs_to :home
   has_many :documents
+  include PgSearch
+  multisearchable :against => [:topic, :description]
+
 
   has_attached_file :upload, styles: {thumbnail: "60x60#"}
   validates_attachment :upload, content_type: { content_type: ["application/pdf",
