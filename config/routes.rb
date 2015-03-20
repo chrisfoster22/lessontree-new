@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'users/sign_up'
   post 'users/sign_up'
   post 'users/sign_out'
+  get 'home/aaron_style_guide'
+  get 'home/elisha_style_guide'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

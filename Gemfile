@@ -24,6 +24,8 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 # gem 'sunspot_solr'
 gem 'protected_attributes'
 
+gem 'pg_search'
+
 
 # gem 'turbolinks'
 # gem 'therubyracer', platforms: :ruby
@@ -38,4 +40,12 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   gem 'spring'
+
+  gem 'minitest-reporters'
+
+  gem 'mini_backtrace'
+
+  gem 'capybara'
+
+  gem 'capybara_minitest_spec'
 end

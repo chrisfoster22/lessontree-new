@@ -39,15 +39,15 @@ h2 {
   text-shadow: -1px -1px $alt-gray-color;
 }
 
+form {
+  width: 500px;
+  margin: 0 auto;
+}
+
 .search-container {
   height: 279px;
   background-color: $dark-header-color;
   color: white;
-}
-
-form {
-  width: 500px;
-  margin: 0 auto;
 }
 
 .search {

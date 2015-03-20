@@ -18,6 +18,7 @@
   <div>
     <%= f.label :description %>
   </div>
+  <%= f.hidden_field :user_id, value: current_user.id %>
   <div>
     <%= f.cktext_area :description, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'simple'} } %>
   </div>

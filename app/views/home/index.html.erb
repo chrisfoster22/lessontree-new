@@ -1,6 +1,6 @@
 
 
-<body>
+
   <div class="main-container">
 
       <h1>Teacher Lesson Plans<h1>
@@ -9,11 +9,11 @@
     </div>
 
     <div class="search-container">
+      <%= form_tag root_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "search-box" %>
+        <%= submit_tag "Search", name: nil, class: "btn btn-search" %>
+      <% end %>
 
-      <form method="GET" action="/search">
-        <span><input type="text" name="q" class="search" placeholder="search here"></span>
-      </form>
-    </div>
 
   <div class="card-container">
     <div class="cards">
