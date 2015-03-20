@@ -20,8 +20,8 @@ gem 'rails_12factor'
 
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
-gem 'sunspot_rails'
-gem 'sunspot_solr'
+# gem 'sunspot_rails'
+# gem 'sunspot_solr'
 gem 'protected_attributes'
 
 
