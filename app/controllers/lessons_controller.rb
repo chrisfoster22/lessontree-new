@@ -13,7 +13,7 @@ class LessonsController < ApplicationController
   end
 
   def create
-    @lesson = Lesson.new(lesson_params)
+    @lesson = Lesson.create(lesson_params)
     if @lesson.save
       redirect_to @lesson, notice: "The lesson has been successfully created."
     else
@@ -28,7 +28,7 @@ class LessonsController < ApplicationController
   def update
     @lesson = Lesson.find(params[:id])
     if @lesson.update_attributes(lesson_params)
-      redirect_to lessons_path, notice: "The lesson has been successfully updated."
+      redirect_to @lesson, notice: "The lesson has been successfully updated."
     else
       render action: "edit"
     end

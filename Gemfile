@@ -20,6 +20,11 @@ gem 'rails_12factor'
 
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
+<<<<<<< HEAD
+=======
+# gem 'sunspot_rails'
+# gem 'sunspot_solr'
+>>>>>>> 6515d6b3b69e93fb93fd5eb5f7dc97d6b9657fba
 gem 'protected_attributes'
 
 gem 'pg_search'
