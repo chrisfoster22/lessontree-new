@@ -1,0 +1,16 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather|Hind:400,600|Dancing+Script);
+@import "colors";
+@import "fonts";
+
+.nav-bar {
+  background-color: $top-bg-color ;
+  height: 365px;
+  display: inline;
+}
+
+.nav-logo {
+  font-family: $cursive-font, cursive;
+  font-size: 3.7em;
+  font-weight: bold;
+  color: $logo-color;
+}
