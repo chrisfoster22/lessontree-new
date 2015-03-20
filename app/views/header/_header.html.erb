@@ -1,5 +1,5 @@
 <header>
- <div class="logo">LessonTree</div>
+  <%= link_to "LessonTree", root_path, class: "logo" %>
   <div class="buttons">
     <%= button_to "About", home_about_path, :class => "about-button" %>
       <% if current_user %>
