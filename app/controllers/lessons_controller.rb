@@ -1,6 +1,7 @@
 class LessonsController < ApplicationController
   def index
     @lessons = Lesson.order("created_at DESC")
+    @pg_search_documents = PgSearch.multisearch(params[:query])
   end
 
   def show
@@ -12,8 +13,10 @@ class LessonsController < ApplicationController
   end
 
   def create
-    @lesson = Lesson.new(lesson_params)
+    @lesson = Lesson.create(lesson_params)
     if @lesson.save
+      @lesson.user_id = current_user.id
+      @lesson.save!
       redirect_to @lesson, notice: "The lesson has been successfully created."
     else
       render action: "new"
@@ -27,7 +30,7 @@ class LessonsController < ApplicationController
   def update
     @lesson = Lesson.find(params[:id])
     if @lesson.update_attributes(lesson_params)
-      redirect_to lessons_path, notice: "The lesson has been successfully updated."
+      redirect_to @lesson, notice: "The lesson has been successfully updated."
     else
       render action: "edit"
     end
@@ -36,7 +39,7 @@ class LessonsController < ApplicationController
 private
 
   def lesson_params
-    params.require(:lesson).permit(:upload, :topic, :description, :id)
+    params.require(:lesson).permit(:upload, :topic, :description, :id, :user_id)
   end
 
 end
