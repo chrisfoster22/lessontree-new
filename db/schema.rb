@@ -70,13 +70,6 @@ ActiveRecord::Schema.define(version: 20150320180517) do
     t.integer "subject_id"
   end
 
-  create_table "pg_search_documents", force: :cascade do |t|
-    t.text     "content"
-    t.integer  "searchable_id"
-    t.string   "searchable_type"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-
   create_table "mercury_images", force: :cascade do |t|
     t.string   "image_file_name"
     t.string   "image_content_type"
@@ -84,6 +77,14 @@ ActiveRecord::Schema.define(version: 20150320180517) do
     t.datetime "image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "searchable_id"
+    t.string   "searchable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "plans", force: :cascade do |t|

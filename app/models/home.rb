@@ -1,5 +1,4 @@
 class Home < ActiveRecord::Base
-  attr_accessible :topic, :description, :content, :title
   has_many :lessons
   has_many :documents
   include PgSearch
