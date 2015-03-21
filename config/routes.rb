@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
+
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, :controllers => { registrations: 'users/registrations' }
   resources :lessons
   resources :users
   resources :documents
+  resources :plans
   get 'home/index'
   get 'home/about'
   post 'home/about'
   get 'users/sign_up'
   post 'users/sign_up'
   post 'users/sign_out'
+  get 'home/aaron_style_guide'
+  get 'home/elisha_style_guide'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
