@@ -7,19 +7,15 @@
 <% end %>
 <%= form_for(@lesson, multipart: true) do |f| %>
   <div>
-    <%= f.label "Topic" %>
     <%= f.label :topic %>
     <%= f.text_field :topic %>
   </div>
   <div>
-    <%= f.label :upload %>
-    <%= f.file_field :upload %>
-  </div>
-  <div>
     <%= f.label :description %>
   </div>
+  <%= f.hidden_field :user_id, value: current_user.id %>
   <div>
-    <%= f.cktext_area :description, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'simple'} } %>
+    <%= f.text_area :description %>
   </div>
   <div>
     <%= f.submit "Create Lesson", :class => "create-lesson" %>

@@ -1,7 +1,11 @@
 class Home < ActiveRecord::Base
-  attr_accessible :topic, :description, :content, :title
   has_many :lessons
   has_many :documents
+<<<<<<< HEAD
+=======
+  # include PgSearch
+  multisearchable :against => [:topic, :description, :content, :title]
+>>>>>>> f5eb947f354898324361ce8f9322e37bf6c43165
 
   # searchable do
   #   text :topic, :boost => 5
