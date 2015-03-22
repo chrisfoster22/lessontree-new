@@ -235,7 +235,11 @@ DEPENDENCIES
   neat
   paperclip (~> 4.2)
   pg
+<<<<<<< HEAD
   pg_search
+=======
+  protected_attributes
+>>>>>>> bdebe61a24927db21ed6238a6507d2bfa6f1475c
   rails (= 4.2.0)
   rails_12factor
   sass-rails (~> 5.0)

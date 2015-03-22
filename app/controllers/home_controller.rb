@@ -15,8 +15,8 @@ class HomeController < ApplicationController
     # end
 
   def index
-    @lessons = Lesson.all.order(:updated_at).reverse.first(9)
-    # @lessons = PgSearch.multisearch(params[:query])
+    @lessons = Lesson.all.order(:updated_at).reverse
+    # @pg_search_documents = PgSearch.multisearch(params[:query])
   end
 
   def show

@@ -24,7 +24,7 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 # gem 'sunspot_solr'
 # gem 'protected_attributes'
 
-gem 'pg_search'
+# gem 'pg_search'
 
 
 # gem 'turbolinks'
