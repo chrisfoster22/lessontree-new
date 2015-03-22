@@ -2,8 +2,8 @@
 
 .about-main-container {
   height: 1065px;
-  // background-color: #b6ded4;
-  background-color: #a6a6b0;
+  // background-color: $top-bg-color;
+  background-color: $alt-gray-color;
   color: white;
 }
 
@@ -12,12 +12,12 @@
   margin-right: auto;
   width: 640px;
   text-align: center;
-  border: 1px solid #a6a6b0;
+  border: 1px solid $alt-gray-color;
 
 }
 
 .type {
-  background-color: #d95353;
+  background-color: $button-bg-color;
   font-size: 28px;
   margin-top: 2.6em;
 }
@@ -44,7 +44,14 @@
 }
 
 .want-more {
-  background-color: #d95353;
+  background-color: $button-bg-color;
+  font-size: 28px;
+  margin-top: 2.6em;
+}
+
+.ellipsis {
+  letter-spacing: 0.2em;
+  background-color: $button-bg-color;
   font-size: 28px;
   margin-top: 2.6em;
 }
@@ -81,22 +88,22 @@
   font-family: 'Hind', sans-serif;
   padding: .5em 2em;
   border-radius: 7.5px;
-  background-color: #d95353;
+  background-color: $button-bg-color;
   margin-left: 11em;
   margin-top: 3em;
   font-size: 22px;
-  color: #e8e3e6;
+  color: $text-button-color;
   display: inline;
   margin-top: 4em;
 }
 
 .home-button:active {
-  background-color: #d95353;
-  color: #e8e3e6;
+  background-color: $button-bg-color;
+  color: $text-button-color;
 }
 
 .home-button:hover {
-  background-color: white;
-  color: #d95353;
+  background-color: $top-bg-color;
+  color:$button-bg-color;
 
 }
