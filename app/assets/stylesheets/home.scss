@@ -8,10 +8,10 @@
 .main-container-hero {
   background-color: $top-bg-color;
   color: white;
-  margin-top: 2.5em;
   margin-left: 0px;
   height: 565px;
   margin-top: 2.5em;
+  margin-bottom: -1em;
 
 }
 
@@ -21,7 +21,9 @@ h1 {
   text-align: center;
   text-shadow: -1px -1px $alt-gray-color;
   line-height: 1.4em;
-  margin-bottom: -1.1em;
+  margin-bottom: -2.7em;
+  padding-top: 1.7em;
+
 }
 
 .key-words {
@@ -29,47 +31,50 @@ h1 {
   text-align: center;
   font-size: 45px;
   margin-top: 1.1em;
+  margin-bottom: -1.7em;
 }
 
-h2 {
+.third-line {
   font-family: $cursive-font, cursive;
   text-align: center;
   font-size: 45px;
-  margin-top: 1.5em;
+  margin-top: 0.5em;
   text-shadow: -1px -1px $alt-gray-color;
-}
+  margin-bottom: -1.7em;
 
-form {
-  width: 500px;
-  margin: 0 auto;
 }
-
-.search-container {
-  height: 279px;
-  background-color: $dark-header-color;
-  color: white;
-}
-
-.search {
-  padding: 0.75em 1.75em;
-  position: absolute;
-  left: 38%;
-  border-radius: 7.5px;
-  background-color: $button-bg-color;
-  font-size: 22px;
-  color: white;
-  margin-top: 4.75em;
-}
-
-.search:active {
-  background-color: $button-bg-color;
-  color: $header-texts-color;
-}
-
-.search:hover {
-  background-color: white;
-  color: $button-bg-color;
-}
+//
+// form {
+//   width: 500px;
+//   margin: 0 auto;
+// }
+//
+// .search-container {
+//   height: 565px;
+//   background-color: $dark-header-color;
+//   color: white;
+// }
+//
+// .search {
+//   padding: 0.75em 1.75em;
+//   position: absolute;
+//   // left: 38%;
+//   border-radius: 7.5px;
+//   background-color: $button-bg-color;
+//   font-size: 22px;
+//   color: white;
+//   margin-top: 4.75em;
+// }
+//
+// .search:active {
+//   background-color: $button-bg-color;
+//   color: $header-texts-color;
+// }
+//
+// .search:hover {
+//   background-color: white;
+//   color: $button-bg-color;
+// }
 
 .card-container {
   background-color: #d95353;
@@ -98,8 +103,6 @@ form {
 
   $card-border-color: $base-border-color;
   $card-border: 1px solid $card-border-color;
-  // $card-background: lighten($card-border-color, 10%);
-  // $card-background: lighten($top-bg-color);
   $card-background: #b6ded4;
 
   $card-header-background: $card-background;
