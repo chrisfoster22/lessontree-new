@@ -1,30 +1,59 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather|Hind:400,600|Dancing+Script);
+@import "colors";
+@import "fonts";
+
 .footer {
+  background: $dark-header-color
+  height: 10em;
   margin-top: 4em;
-  padding: 1em 1.618em;
-  ///////////////////////////////////////////////////////////////////////////////////
-  @import url(http://fonts.googleapis.com/css?family=Merriweather|Hind:400,600|Dancing+Script);
-  @import "colors";
-  @import "fonts";
+}
 
-  $base-spacing: 1.5em !default;
-  $base-accent-color: $dark-header-color !default;
-  $medium-screen: em(640) !default;
-  $large-screen: em(860) !default;
+.footer ul {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.footer li {
+  font-family: $headline-font;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+}
 
-  ul {
-    padding: 0;
+.footer a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+
+.footer a:hover {
+  color: #ddd;
+}
+
+@media screen and (min-width: 600px) {
+  .footer li {
+    width: 120px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
   }
 
-  li {
-    list-style: none;
-    line-height: 1.5em;
+  .footer li {
+    display: inline-block;
+    margin-right: -4px;
   }
 
-  a {
-    text-decoration: none;
+  . footer h1, h2 {
+    font-family: $cursive-font;
+    color: #fff;
+    font-size: 2em;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  . footer h3, h4, h5, h6 {
     font-family: $headline-font;
     color: #fff;
   }
@@ -36,105 +65,9 @@
     color: $header-texts-color;
     margin: 0 0 1em;
   }
-  //////////////////////////////////////////////////////////////////////////////////
 
-  $footer-background: $base-accent-color;
-  $footer-color: $header-texts-color;
-  $footer-link-color: white;
-  $footer-disclaimer-color: transparentize($footer-color, 0.6);
-
-  background: $footer-background;
-  padding: ($base-spacing * 2) $gutter;
-  width: 100%;
-
-  .footer li a {
-    font-family: $headline-font;
-    font-size: 1em;
-  }
-
-  .footer-logo {
-    margin-bottom: 3em;
-    text-align: center;
-
-    img {
-      height: 3em;
-    }
-  }
-
-  .footer-links {
-    @include clearfix;
-    margin-bottom: $base-spacing;
-
-    @include media($medium-screen) {
-      @include shift(3);
-    }
-  }
-
-  ul {
-    margin-bottom: 1em;
-
-    @include media($medium-screen) {
-      @include span-columns(3);
-      @include omega(3n);
-      @include clearfix;
-    }
-  }
-
-  li {
-    text-align: center;
-
-    @include media($medium-screen) {
-      text-align: left;
-    }
-  }
-
-  li a {
-    color: $footer-link-color;
-    font-family: $headline-font;
-    font-size: 1.1em;
-
-    &:focus,
-    &:hover {
-      color: transparentize($footer-color, 0);
-    }
-  }
-
-  li h3 {
-    color: $footer-color;
-    font-size: 1em;
-    font-weight: 800;
-    margin-bottom: 0.4em;
-  }
-
-  hr {
-    border: 1px dashed transparentize($footer-disclaimer-color, 0.3);
-    margin: 0 auto $base-spacing;
+  .footer hr {
+    border: 1px solid #ccc;
+    margin: 0 auto
     width: 60%;
   }
-
-  .footer-social {
-    display: block;
-    margin: 0, auto;
-    height: 2em;
-  }
-
-  .footer-social ul {
-    display: block;
-    text-align: center;
-    vertical-align: baseline;
-  }
-
-  .footer-social li {
-    display: inline;
-    text-align: center;
-  }
-
-  p {
-    color: $footer-disclaimer-color;
-    font-size: 0.9em;
-    line-height: 1.5em;
-    margin: auto;
-    max-width: 35em;
-    text-align: center;
-  }
-}
