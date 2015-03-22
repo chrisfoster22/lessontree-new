@@ -1,5 +1,6 @@
 .footer {
   margin-top: 4em;
+  padding: 1em 1.618em;
   ///////////////////////////////////////////////////////////////////////////////////
   @import url(http://fonts.googleapis.com/css?family=Merriweather|Hind:400,600|Dancing+Script);
   @import "colors";
@@ -32,21 +33,27 @@
     font-family: $cursive-font;
     font-size: 3.7em;
     font-weight: bold;
-    color: #e8e3e6;
+    color: $header-texts-color;
+    margin: 0 0 1em;
   }
   //////////////////////////////////////////////////////////////////////////////////
 
   $footer-background: $base-accent-color;
-  $footer-color: #e8e3e6;
-  $footer-link-color: transparentize($footer-color, 0.6);
+  $footer-color: $header-texts-color;
+  $footer-link-color: white;
   $footer-disclaimer-color: transparentize($footer-color, 0.6);
 
   background: $footer-background;
   padding: ($base-spacing * 2) $gutter;
   width: 100%;
 
+  .footer li a {
+    font-family: $headline-font;
+    font-size: 1em;
+  }
+
   .footer-logo {
-    margin-bottom: 2em;
+    margin-bottom: 3em;
     text-align: center;
 
     img {
@@ -64,7 +71,7 @@
   }
 
   ul {
-    margin-bottom: $base-spacing * 2;
+    margin-bottom: 1em;
 
     @include media($medium-screen) {
       @include span-columns(3);
@@ -83,6 +90,8 @@
 
   li a {
     color: $footer-link-color;
+    font-family: $headline-font;
+    font-size: 1.1em;
 
     &:focus,
     &:hover {
@@ -98,9 +107,26 @@
   }
 
   hr {
-    border: 1px solid transparentize($footer-disclaimer-color, 0.3);
+    border: 1px dashed transparentize($footer-disclaimer-color, 0.3);
     margin: 0 auto $base-spacing;
-    width: 12em;
+    width: 60%;
+  }
+
+  .footer-social {
+    display: block;
+    margin: 0, auto;
+    height: 2em;
+  }
+
+  .footer-social ul {
+    display: block;
+    text-align: center;
+    vertical-align: baseline;
+  }
+
+  .footer-social li {
+    display: inline;
+    text-align: center;
   }
 
   p {
