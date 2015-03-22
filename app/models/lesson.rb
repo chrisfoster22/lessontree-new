@@ -6,11 +6,6 @@ class Lesson < ActiveRecord::Base
   belongs_to :grade_level
   belongs_to :home
   has_many :documents
-<<<<<<< HEAD
-=======
-  # include PgSearch
-  # multisearchable :against => [:topic, :description]
->>>>>>> f5eb947f354898324361ce8f9322e37bf6c43165
 
 
   has_attached_file :upload, styles: {thumbnail: "60x60#"}

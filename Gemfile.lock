@@ -134,8 +134,6 @@ GEM
       cocaine (~> 0.5.3)
       mime-types
     pg (0.18.1)
-    protected_attributes (1.0.9)
-      activemodel (>= 4.0.1, < 5.0)
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -233,7 +231,6 @@ DEPENDENCIES
   neat
   paperclip (~> 4.2)
   pg
-  protected_attributes
   rails (= 4.2.0)
   rails_12factor
   sass-rails (~> 5.0)
