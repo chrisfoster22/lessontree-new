@@ -23,13 +23,14 @@
       <%= l.description.html_safe %>
     </p>
     <div class="my-lesson-edit-button-container">
-      <%= link_to "Edit", edit_lesson_path, class:"my-lesson-edit-button" %>
+      <%= link_to "Edit", "/lessons/#{l.id}/edit", class:"my-lesson-edit-button" %>
     </div>
   </article>
 </section></a>
 <% end %>
 <%= link_to "Edit Profile", edit_user_registration_path, class: 'about-button' %>
 <%= link_to "New Lesson", new_lesson_path, class: 'create-lesson' %>
+<%= link_to "New Plan", new_plan_path, class: 'create-lesson' %>
 
 <!-- <section class="login-signup-container">
 	<h2 class="login-signup-form-header">Signup</h2>
