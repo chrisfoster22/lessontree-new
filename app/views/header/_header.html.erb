@@ -1,13 +1,18 @@
 <header>
-  <%= link_to "LessonTree", root_path, class: "logo" %>
-  <div class="buttons">
-    <%= button_to "About", home_about_path, :class => "about-button" %>
-      <% if current_user %>
+  <nav class="logo-buttons">
+
+
+   <div class="logo">LessonTree</div>
+    <div class="buttons">
+      <%= button_to "About", home_about_path, :class => "about-button" %>
+       <% if current_user %>
         <%= button_to "My Profile", current_user, :method => 'get', :class => "go-to-profile" %>
         <%= button_to "Logout", destroy_user_session_path, :method => 'delete', :class => "log-in-button" %>
       <% else %>
+        <%= button_to "Log In", new_user_session_path, :class => "log-in-button" %>
         <%= button_to "Sign Up", user_registration_path, :class => "sign-up-button" %>
-        <%= button_to "Login", new_user_session_path, :method => 'get', :class => "log-in-button" %>
       <% end %>
-  </div>
+    </nav>
+    </div>
+
 </header>
