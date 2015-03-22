@@ -1,4 +1,5 @@
 class Lesson < ActiveRecord::Base
+  has_many :stars
   belongs_to :plan
   belongs_to :subject
   belongs_to :user

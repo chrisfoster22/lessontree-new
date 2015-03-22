@@ -1,9 +1,13 @@
 <div><h3><%= @lesson.topic %></h3></div>
 <div id="lesson-show"><%= @lesson.description.html_safe %></div>
 
+<%= form_for @star do |f| %>
+<%= f.label "Star this plan?" %>
+<%= f.checkbox : %>
+
 <h3>Add this lesson to a plan below:</h3>
 <%= form_for @lesson do |f| %>
-<%= f.collection_select :plan_id, Plan.all, :id, :title %>
+<%= f.collection_select :plan_id, current_user.plans, :id, :title, include_blank: true %>
 <%= f.submit "Add Lesson to Plan"%>
 <% end %>
 
