@@ -1,5 +1,4 @@
 class Lesson < ActiveRecord::Base
-  attr_accessible :topic, :description, :upload
   belongs_to :plan
   belongs_to :subject
   belongs_to :user
