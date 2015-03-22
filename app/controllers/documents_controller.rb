@@ -18,7 +18,7 @@ class DocumentsController < ApplicationController
   def create
     @document = Document.create(document_params)
     if @document.save
-      @document.user_id = current_user.id
+      @document.lesson_id = current_user.id
       @document.save!
       redirect_to @document, notice: "The document has been successfully created."
     else

@@ -1,7 +1,7 @@
 class Home < ActiveRecord::Base
   has_many :lessons
   has_many :documents
-  include PgSearch
+  # include PgSearch
   multisearchable :against => [:topic, :description, :content, :title]
 
 

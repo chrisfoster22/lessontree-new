@@ -5,32 +5,33 @@
     <% end %>
   </ul>
 <% end %>
-<%= form_for @document do |f| %>
-  <div>
-    <%= f.label :content %>
-    <%= f.file_field :content %>
-  </div>
-  <div>
-    <%= f.submit "Upload", class: "create-lesson" %>
-  </div>
-<% end %>
-<%= form_for(@document, multipart: true) do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-  <div>
-    <%= f.label :content %>
-    <%= f.file_field :content %>
-  </div>
-  <div>
-    <%= f.label :content %>
-  </div>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <div>
-    <%= f.cktext_area :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'simple'} } %>
-  </div>
-  <div>
-    <%= f.submit "Create Document", :class => "create-lesson" %>
-  </div>
-<% end %>
+<div>
+  <%= form_for @document do |f| %>
+    <div>
+      <%= f.label :content %>
+      <%= f.file_field :content %>
+    </div>
+    <div>
+      <%= f.submit "Upload", class: "create-lesson" %>
+    </div>
+  <% end %>
+</div>
+<div>
+  <%= form_for(@document, multipart: true) do |f| %>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :content %>
+      <%= f.file_field :content %>
+    </div>
+    <%= f.hidden_field :lesson_id, value: current_user.id %>
+    <div>
+      <%= f.cktext_area :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'simple'} } %>
+    </div>
+    <div>
+      <%= f.submit "Create Document", :class => "create-lesson" %>
+    </div>
+  <% end %>
+</div>
