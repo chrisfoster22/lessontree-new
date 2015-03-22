@@ -1,73 +1,90 @@
-@import url(http://fonts.googleapis.com/css?family=Merriweather|Hind:400,600|Dancing+Script);
-@import "colors";
-@import "fonts";
 
 .footer {
-  background: $dark-header-color
-  height: 10em;
+  background: #2e2e40;
+  max-height: 35em;
   margin-top: 4em;
+  padding: 1em;
+}
+
+.footer-head,
+.footer-social-icons {
+  text-align: center;
+  font-size: 3em;
+  margin: 1em 0 1em;
+  color: #fff;
 }
 
 .footer ul {
   list-style: none;
-  background-color: #444;
   text-align: center;
   padding: 0;
-  margin: 0;
+  margin: 0 0 2em 0;
 }
-.footer li {
-  font-family: $headline-font;
-  font-size: 1.2em;
+
+.about-footer,
+.signup-footer,
+.terms-footer {
+  font-family: Arial;
+  font-size: 1em;
   line-height: 40px;
   height: 40px;
+  padding: 0 2em 0 2em;
 }
 
 .footer a {
   text-decoration: none;
   color: #fff;
-  display: block;
   transition: .3s background-color;
 }
 
 .footer a:hover {
-  color: #ddd;
+  color: #b6ded4;
+  transition: .4s;
 }
 
-@media screen and (min-width: 600px) {
-  .footer li {
-    width: 120px;
+.footer hr {
+  border: 0;
+  height: 0;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+  width: 50%;
+}
+
+.social-icons {
+  font-size: 2em;
+  color: #fff;
+}
+
+.icon-twitter-circled,
+.icon-facebook-circled,
+.icon-pinterest-circled {
+  margin: 1em .5em .5em .5em;
+}
+
+.icon-twitter-circled:hover,
+.icon-facebook-circled:hover,
+.icon-pinterest-circled:hover{
+  color: #b6ded4;
+  transition: .4s;
+  cursor: pointer;
+}
+
+/************************************
+    FOOTER MEDIA QUERY
+************************************/
+
+@media screen and (min-width: 650px) {
+  .footer-head li {
     border-bottom: none;
     height: 50px;
     line-height: 50px;
-    font-size: 1.4em;
-  }
-
-  .footer li {
+    font-size: 1em;
     display: inline-block;
     margin-right: -4px;
   }
 
-  . footer h1, h2 {
-    font-family: $cursive-font;
-    color: #fff;
-    font-size: 2em;
-  }
-
-  . footer h3, h4, h5, h6 {
-    font-family: $headline-font;
+  .footer h3, h4, h5, h6 {
+    font-family: Arial;
     color: #fff;
   }
-
-  .footer-logo h2 {
-    font-family: $cursive-font;
-    font-size: 3.7em;
-    font-weight: bold;
-    color: $header-texts-color;
-    margin: 0 0 1em;
-  }
-
-  .footer hr {
-    border: 1px solid #ccc;
-    margin: 0 auto
-    width: 60%;
-  }
+}
