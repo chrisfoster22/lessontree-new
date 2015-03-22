@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'documents/index'
+
+  get 'documents/show'
+
+  get 'documents/new'
+
+  get 'documents/create'
+
+  get 'documents/edit'
+
+  get 'documents/update'
+
+  get 'documents/destroy'
+
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, :controllers => { registrations: 'users/registrations' }
   resources :lessons

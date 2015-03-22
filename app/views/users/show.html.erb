@@ -23,7 +23,7 @@
       <%= l.description.html_safe %>
     </p>
     <div class="my-lesson-edit-button-container">
-      <%= link_to "Edit", edit_lesson_path, class:"my-lesson-edit-button" %>
+      <%= link_to "Edit", "/lessons/#{l.id}/edit", class:"my-lesson-edit-button" %>
     </div>
   </article>
 </section></a>
