@@ -17,4 +17,14 @@ class Lesson < ActiveRecord::Base
       "application/vnd.ms-powerpoint", "application/msword",
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
       "image/jpeg", "image/png"] }
+
+  def self.search(search)
+    if search
+      # find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+      where('topic ILIKE ? OR description ILIKE ?' , "%#{search}%", "%#{search}%")
+    else
+      # find(:all)
+      Lesson.all
+    end
+  end
 end

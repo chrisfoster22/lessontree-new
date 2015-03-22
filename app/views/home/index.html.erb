@@ -8,11 +8,8 @@
     </div>
 
     <div class="search-container">
-      <%= form_tag root_path, method: :get do %>
-        <%= text_field_tag :search, params[:search], class: "search-box" %>
-        <%= submit_tag "Search", name: nil, class: "btn btn-search" %>
-      <% end %>
-
+      <%= render :partial => 'home/search' %>
+    </div
 
   <div class="card-container">
     <div class="cards">
