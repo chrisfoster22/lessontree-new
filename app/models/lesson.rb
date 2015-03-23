@@ -27,4 +27,5 @@ class Lesson < ActiveRecord::Base
       Lesson.all
     end
   end
+
 end

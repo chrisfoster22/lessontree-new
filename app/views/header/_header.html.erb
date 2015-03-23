@@ -5,13 +5,13 @@
 
    <div class="logo">LessonTree</div>
     <div class="buttons">
-      <%= button_to "About", home_about_path, :class => "about-button" %>
+      <%= link_to "About", home_about_path, :class => "about-button" %>
        <% if current_user %>
-        <%= button_to "My Profile", current_user, :method => 'get', :class => "go-to-profile" %>
-        <%= button_to "Logout", destroy_user_session_path, :method => 'delete', :class => "log-in-button" %>
+        <%= link_to "My Profile", current_user, :method => 'get', :class => "go-to-profile" %>
+        <%= link_to "Logout", destroy_user_session_path, :method => 'delete', :class => "log-in-button" %>
       <% else %>
-        <%= button_to "Log In", new_user_session_path, :class => "log-in-button" %>
-        <%= button_to "Sign Up", user_registration_path, :class => "sign-up-button" %>
+        <%= link_to "Log In", new_user_session_path, :class => "log-in-button" %>
+        <%= link_to "Sign Up", users_sign_up_path, :class => "sign-up-button" %>
       <% end %>
     </nav>
     </div>
