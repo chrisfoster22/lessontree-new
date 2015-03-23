@@ -2,7 +2,7 @@
 @import "colors";
 @import "fonts";
 
-//header & nav//
+//////////////////////////beginning of header & nav bar////////////////////////
 .all-the-btns {
   text-align: right;
   margin-right: 22px;
@@ -20,13 +20,10 @@ a {
   font-size: 3.7em;
   font-weight: bold;
   color: $logo-color;
-  display: inline;
   text-decoration: none;
   margin: 45px;
-  padding: 0px;
+  margin-top: 1em;
   list-style: none;
-  display: inline;
-
 }
 
 .nav-link-about-btn {
@@ -89,14 +86,58 @@ a {
 }
 
 .nav-link-signup-btn:hover {
-  background-color: $top-bg-color;
+  background-color:$top-bg-color;
   color: $button-bg-color;
 }
 
+.nav-link-logout-btn {
+  text-align: right;
+  font-family: $headline-font, sans-serif;
+  padding: 0.75em 1.75em;
+  border-radius: 7.5px;
+  background-color: $button-bg-color;
+  font-size: 22px;
+  color: $header-texts-color;
+  display: inline;
+}
+
+.nav-link-logout-btn:active {
+  background-color: $button-bg-color;
+  color: $header-texts-color;
+}
+
+.nav-link-logout-btn:hover {
+  background-color:$top-bg-color;
+  color: $button-bg-color;
+}
+
+.nav-link-myprofile-btn {
+  text-align: right;
+  font-family: $headline-font, sans-serif;
+  padding: 0.75em 1.75em;
+  border-radius: 7.5px;
+  background-color: $button-bg-color;
+  font-size: 22px;
+  color: $header-texts-color;
+  display: inline;
+}
+
+.nav-link-myprofile-btn:active {
+  background-color: $button-bg-color;
+  color: $header-texts-color;
+}
+
+.nav-link-myprofile-btn:hover {
+  background-color:$top-bg-color;
+  color: $button-bg-color;
+}
+/////////////////////end of header & nav bar//////////////////////////////
 
 
 
-//hero, hm pg//
+
+
+////////////////beginning of hero, hm pg///////////////////////////////
 .main-container-hero {
   background-color: $top-bg-color;
   color: white;
@@ -135,3 +176,23 @@ h1 {
   margin-bottom: -1.7em;
 
 }
+////////////////////end of hero, hm pg//////////////////////////////////
+
+
+
+
+
+/////////////////////beginning of logo, outside of header/nav bar/////////
+.nav-logo-btn-two {
+    font-family: $cursive-font, cursive;
+    font-size: 3.7em;
+    font-weight: bold;
+    color: $logo-color;
+    text-decoration: none;
+    // margin: 45px;
+    // margin-top: 1em;
+    list-style: none;
+}
+
+//////important to know, the margin & possible padding will likely need added/adjusted///////////
+/////////////////////end of logo, outside of the header/nav bar//////////////////////////////////
