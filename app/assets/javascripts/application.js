@@ -41,21 +41,6 @@ $(function() {
     });
   });
 
-// $(function() {
-//   $("#search-submit").on("click", function() {
-//     $('html, body').animate({
-//         scrollTop: $("#steady_scroll").offset().top
-//       }, 2000);
-//     });
-//   });
-
-
-// $(document).ready(function($) {
-//             $(".search-container").click(function(event) {
-//                 event.preventDefault();
-//                 $('html,body').animate({scrollTop:$(this.hash).offset().top},
-//               });
-//             )};
   $('.plan-star-box').on("click", function() {
     var val = $(this).prevAll(".rails-id").val();
     if ($(this).is(':checked')) {
