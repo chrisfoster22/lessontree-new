@@ -1,29 +1,25 @@
 
-.footer {
-  background: $dark-header-color;
-  max-height: 35em;
+footer {
+  background: #2e2e40;
+  max-height: 40em;
   margin-top: 4em;
   padding: 1em;
 }
 
 .footer-head {
-  font-family: $cursive-font, cursive;
-  font-size: 3.7em;
-  font-weight: bold;
-  color: $logo-color;
-  display: inline;
-  text-decoration: none;
-  padding: 0px;
-  list-style: none;
-  display: inline;
   text-align: center;
+  font-size: 4em;
+  font-family: $cursive-font;
+  font-weight: bolder;
+  margin: 1em 0 1em;
+  color: #fff;
 }
-
 
 .footer-social-icons {
   text-align: center;
-  font-size: 3em;
-  margin: 1em 0 1em;
+  font-size: 4em;
+  font-family: $cursive-font;
+  margin: -1em 0 1em;
   color: #fff;
 }
 
@@ -34,14 +30,17 @@
   margin: 0 0 2em 0;
 }
 
+.footer li {
+  display: inline;
+}
+
 .about-footer,
 .signup-footer,
 .terms-footer {
-  font-family: Arial;
+  font-family: $headline-font;
   font-size: 1em;
-  line-height: 40px;
-  height: 40px;
   padding: 0 2em 0 2em;
+  letter-spacing: .05em;
 }
 
 .footer a {
@@ -55,7 +54,14 @@
   transition: .4s;
 }
 
-.footer hr {
+.footer-ruler {
+  display: block;
+  margin: 2em auto 2em;
+  width: 40%;
+  border-bottom: 1px dashed #aaa;
+}
+
+.footer-ruler hr {
   border: 0;
   height: 0;
   border-top: 1px dashed rgba(0, 0, 0, 0.1);
@@ -86,18 +92,9 @@
     FOOTER MEDIA QUERY
 ************************************/
 
-@media screen and (min-width: 650px) {
-  .footer-head li {
-    border-bottom: none;
-    height: 50px;
-    line-height: 50px;
-    font-size: 1em;
-    display: inline-block;
-    margin-right: -4px;
-  }
-
-  .footer h3, h4, h5, h6 {
-    font-family: Arial;
-    color: #fff;
+@media screen and (max-width: 500px) {
+  .footer-subheads li {
+  display: block;
+  margin: .5em 0 .5em;
   }
 }

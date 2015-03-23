@@ -7,11 +7,35 @@
         <p class="third-line">all in one place</p>
     </div>
 
+<<<<<<< HEAD
+    <!---------------------
+       SEARCH BOX
+    ---------------------->
+
+    <!-- <div class="search-box-wrapper">
+      <form class="inline-search-form">
+        <input id="inline-search-field" type="text" placeholder="Find Plans" required>
+        <input class="inline-search-button" type="button" value="Search">
+      </form>
+    </div> -->
+
+<!----------------------------------------------------------------------------------------
+THIS IS THE OLD SEARCH BOX. WRAP ERB WITH HTML ABOVE
+-------------------------------------------------------------------------------------------->
+
+    <div class="search-container">
+      <%= form_tag root_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "search-box" %>
+        <%= submit_tag "Search", name: nil, class: "btn btn-search" %>
+      <% end %>
+    </div>
+=======
   <a id="steady_scroll" name="steady_scroll"></a>
     <div class="search-container">
       <%= render :partial => 'home/search' %>
     </div>
   </a>
+>>>>>>> 54a4ab9b34e8f780b7bbee7075d052d04ab20f78
 
   <a id="cards_scroll" name="cards_scroll">
   <div class="card-container">
