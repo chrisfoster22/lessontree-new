@@ -1,12 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  outline: none;
-
-  -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
 
 .signup-container h2 {
   font-family: $headline-font;
@@ -36,18 +27,12 @@ li {
 .signup-form-header h2 {
   color: $dark-header-color;
   font-size: 2em;
-  font-family: $maintext-font;
+  font-family: $headline-font;
   margin: 0 0 24px 0;
   text-shadow: none;
   text-align: center;
   padding: 1em;
-  border-bottom: 1px dashed #444;
-}
-
-.signup-form-rule {
-  width: 70%;
-  text-align: center;
-  color: #444;
+  border-bottom: 1px dashed #ccc;
 }
 
 .signup-form-error {
@@ -62,16 +47,15 @@ li {
 
 
 /*BUTTON DESIGN*/
-[class*='btn-'] {
+.signup-button {
   border: none;
-  border-radius: 3px;
+  border-radius: .25em;
   color: #fff;
   font: -webkit-small-control;
   letter-spacing: 1.2px;
   line-height: 140%;
   padding: 12px 22px;
   text-decoration: none;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
   text-transform: uppercase;
 
   -webkit-transition: all 0.1s linear;
@@ -80,23 +64,24 @@ li {
         transition: all 0.1s linear;
 }
 
-.btn-minimal-container {
+.signup-button-container {
   text-align: center;
+  margin: 0 auto 0;
 }
 
-  .btn-minimal {
-  background-color: $button-bg-color;
+.signup-button {
+  background-color: #65a397;
   border-radius: .25em;
   color: white;
   font-family: $headline-font;
-  font-size:1.5em;
+  font-size: .8em;
   font-weight: bolder;
   text-shadow: none;
   border: none;
 }
 
-  .btn-minimal:hover {
-    background-color:  $alt-top-bg-color;
+.signup-button:hover {
+    background-color:  #6fbaab;
     color: white;
     cursor: pointer;
     text-shadow: none;
@@ -108,7 +93,7 @@ li {
 
 
 /*FORM*/
-form {
+.signup-form {
   display: block;
   margin: 0 auto;
   font-family: $headline-font;

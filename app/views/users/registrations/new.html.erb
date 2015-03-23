@@ -6,12 +6,12 @@
   <h3 class="signup-form-error"><%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %></h3>
   <h3 class="signup-form-error"><%= devise_error_messages! %></h3>
 
-    <div class="form.minimal label">
+    <div class=".signup-form-label">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true %>
     </div>
 
-    <br><div class="form.minimal label">
+    <br><div class="signup-form-label">
       <%= f.label :password %>
       <% if @validatable %>
       <em class="weird">(<%= @minimum_password_length %> characters minimum)</em>
@@ -19,13 +19,13 @@
       <%= f.password_field :password, autocomplete: "off" %>
     </div></br>
 
-    <br><div class="form.minimal label">
+    <br><div class="signup-form-label">
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div></br>
 
-    <div class="btn-minimal-container">
-      <%= f.submit "Signup", :class => 'btn-minimal' %>
+    <div class="signup-button-container">
+      <%= f.submit "Signup", :class => 'signup-button' %>
     </div>
   <% end %>
 </div>
