@@ -2,7 +2,6 @@ class PlansController < ApplicationController
   attr_accessor :title, :description
   def index
     @plans = Plan.find_by(current_user.id).order("created_at DESC")
-    @pg_search_documents = PgSearch.multisearch(params[:query])
   end
 
   def show
@@ -12,6 +11,7 @@ class PlansController < ApplicationController
 
   def new
     @plan = Plan.new
+    @lessons = Lesson.find_by_user_id(current_user.id)
   end
 
   def create
@@ -41,7 +41,8 @@ class PlansController < ApplicationController
 private
 
   def plan_params
-    params.require(:plan).permit(:title, :description, :id, :user_id )
+    params.require(:plan).permit(:title, :description, :id, :user_id,
+        lessons_attributes: {plan_id: :id} )
   end
 
 end

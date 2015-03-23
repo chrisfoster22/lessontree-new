@@ -1,114 +1,103 @@
+
 .footer {
+  background: $dark-header-color;
+  max-height: 35em;
   margin-top: 4em;
-  ///////////////////////////////////////////////////////////////////////////////////
-  @import url(http://fonts.googleapis.com/css?family=Merriweather|Hind:400,600|Dancing+Script);
-  @import "colors";
-  @import "fonts";
+  padding: 1em;
+}
 
-  $base-spacing: 1.5em !default;
-  $base-accent-color: $dark-header-color !default;
-  $medium-screen: em(640) !default;
-  $large-screen: em(860) !default;
+.footer-head {
+  font-family: $cursive-font, cursive;
+  font-size: 3.7em;
+  font-weight: bold;
+  color: $logo-color;
+  display: inline;
+  text-decoration: none;
+  padding: 0px;
+  list-style: none;
+  display: inline;
+  text-align: center;
+}
 
-  ul {
-    padding: 0;
-  }
 
-  li {
-    list-style: none;
-    line-height: 1.5em;
-  }
+.footer-social-icons {
+  text-align: center;
+  font-size: 3em;
+  margin: 1em 0 1em;
+  color: #fff;
+}
 
-  a {
-    text-decoration: none;
-  }
+.footer ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 2em 0;
+}
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: $headline-font;
-    color: #fff;
-  }
+.about-footer,
+.signup-footer,
+.terms-footer {
+  font-family: Arial;
+  font-size: 1em;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 2em 0 2em;
+}
 
-  .footer-logo h2 {
-    font-family: $cursive-font;
-    font-size: 3.7em;
-    font-weight: bold;
-    color: #e8e3e6;
-  }
-  //////////////////////////////////////////////////////////////////////////////////
+.footer a {
+  text-decoration: none;
+  color: #fff;
+  transition: .3s background-color;
+}
 
-  $footer-background: $base-accent-color;
-  $footer-color: #e8e3e6;
-  $footer-link-color: transparentize($footer-color, 0.6);
-  $footer-disclaimer-color: transparentize($footer-color, 0.6);
+.footer a:hover {
+  color: #b6ded4;
+  transition: .4s;
+}
 
-  background: $footer-background;
-  padding: ($base-spacing * 2) $gutter;
-  width: 100%;
+.footer hr {
+  border: 0;
+  height: 0;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+  width: 50%;
+}
 
-  .footer-logo {
-    margin-bottom: 2em;
-    text-align: center;
+.social-icons {
+  font-size: 2em;
+  color: #fff;
+}
 
-    img {
-      height: 3em;
-    }
-  }
+.icon-twitter-circled,
+.icon-facebook-circled,
+.icon-pinterest-circled {
+  margin: 1em .5em .5em .5em;
+}
 
-  .footer-links {
-    @include clearfix;
-    margin-bottom: $base-spacing;
+.icon-twitter-circled:hover,
+.icon-facebook-circled:hover,
+.icon-pinterest-circled:hover{
+  color: #b6ded4;
+  transition: .4s;
+  cursor: pointer;
+}
 
-    @include media($medium-screen) {
-      @include shift(3);
-    }
-  }
+/************************************
+    FOOTER MEDIA QUERY
+************************************/
 
-  ul {
-    margin-bottom: $base-spacing * 2;
-
-    @include media($medium-screen) {
-      @include span-columns(3);
-      @include omega(3n);
-      @include clearfix;
-    }
-  }
-
-  li {
-    text-align: center;
-
-    @include media($medium-screen) {
-      text-align: left;
-    }
-  }
-
-  li a {
-    color: $footer-link-color;
-
-    &:focus,
-    &:hover {
-      color: transparentize($footer-color, 0);
-    }
-  }
-
-  li h3 {
-    color: $footer-color;
+@media screen and (min-width: 650px) {
+  .footer-head li {
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
     font-size: 1em;
-    font-weight: 800;
-    margin-bottom: 0.4em;
+    display: inline-block;
+    margin-right: -4px;
   }
 
-  hr {
-    border: 1px solid transparentize($footer-disclaimer-color, 0.3);
-    margin: 0 auto $base-spacing;
-    width: 12em;
-  }
-
-  p {
-    color: $footer-disclaimer-color;
-    font-size: 0.9em;
-    line-height: 1.5em;
-    margin: auto;
-    max-width: 35em;
-    text-align: center;
+  .footer h3, h4, h5, h6 {
+    font-family: Arial;
+    color: #fff;
   }
 }

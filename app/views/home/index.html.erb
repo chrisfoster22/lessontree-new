@@ -1,32 +1,30 @@
 
 
 
-  <div class="main-container">
-  <div class="main-container">
+  <div class="main-container-hero">
       <h1>Teacher Lesson Plans<h1>
-      <p class="key-words">find, create, share, connect</p>
-      <h2>all in one place</h2>
+        <p class="key-words">find, create, share, connect</p>
+        <p class="third-line">all in one place</p>
     </div>
 
     <div class="search-container">
-      <%= form_tag root_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], class: "search-box" %>
-        <%= submit_tag "Search", name: nil, class: "btn btn-search" %>
-      <% end %>
-
+      <%= render :partial => 'home/search' %>
+    </div
 
   <div class="card-container">
     <div class="cards">
     <% @lessons.each do |l| %>
       <div class="card">
-        <div class="card-image">
-          <h3> <%= l.topic %></h3>
-        </div>
-        <div class="card-header">
-          <%= l.description.html_safe + "..." %>
-        </div>
-        <div class="card-copy">
-        </div>
+        <%= link_to l do %>
+          <div class="card-image">
+            <h3> <%= l.topic %></h3>
+          </div>
+          <div class="card-header">
+            <%= l.description.html_safe + "..." %>
+          </div>
+          <div class="card-copy">
+          </div>
+        <% end %>
       </div>
       <% end %>
     </div>

@@ -1,6 +1,6 @@
 class Document < ActiveRecord::Base
-  include PgSearch
-  multisearchable :against => [:title, :content]
-  belongs_to :lessons
+  # include PgSearch
+  # multisearchable :against => [:title, :content]
+  belongs_to :lesson
   belongs_to :home
 end
