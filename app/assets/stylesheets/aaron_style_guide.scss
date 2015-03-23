@@ -31,6 +31,168 @@ $dark-header-color: #2e2e40;
 //text-shadow for <h1>
 $alt-gray-color: #a6a6b0;
 
+/************************************
+        NAVIGATION BAR
+************************************/
+nav {
+  width: 100%;
+  margin: 0 0 4em;
+  padding-top: 3em;
+}
+
+nav a {
+  padding: 1em .8em;
+  background: #d95353;
+  margin: 0 .5em;
+  border-radius: .25em;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 1em;
+  color: #fff;
+}
+
+.nav-wrapper {
+  padding-bottom: 1em;
+}
+
+.logo-wrapper {
+  display: inline-block;
+  float: left;
+  margin-bottom: 1.5em;
+}
+
+.list-wrapper {
+  display: inline-block;
+  float: right;
+}
+
+.nav-logo {
+  margin-left: 1em;
+}
+
+.logo h1 {
+  font-size: 3em;
+  color: #2e2e40;
+}
+
+.logo h1:hover {
+  cursor: pointer;
+  color: #d95353;
+  transition: .6s;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 1em;
+  text-align: center;
+  padding: 0;
+  margin-right: 2em;
+}
+
+.nav-about,
+.nav-signup,
+.nav-login {
+  display: inline;
+  text-transform: uppercase;
+}
+
+.nav-wrapper li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1em;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .6s background-color;
+}
+
+nav a:hover {
+  background: #2e2e40;
+  -webkit-transition: .6s;
+  transition: .6s;
+}
+
+.nav-ruler {
+  border: 0;
+  height: 0;
+  border-top: 1px dashed rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+}
+
+/************************************
+  NAVIGATION MEDIA QUERY
+************************************/
+
+@media screen and (max-width: 700px) {
+  nav {
+    padding-bottom: 2em;
+    width: 100%;
+    margin: 0 auto 0;
+  }
+
+  .logo-wrapper {
+    display: block;
+    text-align: center;
+    float: none;
+  }
+
+  .list-wrapper {
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+
+  .nav-list {
+  list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: .7em 0 0 0;
+    background: #d95353;
+  }
+
+  .nav-wrapper li {
+    display: block;
+    border-bottom: 1px solid #fff;
+    padding: .5em;
+  }
+
+  nav a {
+  display: block;
+  padding: .75em .5em;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 1em;
+  color: #fff;
+  background: none;
+}
+
+nav li:hover {
+  background: #2e2e40;
+  transition: .4s;
+}
+
+nav a:hover {
+  background: none;
+  transition: none;
+}
+
+.nav-ruler {
+  border: 0;
+  height: 0;
+}
+
+.logo:hover {
+  background: none;
+}
+}
+
+
+
+
+
 
 /************************************
     CENTERED SEARCH BOX
