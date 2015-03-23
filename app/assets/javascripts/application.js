@@ -35,7 +35,7 @@ $(function() {
 });
 
 $(function() {
-  $('.search-container').on("click", function() {
+  $('#inline-search-field').on("click", function() {
   var WhereToMove = $("#steady_scroll").position().top;
     $("html,body").animate({scrollTop: WhereToMove }, 300);
     });
