@@ -1,12 +1,24 @@
 class PlansController < ApplicationController
   attr_accessor :title, :description
   def index
-    @plans = Plan.find_by(current_user.id).order("created_at DESC")
+    @plans = Plan.where(user_id: current_user.id).order("created_at DESC")
+    stars = Star.where(user_id: current_user.id, lesson_id: nil)
+    @starred_plans = []
+    stars.each do |s|
+      plan = Plan.find_by(id: s.plan_id)
+      @starred_plans << plan
+    end
   end
 
   def show
     @plan = Plan.find_by_id(params[:id])
     @lessons = @plan.lessons
+    @star = Star.new
+    if Star.find_by(plan_id: @plan.id, user_id: current_user.id)
+      @starred = true
+    else
+      @starred = false
+    end
   end
 
   def new

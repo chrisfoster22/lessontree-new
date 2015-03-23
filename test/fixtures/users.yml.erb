@@ -6,6 +6,7 @@ one:
   password: password
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   location: Pawnee
+  state: IN
   school: N/A
 
 two:
@@ -14,4 +15,5 @@ two:
   password: password
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   location: Testland
+  state: TT
   school: Testies Elementary

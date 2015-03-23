@@ -44,5 +44,5 @@ group :development, :test do
 
   gem 'capybara'
 
-  gem 'capybara_minitest_spec'
+  gem 'rspec-rails', '~> 3.0'
 end

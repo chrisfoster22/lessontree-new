@@ -16,6 +16,7 @@ class StarsController < ApplicationController
   def create
     @star = Star.create
     @star.lesson_id = params[:lesson_id]
+    @star.plan_id = params[:plan_id]
     @star.user_id = current_user.id
     @star.save!
     redirect_to @star, notice: "You have starred a plan!"
@@ -42,7 +43,7 @@ class StarsController < ApplicationController
 private
 
   def star_params
-    params.require(:star).permit(:upload, :topic, :description, :id, :user_id)
+    params.require(:star).permit(:upload, :topic, :description, :id, :user_id, :lesson_id, :plan_id)
   end
 
 end
