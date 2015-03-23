@@ -1,5 +1,6 @@
   <%= form_tag '/' + '#cards_scroll', class: "inline-search-form", :method => 'get' do %>
     <%= text_field_tag :search, params[:search], :id => 'inline-search-field' %>
-    <%= select_tag "Subject", options_from_collection_for_select(Subject.all, "id", "title") %>
+    <%= select_tag "subject_id", options_from_collection_for_select(Subject.all, "id", "title") %>
+    <%= select_tag "grade_levels_id", options_from_collection_for_select(GradeLevel.all, "id", "title") %>
     <%= submit_tag "Search", :name => nil, class: 'inline-search-button' %>
 <% end %>
