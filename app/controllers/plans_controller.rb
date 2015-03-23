@@ -1,4 +1,5 @@
 class PlansController < ApplicationController
+  before_action :set_plan
   attr_accessor :title, :description
   def index
     @plans = Plan.where(user_id: current_user.id).order("created_at DESC")
@@ -11,7 +12,6 @@ class PlansController < ApplicationController
   end
 
   def show
-    @plan = Plan.find_by_id(params[:id])
     @lessons = @plan.lessons
     @star = Star.new
     if Star.find_by(plan_id: @plan.id, user_id: current_user.id)
@@ -38,11 +38,9 @@ class PlansController < ApplicationController
   end
 
   def edit
-    @plan = Plan.find(params[:id])
   end
 
   def update
-    @plan = Plan.find(params[:id])
     if @plan.update_attributes(plan_params)
       redirect_to @plan, notice: "The plan has been successfully updated."
     else
@@ -55,6 +53,11 @@ private
   def plan_params
     params.require(:plan).permit(:title, :description, :id, :user_id,
         lessons_attributes: {plan_id: :id} )
+  end
+
+  def set_plan
+    @plan = Plan.find_by(id: params[:id])
+    redirect_to root_path if @plan.nil?
   end
 
 end

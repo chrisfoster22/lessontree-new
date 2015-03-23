@@ -1,11 +1,11 @@
 class DocumentsController < ApplicationController
+  before_action :set_document
   attr_accessor :title, :description
   def index
     @documents = Document.find_by(current_user.id).order("created_at DESC")
   end
 
   def show
-    @document = Document.find_by_id(params[:id])
     @lessons = @document.lesson
   end
 
@@ -25,11 +25,9 @@ class DocumentsController < ApplicationController
   end
 
   def edit
-    @document = Document.find(params[:id])
   end
 
   def update
-    @document = Document.find(params[:id])
     if @document.update_attributes(document_params)
       redirect_to @document, notice: "The document has been successfully updated."
     else
@@ -41,6 +39,11 @@ private
 
   def document_params
     params.require(:document).permit(:title, :content, :user_id, :lesson_id)
+  end
+
+  def set_document
+    @document = Document.find_by(id: params[:id])
+    redirect_to root_path if @document.nil?
   end
 
 end

@@ -1,12 +1,4 @@
 class StarsController < ApplicationController
-  def index
-    @stars = Star.order("created_at DESC")
-  end
-
-  def show
-    @star = Star.find_by_id(params[:id])
-    @star = Star.new
-  end
 
   def new
     @star = Star.new
@@ -19,10 +11,6 @@ class StarsController < ApplicationController
     @star.user_id = current_user.id
     @star.save!
     redirect_to @star, notice: "You have starred a plan!"
-  end
-
-  def edit
-    @star = Star.find(params[:id])
   end
 
   def update

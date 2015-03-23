@@ -1,10 +1,12 @@
 class LessonsController < ApplicationController
+  before_action :set_lesson
+  before_action :lesson_owner, only: [:edit, :destroy, :update]
+
   def index
     @lessons = Lesson.order("created_at DESC")
   end
 
   def show
-    @lesson = Lesson.find_by_id(params[:id])
     @star = Star.new
     @documents = @lesson.documents
     @plan = @lesson.plan
@@ -34,11 +36,9 @@ class LessonsController < ApplicationController
   end
 
   def edit
-    @lesson = Lesson.find(params[:id])
   end
 
   def update
-    @lesson = Lesson.find(params[:id])
     if @lesson.update_attributes(lesson_params)
       redirect_to @lesson, notice: "The lesson has been successfully updated."
     else
@@ -50,6 +50,15 @@ private
 
   def lesson_params
     params.require(:lesson).permit(:upload, :topic, :description, :id, :user_id, :plan_id)
+  end
+
+  def lesson_owner
+    redirect_to root_path if @lesson.user_id != current_user.id
+  end
+
+  def set_lesson
+    @lesson = Lesson.find_by(id: params[:id])
+    redirect_to root_path if @lesson.nil?
   end
 
 end
