@@ -2,13 +2,21 @@
 <div id="lesson-show"><%= @lesson.description.html_safe %></div>
 
 <%= form_for @star do |f| %>
-<%= f.label "Star this plan?" %>
+<%= f.label "Star this lesson?" %>
+<%= f.check_box :lesson_id, value: @lesson.id, class: "star-box", id: "#{@lesson.id}", checked: @starred %>
+<% end %>
 
 <h3>Add this lesson to a plan below:</h3>
 <%= form_for @lesson do |f| %>
-<%= f.collection_select :plan_id, current_user.plans, :id, :title, include_blank: true %>
+<%= f.collection_select :plan_id, current_user.plans, :id, :title, include_blank: true, selected: @default %>
 <%= f.submit "Add Lesson to Plan"%>
 <% end %>
-
+<div>
+<% @documents.each do |d| %>
+<%= link_to d do %>
+  <p><%= d.title %></p>
+  <% end %>
+<% end %>
+</div>
 <div><%= link_to 'Upload Document', new_document_path, class: 'create-lesson' %></div>
-<div><%= link_to "Create Document", new_document_path, class: 'create-lesson' %></div>
+<div><%= link_to "Create Document", '/documents/new' + "?lesson_id=#{@lesson.id}", class: 'create-lesson' %></div>

@@ -1,36 +1,33 @@
 class DocumentsController < ApplicationController
+  before_action :set_document
   attr_accessor :title, :description
   def index
     @documents = Document.find_by(current_user.id).order("created_at DESC")
   end
 
   def show
-    @document = Document.find_by_id(params[:id])
-    @lessons = @document.lessons
+    @lessons = @document.lesson
   end
 
   def new
     @document = Document.new
-    @lessons = Lesson.find_by_user_id(current_user.id)
+    @lesson_id = Lesson.find(params[:lesson_id]).id
   end
 
   def create
     @document = Document.create(document_params)
+    lesson = @document.lesson
     if @document.save
-      @document.lesson_id = current_user.id
-      @document.save!
-      redirect_to @document, notice: "The document has been successfully created."
+      redirect_to lesson, notice: "The document has been successfully created."
     else
       render action: "new"
     end
   end
 
   def edit
-    @document = Document.find(params[:id])
   end
 
   def update
-    @document = Document.find(params[:id])
     if @document.update_attributes(document_params)
       redirect_to @document, notice: "The document has been successfully updated."
     else
@@ -41,8 +38,12 @@ class DocumentsController < ApplicationController
 private
 
   def document_params
-    params.require(:document).permit(:title, :description, :id, :user_id,
-        lessons_attributes: {document_id: :id} )
+    params.require(:document).permit(:title, :content, :user_id, :lesson_id)
+  end
+
+  def set_document
+    @document = Document.find_by(id: params[:id])
+    redirect_to root_path if @document.nil?
   end
 
 end

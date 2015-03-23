@@ -1,2 +1,13 @@
-<h1>Plans#index</h1>
-<p>Find me in app/views/plans/index.html.erb</p>
+<h3>My Plans</h3>
+<% @plans.each do |plan| %>
+  <%= link_to plan do %>
+    <%= plan.title %>
+  <% end %>
+<% end %>
+
+<h3>Starred Plans</h3>
+<% @starred_plans.each do |s| %>
+<%= link_to s do %>
+<%= s.title %>
+<% end %>
+<% end %>

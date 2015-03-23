@@ -16,21 +16,42 @@
 </section>
 
 <% @user.lessons.each do |l| %>
-<a class="my-lesson-container-link" href=<%= "/lessons/#{l.id}" %>><section class="my-lessons-container">
-  <article class="my-lessons-preview-area">
-    <h3 class="my-lessons-container-title"><%= l.topic %></h3>
-    <p class="my-lessons-container-description">
-      <%= l.description.html_safe %>
-    </p>
-    <div class="my-lesson-edit-button-container">
-      <%= link_to "Edit", "/lessons/#{l.id}/edit", class:"my-lesson-edit-button" %>
-    </div>
-  </article>
-</section></a>
+<%= link_to l, class:"my-lessons-container-link" do %>
+  <section class="my-lessons-container">
+    <article class="my-lessons-preview-area">
+      <h3 class="my-lessons-container-title"><%= l.topic %></h3>
+      <p class="my-lessons-container-description">
+        <%= l.description.html_safe %>
+      </p>
+      <div class="my-lesson-edit-button-container">
+        <%= link_to "Edit", "/lessons/#{l.id}/edit", class:"my-lesson-edit-button" %>
+      </div>
+    </article>
+  </section></a>
 <% end %>
-<%= link_to "Edit Profile", edit_user_registration_path, class: 'about-button' %>
-<%= link_to "New Lesson", new_lesson_path, class: 'create-lesson' %>
-<%= link_to "New Plan", new_plan_path, class: 'create-lesson' %>
+<% end %>
+<h3>Starred Lessons</h3>
+<% @starred_lessons.each do |l| %>
+  <%= link_to l, class:"my-lessons-container-link" do %>
+  <section class="my-lessons-container">
+    <article class="my-lessons-preview-area">
+      <h3 class="my-lessons-container-title"><%= l.topic %></h3>
+      <p class="my-lessons-container-description">
+        <%= l.description.html_safe %>
+        <%= l.user.name %>
+      </p>
+    </article>
+  </section></a>
+  <% end %>
+<% end %>
+<div><%= link_to "Edit Profile", edit_user_registration_path, class: 'save-button' %></div>
+<br>
+<div><%= link_to "New Lesson", new_lesson_path, class: 'save-button' %></div>
+<br>
+<div><%= link_to "New Plan", new_plan_path, class: 'save-button' %></div>
+<br>
+<div><%= link_to "My Plans", plans_path, class: 'save-button' %></div>
+
 
 <!-- <section class="login-signup-container">
 	<h2 class="login-signup-form-header">Signup</h2>
