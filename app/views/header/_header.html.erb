@@ -10,7 +10,7 @@
         <%= link_to "Logout", destroy_user_session_path, :method => 'delete', :class => "log-in-button" %>
       <% else %>
         <%= link_to "Log In", new_user_session_path, :class => "log-in-button" %>
-        <%= link_to "Sign Up", user_registration_path, :class => "sign-up-button" %>
+        <%= link_to "Sign Up", users_sign_up_path, :class => "sign-up-button" %>
       <% end %>
     </nav>
     </div>
