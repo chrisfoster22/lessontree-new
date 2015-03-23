@@ -1,7 +1,6 @@
 class LessonsController < ApplicationController
   def index
     @lessons = Lesson.order("created_at DESC")
-    @pg_search_documents = PgSearch.multisearch(params[:query])
   end
 
   def show
