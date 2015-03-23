@@ -2,7 +2,6 @@ class DocumentsController < ApplicationController
   attr_accessor :title, :description
   def index
     @documents = Document.find_by(current_user.id).order("created_at DESC")
-    @pg_search_documents = PgSearch.multisearch(params[:query])
   end
 
   def show

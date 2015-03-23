@@ -2,7 +2,6 @@ class PlansController < ApplicationController
   attr_accessor :title, :description
   def index
     @plans = Plan.find_by(current_user.id).order("created_at DESC")
-    @pg_search_documents = PgSearch.multisearch(params[:query])
   end
 
   def show
