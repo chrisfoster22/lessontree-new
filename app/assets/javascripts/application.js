@@ -71,5 +71,4 @@ $(function() {
         data: {plan_id: this.id}
      });
     }
-  })
-});
+  });
