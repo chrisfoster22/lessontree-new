@@ -1,7 +1,6 @@
 class StarsController < ApplicationController
   def index
     @stars = Star.order("created_at DESC")
-    @pg_search_documents = PgSearch.multisearch(params[:query])
   end
 
   def show
