@@ -8,12 +8,19 @@
     </div>
 
 
-  <a id="steady_scroll" name="steady_scroll"></a>
+    </div> -->
+
+<!----------------------------------------------------------------------------------------
+THIS IS THE OLD SEARCH BOX. WRAP ERB WITH HTML ABOVE
+-------------------------------------------------------------------------------------------->
+
     <div class="search-container">
-      <%= render :partial => 'home/search' %>
+      <%= form_tag root_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "search-box" %>
+        <%= submit_tag "Search", name: nil, class: "btn btn-search" %>
+      <% end %>
     </div>
-  </a>
->>>>>>> 54a4ab9b34e8f780b7bbee7075d052d04ab20f78
+
 
   <a id="cards_scroll" name="cards_scroll">
   <div class="card-container">
