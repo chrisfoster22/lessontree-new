@@ -11,6 +11,12 @@
 <%= f.collection_select :plan_id, current_user.plans, :id, :title, include_blank: true %>
 <%= f.submit "Add Lesson to Plan"%>
 <% end %>
-
+<div>
+<% @documents.each do |d| %>
+<%= link_to d do %>
+  <p><%= d.title %></p>
+  <% end %>
+<% end %>
+</div>
 <div><%= link_to 'Upload Document', new_document_path, class: 'create-lesson' %></div>
-<div><%= link_to "Create Document", new_document_path, class: 'create-lesson' %></div>
+<div><%= link_to "Create Document", '/documents/new' + "?lesson_id=#{@lesson.id}", class: 'create-lesson' %></div>
