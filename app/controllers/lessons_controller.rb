@@ -7,6 +7,10 @@ class LessonsController < ApplicationController
     @lesson = Lesson.find_by_id(params[:id])
     @star = Star.new
     @documents = @lesson.documents
+    @plan = @lesson.plan
+    if @plan
+      @default = @plan.id
+    end 
   end
 
   def new
@@ -40,7 +44,7 @@ class LessonsController < ApplicationController
 private
 
   def lesson_params
-    params.require(:lesson).permit(:upload, :topic, :description, :id, :user_id)
+    params.require(:lesson).permit(:upload, :topic, :description, :id, :user_id, :plan_id)
   end
 
 end
