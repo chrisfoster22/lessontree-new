@@ -1,5 +1,5 @@
   <%= form_tag '/' + '#cards_scroll', :method => 'get' do %>
     <%= text_field_tag :search, params[:search], :id => 'search_field' %>
-    <%= submit_tag "Search", :name => nil, :id => 'search-submit' %>
-  <!-- #link_to "Clear", "javascript:void(0);", id="remove_link" -->
+    <%= select_tag "Subject", options_from_collection_for_select(Subject.all, "id", "title") %>
+    <%= submit_tag "Search", :name => nil %>
 <% end %>
