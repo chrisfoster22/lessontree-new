@@ -1,35 +1,24 @@
-* {
-  margin: 0;
-  padding: 0;
-  outline: none;
 
-  -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.login-signup-container {
- background: #eee;
+.login-container {
  width: 60%;
- margin: 0 auto 1em;
+ margin: 3em auto 1em;
  padding: 2em;
  border-radius: .25em;
 }
 
 
-.login-signup-form-header {
+.login-form-header {
   color: $button-bg-color;
   font-size: 2em;
-  font-family: $maintext-font;
+  font-family: Arial;
   margin: 0 0 24px 0;
   text-shadow: none;
   text-align: center;
-  font-family: serif;
   font-size: 2em;
 }
 
 /*BUTTON DESIGN*/
-[class*='btn-'] {
+.login-button {
   border: none;
   border-bottom: 2px solid rgba(0,0,0,.15);
   border-top: 1px solid rgba(255,255,255,.15);
@@ -50,7 +39,7 @@
         transition: all 0.1s linear;
 }
 
-  .btn-minimal {
+.login-button {
   background-color: $button-bg-color;
   border-radius: .25em;
   color: white;
@@ -61,7 +50,7 @@
   margin-top: 1em;
 }
 
-  .btn-minimal:hover {
+  .login-button:hover {
     background-color:  #d96354;
     color: white;
     cursor: pointer;
