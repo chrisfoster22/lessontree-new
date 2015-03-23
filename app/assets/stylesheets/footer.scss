@@ -7,16 +7,12 @@ footer {
 }
 
 .footer-head {
-  font-family: $cursive-font, cursive;
-  font-size: 3.7em;
-  font-weight: bold;
-  color: $logo-color;
-  display: inline;
-  text-decoration: none;
-  padding: 0px;
-  list-style: none;
-  display: inline;
   text-align: center;
+  font-size: 4em;
+  font-family: $cursive-font;
+  font-weight: bolder;
+  margin: 1em 0 1em;
+  color: #fff;
 }
 
 .footer-social-icons {
