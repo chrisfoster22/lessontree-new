@@ -7,10 +7,13 @@
         <p class="third-line">all in one place</p>
     </div>
 
+  <a id="steady_scroll" name="steady_scroll"></a>
     <div class="search-container">
       <%= render :partial => 'home/search' %>
-    </div
+    </div>
+  </a>
 
+  <a id="cards_scroll" name="cards_scroll">
   <div class="card-container">
     <div class="cards">
     <% @lessons.each do |l| %>
@@ -30,3 +33,4 @@
     </div>
   </div>
  </div>
+</a>

@@ -33,3 +33,26 @@ $(function() {
     }
   })
 });
+
+$(function() {
+  $('.search-container').on("click", function() {
+  var WhereToMove = $("#steady_scroll").position().top;
+    $("html,body").animate({scrollTop: WhereToMove }, 300);
+    });
+  });
+
+// $(function() {
+//   $("#search-submit").on("click", function() {
+//     $('html, body').animate({
+//         scrollTop: $("#steady_scroll").offset().top
+//       }, 2000);
+//     });
+//   });
+
+
+// $(document).ready(function($) {
+//             $(".search-container").click(function(event) {
+//                 event.preventDefault();
+//                 $('html,body').animate({scrollTop:$(this.hash).offset().top},
+//               });
+//             )};
