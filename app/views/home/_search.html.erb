@@ -1,5 +1,8 @@
-  <%= form_tag '/' + '#cards_scroll', :method => 'get' do %>
-    <%= text_field_tag :search, params[:search], :id => 'search_field' %>
-    <%= submit_tag "Search", :name => nil, :id => 'search-submit' %>
-  <!-- #link_to "Clear", "javascript:void(0);", id="remove_link" -->
+  <%= form_tag '/' + '#steady_scroll', class: "inline-search-form", :method => 'get' do %>
+    <span>Subject:</span>
+    <%= select_tag "subject_id", options_from_collection_for_select(Subject.all, "id", "title") %>
+    <span>Grade Level:</span>
+    <%= select_tag "grade_levels_id", options_from_collection_for_select(GradeLevel.all, "id", "title" ) %>
+    <%= text_field_tag :search, params[:search], :id => 'inline-search-field' %>
+    <%= submit_tag "Search", :name => nil, class: 'inline-search-button' %>
 <% end %>

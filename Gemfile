@@ -38,11 +38,11 @@ group :development, :test do
 
   gem 'spring'
 
-  gem 'minitest-reporters'
-
-  gem 'mini_backtrace'
+  gem 'rspec-rails', '~> 3.0'
 
   gem 'capybara'
 
-  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
+
+  gem 'database_cleaner'
 end
