@@ -10,7 +10,12 @@ class LessonsController < ApplicationController
     @plan = @lesson.plan
     if @plan
       @default = @plan.id
-    end 
+    end
+    if Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
+      @starred = true
+    else
+      @starred = false
+    end
   end
 
   def new

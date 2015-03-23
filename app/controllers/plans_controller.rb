@@ -7,6 +7,12 @@ class PlansController < ApplicationController
   def show
     @plan = Plan.find_by_id(params[:id])
     @lessons = @plan.lessons
+    @star = Star.new
+    if Star.find_by(plan_id: @plan.id, user_id: current_user.id)
+      @starred = true
+    else
+      @starred = false
+    end
   end
 
   def new

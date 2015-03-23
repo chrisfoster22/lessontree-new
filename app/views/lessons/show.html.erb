@@ -2,8 +2,8 @@
 <div id="lesson-show"><%= @lesson.description.html_safe %></div>
 
 <%= form_for @star do |f| %>
-<%= f.label "Star this plan?" %>
-<%= f.check_box :lesson_id, value: @lesson.id, class: "star-box", id: "#{@lesson.id}" %>
+<%= f.label "Star this lesson?" %>
+<%= f.check_box :lesson_id, value: @lesson.id, class: "star-box", id: "#{@lesson.id}", checked: @starred %>
 <% end %>
 
 <h3>Add this lesson to a plan below:</h3>

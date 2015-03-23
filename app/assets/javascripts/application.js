@@ -33,3 +33,22 @@ $(function() {
     }
   })
 });
+
+$(function() {
+  $('.plan-star-box').on("click", function() {
+    var val = $(this).prevAll(".rails-id").val();
+    if ($(this).is(':checked')) {
+      $.ajax({
+        type: "POST",
+        url: "/stars",
+        data: {plan_id: this.id}
+     });
+    } else {
+      $.ajax({
+        type: "DELETE",
+        url: "/stars/1",
+        data: {plan_id: this.id}
+     });
+    }
+  })
+});
