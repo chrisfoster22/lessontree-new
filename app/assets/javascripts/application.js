@@ -35,6 +35,12 @@ $(function() {
 });
 
 $(function() {
+  $('.search-container').on("click", function() {
+  var WhereToMove = $("#steady_scroll").position().top;
+    $("html,body").animate({scrollTop: WhereToMove }, 300);
+    });
+  });
+
   $('.plan-star-box').on("click", function() {
     var val = $(this).prevAll(".rails-id").val();
     if ($(this).is(':checked')) {
@@ -50,5 +56,4 @@ $(function() {
         data: {plan_id: this.id}
      });
     }
-  })
-});
+  });
