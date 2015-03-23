@@ -28,9 +28,23 @@
   </article>
 </section></a>
 <% end %>
-<%= link_to "Edit Profile", edit_user_registration_path, class: 'about-button' %>
-<%= link_to "New Lesson", new_lesson_path, class: 'create-lesson' %>
-<%= link_to "New Plan", new_plan_path, class: 'create-lesson' %>
+<h3>Starred Lessons</h3>
+<% @starred_lessons.each do |l| %>
+<a class="my-lesson-container-link" href=<%= "/lessons/#{l.id}" %>><section class="my-lessons-container">
+  <article class="my-lessons-preview-area">
+    <h3 class="my-lessons-container-title"><%= l.topic %></h3>
+    <p class="my-lessons-container-description">
+      <%= l.description.html_safe %>
+      <%= l.user.name %>
+    </p>
+  </article>
+</section></a>
+<% end %>
+<div><%= link_to "Edit Profile", edit_user_registration_path, class: 'about-button' %></div>
+<div><%= link_to "New Lesson", new_lesson_path, class: 'create-lesson' %></div>
+<div><%= link_to "New Plan", new_plan_path, class: 'create-lesson' %></div>
+<div><%= link_to "My Plans", plans_path, class: 'create-lesson' %></div>
+
 
 <!-- <section class="login-signup-container">
 	<h2 class="login-signup-form-header">Signup</h2>
