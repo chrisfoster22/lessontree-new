@@ -1,8 +1,8 @@
   <%= form_tag '/' + '#steady_scroll', class: "inline-search-form", :method => 'get' do %>
-    <%= text_field_tag :search, params[:search], :id => 'inline-search-field' %>
-    <p>Subject:</p>
+    <span>Subject:</span>
     <%= select_tag "subject_id", options_from_collection_for_select(Subject.all, "id", "title") %>
-    <p>Grade Level:</p>
+    <span>Grade Level:</span>
     <%= select_tag "grade_levels_id", options_from_collection_for_select(GradeLevel.all, "id", "title" ) %>
-    <br><%= submit_tag "Search", :name => nil, class: 'inline-search-button' %></br>
+    <%= text_field_tag :search, params[:search], :id => 'inline-search-field' %>
+    <%= submit_tag "Search", :name => nil, class: 'inline-search-button' %>
 <% end %>
