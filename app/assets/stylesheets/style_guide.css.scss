@@ -29,22 +29,18 @@ $dark-header-color: #2e2e40;
 $alt-gray-color: #a6a6b0;
 
 
+
 /************************************
               NAV BAR
 ************************************/
 .nav-login-bar, .nav-logout-bar {
   background-color: $dark-header-color;
-  height: 6em;
-  margin-bottom: 4em;
+  height: 4.3em;
   box-shadow: 0 2px 5px rgba(0,0,0,0.26);
-/**************************************
-OPTION FOR FIXED POSITION
-*************************************/
-/*  position: fixed;
-  z-index:1;
-  top: -5px;
-  width: 100%;
-*/
+}
+
+.nav-login-bar {
+  margin-bottom: 2em;
 }
 
 .nav-logo {
@@ -52,7 +48,7 @@ OPTION FOR FIXED POSITION
   float: left;
   font-size: 3em;
   font-family: $cursive-font;
-  padding: .5em 0 0 1.7em;
+  padding: 0.2em 0 0 1.7em;
 }
 
 .logo {
@@ -72,10 +68,10 @@ OPTION FOR FIXED POSITION
 .nav-list {
   display: inline;
   float: right;
-  padding: 3.3em 5em 0 0;
+  padding: 2.3em 5em 0 0;
 }
 
-.nav-about, .nav-signup, .nav-login, .nav-myProfile, .nav-logout {
+.nav-about, .nav-signup, .nav-login, .nav-myProfile, .nav-edit-profile, .nav-logout {
   display: inline;
   font-family: $headline-font;
   font-size: 1em;
@@ -102,7 +98,7 @@ OPTION FOR FIXED POSITION
 ************************************/
 /*
 @media screen and (max-width: 750px) {
-  .nav-login-bar, .nav-logout-bar {
+.nav-login-bar, .nav-logout-bar {
   padding-bottom: 2em;
   width: 100%;
   margin: 0 auto 0;
@@ -165,37 +161,44 @@ list-style: none;
   background-color: $top-bg-color;
   color: white;
   margin-left: 0px;
-  height: 535px;
-  margin-top: 2.5em;
-  margin-bottom: -1em;
+  padding-bottom: 6em;
 }
+
+
 
 h1 {
   font-family: $headline-font;
   font-size: 5.3em;
   text-align: center;
   text-shadow: -1px -1px $alt-gray-color;
-  line-height: 1.4em;
-  margin-bottom: -2.7em;
-  padding-top: 1.7em;
+  line-height: 1.2em;
+  padding-top: .9em;
 }
 
 .key-words {
   font-family: $headline-font, sans-serif;
   text-align: center;
+  text-shadow: -1px -1px $alt-gray-color;
   font-size: 45px;
-  margin-top: 1.1em;
-  margin-bottom: -1.7em;
 }
 
-.third-line {
-  font-family: $cursive-font, cursive;
-  text-align: center;
-  font-size: 45px;
-  margin-top: 0.5em;
-  text-shadow: -1px -1px $alt-gray-color;
-  margin-bottom: -1.7em;
+
+
+/************************************
+         HERO HOMEPAGE MEDIA QUERY
+************************************/
+/*
+@media screen and (max-width: 750px) {
+.main-container-hero {
+  padding-bottom: 2em;
+  width: 100%;
+  margin: 0 auto 0;
+  background-color: $top-bg-color;
+  color: white;
+  height: 535px;
 }
+}
+*/
 
 /************************************
     CENTERED SEARCH BOX
@@ -203,7 +206,7 @@ h1 {
 .search-box-wrapper {
   display: block;
   text-align: center;
-  margin: 4em 0 4em;
+  margin-top: 6.5em;
 }
 
 .inline-search-form {
@@ -215,7 +218,7 @@ h1 {
   font-size: 1em;
   font-family: $headline-font;
   width: 15em;
-  padding: .35em .4em .4em;
+  padding: .34em .4em .44em;
   border-top-left-radius: .25em;
   border-bottom-left-radius: .25em;
   border-inset: none;
@@ -278,7 +281,7 @@ HOMEPAGE LESSON PREVIEWS
 }
 
 .lesson-preview-container {
-  margin: 3em auto 3em;
+  margin: 6em auto 3em;
   width: 45%;
   border: 1px solid #ddd;
   background: #f7f7f7;
@@ -286,10 +289,10 @@ HOMEPAGE LESSON PREVIEWS
 }
 
 .lesson-preview-title-container {
-  margin-bottom: 1em;
+  margin-bottom: .5em;
   background: #ddd;
   box-shadow: 0 2px 5px rgba(0,0,0,0.18);
-  padding: .5em .5em .5em .7em;
+  padding: .7em .7em .7em .9em;
 
 }
 
@@ -298,6 +301,7 @@ HOMEPAGE LESSON PREVIEWS
   font-family: $headline-font;
   font-weight: 400;
   color: #222;
+  margin-bottom: .3em;
 }
 
 .lesson-preview-subject-container {
@@ -314,10 +318,16 @@ HOMEPAGE LESSON PREVIEWS
 
 .lesson-preview-subject-list {
   margin-right: .75em;
+  font-size: 1.1em;
 }
 
 .lesson-preview-grade-list {
   padding-left: .75em;
+  font-size: 1.1em;
+}
+
+.lesson-preview-description-container {
+  padding: 1em;
 }
 
 .lesson-preview-subject-list, .lesson-preview-pipe, .lesson-preview-grade-list,  {
@@ -328,20 +338,30 @@ HOMEPAGE LESSON PREVIEWS
   color: #222;
 }
 
-.lesson-preview-ranking, .lesson-preview-description {
-  font-size: .9em;
+.lesson-preview-description {
+  font-size: 1.1em;
   font-family: $headline-font;
   font-weight: 400;
   color: #222;
 }
 
-.lesson-preview-ranking {
-  padding: 0 0 .5em .75em;
+.star-ranking {
+  vertical-align: text-baseline;
+}
+
+.icon-star {
+  color: gold;
+  font-size: 1.5em;
+  display: inline;
+}
+
+.ranking {
+  display: inline;
+  padding-bottom: 1em;
 }
 
 .lesson-preview-description {
-  padding: 0 .5em .75em .75em;
-  line-height: 1.3em;
+  line-height: 1.4em;
 }
 
 /************************************
@@ -516,5 +536,5 @@ footer {
   .footer-subheads li {
   display: block;
   margin: .5em 0 .5em;
-  }
+ }
 }
