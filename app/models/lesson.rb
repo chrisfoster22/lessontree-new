@@ -29,4 +29,10 @@ class Lesson < ActiveRecord::Base
     end
   end
 
+  def username
+    id = self.user_id
+    user = User.find_by(id: id)
+    user.name || ""
+  end
+
 end
