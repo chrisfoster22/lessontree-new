@@ -1,5 +1,5 @@
 class LessonsController < ApplicationController
-  before_action :set_lesson
+  before_action :set_lesson, only: [:edit, :show, :update, :destroy]
   before_action :lesson_owner, only: [:edit, :destroy, :update]
 
   def index

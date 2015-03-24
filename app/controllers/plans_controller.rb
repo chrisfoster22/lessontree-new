@@ -1,5 +1,5 @@
 class PlansController < ApplicationController
-  before_action :set_plan
+  before_action :set_plan, only: [:edit, :show, :update, :destroy]
   attr_accessor :title, :description
   def index
     @plans = Plan.where(user_id: current_user.id).order("created_at DESC")
