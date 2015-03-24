@@ -35,16 +35,7 @@ $alt-gray-color: #a6a6b0;
 .nav-login-bar, .nav-logout-bar {
   background-color: $dark-header-color;
   height: 6em;
-  margin-bottom: 4em;
   box-shadow: 0 2px 5px rgba(0,0,0,0.26);
-/**************************************
-OPTION FOR FIXED POSITION
-*************************************/
-/*  position: fixed;
-  z-index:1;
-  top: -5px;
-  width: 100%;
-*/
 }
 
 .nav-logo {
@@ -165,36 +156,33 @@ list-style: none;
   background-color: $top-bg-color;
   color: white;
   margin-left: 0px;
-  height: 535px;
-  margin-top: 2.5em;
   margin-bottom: -1em;
 }
+
+
 
 h1 {
   font-family: $headline-font;
   font-size: 5.3em;
   text-align: center;
   text-shadow: -1px -1px $alt-gray-color;
-  line-height: 1.4em;
-  margin-bottom: -2.7em;
-  padding-top: 1.7em;
+  line-height: 1.2em;
+  padding-top: .9em;
 }
 
 .key-words {
   font-family: $headline-font, sans-serif;
   text-align: center;
   font-size: 45px;
-  margin-top: 1.1em;
-  margin-bottom: -1.7em;
 }
 
 .third-line {
   font-family: $cursive-font, cursive;
   text-align: center;
   font-size: 45px;
-  margin-top: 0.5em;
+  margin-top: 0.2em;
   text-shadow: -1px -1px $alt-gray-color;
-  margin-bottom: -1.7em;
+  padding-bottom: 1.5em;
 }
 
 /************************************
@@ -516,5 +504,5 @@ footer {
   .footer-subheads li {
   display: block;
   margin: .5em 0 .5em;
-  }
+ }
 }
