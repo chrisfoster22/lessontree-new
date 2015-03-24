@@ -83,7 +83,7 @@ end
   end
   subject_ids = Subject.pluck(:id).sample((1..3).to_a.sample)
   subject_ids.each do |id|
-    lesson.subjects.create!(subject_id: id)
+    lesson.lesson_subjects.create!(subject_id: id)
   end
 end
 
