@@ -14,8 +14,6 @@ lesson = Lesson.create!(topic: "American Revolution", description: "America foug
 
 plan = Plan.create!(title: "Plan for History 101", description: "History is great.", user_id: 1, star_count: 1)
 
-grade_level = GradeLevel.create!(title: "Kindergarten")
-
 subject = Subject.create!(title: "History")
 
 GradeLevel.create!(title: "1st Grade")
@@ -69,11 +67,15 @@ Plan.all.each do |u|
 end
 
 100.times do
-  Lesson.create!(topic: Faker::Company.bs,
+  lesson = Lesson.create!(topic: Faker::Company.bs,
                  description: Faker::Lorem.sentences,
                  user_id: @all_users.sample,
                  plan_id: @all_plans.sample,
                  star_count: Faker::Number.digit)
+  grade_level_ids = GradeLevel.pluck(:id).sample((1..3).to_a.sample)
+  grade_level_ids.each do |id|
+    lesson.lesson_grade_levels.create!(grade_level_id: id)
+  end
 end
 
 @all_lessons = []

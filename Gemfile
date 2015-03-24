@@ -33,16 +33,11 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 
 group :development, :test do
   gem 'byebug'
-
   gem 'web-console', '~> 2.0'
-
   gem 'spring'
-
-  gem 'minitest-reporters'
-
-  gem 'mini_backtrace'
-
-  gem 'capybara'
-
   gem 'rspec-rails', '~> 3.0'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
