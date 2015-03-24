@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324011805) do
+ActiveRecord::Schema.define(version: 20150324182357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,8 +36,12 @@ ActiveRecord::Schema.define(version: 20150324011805) do
     t.string   "title"
     t.text     "content"
     t.integer  "lesson_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "upload_file_name"
+    t.string   "upload_content_type"
+    t.integer  "upload_file_size"
+    t.datetime "upload_updated_at"
   end
 
   create_table "grade_levels", force: :cascade do |t|
@@ -78,15 +82,6 @@ ActiveRecord::Schema.define(version: 20150324011805) do
     t.integer "subject_id"
   end
 
-  create_table "mercury_images", force: :cascade do |t|
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "plans", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -109,6 +104,14 @@ ActiveRecord::Schema.define(version: 20150324011805) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "user_grade_levels", force: :cascade do |t|
+    t.integer "user_id",        null: false
+    t.integer "grade_level_id", null: false
+  end
+
+  add_index "user_grade_levels", ["grade_level_id"], name: "index_user_grade_levels_on_grade_level_id", using: :btree
+  add_index "user_grade_levels", ["user_id"], name: "index_user_grade_levels_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

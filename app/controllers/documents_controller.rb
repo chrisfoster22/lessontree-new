@@ -1,6 +1,7 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:edit, :show, :update, :destroy]
   attr_accessor :title, :description
+
   def index
     @documents = Document.find_by(current_user.id).order("created_at DESC")
   end
@@ -35,10 +36,15 @@ class DocumentsController < ApplicationController
     end
   end
 
+  def upload_file
+    @document = Document.new
+    @lesson_id = Lesson.find(params[:id]).id
+  end
+
 private
 
   def document_params
-    params.require(:document).permit(:title, :content, :user_id, :lesson_id)
+    params.require(:document).permit(:title, :content, :user_id, :lesson_id, :upload)
   end
 
   def set_document
