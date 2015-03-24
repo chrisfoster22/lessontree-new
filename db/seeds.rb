@@ -45,7 +45,7 @@ end
               city: Faker::Address.city,
               state: Faker::Address.state_abbr,
               school: Faker::Company.name,
-              avatar: Faker::Avatar.image("Profile-Picture", "150x150"),
+              # avatar: Faker::Avatar.image("Profile-Picture", "150x150"),
               grade_level_id: @all_grades.sample)
 end
 
