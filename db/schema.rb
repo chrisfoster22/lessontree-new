@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150322194753) do
+ActiveRecord::Schema.define(version: 20150324011805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,14 @@ ActiveRecord::Schema.define(version: 20150322194753) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "lesson_grade_levels", force: :cascade do |t|
+    t.integer "lesson_id",      null: false
+    t.integer "grade_level_id", null: false
+  end
+
+  add_index "lesson_grade_levels", ["grade_level_id"], name: "index_lesson_grade_levels_on_grade_level_id", using: :btree
+  add_index "lesson_grade_levels", ["lesson_id"], name: "index_lesson_grade_levels_on_lesson_id", using: :btree
 
   create_table "lessons", force: :cascade do |t|
     t.string   "topic"
@@ -92,6 +100,14 @@ ActiveRecord::Schema.define(version: 20150322194753) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "user_grade_levels", force: :cascade do |t|
+    t.integer "user_id",        null: false
+    t.integer "grade_level_id", null: false
+  end
+
+  add_index "user_grade_levels", ["grade_level_id"], name: "index_user_grade_levels_on_grade_level_id", using: :btree
+  add_index "user_grade_levels", ["user_id"], name: "index_user_grade_levels_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

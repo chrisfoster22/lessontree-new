@@ -13,7 +13,7 @@ class LessonsController < ApplicationController
     if @plan
       @default = @plan.id
     end
-    if Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
+    if current_user && Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
       @starred = true
     else
       @starred = false
