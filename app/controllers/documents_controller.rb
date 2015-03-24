@@ -1,5 +1,5 @@
 class DocumentsController < ApplicationController
-  before_action :set_document
+  before_action :set_document, only: [:edit, :show, :update, :destroy]
   attr_accessor :title, :description
   def index
     @documents = Document.find_by(current_user.id).order("created_at DESC")
