@@ -288,10 +288,10 @@ HOMEPAGE LESSON PREVIEWS
 }
 
 .lesson-preview-title-container {
-  margin-bottom: 1em;
+  margin-bottom: .5em;
   background: #ddd;
   box-shadow: 0 2px 5px rgba(0,0,0,0.18);
-  padding: .5em .5em .5em .7em;
+  padding: .7em .7em .7em .9em;
 
 }
 
@@ -300,6 +300,7 @@ HOMEPAGE LESSON PREVIEWS
   font-family: $headline-font;
   font-weight: 400;
   color: #222;
+  margin-bottom: .3em;
 }
 
 .lesson-preview-subject-container {
@@ -316,10 +317,16 @@ HOMEPAGE LESSON PREVIEWS
 
 .lesson-preview-subject-list {
   margin-right: .75em;
+  font-size: 1.1em;
 }
 
 .lesson-preview-grade-list {
   padding-left: .75em;
+  font-size: 1.1em;
+}
+
+.lesson-preview-description-container {
+  padding: 1em;
 }
 
 .lesson-preview-subject-list, .lesson-preview-pipe, .lesson-preview-grade-list,  {
@@ -331,19 +338,18 @@ HOMEPAGE LESSON PREVIEWS
 }
 
 .lesson-preview-ranking, .lesson-preview-description {
-  font-size: .9em;
+  font-size: 1.1em;
   font-family: $headline-font;
   font-weight: 400;
   color: #222;
 }
 
 .lesson-preview-ranking {
-  padding: 0 0 .5em .75em;
+  margin-bottom: .75em;
 }
 
 .lesson-preview-description {
-  padding: 0 .5em .75em .75em;
-  line-height: 1.3em;
+  line-height: 1.4em;
 }
 
 /************************************
