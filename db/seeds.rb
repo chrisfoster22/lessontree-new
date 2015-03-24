@@ -38,16 +38,16 @@ GradeLevel.all.each do |u|
   @all_grades << u.id
 end
 
-# 100.times do
-#   User.create!(name: Faker::Name.name,
-#               email: Faker::Internet.email,
-#               password: "password",
-#               city: Faker::Address.city,
-#               state: Faker::Address.state_abbr,
-#               school: Faker::Company.name,
-#               avatar: Faker::Avatar.image("Profile-Picture", "150x150"),
-#               grade_level_id: @all_grades.sample)
-# end
+100.times do
+  User.create!(name: Faker::Name.name,
+              email: Faker::Internet.email,
+              password: "password",
+              city: Faker::Address.city,
+              state: Faker::Address.state_abbr,
+              school: Faker::Company.name,
+              # avatar: Faker::Avatar.image("Profile-Picture", "150x150"),
+              grade_level_id: @all_grades.sample)
+end
 
 @all_users = []
 User.all.each do |u|
