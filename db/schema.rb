@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324011805) do
+ActiveRecord::Schema.define(version: 20150324184040) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,16 +66,6 @@ ActiveRecord::Schema.define(version: 20150324011805) do
     t.string   "upload_content_type"
     t.integer  "upload_file_size"
     t.datetime "upload_updated_at"
-  end
-
-  create_table "lessons_grade_levels", id: false, force: :cascade do |t|
-    t.integer "lesson_id"
-    t.integer "grade_level_id"
-  end
-
-  create_table "lessons_subjects", id: false, force: :cascade do |t|
-    t.integer "lesson_id"
-    t.integer "subject_id"
   end
 
   create_table "mercury_images", force: :cascade do |t|

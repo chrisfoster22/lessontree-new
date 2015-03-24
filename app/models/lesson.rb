@@ -5,7 +5,8 @@ class Lesson < ActiveRecord::Base
   belongs_to :user
   has_many :lesson_grade_levels
   has_many :grade_levels, through: :lesson_grade_levels
-  belongs_to :home
+  has_many :lesson_subjects
+  has_many :subjects, through: :lesson_subjects
   has_many :documents
 
 
