@@ -1,2 +1,2 @@
-<h1>Documents#show</h1>
-<p>Find me in app/views/documents/show.html.erb</p>
+<div><h3><%= @document.title %></h3></div>
+<div><%= link_to("Download Document", @document.upload.url) %></div>

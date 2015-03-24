@@ -15,6 +15,12 @@ Rails.application.routes.draw do
   post 'users/sign_out'
   get 'home/style_guide'
 
+  resources :documents do
+    member do
+      get 'upload_file'
+    end
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

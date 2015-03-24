@@ -21,5 +21,7 @@
   <% end %>
 <% end %>
 </div>
-<div><%= link_to 'Upload Document', new_document_path, class: 'create-lesson' %></div>
-<div><%= link_to "Create Document", '/documents/new' + "?lesson_id=#{@lesson.id}", class: 'create-lesson' %></div>
+<div class="edit-save-buttons-wrapper">
+  <%= link_to 'Upload Lesson Document', "/documents/#{@lesson.id}/upload_file", class: 'edit-button' %>
+  <%= link_to "Create Lesson Document", '/documents/new' + "?lesson_id=#{@lesson.id}", class: 'save-button' %>
+</div>
