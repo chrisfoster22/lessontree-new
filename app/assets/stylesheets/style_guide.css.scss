@@ -156,7 +156,7 @@ list-style: none;
   background-color: $top-bg-color;
   color: white;
   margin-left: 0px;
-  margin-bottom: -1em;
+  padding-bottom: 6em;
 }
 
 
@@ -182,7 +182,6 @@ h1 {
   font-size: 45px;
   margin-top: 0.2em;
   text-shadow: -1px -1px $alt-gray-color;
-  padding-bottom: 1.5em;
 }
 
 /************************************
@@ -191,7 +190,7 @@ h1 {
 .search-box-wrapper {
   display: block;
   text-align: center;
-  margin: 4em 0 4em;
+  margin-top: 4.5em;
 }
 
 .inline-search-form {
