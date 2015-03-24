@@ -9,6 +9,7 @@ class LessonsController < ApplicationController
   def show
     @star = Star.new
     @documents = @lesson.documents
+    @plans = Plan.where(user_id: current_user)
     @plan = @lesson.plan
     if @plan
       @default = @plan.id
