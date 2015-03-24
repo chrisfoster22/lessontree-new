@@ -457,100 +457,6 @@ SAVE & DELETE BUTTON SIDE BY SIDE
 }
 
 /************************************
-              FOOTER
-************************************/
-footer {
-  background: #2e2e40;
-  max-height: 40em;
-  margin-top: 4em;
-  padding: 1em;
-}
-
-.footer-head {
-  text-align: center;
-  font-size: 4em;
-  font-family: $cursive-font;
-  margin: 1em 0 1em;
-  color: #fff;
-  padding: 0;
-  font-weight: 400;
-  text-shadow: none;
-}
-
-.footer-social-icons {
-  text-align: center;
-  font-size: 4em;
-  font-family: $cursive-font;
-  margin: -1em 0 1em;
-  color: #fff;
-}
-
-.footer ul {
-  list-style: none;
-  text-align: center;
-  padding: 0;
-  margin: 0 0 2em 0;
-}
-
-.footer li {
-  display: inline;
-}
-
-.about-footer,
-.signup-footer,
-.terms-footer {
-  font-family: $headline-font;
-  font-size: 1em;
-  padding: 0 2em 0 2em;
-  letter-spacing: .05em;
-}
-
-.footer a {
-  text-decoration: none;
-  color: #fff;
-  transition: .3s background-color;
-}
-
-.footer a:hover {
-  color: $top-bg-color;
-  transition: .4s;
-}
-
-.footer-ruler {
-  display: block;
-  margin: 2em auto 2em;
-  width: 40%;
-  border-bottom: 1px dashed #aaa;
-}
-
-.footer-ruler hr {
-  border: 0;
-  height: 0;
-  border-top: 1px dashed rgba(0, 0, 0, 0.1);
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
-  width: 50%;
-}
-
-.social-icons {
-  font-size: 2em;
-  color: #fff;
-}
-
-.icon-twitter-circled,
-.icon-facebook-circled,
-.icon-pinterest-circled {
-  margin: 1em .5em .5em .5em;
-}
-
-.icon-twitter-circled:hover,
-.icon-facebook-circled:hover,
-.icon-pinterest-circled:hover{
-  color: $top-bg-color;
-  transition: .4s;
-  cursor: pointer;
-}
-
-/************************************
     PROFILE PAGE, LESSONS & PLANS
 ************************************/
 .accordion-tabs {
@@ -659,7 +565,188 @@ footer {
   }
 }
 
+/************************************
+    SHOWING PLANS/LESSONS
+************************************/
+.lesson-container {
+  margin: 6em auto 3em;
+  width: 45%;
+  border: 1px solid #ddd;
+  background: #f7f7f7;
+  border-radius: 1px;
+}
 
+.lesson-title-container {
+  margin-bottom: .5em;
+  background: #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.18);
+  padding: .7em .7em .7em .9em;
+
+}
+
+.lesson-title {
+  font-size: 1.75em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: #222;
+  margin-bottom: .3em;
+}
+
+.lesson-subject-container {
+  padding: .5em .5em .5em 1em;
+}
+
+.lesson-subject {
+  font-size: 1.5em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: #222;
+  margin: .3em .3em .5em 2em;
+}
+
+.lesson-subject-list {
+  margin-right: .75em;
+  font-size: 1.1em;
+}
+
+.lesson-grade-list {
+  padding-left: .75em;
+  font-size: 1.1em;
+}
+
+.lesson-description-container {
+  padding: 1em;
+}
+
+.lesson-subject-list, .lesson-pipe, .lesson-grade-list,  {
+  display: inline;
+  font-size: 1em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: #222;
+}
+
+.lesson-description {
+  font-size: 1.1em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: #222;
+}
+
+.star-ranking {
+  vertical-align: text-baseline;
+}
+
+.icon-star {
+  color: gold;
+  font-size: 1.5em;
+  display: inline;
+}
+
+.ranking {
+  display: inline;
+  padding-bottom: 1em;
+}
+
+.lesson-description {
+  line-height: 1.4em;
+}
+
+
+
+/************************************
+              FOOTER
+************************************/
+footer {
+  background: #2e2e40;
+  max-height: 40em;
+  margin-top: 4em;
+  padding: 1em;
+}
+
+.footer-head {
+  text-align: center;
+  font-size: 4em;
+  font-family: $cursive-font;
+  margin: 1em 0 1em;
+  color: #fff;
+  padding: 0;
+  font-weight: 400;
+  text-shadow: none;
+}
+
+.footer-social-icons {
+  text-align: center;
+  font-size: 4em;
+  font-family: $cursive-font;
+  margin: -1em 0 1em;
+  color: #fff;
+}
+
+.footer ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0 0 2em 0;
+}
+
+.footer li {
+  display: inline;
+}
+
+.about-footer,
+.signup-footer,
+.terms-footer {
+  font-family: $headline-font;
+  font-size: 1em;
+  padding: 0 2em 0 2em;
+  letter-spacing: .05em;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #fff;
+  transition: .3s background-color;
+}
+
+.footer a:hover {
+  color: $top-bg-color;
+  transition: .4s;
+}
+
+.footer-ruler {
+  display: block;
+  margin: 2em auto 2em;
+  width: 40%;
+  border-bottom: 1px dashed #aaa;
+}
+
+.footer-ruler hr {
+  border: 0;
+  height: 0;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+  width: 50%;
+}
+
+.social-icons {
+  font-size: 2em;
+  color: #fff;
+}
+
+.icon-twitter-circled,
+.icon-facebook-circled,
+.icon-pinterest-circled {
+  margin: 1em .5em .5em .5em;
+}
+
+.icon-twitter-circled:hover,
+.icon-facebook-circled:hover,
+.icon-pinterest-circled:hover{
+  color: $top-bg-color;
+  transition: .4s;
+  cursor: pointer;
+}
 
 
 /************************************
