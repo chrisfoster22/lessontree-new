@@ -173,16 +173,11 @@ h1 {
 .key-words {
   font-family: $headline-font, sans-serif;
   text-align: center;
+  text-shadow: -1px -1px $alt-gray-color;
   font-size: 45px;
 }
 
-.third-line {
-  font-family: $cursive-font, cursive;
-  text-align: center;
-  font-size: 45px;
-  margin-top: 0.2em;
-  text-shadow: -1px -1px $alt-gray-color;
-}
+
 
 /************************************
          HERO HOMEPAGE MEDIA QUERY
@@ -206,7 +201,7 @@ h1 {
 .search-box-wrapper {
   display: block;
   text-align: center;
-  margin-top: 4.5em;
+  margin-top: 6.5em;
 }
 
 .inline-search-form {
@@ -281,7 +276,7 @@ HOMEPAGE LESSON PREVIEWS
 }
 
 .lesson-preview-container {
-  margin: 3em auto 3em;
+  margin: 7em auto 3em;
   width: 45%;
   border: 1px solid #ddd;
   background: #f7f7f7;
