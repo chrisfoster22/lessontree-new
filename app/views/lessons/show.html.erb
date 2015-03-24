@@ -21,5 +21,6 @@
   <% end %>
 <% end %>
 </div>
-<div><%= link_to 'Upload Document', new_document_path, class: 'create-lesson' %></div>
+<div><%= link_to 'Upload Document', "/documents/#{@lesson.id}/upload_file", class: 'create-lesson' %></div>
+
 <div><%= link_to "Create Document", '/documents/new' + "?lesson_id=#{@lesson.id}", class: 'create-lesson' %></div>
