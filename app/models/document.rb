@@ -3,7 +3,7 @@ class Document < ActiveRecord::Base
   # multisearchable :against => [:title, :content]
   belongs_to :lesson
 
-  has_attached_file :upload, styles: {thumbnail: "60x60#"}
+  has_attached_file :upload
   validates_attachment :upload, content_type: { content_type: ["application/pdf",
       "application/vnd.oasis.opendocument.text",
       "application/vnd.oasis.opendocument.spreadsheet",
