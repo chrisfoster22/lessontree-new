@@ -36,6 +36,15 @@ $alt-gray-color: #a6a6b0;
   background-color: $dark-header-color;
   height: 6em;
   margin-bottom: 4em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+/**************************************
+OPTION FOR FIXED POSITION
+*************************************/
+/*  position: fixed;
+  z-index:1;
+  top: -5px;
+  width: 100%;
+*/
 }
 
 .nav-logo {
@@ -206,13 +215,12 @@ h1 {
   font-size: 1em;
   font-family: $headline-font;
   width: 15em;
-  padding: .4em .4em .5em;
+  padding: .35em .4em .4em;
   border-top-left-radius: .25em;
   border-bottom-left-radius: .25em;
   border-inset: none;
-  background: #eee;
-  border: none;
-  color: #444;
+  border: 1px solid #ccc;
+  color: black;
 }
 
 .inline-search-button {
@@ -251,7 +259,6 @@ h1 {
     border-radius: .25em;
     margin-bottom: .25em;
 }
-}
 
 .inline-search-button {
   display: block;
@@ -261,7 +268,81 @@ h1 {
   left: 0;
   width: 18.8em;
 }
+}
 
+/****************************************
+HOMEPAGE LESSON PREVIEWS
+****************************************/
+.lesson-preview-link {
+  text-decoration: none;
+}
+
+.lesson-preview-container {
+  margin: 3em auto 3em;
+  width: 45%;
+  border: 1px solid #ddd;
+  background: #f7f7f7;
+  border-radius: 1px;
+}
+
+.lesson-preview-title-container {
+  margin-bottom: 1em;
+  background: #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.18);
+  padding: .5em .5em .5em .7em;
+
+}
+
+.lesson-preview-title {
+  font-size: 1.75em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: #222;
+}
+
+.lesson-preview-subject-container {
+  padding: .5em .5em .5em 1em;
+}
+
+.lesson-preview-subject {
+  font-size: 1.5em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: #222;
+  margin: .3em .3em .5em 2em;
+}
+
+.lesson-preview-subject-list {
+  margin-right: .75em;
+}
+
+.lesson-preview-grade-list {
+  padding-left: .75em;
+}
+
+.lesson-preview-subject-list, .lesson-preview-pipe, .lesson-preview-grade-list,  {
+  display: inline;
+  font-size: 1em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: #222;
+}
+
+.lesson-preview-ranking, .lesson-preview-description {
+  font-size: .9em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: #222;
+}
+
+.lesson-preview-ranking {
+  padding: 0 0 .5em .75em;
+}
+
+.lesson-preview-description {
+  padding: 0 .5em .75em .75em;
+  line-height: 1.3em;
+}
 
 /************************************
             SAVE BUTTON
@@ -332,12 +413,6 @@ SAVE & EDIT BUTTON SIDE BY SIDE
 
 .edit-save-buttons-wrapper button {
   margin: 0 .5em 0;
-}
-
-.lesson-preview-container {
-  margin: 3em auto 3em;
-  background: eee;
-  width: 70%
 }
 
 /************************************
