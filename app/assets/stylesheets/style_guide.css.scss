@@ -173,6 +173,7 @@ h1 {
   text-shadow: -1px -1px $alt-gray-color;
   line-height: 1.2em;
   padding-top: .9em;
+  letter-spacing: .02em
 }
 
 .key-words {
@@ -206,7 +207,7 @@ h1 {
 .search-box-wrapper {
   display: block;
   text-align: center;
-  margin-top: 6.5em;
+  margin-top: 4.2em;
 }
 
 .inline-search-form {
@@ -217,7 +218,7 @@ h1 {
   display: inline-block;
   font-size: 1em;
   font-family: $headline-font;
-  width: 15em;
+  width: 18em;
   padding: .34em .4em .44em;
   border-top-left-radius: .25em;
   border-bottom-left-radius: .25em;
@@ -259,6 +260,7 @@ h1 {
     display: block;
     margin: 0 auto 0;
     text-align: center;
+    width: 15.1em;
     border-radius: .25em;
     margin-bottom: .25em;
 }
@@ -284,13 +286,12 @@ HOMEPAGE LESSON PREVIEWS
   margin: 6em auto 3em;
   width: 45%;
   border: 1px solid #ddd;
-  background: #f7f7f7;
-  border-radius: 1px;
+  border-radius: 5px;
 }
 
 .lesson-preview-title-container {
   margin-bottom: .5em;
-  background: #ddd;
+  background: #eee;
   box-shadow: 0 2px 5px rgba(0,0,0,0.18);
   padding: .7em .7em .7em .9em;
 
@@ -356,8 +357,15 @@ HOMEPAGE LESSON PREVIEWS
 }
 
 .ranking {
-  display: inline;
-  padding-bottom: 1em;
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-25%);
+    font-family: 'Hind';
+    font-size: 1.2em;
+    margin-left: .25em;
+    color: #555;
+    letter-spacing: .1em;
 }
 
 .lesson-preview-description {
@@ -572,16 +580,14 @@ SAVE & DELETE BUTTON SIDE BY SIDE
   margin: 6em auto 3em;
   width: 45%;
   border: 1px solid #ddd;
-  background: #f7f7f7;
-  border-radius: 1px;
+  border-radius: 5px;
 }
 
 .lesson-title-container {
   margin-bottom: .5em;
-  background: #ddd;
+  background: #eee;
   box-shadow: 0 2px 5px rgba(0,0,0,0.18);
   padding: .7em .7em .7em .9em;
-
 }
 
 .lesson-title {
@@ -644,14 +650,102 @@ SAVE & DELETE BUTTON SIDE BY SIDE
 }
 
 .ranking {
-  display: inline;
-  padding-bottom: 1em;
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-25%);
+  font-family: 'Hind';
+  font-size: 1.2em;
+  margin-left: .25em;
+  color: #555;
+  letter-spacing: .1em;
 }
 
 .lesson-description {
   line-height: 1.4em;
 }
 
+/***************************************
+ -- START MY PROFILE PAGE --
+***************************************/
+
+
+/***************************************
+  MY PROFILE PERSONAL INFO
+***************************************/
+.profile-wrapper {
+  margin: 0 auto;
+  width: 90%;
+  padding: 3em 0 3em;
+}
+
+.user-profile-photo-wrapper {
+  float: left;
+  margin-left: 5em;
+  margin-right: 3em;
+}
+
+.user-profile-photo-wrapper img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 3em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.18)
+}
+
+.user-profile-information-wrapper-right {
+  margin-left: 10em;
+}
+
+.user-profile-unique-information {
+  font-family: 'Hind';
+  font-weight: 400;
+  color: #333;
+  font-size: 1.1em;
+  letter-spacing: .02em;
+  margin-bottom: 3.9em;
+}
+
+.user-profile-unique-information li {
+  margin-bottom: .65em;
+}
+
+.profile-wrapper hr {
+  border-top: 1px solid #ddd;
+  border-bottom: #fff;
+}
+
+/***************************************
+  MY PROFILE PERSONAL INFO
+         MEDIA QUERY
+***************************************/
+@media screen and (max-width: 550px) {
+  .profile-wrapper  {
+    width: 100%;
+}
+
+.user-profile-photo-wrapper {
+  display: block;
+  text-align: center;
+  margin: 0 auto 0;
+}
+
+.user-profile-photo-wrapper img {
+  margin-bottom: 1em;
+}
+
+.user-profile-information-wrapper-right {
+  margin: 0 auto 0;
+}
+
+.user-profile-unique-information {
+  margin-bottom: 2em;
+}
+
+.profile-wrapper hr {
+  width: 90%;
+}
+}
 
 
 /************************************
