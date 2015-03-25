@@ -14,6 +14,15 @@ class LessonsController < ApplicationController
     else
       @starred = false
     end
+    @uploaded_documents = []
+    @created_documents = []
+    documents.each do |d|
+      if d.upload.url != "/uploads/original/missing.png"
+        @uploaded_documents << d
+      else
+        @created_documents << d
+      end
+    end
   end
 
   def new

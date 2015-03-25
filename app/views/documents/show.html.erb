@@ -1,2 +1,4 @@
-<div><h3><%= @document.title %></h3></div>
-<div><%= link_to("Download Document", @document.upload.url) if @document.upload.url %></div>
+<h2><%= @document.title %></h2>
+<%= @document.content.html_safe %>
+<%= link_to "Edit Document", edit_document_path%>
+<%= link_to "Destroy Document", @document, method: :delete %>
