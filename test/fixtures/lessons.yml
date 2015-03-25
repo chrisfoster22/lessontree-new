@@ -4,12 +4,10 @@ one:
   topic: SuperfluousStuff
   description: herpaderpa
   user_id: 1
-  plan_id: 1
   star_count: 1
 
 two:
   topic: BoringBigons
   description: supercalifragalisticexpialidocious
   user_id: 2
-  plan_id: 2
   star_count: 1

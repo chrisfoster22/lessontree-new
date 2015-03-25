@@ -14,12 +14,16 @@
   <% end %>
 <% end %>
 
-<div>
-<% @documents.each do |d| %>
-<%= link_to d do %>
-  <p><%= d.title %></p>
-  <% end %>
+<h3>Uploaded Documents</h3>
+<% @uploaded_documents.each do |d| %>
+  <div><%= link_to("#{d.title}", d.upload.url) %></div>
 <% end %>
+
+<h3>Created Documents</h3>
+<% @created_documents.each do |d| %>
+  <div><%= link_to "#{d.title}", d %></div>
+<% end %>
+
 
 <div class="edit-save-buttons-wrapper">
   <%= link_to 'Upload Lesson Document', "/documents/#{@lesson.id}/upload_file", class: 'edit-button' %>

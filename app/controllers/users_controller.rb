@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
-    stars = Star.where(user_id: current_user.id, plan_id: nil)
+    stars = Star.where(user_id: current_user.id)
     @starred_lessons = []
     stars.each do |s|
       lesson = Lesson.find_by(id: s.lesson_id)

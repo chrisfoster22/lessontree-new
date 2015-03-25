@@ -9,15 +9,19 @@ class LessonsController < ApplicationController
   def show
     @star = Star.new
     @documents = @lesson.documents
-    @plans = Plan.where(user_id: current_user)
-    @plan = @lesson.plan
-    if @plan
-      @default = @plan.id
-    end
     if current_user && Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
       @starred = true
     else
       @starred = false
+    end
+    @uploaded_documents = []
+    @created_documents = []
+    documents.each do |d|
+      if d.upload.url != "/uploads/original/missing.png"
+        @uploaded_documents << d
+      else
+        @created_documents << d
+      end
     end
   end
 
@@ -50,7 +54,7 @@ class LessonsController < ApplicationController
 private
 
   def lesson_params
-    params.require(:lesson).permit(:upload, :topic, :description, :id, :user_id, :plan_id)
+    params.require(:lesson).permit(:upload, :topic, :description, :id, :user_id)
   end
 
   def lesson_owner

@@ -1,5 +1,4 @@
 class Lesson < ActiveRecord::Base
-  belongs_to :plan
   belongs_to :subject
   belongs_to :user
 
@@ -10,10 +9,14 @@ class Lesson < ActiveRecord::Base
   has_many :subjects, through: :lesson_subjects
   has_many :documents
 
-  def self.search(search)
+  def self.search(subject, grade, search)
     if search
       # find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-      where('topic ILIKE ? OR description ILIKE ?' , "%#{search}%", "%#{search}%")
+      filtered_search = []
+      lessons = where('topic ILIKE ? OR description ILIKE ?' , "%#{search}%", "%#{search}%")
+      filtered_search = lessons.select {|s| s.subjects.map(&:id).include?(subject)}
+      filtered_search
+
     else
       # find(:all)
       Lesson.all
