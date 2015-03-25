@@ -278,7 +278,92 @@ h1 {
 /****************************************
 SELECT DROPDOWN BUTTON
 ****************************************/
+.expander {
+  ///////////////////////////////////////////////////////////////////////////////////
+  $base-font-size: 1.2em !default;
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $base-accent-color: #fff !default;
+  $base-link-color: $base-accent-color !default;
+  $dark-gray: #333 !default;
+  $light-gray: #DDD !default;
+  $base-font-color: $dark-gray !default;
+  margin: 1em auto 0;
+  font-family: $headline-font;
+  font-size: 1.3em;
+  text-align: center;
 
+  p {
+    color: $base-font-color;
+    line-height: $base-line-height;
+  }
+
+  a {
+    color: $base-link-color;
+    text-decoration: none;
+  }
+  //////////////////////////////////////////////////////////////////////////////////
+
+  $expander-arrow-width: 0.7em;
+  $expander-toggle-size: 1em;
+  $expander-toggle-arrow-size: $expander-toggle-size;
+  $expander-toggle-margin: 1em;
+
+  width: 40%;
+
+  .expander-trigger {
+    @include user-select(none);
+    border-bottom: none;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto 0;
+    font-size: $expander-toggle-size;
+    margin-bottom: $expander-toggle-size;
+    padding-bottom: $expander-toggle-size / 4;
+
+    &:before {
+      font-size: $expander-arrow-width;
+      content: "\25BC";
+      margin-right: 0.5em;
+    }
+  }
+
+  .expander-hidden {
+    &:before {
+      font-size: $expander-arrow-width;
+      content: "\25BA";
+    }
+  }
+
+  .expander-hidden + .expander-content {
+    display: none;
+  }
+}
+
+.grades-select-menu-container {
+    display: inline-block;
+    float: right;
+    margin-right: 7em;
+}
+
+.subjects-select-menu-container {
+    display: inline-block;
+    float: left;
+    margin-left: 7em;
+}
+
+.select-menu {
+  display: block;
+  background: $alt-top-bg-color;
+  color: #fff;
+  font-family: $headline-font;
+  font-size: .75em;
+  width: 5em;
+  height: 2em;
+  border-radius: none;
+  border: none;
+  padding: 2em;
+}
 
 /****************************************
 HOMEPAGE LESSON PREVIEWS
