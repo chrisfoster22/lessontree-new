@@ -1,8 +1,9 @@
 class Lesson < ActiveRecord::Base
-  has_many :stars
   belongs_to :plan
   belongs_to :subject
   belongs_to :user
+
+  has_many :stars
   has_many :lesson_grade_levels
   has_many :grade_levels, through: :lesson_grade_levels
   has_many :lesson_subjects
@@ -18,11 +19,4 @@ class Lesson < ActiveRecord::Base
       Lesson.all
     end
   end
-
-  def username
-    id = self.user_id
-    user = User.find_by(id: id)
-    user.name || ""
-  end
-
 end

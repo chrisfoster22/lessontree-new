@@ -38,14 +38,6 @@ GradeLevel.all.each do |u|
   @all_grades << u.id
 end
 
-<<<<<<< HEAD
-@all_subjects = []
-Subject.all.each do |u|
-  @all_grades << u.id
-end
-
-=======
->>>>>>> e0fcdc5ac940715ce30833eb941b54fb1960c380
 100.times do
   User.create!(name: Faker::Name.name,
               email: Faker::Internet.email,
@@ -57,10 +49,7 @@ end
               grade_level_id: @all_grades.sample)
 end
 
-@all_users = []
-User.all.each do |u|
-  @all_users << u.id
-end
+@all_users = User.pluck(:id)
 
 100.times do
   Plan.create!(title: Faker::Commerce.product_name,
