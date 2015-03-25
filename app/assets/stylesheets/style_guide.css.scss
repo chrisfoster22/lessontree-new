@@ -735,6 +735,7 @@ SAVE & DELETE BUTTON SIDE BY SIDE
 @media screen and (max-width: 550px) {
   .profile-wrapper  {
     width: 100%;
+    display: block;
 }
 
 .user-profile-photo-wrapper {
@@ -744,11 +745,12 @@ SAVE & DELETE BUTTON SIDE BY SIDE
 }
 
 .user-profile-photo-wrapper img {
-  margin-bottom: 1em;
+  margin-bottom: 0 0 1em 0;
 }
 
 .user-profile-information-wrapper-right {
   margin: 0 auto 0;
+  display: block;
 }
 
 .user-profile-unique-information {
