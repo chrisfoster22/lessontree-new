@@ -1,5 +1,5 @@
 class LessonsController < ApplicationController
-  before_action :set_lesson, only: [:edit, :show, :update, :destroy]
+  # before_action :set_lesson, only: [:edit, :show, :update, :destroy]
   before_action :lesson_owner, only: [:edit, :destroy, :update]
 
   def index
@@ -7,8 +7,9 @@ class LessonsController < ApplicationController
   end
 
   def show
+    @lesson = Lesson.find_by(id: params[:id])
     @star = Star.new
-    @documents = @lesson.documents
+    documents = @lesson.documents
     if current_user && Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
       @starred = true
     else

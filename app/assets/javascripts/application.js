@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require fancybox
 //= require jquery_ujs
 //= require ckeditor/init
 //= require_tree .
@@ -40,3 +41,8 @@ $(function() {
     $("html,body").animate({scrollTop: WhereToMove }, 300);
   });
 });
+
+$('#fancybox').fancybox({
+  type: 'ajax',
+  href: '/documents/111',
+})

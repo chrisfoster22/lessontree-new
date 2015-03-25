@@ -18,7 +18,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'rails_12factor'
 gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 gem 'puma'
+gem 'fancybox2-rails', '~> 0.2.8'
+
 
 # gem 'sunspot_rails'
 # gem 'sunspot_solr'

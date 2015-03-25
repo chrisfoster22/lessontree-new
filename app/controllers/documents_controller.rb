@@ -1,5 +1,5 @@
 class DocumentsController < ApplicationController
-  before_action :set_document, only: [:edit, :show, :update, :destroy]
+  before_action :set_document, only: [:edit, :show, :update, :destroy, :document_frame]
   attr_accessor :title, :description
 
   def index
@@ -7,7 +7,15 @@ class DocumentsController < ApplicationController
   end
 
   def show
+    @document = Document.find_by(id: 111)
     @lesson = @document.lesson
+    # respond_to do |format|
+    #   format.html
+    #   format.pdf do
+    #     pdf = WickedPdf.new.pdf_from_string("#{@document.content}")
+    #     render pdf: "pdf"
+    #   end
+    # end
   end
 
   def new
@@ -47,6 +55,11 @@ class DocumentsController < ApplicationController
     redirect_to lesson_path(lesson_id)
   end
 
+  def document_frame
+    @lesson = Lesson.find_by(id: 111)
+    # render :layout => false
+  end
+
 private
 
   def document_params
@@ -54,7 +67,7 @@ private
   end
 
   def set_document
-    @document = Document.find_by(id: params[:id])
+    @document = Document.find_by(id: 111)
     redirect_to root_path if @document.nil?
   end
 

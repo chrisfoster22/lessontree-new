@@ -6,14 +6,6 @@
 <%= f.check_box :lesson_id, value: @lesson.id, class: "star-box", id: "#{@lesson.id}", checked: @starred %>
 <% end %>
 
-<% if current_user %>
-  <h3>Add this lesson to a plan below:</h3>
-  <%= form_for @lesson do |f| %>
-  <%= f.collection_select :plan_id, @plans, :id, :title, include_blank: true, selected: @default %>
-  <%= f.submit "Add Lesson to Plan"%>
-  <% end %>
-<% end %>
-
 <h3>Uploaded Documents</h3>
 <% @uploaded_documents.each do |d| %>
   <div><%= link_to("#{d.title}", d.upload.url) %></div>
@@ -21,7 +13,7 @@
 
 <h3>Created Documents</h3>
 <% @created_documents.each do |d| %>
-  <div><%= link_to "#{d.title}", d %></div>
+  <div><%= link_to "#{d.title}", d, id: "fancybox" %></div>
 <% end %>
 
 
