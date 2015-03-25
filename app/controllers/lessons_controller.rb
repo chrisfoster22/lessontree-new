@@ -8,7 +8,7 @@ class LessonsController < ApplicationController
 
   def show
     @star = Star.new
-    @documents = @lesson.documents
+    documents = @lesson.documents
     @plans = Plan.where(user_id: current_user)
     @plan = @lesson.plan
     if @plan
@@ -18,6 +18,15 @@ class LessonsController < ApplicationController
       @starred = true
     else
       @starred = false
+    end
+    @uploaded_documents = []
+    @created_documents = []
+    documents.each do |d|
+      if d.upload.url != "/uploads/original/missing.png"
+        @uploaded_documents << d
+      else
+        @created_documents << d
+      end
     end
   end
 

@@ -7,7 +7,7 @@ class DocumentsController < ApplicationController
   end
 
   def show
-    @lessons = @document.lesson
+    @lesson = @document.lesson
   end
 
   def new
@@ -39,6 +39,12 @@ class DocumentsController < ApplicationController
   def upload_file
     @document = Document.new
     @lesson_id = Lesson.find(params[:id]).id
+  end
+
+  def destroy
+    lesson_id = @document.lesson.id
+    @document.destroy!
+    redirect_to lesson_path(lesson_id)
   end
 
 private
