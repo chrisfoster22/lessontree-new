@@ -158,13 +158,19 @@
         <button class="upload-button" type="button">Upload</button>
       </div>
 
-    <!-- HEADLINE -->
+<!-- SIGN UP BUTTON  -->
+    <div class="signup-button-wrapper">
+      <button class="signup-button" type="button">Sign Up</button>
+    </div>
+
+
+<!-- HEADLINE -->
     <div class="page-headline">I'm A Headline. Use Me Like This at the Top of a Page.</div>
 
-    <!-- SUB-HEADLINE -->
+<!-- SUB-HEADLINE -->
     <div class="page-sub-headline">I'm A Sub-Headline.</div>
 
-    <!-- BODY TEXT -->
+<!-- BODY TEXT -->
     <div class="body-text-container">
       <p class="body-text">
       This is for our body text. LessonTree is a collaborative community of educators that seeks to promote the creation & distribution of high-quality educational materials.
@@ -246,6 +252,52 @@
       te paulo placerat cotidieque sea. An sit dico stet omnesque, libris integre hendrerit id sit.</p>
   </div>
   </a>
+</section>
+
+<!-- SIGN UP FORM -->
+<section class="signup-container">
+	<h2 class="signup-form-header">Sign Up</h2>
+	<form class="signup-form" method="post" class="minimal">
+		<label for="name">
+      <input type="text" name="name" id="name" placeholder="My full name" />
+		</label>
+    <label for="grades">
+      <input type="text" name="grades" id="grades" placeholder="Grades I teach" />
+    </label>
+    <label for="school">
+      <input type="text" name="school" id="school" placeholder="Where I teach" />
+    </label>
+    <label for="school-city">
+      <input type="text" name="school-city" id="school-city" placeholder="My school's city" />
+    </label>
+    <label for="username">
+      <input type="text" name="username" id="username" placeholder="Username" />
+		</label>
+    <label for="password">
+      <input type="password" name="password" id="password" placeholder="Password must be between 8 and 20 characters" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required">
+		</label>
+    <div class="signup-button-container">
+		<button class="signup-button" type="submit">Sign Up</button>
+    </div>
+  </form>
+</section>
+
+<!-- LOG IN FORM -->
+<section class="login-container">
+	<h2 class="login-form-header">Log In</h2>
+	<form class="login-form" method="post" class="minimal">
+		<label for="username">
+
+      <input type="text" name="username" id="username" placeholder="Username" />
+		</label>
+		<label for="password">
+		
+      <input type="password" name="password" id="password" placeholder="Password" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required">
+		</label>
+    <div class="login-button-container">
+		<button class="login-button" type="submit">Log In</button>
+	</div>
+  </form>
 </section>
 
 <!-- FOOTER-->

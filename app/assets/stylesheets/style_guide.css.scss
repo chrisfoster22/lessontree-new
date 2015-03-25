@@ -545,6 +545,36 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
 }
 
 /************************************
+            SIGN UP BUTTON
+************************************/
+.signup-button-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.signup-button {
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $alt-top-bg-color;
+  color: #fff;
+  border-radius: .25em;
+  padding: 1em 1.6em 1em;
+}
+
+.signup-button:hover {
+  background: #6fbaab;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+
+/************************************
     PROFILE PAGE, LESSONS & PLANS
 ************************************/
 .accordion-tabs {
@@ -883,6 +913,248 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
   margin-bottom: 2em;
 }
 }
+
+/************************************
+              SIGN UP FORM
+************************************/
+.signup-form-header {
+  text-align: center;
+  font-size: 2.4em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: $alt-top-bg-color;
+  margin-bottom: 1em;
+}
+
+
+.signup-container label, .weird {
+  text-align: center;
+  display: block;
+  color: $dark-header-color;
+}
+
+
+.signup-form-error {
+  color: $button-bg-color;
+  font-size: 1em;
+  font-family: $maintext-font;
+  margin: 0 0 24px 0;
+  text-shadow: none;
+  text-align: center;
+  margin-top: 1em;
+}
+
+/*BUTTON DESIGN*/
+.signup-button-container {
+  text-align: center;
+  display: block;
+  margin: 2em 0 2em;
+}
+
+.signup-button {
+  background-color: $alt-top-bg-color;
+  border-radius: .25em;
+  color: white;
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  text-shadow: none;
+  border: none;
+  text-align: center;
+  padding: 1em 1.6em 1em;
+  text-transform: uppercase;
+}
+
+.signup-button:hover {
+    background-color: #6fbaab;
+    color: white;
+    cursor: pointer;
+    text-shadow: none;
+    border: none;
+    transition: .6s;
+    -webkit-transition: .6s;
+}
+
+/*SECTION CONTAINER*/
+/*FORM*/
+.signup-form {
+  display: block;
+  margin: 0 auto;
+  font-family: $headline-font;
+}
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="password"],
+  textarea {
+
+    background: white;
+    border: 1px solid rgb( 186, 186, 186 );
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+    display: block;
+    font-family: $headline-font;
+    font-size: 1.1em;
+    margin: 6px auto 12px;
+    padding: 11px;
+    text-shadow: 0 1px 1px white;
+    width: 40%;
+
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+      transition: all 0.1s linear;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+
+  }
+
+    input[type="text"]:invalid:focus,
+    input[type="email"]:invalid:focus,
+    input[type="number"]:invalid:focus,
+    input[type="search"]:invalid:focus,
+    input[type="password"]:invalid:focus,
+    textarea:invalid:focus,
+    select:invalid:focus {
+      border-color: rgb(248,66,66);
+      -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+      -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+    }
+
+/************************************
+          LOG IN FORM
+************************************/
+.login-form-header {
+      text-align: center;
+      font-size: 2.4em;
+      font-family: $headline-font;
+      font-weight: 400;
+      color: $alt-top-bg-color;
+      margin-bottom: 1em;
+}
+
+.login-container label, .weird {
+      text-align: center;
+      display: block;
+      color: $dark-header-color;
+}
+
+.login-form-error {
+      color: $button-bg-color;
+      font-size: 1em;
+      font-family: $maintext-font;
+      margin: 0 0 24px 0;
+      text-shadow: none;
+      text-align: center;
+      margin-top: 1em;
+}
+
+/*BUTTON DESIGN*/
+.login-button-container {
+      text-align: center;
+      display: block;
+      margin: 2em 0 2em;
+}
+
+.login-button {
+      background-color: $alt-top-bg-color;
+      border-radius: .25em;
+      color: white;
+      font-family: $headline-font;
+      font-size: .8em;
+      font-weight: bolder;
+      text-shadow: none;
+      border: none;
+      text-align: center;
+      padding: 1em 1.6em 1em;
+      text-transform: uppercase;
+}
+
+.login-button:hover {
+        background-color: #6fbaab;
+        color: white;
+        cursor: pointer;
+        text-shadow: none;
+        border: none;
+        transition: .6s;
+        -webkit-transition: .6s;
+}
+
+/*SECTION CONTAINER*/
+/*FORM*/
+.login-form {
+      display: block;
+      margin: 0 auto;
+      font-family: $headline-font;
+}
+
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      input[type="search"],
+      input[type="password"],
+      textarea {
+
+      background: white;
+      border: 1px solid rgb( 186, 186, 186 );
+      border-radius: 2px;
+      -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+      -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+      display: block;
+      font-family: $headline-font;
+      font-size: 1.1em;
+      margin: 6px auto 12px;
+      padding: 11px;
+      text-shadow: 0 1px 1px white;
+      width: 40%;
+
+      -webkit-transition: all 0.1s linear;
+      -moz-transition: all 0.1s linear;
+      -o-transition: all 0.1s linear;
+      transition: all 0.1s linear;
+}
+
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      input[type="number"]:focus,
+      input[type="search"]:focus,
+      input[type="password"]:focus,
+      textarea:focus,
+      select:focus {
+
+}
+
+      input[type="text"]:invalid:focus,
+      input[type="email"]:invalid:focus,
+      input[type="number"]:invalid:focus,
+      input[type="search"]:invalid:focus,
+      input[type="password"]:invalid:focus,
+      textarea:invalid:focus,
+      select:invalid:focus {
+        border-color: rgb(248,66,66);
+        -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+        -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+}
+
+
+
+
+
+
 
 
 /************************************
