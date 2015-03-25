@@ -145,6 +145,9 @@ GEM
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
+    paper_trail (4.0.0.beta2)
+      activerecord (>= 3.0, < 6.0)
+      activesupport (>= 3.0, < 6.0)
     paperclip (4.2.1)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -267,6 +270,7 @@ DEPENDENCIES
   neat
   omniauth
   omniauth-facebook
+  paper_trail (~> 4.0.0.beta)
   paperclip (~> 4.2)
   pg
   puma

@@ -8,7 +8,7 @@ class LessonsController < ApplicationController
 
   def show
     @star = Star.new
-    @documents = @lesson.documents
+    documents = @lesson.documents
     if current_user && Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
       @starred = true
     else

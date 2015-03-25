@@ -7,10 +7,14 @@
 <% end %>
 
 <div>
-<% @documents.each do |d| %>
-<%= link_to d do %>
-  <p><%= d.title %></p>
+  <% if @documents %>
+    <% @documents.each do |d| %>
+      <%= link_to d do %>
+      <p><%= d.title %></p>
+      <% end %>
+    <% end %>
   <% end %>
+</div>
 
 <h3>Uploaded Documents</h3>
 <% @uploaded_documents.each do |d| %>

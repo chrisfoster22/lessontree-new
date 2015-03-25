@@ -1,5 +1,6 @@
 class Document < ActiveRecord::Base
   belongs_to :lesson
+  has_paper_trail
 
   has_attached_file :upload
   validates_attachment :upload, content_type: { content_type: ["application/pdf",
