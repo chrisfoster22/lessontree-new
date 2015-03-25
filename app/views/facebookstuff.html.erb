@@ -1,0 +1,39 @@
+
+####basic fb synch####
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1600395123537999',
+      xfbml      : true,
+      version    : 'v2.2'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+########### like button  ####
+
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+
+
+####### APP ID #####
+1600395123537999
+#########
+
+####APP SECRET ####
+ace3527673025bea2a022c463a3d78a8
+#######

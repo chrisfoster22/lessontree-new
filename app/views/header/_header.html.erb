@@ -14,6 +14,7 @@
           <% else %>
             <%= link_to "Log In", new_user_session_path, :class => "nav-login" %>
             <%= link_to "Sign Up", users_sign_up_path, :class => "nav-signup" %>
+            <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
           <% end %>
       </ul>
     <div>
