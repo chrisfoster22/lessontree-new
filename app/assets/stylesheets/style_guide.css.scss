@@ -514,6 +514,19 @@ SAVE & EDIT BUTTON SIDE BY SIDE
 }
 
 /**********************************************
+SAVE & DELETE BUTTON SIDE BY SIDE
+**********************************************/
+.edit-save-buttons-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.edit-save-buttons-wrapper button {
+  margin: 0 .5em 0;
+}
+
+/**********************************************
 CREATE & UPLOAD BUTTON SIDE BY SIDE
 **********************************************/
 .create-upload-buttons-wrapper {
