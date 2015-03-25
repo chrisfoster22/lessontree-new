@@ -1,2 +1,2 @@
 <div><h3><%= @document.title %></h3></div>
-<div><%= link_to("Download Document", @document.upload.url) %></div>
+<div><%= link_to("Download Document", @document.upload.url) if @document.upload.url %></div>

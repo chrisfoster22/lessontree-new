@@ -1,6 +1,4 @@
 class Document < ActiveRecord::Base
-  # include PgSearch
-  # multisearchable :against => [:title, :content]
   belongs_to :lesson
 
   has_attached_file :upload
