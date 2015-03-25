@@ -13,11 +13,15 @@
 
 <h3>Created Documents</h3>
 <% @created_documents.each do |d| %>
-  <div><%= link_to "#{d.title}", d, id: "fancybox" %></div>
+  <div><%= link_to "#{d.title}", d, class: "fancybox", id: "#{d.id}", remote: true %></div>
 <% end %>
 
 
 <div class="edit-save-buttons-wrapper">
   <%= link_to 'Upload Lesson Document', "/documents/#{@lesson.id}/upload_file", class: 'edit-button' %>
   <%= link_to "Create Lesson Document", '/documents/new' + "?lesson_id=#{@lesson.id}", class: 'save-button' %>
+</div>
+
+<div style="display: none">
+    <div id="content-div">Some content here</div>
 </div>

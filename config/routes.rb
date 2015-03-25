@@ -17,7 +17,13 @@ Rails.application.routes.draw do
   resources :documents do
     member do
       get 'upload_file'
-      get 'document_frame'
+      get 'document_frame', to: 'documents#document_frame'
+    end
+  end
+
+  resources :lessons do
+    member do
+      get 'document_form/:id' => 'lessons#document_form'
     end
   end
 

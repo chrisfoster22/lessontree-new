@@ -52,6 +52,11 @@ class LessonsController < ApplicationController
     end
   end
 
+  def document_form
+    @lesson = Lesson.find_by(id: 111)
+    # render :layout => false
+  end
+
 private
 
   def lesson_params

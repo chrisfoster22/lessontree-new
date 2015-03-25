@@ -42,7 +42,9 @@ $(function() {
   });
 });
 
-$('#fancybox').fancybox({
+$('.fancybox').fancybox({
   type: 'ajax',
-  href: '/documents/111',
+  content: this.id,
+  parent: "body",
+  data: {document_id: this.id}
 })
