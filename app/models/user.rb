@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
   # before_action :authenticate_user!
   # user_signed_in?
   # current_user
-  has_many :plans
   has_many :lessons
   has_many :grade_levels, through: :lessons
   # Include default devise modules. Others available are:

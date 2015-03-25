@@ -90,15 +90,6 @@ ActiveRecord::Schema.define(version: 20150325152743) do
     t.datetime "updated_at"
   end
 
-  create_table "plans", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.integer  "user_id"
-    t.integer  "star_count"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "stars", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "lesson_id"

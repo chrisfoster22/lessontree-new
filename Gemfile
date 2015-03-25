@@ -22,17 +22,6 @@ gem 'puma'
 gem 'omniauth'
 gem 'omniauth-facebook' 
 
-# gem 'sunspot_rails'
-# gem 'sunspot_solr'
-# gem 'protected_attributes'
-
-# gem 'turbolinks'
-# gem 'therubyracer', platforms: :ruby
-# gem 'unicorn'
-# gem 'sqlite3'
-# gem 'turbolinks'
-# gem 'capistrano-rails', group: :development
-
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
