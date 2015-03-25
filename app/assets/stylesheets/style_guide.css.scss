@@ -276,6 +276,11 @@ h1 {
 }
 
 /****************************************
+SELECT DROPDOWN BUTTON
+****************************************/
+
+
+/****************************************
 HOMEPAGE LESSON PREVIEWS
 ****************************************/
 .lesson-preview-link {
@@ -684,9 +689,49 @@ SAVE & DELETE BUTTON SIDE BY SIDE
 }
 
 /***************************************
- -- START MY PROFILE PAGE --
+          PAGE HEADLINE
 ***************************************/
 
+.page-headline {
+  text-align: center;
+  font-size: 2.4em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: $alt-top-bg-color;
+  margin-bottom: 1em;
+}
+
+
+/***************************************
+          PAGE SUB HEADLINE
+***************************************/
+
+.page-sub-headline {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: $dark-header-color;
+  margin-bottom: 1em;
+}
+
+
+/***************************************
+             BODY TEXT
+***************************************/
+.body-text-container {
+  width: 60%;
+  max-width: 800px;
+  margin: 1em auto 2em;
+}
+
+.body-text {
+  font-size: 1.1em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: $dark-header-color;
+  line-height: 1.6em;
+}
 
 /***************************************
   MY PROFILE PERSONAL INFO
@@ -731,6 +776,7 @@ SAVE & DELETE BUTTON SIDE BY SIDE
 .profile-wrapper hr {
   border-top: 1px solid #ddd;
   border-bottom: #fff;
+  margin-bottom: 4em;
 }
 
 /***************************************
@@ -760,10 +806,6 @@ SAVE & DELETE BUTTON SIDE BY SIDE
 
 .user-profile-unique-information {
   margin-bottom: 2em;
-}
-
-.profile-wrapper hr {
-  width: 90%;
 }
 }
 
