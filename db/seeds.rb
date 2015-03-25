@@ -10,9 +10,7 @@
 
 document = Document.create!(title: "Learning the ABC's", content: "A, B, C, D, E, F, G... You know the rest of the song.", lesson_id: 1)
 
-lesson = Lesson.create!(topic: "American Revolution", description: "America fought and won...everything", user_id: 1, plan_id: 1, star_count: 1)
-
-plan = Plan.create!(title: "Plan for History 101", description: "History is great.", user_id: 1, star_count: 1)
+lesson = Lesson.create!(topic: "American Revolution", description: "America fought and won...everything", user_id: 1, star_count: 1)
 
 subject = Subject.create!(title: "History")
 
@@ -49,19 +47,9 @@ end
 @all_users = User.pluck(:id)
 
 100.times do
-  Plan.create!(title: Faker::Commerce.product_name,
-               description: Faker::Lorem.sentence,
-               user_id: @all_users.sample,
-               star_count: Faker::Number.digit)
-end
-
-@all_plans = Plan.pluck(:id)
-
-100.times do
   lesson = Lesson.create!(topic: Faker::Company.bs,
                  description: Faker::Lorem.sentences,
                  user_id: @all_users.sample,
-                 plan_id: @all_plans.sample,
                  star_count: Faker::Number.digit)
   grade_level_ids = GradeLevel.pluck(:id).sample((1..3).to_a.sample)
   grade_level_ids.each do |id|

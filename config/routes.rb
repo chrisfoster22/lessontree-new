@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :lessons
   resources :users
   resources :documents
-  resources :plans
   resources :stars
   get 'home/index'
   get 'home/about'
