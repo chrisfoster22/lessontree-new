@@ -438,6 +438,68 @@ HOMEPAGE LESSON PREVIEWS
   cursor: pointer;
 }
 
+/************************************
+            CREATE DOC BUTTON
+************************************/
+.create-button-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.create-button {
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $button-bg-color;
+  color: #fff;
+  border-radius: .25em;
+  padding: 1em 1.6em 1em;
+}
+
+.create-button:hover {
+  background: #ff6363;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+/************************************
+            UPLOAD BUTTON
+************************************/
+.upload-button-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.upload-button {
+  padding: 1em 2.7em 1em;
+
+}
+
+.upload-button {
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $alt-top-bg-color;
+  color: #fff;
+  border-radius: .25em;
+}
+
+.upload-button:hover {
+  background: #6fbaab;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
 /**********************************************
 SAVE & EDIT BUTTON SIDE BY SIDE
 **********************************************/
@@ -452,15 +514,15 @@ SAVE & EDIT BUTTON SIDE BY SIDE
 }
 
 /**********************************************
-SAVE & DELETE BUTTON SIDE BY SIDE
+CREATE & UPLOAD BUTTON SIDE BY SIDE
 **********************************************/
-.delete-save-buttons-wrapper {
+.create-upload-buttons-wrapper {
   display: block;
   text-align: center;
   margin: 2em 0 2em;
 }
 
-.delete-save-buttons-wrapper button {
+.create-upload-buttons-wrapper button {
   margin: 0 .5em 0;
 }
 
