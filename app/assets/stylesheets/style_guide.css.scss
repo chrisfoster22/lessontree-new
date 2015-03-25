@@ -534,6 +534,11 @@ SAVE & DELETE BUTTON SIDE BY SIDE
     font-family: $headline-font;
     font-size: 1.5em;
     margin-left: 3.7em;
+    .icon-star {
+      color: gold;
+      font-size: 1.5em;
+      display: inline;
+    }
 
     @include media($tab-mode) {
       @include inline-block;
@@ -586,7 +591,7 @@ SAVE & DELETE BUTTON SIDE BY SIDE
 }
 
 /************************************
-    SHOWING PLANS/LESSONS
+    SHOWING LESSONS/UNITS
 ************************************/
 .lesson-container {
   margin: 6em auto 3em;
