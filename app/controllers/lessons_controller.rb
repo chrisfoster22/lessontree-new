@@ -9,11 +9,6 @@ class LessonsController < ApplicationController
   def show
     @star = Star.new
     @documents = @lesson.documents
-    @plans = Plan.where(user_id: current_user)
-    @plan = @lesson.plan
-    if @plan
-      @default = @plan.id
-    end
     if current_user && Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
       @starred = true
     else
@@ -50,7 +45,7 @@ class LessonsController < ApplicationController
 private
 
   def lesson_params
-    params.require(:lesson).permit(:upload, :topic, :description, :id, :user_id, :plan_id)
+    params.require(:lesson).permit(:upload, :topic, :description, :id, :user_id)
   end
 
   def lesson_owner

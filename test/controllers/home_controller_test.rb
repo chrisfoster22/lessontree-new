@@ -7,10 +7,10 @@ class HomeControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should see plan preview cards on home page" do
+  test "should see lesson preview cards on home page" do
     get :index
     assert_response :success
-    page.has_link?('sign_up_button') 
+    page.has_link?('sign_up_button')
   end
 
 end
