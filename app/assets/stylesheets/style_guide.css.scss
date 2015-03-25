@@ -478,6 +478,7 @@ SAVE & DELETE BUTTON SIDE BY SIDE
   $dark-gray: #333 !default;
   $light-gray: #DDD !default;
   $medium-screen: em(640) !default;
+  $dark-header-color: #2e2e40;
   //////////////////////////////////////////////////////////////////////////////////
 
   $tab-border: 1px solid $base-border-color;
@@ -488,7 +489,7 @@ SAVE & DELETE BUTTON SIDE BY SIDE
   $tab-mode: $medium-screen;
 
   @include clearfix;
-  line-height: 1.5;
+  line-height: 1.4;
   margin-bottom: $base-spacing;
   padding: 0;
 
@@ -499,6 +500,7 @@ SAVE & DELETE BUTTON SIDE BY SIDE
 
   .tab-header-and-content {
     list-style: none;
+
 
     @include media($tab-mode) {
       display: inline;
@@ -524,11 +526,14 @@ SAVE & DELETE BUTTON SIDE BY SIDE
   .tab-link {
     background-color: $tab-inactive-color;
     border-top: $tab-border;
-    color: $dark-gray;
+    color: $dark-header-color;
     display: block;
     font-weight: bold;
     padding: $base-spacing/2 $gutter/2;
     text-decoration: none;
+    font-family: $headline-font;
+    font-size: 1.5em;
+    margin-left: 3.7em;
 
     @include media($tab-mode) {
       @include inline-block;
@@ -537,16 +542,19 @@ SAVE & DELETE BUTTON SIDE BY SIDE
       border-top: 0;
     }
 
+
     &:hover {
-      color: $base-link-color;
+      color: $top-bg-color;
     }
 
     &:focus {
       outline: none;
+
     }
 
     &.is-active {
       background-color: $tab-active-background;
+
 
       @include media($tab-mode) {
         background-color: $tab-active-background;
@@ -558,10 +566,14 @@ SAVE & DELETE BUTTON SIDE BY SIDE
   }
 
   .tab-content {
-    background: $tab-content-background;
+    background: $tab-content-background ;
     display: none;
     padding: $base-spacing $gutter;
     width: 100%;
+    font-family: $headline-font;
+    font-size: 1.1em;
+    padding: 2em 13em 2em 13em;
+
 
     @include media($tab-mode) {
       border-bottom-left-radius: $base-border-radius;
@@ -606,8 +618,9 @@ SAVE & DELETE BUTTON SIDE BY SIDE
   font-size: 1.5em;
   font-family: $headline-font;
   font-weight: 400;
-  color: #222;
+  color: $dark-header-color;
   margin: .3em .3em .5em 2em;
+
 }
 
 .lesson-subject-list {
@@ -629,14 +642,14 @@ SAVE & DELETE BUTTON SIDE BY SIDE
   font-size: 1em;
   font-family: $headline-font;
   font-weight: 400;
-  color: #222;
+  color: $dark-header-color;
 }
 
 .lesson-description {
   font-size: 1.1em;
   font-family: $headline-font;
   font-weight: 400;
-  color: #222;
+  color: $dark-header-color;
 }
 
 .star-ranking {
