@@ -173,6 +173,7 @@ h1 {
   text-shadow: -1px -1px $alt-gray-color;
   line-height: 1.2em;
   padding-top: .9em;
+  letter-spacing: .02em
 }
 
 .key-words {
@@ -206,7 +207,7 @@ h1 {
 .search-box-wrapper {
   display: block;
   text-align: center;
-  margin-top: 6.5em;
+  margin-top: 4.2em;
 }
 
 .inline-search-form {
@@ -217,7 +218,7 @@ h1 {
   display: inline-block;
   font-size: 1em;
   font-family: $headline-font;
-  width: 15em;
+  width: 18em;
   padding: .34em .4em .44em;
   border-top-left-radius: .25em;
   border-bottom-left-radius: .25em;
@@ -259,6 +260,7 @@ h1 {
     display: block;
     margin: 0 auto 0;
     text-align: center;
+    width: 15.1em;
     border-radius: .25em;
     margin-bottom: .25em;
 }
@@ -274,6 +276,96 @@ h1 {
 }
 
 /****************************************
+SELECT DROPDOWN BUTTON
+****************************************/
+.expander {
+  ///////////////////////////////////////////////////////////////////////////////////
+  $base-font-size: 1.2em !default;
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $base-accent-color: #fff !default;
+  $base-link-color: $base-accent-color !default;
+  $dark-gray: #333 !default;
+  $light-gray: #DDD !default;
+  $base-font-color: $dark-gray !default;
+  margin: 1em auto 0;
+  font-family: $headline-font;
+  font-size: 1.3em;
+  text-align: center;
+
+  p {
+    color: $base-font-color;
+    line-height: $base-line-height;
+  }
+
+  a {
+    color: $base-link-color;
+    text-decoration: none;
+  }
+  //////////////////////////////////////////////////////////////////////////////////
+
+  $expander-arrow-width: 0.7em;
+  $expander-toggle-size: 1em;
+  $expander-toggle-arrow-size: $expander-toggle-size;
+  $expander-toggle-margin: 1em;
+
+  width: 40%;
+
+  .expander-trigger {
+    @include user-select(none);
+    border-bottom: none;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto 0;
+    font-size: $expander-toggle-size;
+    margin-bottom: $expander-toggle-size;
+    padding-bottom: $expander-toggle-size / 4;
+
+    &:before {
+      font-size: $expander-arrow-width;
+      content: "\25BC";
+      margin-right: 0.5em;
+    }
+  }
+
+  .expander-hidden {
+    &:before {
+      font-size: $expander-arrow-width;
+      content: "\25BA";
+    }
+  }
+
+  .expander-hidden + .expander-content {
+    display: none;
+  }
+}
+
+.grades-select-menu-container {
+    display: inline-block;
+    float: right;
+    margin-right: 7em;
+}
+
+.subjects-select-menu-container {
+    display: inline-block;
+    float: left;
+    margin-left: 7em;
+}
+
+.select-menu {
+  display: block;
+  background: $alt-top-bg-color;
+  color: #fff;
+  font-family: $headline-font;
+  font-size: .75em;
+  width: 5em;
+  height: 2em;
+  border-radius: none;
+  border: none;
+  padding: 2em;
+}
+
+/****************************************
 HOMEPAGE LESSON PREVIEWS
 ****************************************/
 .lesson-preview-link {
@@ -284,13 +376,12 @@ HOMEPAGE LESSON PREVIEWS
   margin: 6em auto 3em;
   width: 45%;
   border: 1px solid #ddd;
-  background: #f7f7f7;
-  border-radius: 1px;
+  border-radius: 5px;
 }
 
 .lesson-preview-title-container {
   margin-bottom: .5em;
-  background: #ddd;
+  background: #eee;
   box-shadow: 0 2px 5px rgba(0,0,0,0.18);
   padding: .7em .7em .7em .9em;
 
@@ -356,8 +447,15 @@ HOMEPAGE LESSON PREVIEWS
 }
 
 .ranking {
-  display: inline;
-  padding-bottom: 1em;
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-25%);
+    font-family: 'Hind';
+    font-size: 1.2em;
+    margin-left: .25em;
+    color: #555;
+    letter-spacing: .1em;
 }
 
 .lesson-preview-description {
@@ -383,8 +481,12 @@ HOMEPAGE LESSON PREVIEWS
   background: $alt-top-bg-color;
   color: #fff;
   border-radius: .25em;
+<<<<<<< HEAD
   padding: 1em .8em 1em;
   text-decoration: none;
+=======
+  padding: 1em 1.6em 1em;
+>>>>>>> e81ada5ed8e97b1c541d0d95cc22c7be247273df
 }
 
 .save-button:hover {
@@ -397,13 +499,22 @@ HOMEPAGE LESSON PREVIEWS
 /************************************
             EDIT BUTTON
 ************************************/
-.edit-button-wrapper {
+.edit-button-wrapper, .delete-button-wrapper {
   display: block;
   text-align: center;
   margin: 2em 0 2em;
 }
 
 .edit-button {
+  padding: 1em 1.7em 1em;
+
+}
+
+.delete-button {
+  padding: 1em .9em 1em;
+}
+
+.edit-button, .delete-button {
   font-family: $headline-font;
   font-size: .8em;
   font-weight: bolder;
@@ -413,12 +524,77 @@ HOMEPAGE LESSON PREVIEWS
   background: $button-bg-color;
   color: #fff;
   border-radius: .25em;
+<<<<<<< HEAD
   padding: 1em;
   text-decoration: none;
+=======
+>>>>>>> e81ada5ed8e97b1c541d0d95cc22c7be247273df
 }
 
-.edit-button:hover {
+.edit-button:hover, .delete-button:hover {
   background: #ff6363;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+/************************************
+            CREATE DOC BUTTON
+************************************/
+.create-button-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.create-button {
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $button-bg-color;
+  color: #fff;
+  border-radius: .25em;
+  padding: 1em 1.6em 1em;
+}
+
+.create-button:hover {
+  background: #ff6363;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+/************************************
+            UPLOAD BUTTON
+************************************/
+.upload-button-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.upload-button {
+  padding: 1em 2.7em 1em;
+
+}
+
+.upload-button {
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $alt-top-bg-color;
+  color: #fff;
+  border-radius: .25em;
+}
+
+.upload-button:hover {
+  background: #6fbaab;
   -webkit-transition: .6s;
   transition: .6s;
   cursor: pointer;
@@ -436,6 +612,645 @@ SAVE & EDIT BUTTON SIDE BY SIDE
 .edit-save-buttons-wrapper button {
   margin: 0 .5em 0;
 }
+
+/**********************************************
+SAVE & DELETE BUTTON SIDE BY SIDE
+**********************************************/
+.edit-save-buttons-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.edit-save-buttons-wrapper button {
+  margin: 0 .5em 0;
+}
+
+/**********************************************
+CREATE & UPLOAD BUTTON SIDE BY SIDE
+**********************************************/
+.create-upload-buttons-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.create-upload-buttons-wrapper button {
+  margin: 0 .5em 0;
+}
+
+/************************************
+            SIGN UP BUTTON
+************************************/
+.signup-button-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.signup-button {
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $alt-top-bg-color;
+  color: #fff;
+  border-radius: .25em;
+  padding: 1em 1.6em 1em;
+}
+
+.signup-button:hover {
+  background: #6fbaab;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+
+/************************************
+    PROFILE PAGE, LESSONS & PLANS
+************************************/
+.accordion-tabs {
+  ///////////////////////////////////////////////////////////////////////////////////
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $base-spacing: 1.5em !default;
+  $base-accent-color: #477DCA !default;
+  $base-link-color: $base-accent-color !default;
+  $dark-gray: #333 !default;
+  $light-gray: #DDD !default;
+  $medium-screen: em(640) !default;
+  $dark-header-color: #2e2e40;
+  //////////////////////////////////////////////////////////////////////////////////
+
+  $tab-border: 1px solid $base-border-color;
+  $tab-content-background: lighten($light-gray, 10);
+  $tab-active-background: $tab-content-background;
+  $tab-inactive-color: $base-background-color;
+  $tab-inactive-hover-color: darken($light-gray, 5);
+  $tab-mode: $medium-screen;
+
+  @include clearfix;
+  line-height: 1.4;
+  margin-bottom: $base-spacing;
+  padding: 0;
+
+  @include media(max-width $tab-mode) {
+    border-radius: $base-border-radius;
+    border: $tab-border;
+  }
+
+  .tab-header-and-content {
+    list-style: none;
+
+
+    @include media($tab-mode) {
+      display: inline;
+    }
+
+    &:first-child .tab-link {
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+
+      @include media(max-width $tab-mode) {
+        border-top: 0;
+      }
+    }
+
+    &:last-child .tab-link {
+      @include media(max-width $tab-mode) {
+        border-bottom-left-radius: $base-border-radius;
+        border-bottom-right-radius: $base-border-radius;
+      }
+    }
+  }
+
+  .tab-link {
+    background-color: $tab-inactive-color;
+    border-top: $tab-border;
+    color: $dark-header-color;
+    display: block;
+    font-weight: bold;
+    padding: $base-spacing/2 $gutter/2;
+    text-decoration: none;
+    font-family: $headline-font;
+    font-size: 1.5em;
+    margin-left: 3.7em;
+    .icon-star {
+      color: gold;
+      font-size: 1.5em;
+      display: inline;
+    }
+
+    @include media($tab-mode) {
+      @include inline-block;
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+      border-top: 0;
+    }
+
+
+    &:hover {
+      color: $top-bg-color;
+    }
+
+    &:focus {
+      outline: none;
+
+    }
+
+    &.is-active {
+      background-color: $tab-active-background;
+
+
+      @include media($tab-mode) {
+        background-color: $tab-active-background;
+        border: $tab-border;
+        border-bottom-color: $tab-active-background;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  .tab-content {
+    background: $tab-content-background ;
+    display: none;
+    padding: $base-spacing $gutter;
+    width: 100%;
+    font-family: $headline-font;
+    font-size: 1.1em;
+    padding: 2em 13em 2em 13em;
+
+
+    @include media($tab-mode) {
+      border-bottom-left-radius: $base-border-radius;
+      border-bottom-right-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+      border: $tab-border;
+      float: left;
+    }
+  }
+}
+
+/************************************
+    SHOWING LESSONS/UNITS
+************************************/
+.lesson-container {
+  margin: 6em auto 3em;
+  width: 45%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.lesson-title-container {
+  margin-bottom: .5em;
+  background: #eee;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.18);
+  padding: .7em .7em .7em .9em;
+}
+
+.lesson-title {
+  font-size: 1.75em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: #222;
+  margin-bottom: .3em;
+}
+
+.lesson-subject-container {
+  padding: .5em .5em .5em 1em;
+}
+
+.lesson-subject {
+  font-size: 1.5em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: $dark-header-color;
+  margin: .3em .3em .5em 2em;
+
+}
+
+.lesson-subject-list {
+  margin-right: .75em;
+  font-size: 1.1em;
+}
+
+.lesson-grade-list {
+  padding-left: .75em;
+  font-size: 1.1em;
+}
+
+.lesson-description-container {
+  padding: 1em;
+}
+
+.lesson-subject-list, .lesson-pipe, .lesson-grade-list,  {
+  display: inline;
+  font-size: 1em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: $dark-header-color;
+}
+
+.lesson-description {
+  font-size: 1.1em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: $dark-header-color;
+}
+
+.star-ranking {
+  vertical-align: text-baseline;
+}
+
+.icon-star {
+  color: gold;
+  font-size: 1.5em;
+  display: inline;
+}
+
+.ranking {
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-25%);
+  font-family: 'Hind';
+  font-size: 1.2em;
+  margin-left: .25em;
+  color: #555;
+  letter-spacing: .1em;
+}
+
+.lesson-description {
+  line-height: 1.4em;
+}
+
+/***************************************
+          PAGE HEADLINE
+***************************************/
+
+.page-headline {
+  text-align: center;
+  font-size: 2.4em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: $alt-top-bg-color;
+  margin-bottom: 1em;
+}
+
+
+/***************************************
+          PAGE SUB HEADLINE
+***************************************/
+
+.page-sub-headline {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: $dark-header-color;
+  margin-bottom: 1em;
+}
+
+
+/***************************************
+             BODY TEXT
+***************************************/
+.body-text-container {
+  width: 60%;
+  max-width: 800px;
+  margin: 1em auto 2em;
+}
+
+.body-text {
+  font-size: 1.1em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: $dark-header-color;
+  line-height: 1.6em;
+}
+
+/***************************************
+  MY PROFILE PERSONAL INFO
+***************************************/
+.profile-wrapper {
+  margin: 0 auto;
+  width: 90%;
+  padding: 3em 0 3em;
+}
+
+.user-profile-photo-wrapper {
+  float: left;
+  margin-left: 5em;
+  margin-right: 3em;
+}
+
+.user-profile-photo-wrapper img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 3em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.18)
+}
+
+.user-profile-information-wrapper-right {
+  margin-left: 10em;
+}
+
+.user-profile-unique-information {
+  font-family: 'Hind';
+  font-weight: 400;
+  color: #333;
+  font-size: 1.1em;
+  letter-spacing: .02em;
+  margin-bottom: 3.9em;
+}
+
+.user-profile-unique-information li {
+  margin-bottom: .65em;
+}
+
+.profile-wrapper hr {
+  border-top: 1px solid #ddd;
+  border-bottom: #fff;
+  margin-bottom: 4em;
+}
+
+/***************************************
+  MY PROFILE PERSONAL INFO
+         MEDIA QUERY
+***************************************/
+@media screen and (max-width: 550px) {
+  .profile-wrapper  {
+    width: 100%;
+    display: block;
+}
+
+.user-profile-photo-wrapper {
+  display: block;
+  text-align: center;
+  margin: 0 auto 0;
+}
+
+.user-profile-photo-wrapper img {
+  margin-bottom: 0 0 1em 0;
+}
+
+.user-profile-information-wrapper-right {
+  margin: 0 auto 0;
+  display: block;
+}
+
+.user-profile-unique-information {
+  margin-bottom: 2em;
+}
+}
+
+/************************************
+              SIGN UP FORM
+************************************/
+.signup-form-header {
+  text-align: center;
+  font-size: 2.4em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: $alt-top-bg-color;
+  margin-bottom: 1em;
+}
+
+
+.signup-container label, .weird {
+  text-align: center;
+  display: block;
+  color: $dark-header-color;
+}
+
+
+.signup-form-error {
+  color: $button-bg-color;
+  font-size: 1em;
+  font-family: $maintext-font;
+  margin: 0 0 24px 0;
+  text-shadow: none;
+  text-align: center;
+  margin-top: 1em;
+}
+
+/*BUTTON DESIGN*/
+.signup-button-container {
+  text-align: center;
+  display: block;
+  margin: 2em 0 2em;
+}
+
+.signup-button {
+  background-color: $alt-top-bg-color;
+  border-radius: .25em;
+  color: white;
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  text-shadow: none;
+  border: none;
+  text-align: center;
+  padding: 1em 1.6em 1em;
+  text-transform: uppercase;
+}
+
+.signup-button:hover {
+    background-color: #6fbaab;
+    color: white;
+    cursor: pointer;
+    text-shadow: none;
+    border: none;
+    transition: .6s;
+    -webkit-transition: .6s;
+}
+
+/*SECTION CONTAINER*/
+/*FORM*/
+.signup-form {
+  display: block;
+  margin: 0 auto;
+  font-family: $headline-font;
+}
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="password"],
+  textarea {
+
+    background: white;
+    border: 1px solid rgb( 186, 186, 186 );
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+    display: block;
+    font-family: $headline-font;
+    font-size: 1.1em;
+    margin: 6px auto 12px;
+    padding: 11px;
+    text-shadow: 0 1px 1px white;
+    width: 40%;
+
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+      transition: all 0.1s linear;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  input[type="password"]:focus,
+  textarea:focus,
+  select:focus {
+
+  }
+
+    input[type="text"]:invalid:focus,
+    input[type="email"]:invalid:focus,
+    input[type="number"]:invalid:focus,
+    input[type="search"]:invalid:focus,
+    input[type="password"]:invalid:focus,
+    textarea:invalid:focus,
+    select:invalid:focus {
+      border-color: rgb(248,66,66);
+      -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+      -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+    }
+
+/************************************
+          LOG IN FORM
+************************************/
+.login-form-header {
+      text-align: center;
+      font-size: 2.4em;
+      font-family: $headline-font;
+      font-weight: 400;
+      color: $alt-top-bg-color;
+      margin-bottom: 1em;
+}
+
+.login-container label, .weird {
+      text-align: center;
+      display: block;
+      color: $dark-header-color;
+}
+
+.login-form-error {
+      color: $button-bg-color;
+      font-size: 1em;
+      font-family: $maintext-font;
+      margin: 0 0 24px 0;
+      text-shadow: none;
+      text-align: center;
+      margin-top: 1em;
+}
+
+/*BUTTON DESIGN*/
+.login-button-container {
+      text-align: center;
+      display: block;
+      margin: 2em 0 2em;
+}
+
+.login-button {
+      background-color: $alt-top-bg-color;
+      border-radius: .25em;
+      color: white;
+      font-family: $headline-font;
+      font-size: .8em;
+      font-weight: bolder;
+      text-shadow: none;
+      border: none;
+      text-align: center;
+      padding: 1em 1.6em 1em;
+      text-transform: uppercase;
+}
+
+.login-button:hover {
+        background-color: #6fbaab;
+        color: white;
+        cursor: pointer;
+        text-shadow: none;
+        border: none;
+        transition: .6s;
+        -webkit-transition: .6s;
+}
+
+/*SECTION CONTAINER*/
+/*FORM*/
+.login-form {
+      display: block;
+      margin: 0 auto;
+      font-family: $headline-font;
+}
+
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      input[type="search"],
+      input[type="password"],
+      textarea {
+
+      background: white;
+      border: 1px solid rgb( 186, 186, 186 );
+      border-radius: 2px;
+      -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+      -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+      display: block;
+      font-family: $headline-font;
+      font-size: 1.1em;
+      margin: 6px auto 12px;
+      padding: 11px;
+      text-shadow: 0 1px 1px white;
+      width: 40%;
+
+      -webkit-transition: all 0.1s linear;
+      -moz-transition: all 0.1s linear;
+      -o-transition: all 0.1s linear;
+      transition: all 0.1s linear;
+}
+
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      input[type="number"]:focus,
+      input[type="search"]:focus,
+      input[type="password"]:focus,
+      textarea:focus,
+      select:focus {
+
+}
+
+      input[type="text"]:invalid:focus,
+      input[type="email"]:invalid:focus,
+      input[type="number"]:invalid:focus,
+      input[type="search"]:invalid:focus,
+      input[type="password"]:invalid:focus,
+      textarea:invalid:focus,
+      select:invalid:focus {
+        border-color: rgb(248,66,66);
+        -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+        -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+}
+
+
+
+
+
+
+
 
 /************************************
               FOOTER
@@ -530,6 +1345,7 @@ footer {
   transition: .4s;
   cursor: pointer;
 }
+
 
 /************************************
     FOOTER MEDIA QUERY
