@@ -38,6 +38,14 @@ GradeLevel.all.each do |u|
   @all_grades << u.id
 end
 
+<<<<<<< HEAD
+@all_subjects = []
+Subject.all.each do |u|
+  @all_grades << u.id
+end
+
+=======
+>>>>>>> e0fcdc5ac940715ce30833eb941b54fb1960c380
 100.times do
   User.create!(name: Faker::Name.name,
               email: Faker::Internet.email,
@@ -75,6 +83,10 @@ end
   grade_level_ids = GradeLevel.pluck(:id).sample((1..3).to_a.sample)
   grade_level_ids.each do |id|
     lesson.lesson_grade_levels.create!(grade_level_id: id)
+  end
+  subject_ids = Subject.pluck(:id).sample((1..3).to_a.sample)
+  subject_ids.each do |id|
+    lesson.lesson_subjects.create!(subject_id: id)
   end
 end
 
