@@ -39,6 +39,7 @@ $(function() {
   var WhereToMove = $("#steady_scroll").position().top;
     $("html,body").animate({scrollTop: WhereToMove }, 300);
   });
+});
 
 $(document).ready(function () {
     $('.accordion-tabs').each(function(index) {
