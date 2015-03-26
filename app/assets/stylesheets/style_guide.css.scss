@@ -6,26 +6,28 @@ $maintext-font: 'Merriweather', serif;
 $cursive-font: 'Dancing Script', cursive;
 
 
-//light green
+// LIGHT GREEN
 $top-bg-color: #b6ded4;
 
-//deeper green in case we need it
+// DEEP GREEN & GREEN ON HOVER
 $alt-top-bg-color: #65a397;
+$alt-top-bg-hover:#6fbaab;
 
-//faded red color
+// RED & RED ON HOVER
 $button-bg-color: #d95353;
+$button-bg-hover: #ff6363;
 
-//light gray color
+// LIGHT GRAYS
 $text-button-color: #e8e3e6;
 $header-texts-color: #e8e3e6;
 
-//dark gray color
+// DARK GRAY
 $logo-color: #bab4b3;
 
-//navy color
+// NAVY
 $dark-header-color: #2e2e40;
 
-//text-shadow for <h1>
+// TEXT SHADOW
 $alt-gray-color: #a6a6b0;
 
 
@@ -164,8 +166,6 @@ list-style: none;
   padding-bottom: 6em;
 }
 
-
-
 h1 {
   font-family: $headline-font;
   font-size: 5.3em;
@@ -182,8 +182,6 @@ h1 {
   text-shadow: -1px -1px $alt-gray-color;
   font-size: 45px;
 }
-
-
 
 /************************************
          HERO HOMEPAGE MEDIA QUERY
@@ -245,7 +243,7 @@ h1 {
 }
 
 .inline-search-button:hover {
-  background: #6fbaab;
+  background: $alt-top-bg-hover;
   -webkit-transition: .6s;
   transition: .6s;
   cursor: pointer;
@@ -340,25 +338,23 @@ SELECT DROPDOWN BUTTON
   }
 }
 
-.grades-select-menu-container {
-    display: inline-block;
-    float: right;
-    margin-right: 7em;
+.expander {
+  position: relative;
 }
 
-.subjects-select-menu-container {
+.grades-select-menu-container, .subjects-select-menu-container {
+    text-align: center;
     display: inline-block;
-    float: left;
-    margin-left: 7em;
 }
 
 .select-menu {
   display: block;
+  text-transform: uppercase;
   background: $alt-top-bg-color;
   color: #fff;
   font-family: $headline-font;
   font-size: .75em;
-  width: 5em;
+  width: 5.75em;
   height: 2em;
   border-radius: none;
   border: none;
@@ -472,6 +468,7 @@ HOMEPAGE LESSON PREVIEWS
 }
 
 .save-button {
+  margin: 0 .5em 0;
   font-family: $headline-font;
   font-size: .8em;
   font-weight: bolder;
@@ -485,7 +482,7 @@ HOMEPAGE LESSON PREVIEWS
 }
 
 .save-button:hover {
-  background: #6fbaab;
+  background: $alt-top-bg-hover;
   -webkit-transition: .6s;
   transition: .6s;
   cursor: pointer;
@@ -502,7 +499,6 @@ HOMEPAGE LESSON PREVIEWS
 
 .edit-button {
   padding: 1em 1.7em 1em;
-
 }
 
 .delete-button {
@@ -522,14 +518,14 @@ HOMEPAGE LESSON PREVIEWS
 }
 
 .edit-button:hover, .delete-button:hover {
-  background: #ff6363;
+  background: $button-bg-hover;
   -webkit-transition: .6s;
   transition: .6s;
   cursor: pointer;
 }
 
 /************************************
-            CREATE DOC BUTTON
+      CREATE DOC BUTTON
 ************************************/
 .create-button-wrapper {
   display: block;
@@ -551,14 +547,14 @@ HOMEPAGE LESSON PREVIEWS
 }
 
 .create-button:hover {
-  background: #ff6363;
+  background: $button-bg-hover;
   -webkit-transition: .6s;
   transition: .6s;
   cursor: pointer;
 }
 
 /************************************
-            UPLOAD BUTTON
+          UPLOAD BUTTON
 ************************************/
 .upload-button-wrapper {
   display: block;
@@ -568,7 +564,6 @@ HOMEPAGE LESSON PREVIEWS
 
 .upload-button {
   padding: 1em 2.7em 1em;
-
 }
 
 .upload-button {
@@ -584,14 +579,14 @@ HOMEPAGE LESSON PREVIEWS
 }
 
 .upload-button:hover {
-  background: #6fbaab;
+  background: $alt-top-bg-hover;
   -webkit-transition: .6s;
   transition: .6s;
   cursor: pointer;
 }
 
 /**********************************************
-SAVE & EDIT BUTTON SIDE BY SIDE
+ SAVE & EDIT BUTTON SIDE BY SIDE
 **********************************************/
 .edit-save-buttons-wrapper {
   display: block;
@@ -606,13 +601,13 @@ SAVE & EDIT BUTTON SIDE BY SIDE
 /**********************************************
 SAVE & DELETE BUTTON SIDE BY SIDE
 **********************************************/
-.edit-save-buttons-wrapper {
+.delete-save-buttons-wrapper {
   display: block;
   text-align: center;
   margin: 2em 0 2em;
 }
 
-.edit-save-buttons-wrapper button {
+.delete-button {
   margin: 0 .5em 0;
 }
 
@@ -652,7 +647,7 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
 }
 
 .signup-button:hover {
-  background: #6fbaab;
+  background: $alt-top-bg-hover;
   -webkit-transition: .6s;
   transition: .6s;
   cursor: pointer;
@@ -881,21 +876,47 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
 /***************************************
           PAGE HEADLINE
 ***************************************/
-
 .page-headline {
   text-align: center;
   font-size: 2.4em;
   font-family: $headline-font;
   font-weight: 400;
   color: $alt-top-bg-color;
-  margin-bottom: 1em;
+  margin-bottom: .25em;
 }
 
+.page-headline-rule-first {
+  border-bottom: 1px solid #eee;
+  width: 25%;
+  margin: 0 auto 0;
+}
+
+.page-headline-rule-container {
+  position: relative;
+  margin: 0 auto 0;
+  padding-top: .2em;
+}
+
+.page-headline-rule-first {
+  margin-bottom: 3em;
+}
+
+.page-headline-triangle {
+  position: absolute;
+  right: 50%;
+  transform: translate(50%);
+  top: 0;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 8px 0 8px;
+  border-color: #ccc transparent transparent transparent;
+}
 
 /***************************************
           PAGE SUB HEADLINE
 ***************************************/
-
 .page-sub-headline {
   text-align: center;
   font-size: 1.8em;
@@ -957,6 +978,13 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
   font-size: 1.1em;
   letter-spacing: .02em;
   margin-bottom: 3.9em;
+}
+
+.profile-page-user-labels {
+  font-family: 'Hind';
+  font-weight: bolder;
+  color: #333;
+  font-size: 1.1em;
 }
 
 .user-profile-unique-information li {
@@ -1051,7 +1079,7 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
 }
 
 .signup-button:hover {
-    background-color: #6fbaab;
+    background-color: $alt-top-bg-hover;
     color: white;
     cursor: pointer;
     text-shadow: none;
@@ -1168,7 +1196,7 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
 }
 
 .login-button:hover {
-        background-color: #6fbaab;
+        background-color: $alt-top-bg-hover;
         color: white;
         cursor: pointer;
         text-shadow: none;
