@@ -1,6 +1,7 @@
 class DocumentsController < ApplicationController
-  before_action :set_document, only: [:edit, :show, :update, :destroy, :document_frame]
-  before_action :set_lesson_id, only: [:new, :upload_file]
+
+  before_action :set_document, only: [:edit, :show, :update,
+        :destroy, :document_frame, :version_history]
   attr_accessor :title, :description
 
   def index
@@ -47,7 +48,15 @@ class DocumentsController < ApplicationController
     redirect_to lesson_path(lesson_id)
   end
 
-private
+  def document_frame
+    @lesson = Lesson.find_by(id: params[:id])
+    # render :layout => false
+  end
+
+  def version_history
+  end
+
+  private
 
   def document_params
     params.require(:document).permit(:title, :content, :user_id, :lesson_id, :upload)
@@ -58,7 +67,4 @@ private
     redirect_to root_path if @document.nil?
   end
 
-  def set_lesson_id
-    @lesson_id = Lesson.find(params[:id]).id
-  end
 end
