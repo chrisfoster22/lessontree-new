@@ -7,7 +7,6 @@ class LessonsController < ApplicationController
   end
 
   def show
-    @lesson = Lesson.find_by(id: 102)
     @star = Star.new
     @document = Document.find(params[:id])
     documents = @lesson.documents

@@ -7,7 +7,6 @@ class DocumentsController < ApplicationController
   end
 
   def show
-    @document = Document.find_by(id: 111)
     @lesson = @document.lesson
     # respond_to do |format|
     #   format.html
@@ -55,11 +54,6 @@ class DocumentsController < ApplicationController
     redirect_to lesson_path(lesson_id)
   end
 
-  def document_frame
-    @lesson = Lesson.find_by(id: params[:id])
-    # render :layout => false
-  end
-
 private
 
   def document_params
@@ -67,7 +61,7 @@ private
   end
 
   def set_document
-    @document = Document.find_by(id: 111)
+    @document = Document.find_by(id: params[:id])
     redirect_to root_path if @document.nil?
   end
 
