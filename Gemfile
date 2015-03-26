@@ -7,8 +7,8 @@ gem 'bourbon'
 gem 'neat'
 gem 'pg'
 gem 'devise'
-gem "paperclip", "~> 4.2"
-gem 'aws-sdk', "< 2.0"
+gem 'paperclip', '~> 4.2'
+gem 'aws-sdk', '< 2.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -23,17 +23,9 @@ gem 'wkhtmltopdf-binary'
 gem 'puma'
 gem 'fancybox2-rails', '~> 0.2.8'
 
-
-# gem 'sunspot_rails'
-# gem 'sunspot_solr'
-# gem 'protected_attributes'
-
-# gem 'turbolinks'
-# gem 'therubyracer', platforms: :ruby
-# gem 'unicorn'
-# gem 'sqlite3'
-# gem 'turbolinks'
-# gem 'capistrano-rails', group: :development
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'paper_trail', '~> 4.0.0.beta'
 
 group :development, :test do
   gem 'byebug'
@@ -44,4 +36,5 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'pry-nav'
 end

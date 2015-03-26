@@ -1,22 +1,12 @@
-
-.signup-container h2 {
+.signup-form-header {
+  text-align: center;
+  font-size: 2.4em;
   font-family: $headline-font;
-  font-size: 1.25em;
-  text-shadow: none;
-  color: $button-bg-color;
+  font-weight: 400;
+  color: $alt-top-bg-color;
+  margin-bottom: 1em;
 }
 
-li {
-  list-style-type: none;
-}
-
-.signup-container {
- width: 60%;
- margin: 0 auto 1em;
- padding: 2em;
- border-radius: .25em;
- font-family: Arial;
-}
 
 .signup-container label, .weird {
   text-align: center;
@@ -24,16 +14,6 @@ li {
   color: $dark-header-color;
 }
 
-.signup-form-header h2 {
-  color: $dark-header-color;
-  font-size: 2em;
-  font-family: $headline-font;
-  margin: 0 0 24px 0;
-  text-shadow: none;
-  text-align: center;
-  padding: 1em;
-  border-bottom: 1px dashed #ccc;
-}
 
 .signup-form-error {
   color: $button-bg-color;
@@ -45,32 +25,15 @@ li {
   margin-top: 1em;
 }
 
-
 /*BUTTON DESIGN*/
-.signup-button {
-  border: none;
-  border-radius: .25em;
-  color: #fff;
-  font: -webkit-small-control;
-  letter-spacing: 1.2px;
-  line-height: 140%;
-  padding: 12px 22px;
-  text-decoration: none;
-  text-transform: uppercase;
-
-  -webkit-transition: all 0.1s linear;
-     -moz-transition: all 0.1s linear;
-       -o-transition: all 0.1s linear;
-        transition: all 0.1s linear;
-}
-
 .signup-button-container {
   text-align: center;
-  margin: 0 auto 0;
+  display: block;
+  margin: 2em 0 2em;
 }
 
 .signup-button {
-  background-color: #65a397;
+  background-color: $alt-top-bg-color;
   border-radius: .25em;
   color: white;
   font-family: $headline-font;
@@ -78,20 +41,22 @@ li {
   font-weight: bolder;
   text-shadow: none;
   border: none;
+  text-align: center;
+  padding: 1em 1.6em 1em;
+  text-transform: uppercase;
 }
 
 .signup-button:hover {
-    background-color:  #6fbaab;
+    background-color: #6fbaab;
     color: white;
     cursor: pointer;
     text-shadow: none;
     border: none;
-  }
-
+    transition: .6s;
+    -webkit-transition: .6s;
+}
 
 /*SECTION CONTAINER*/
-
-
 /*FORM*/
 .signup-form {
   display: block;
@@ -114,11 +79,11 @@ li {
       box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
     display: block;
     font-family: $headline-font;
-    font-size: 14px;
+    font-size: 1.1em;
     margin: 6px auto 12px;
-    padding: 8px;
+    padding: 11px;
     text-shadow: 0 1px 1px white;
-    width: 70%;
+    width: 40%;
 
     -webkit-transition: all 0.1s linear;
     -moz-transition: all 0.1s linear;

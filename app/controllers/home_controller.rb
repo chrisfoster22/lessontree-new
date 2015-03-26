@@ -1,11 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    if params[:search]
-      @lessons = Lesson.search(params[:subject_id], params[:grade_level_id], params[:search]).reverse.first(9)
-    else
-      @lessons = Lesson.all.order(:updated_at).reverse.first(9)
-    end
+    @lessons = Lesson.query(params).order(:updated_at).reverse.first(9)
   end
 end
       # filtered_lessons = []
