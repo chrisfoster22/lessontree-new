@@ -285,11 +285,9 @@
 	<h2 class="login-form-header">Log In</h2>
 	<form class="login-form" method="post" class="minimal">
 		<label for="username">
-
       <input type="text" name="username" id="username" placeholder="Username" />
 		</label>
 		<label for="password">
-
       <input type="password" name="password" id="password" placeholder="Password" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required">
 		</label>
     <div class="login-button-container">
@@ -297,6 +295,21 @@
 	</div>
   </form>
 </section>
+
+<!-- NEW UPLOAD FORM -->
+<section class="new-upload-container">
+	<h2 class="new-upload-header">New Upload</h2>
+	<form class="new-upload-form" method="post" class="minimal">
+		<label for="title">
+      <input type="text" name="title" id="title" placeholder="Title" />
+		</label>
+    <div class="create-upload-buttons-wrapper">
+      <button class="upload-button" type="button">Upload</button>
+      <button class="create-button" type="button">Create Doc</button>
+    </div>
+  </form>
+</section>
+
 
 <!-- FOOTER-->
 <footer>
