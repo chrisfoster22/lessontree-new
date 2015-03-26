@@ -1,18 +1,16 @@
 <h2>Following:</h2>
-<ul>
-  <% for friendship in @user.friendships %>
-    <li>
-      <%=h friendship.friend.username %>
-      (<%= link_to "remove", friendship, :method => :delete %>)
-    </li>
-  <% end %>
-</ul>
-
-<p><%= link_to "Find Followers", users_all_users_path %></p>
+  <ul>
+    <% for friendship in @user.friendships %>
+      <li>
+        <%=h friendship.friend.name %>
+        (<%= link_to "Stop following", friendship, :method => :delete %>)
+      </li>
+    <% end %>
+  </ul>
 
 <h2>Followers:</h2>
-<ul>
-  <% for user in @user.inverse_friends %>
-    <li><%=h user.username %></li>
-  <% end %>
-</ul>
+  <ul>
+    <% for user in @user.inverse_friends %>
+      <li><%=h user.name %></li>
+    <% end %>
+  </ul>

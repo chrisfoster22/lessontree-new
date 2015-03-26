@@ -1,7 +1,7 @@
 <section class="profile-wrapper">
 
   <aside class="user-profile-photo-wrapper">
-    <%= image_tag @user.avatar.url, class: "user-profile-photo" %>
+    <%= image_tag @user.avatar.url, class: "user-profile-photo" if @user %>
   </aside>
 
   <aside class="user-profile-information-wrapper-right">
@@ -11,14 +11,13 @@
       <li><strong>My School Name:</strong>&nbsp&nbsp<%= @user.school %></li>
       <li><strong>School City:</strong>&nbsp&nbsp<%= @user.city %></li>
       <li><strong>School State:</strong>&nbsp&nbsp<%= @user.state %></li>
+      <li><%= render 'followers_show' %></li>
+      <li><%= button_to "Follow", friendships_path(:friend_id => @user), :method => :post %></li>
     </ul>
   </aside>
 </section>
 
-<div class="followers_and_following"
-<br><%= render 'followers_show' %></br>
-<%= link_to "Follow Me", friendships_path(:friend_id => @user), :method => :post %>
-</div>
+<p><%= button_to "Find more users to follow", all_users_users_path, :method => 'get' %></p>
 
 <br><% @user.lessons.each do |l| %>
 <%= link_to l, class:"my-lessons-container-link" do %>

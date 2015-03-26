@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   # devise_for :users, :controllers => { :registrations => 'users/registrations' }
   devise_for :users, :controllers => { :omniauth_callbacks => 'omniauth_callbacks' }
-  resources :users
   resources :documents
   resources :friendships
   resources :stars
@@ -40,8 +39,8 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    member do
-      get 'all_users', to: 'users#all_users'
+    collection do
+      get 'all_users'
     end
   end
 
