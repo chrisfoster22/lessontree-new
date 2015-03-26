@@ -8,7 +8,6 @@ class DocumentsController < ApplicationController
   end
 
   def show
-    @document = Document.find_by(id: 111)
     @lesson = @document.lesson
     # respond_to do |format|
     #   format.html
@@ -64,15 +63,14 @@ class DocumentsController < ApplicationController
   def version_history
   end
 
-private
+  private
 
   def document_params
     params.require(:document).permit(:title, :content, :user_id, :lesson_id, :upload)
   end
 
   def set_document
-    @document = Document.find_by_id(params[:id])
+    @document = Document.find_by_id(id: params[:id])
     redirect_to root_path if @document.nil?
   end
-
 end
