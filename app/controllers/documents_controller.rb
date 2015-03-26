@@ -24,6 +24,15 @@ class DocumentsController < ApplicationController
     end
   end
 
+  def create_from_upload
+    @document = Document.create(document_params)
+    if @document.save
+      redirect_to @document.lesson, notice: "The document has been successfully created."
+    else
+      render action: "upload_file"
+    end
+  end
+
   def edit
   end
 
@@ -37,7 +46,7 @@ class DocumentsController < ApplicationController
 
   def upload_file
     @document = Document.new
-    @lesson_id = @lesson.id
+    @lesson_id = params[:lesson_id]
     render layout: false
   end
 

@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
     collection do
       get 'upload_file'
+      post 'create_from_upload'
     end
 
     resources :versions, only: [:destroy] do
