@@ -38,6 +38,7 @@ class DocumentsController < ApplicationController
 
   def upload_file
     @document = Document.new
+    render layout: false
   end
 
   def destroy
