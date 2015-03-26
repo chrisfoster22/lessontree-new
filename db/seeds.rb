@@ -14,6 +14,7 @@ lesson = Lesson.create!(topic: "American Revolution", description: "America foug
 
 subject = Subject.create!(title: "History")
 
+GradeLevel.create!(title: "Kindergarten")
 GradeLevel.create!(title: "1st Grade")
 GradeLevel.create!(title: "2nd Grade")
 GradeLevel.create!(title: "3rd Grade")
