@@ -20,8 +20,8 @@
 <% end %>
 
 <div class="edit-save-buttons-wrapper">
-  <%= link_to 'Upload Lesson Document', "/documents/#{@lesson.id}/upload_file", class: 'fancybox' %>
-  <%= link_to "Create Lesson Document", '/documents/new' + "?lesson_id=#{@lesson.id}", class: 'save-button' %>
+  <%= link_to 'Upload Lesson Document', upload_file_documents_path(lesson_id: @lesson.id), class: 'fancybox' %>
+  <%= link_to "Create Lesson Document", new_document_path(lesson_id: @lesson.id), class: 'save-button' %>
 </div>
 
 <div style="display: none">
