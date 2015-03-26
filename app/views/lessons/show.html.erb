@@ -8,12 +8,12 @@
 
 <h3>Uploaded Documents</h3>
 <% @uploaded_documents.each do |d| %>
-  <div><%= link_to("#{d.title}", d.upload.url) %></div>
+  <div><%= link_to "#{d.title}", "https://isotropic.org/papers/chicken.pdf", class: "fancybox", id: "#{d.id}", remote: true %></div>
 <% end %>
 
 <h3>Created Documents</h3>
 <% @created_documents.each do |d| %>
-  <div><%= link_to "#{d.title}", '/lessons/111/document_form', class: "fancybox", id: "#{d.id}", remote: true %></div>
+  <div><%= link_to "#{d.title}", "/lessons/#{d.id}/document_form", class: "fancybox", id: "#{d.id}", remote: true %></div>
 <% end %>
 
 <div class="edit-save-buttons-wrapper">
