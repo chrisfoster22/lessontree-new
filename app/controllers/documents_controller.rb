@@ -9,13 +9,6 @@ class DocumentsController < ApplicationController
   end
 
   def show
-    # respond_to do |format|
-    #   format.html
-    #   format.pdf do
-    #     pdf = WickedPdf.new.pdf_from_string("#{@document.content}")
-    #     render pdf: "pdf"
-    #   end
-    # end
   end
 
   def new
@@ -46,6 +39,7 @@ class DocumentsController < ApplicationController
   def upload_file
     @document = Document.new
     @lesson_id = @lesson.id
+    render layout: false
   end
 
   def destroy

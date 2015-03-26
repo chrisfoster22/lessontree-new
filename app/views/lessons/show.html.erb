@@ -6,6 +6,9 @@
 <%= f.check_box :lesson_id, value: @lesson.id, class: "star-box", id: "#{@lesson.id}", checked: @starred %>
 <% end %>
 
+<div><%= formatted_lesson_grade_levels(@lesson) %></div>
+<div><%= formatted_lesson_subjects(@lesson) %></div>
+
 <h3>Uploaded Documents</h3>
 <% @uploaded_documents.each do |d| %>
   <div><%= link_to "#{d.title}", "https://isotropic.org/papers/chicken.pdf", class: "fancybox", id: "#{d.id}", remote: true %></div>
@@ -17,7 +20,7 @@
 <% end %>
 
 <div class="edit-save-buttons-wrapper">
-  <%= link_to 'Upload Lesson Document', "/documents/#{@lesson.id}/upload_file", class: 'edit-button' %>
+  <%= link_to 'Upload Lesson Document', "/documents/#{@lesson.id}/upload_file", class: 'fancybox' %>
   <%= link_to "Create Lesson Document", '/documents/new' + "?lesson_id=#{@lesson.id}", class: 'save-button' %>
 </div>
 
