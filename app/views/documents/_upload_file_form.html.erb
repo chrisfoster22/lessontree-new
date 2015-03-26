@@ -7,7 +7,7 @@
 <% end %>
 
 <div>
-  <%= form_for(@document, multipart: true) do |f| %>
+  <%= form_for(@document, multipart: true, :html => {target: '_parent'}) do |f| %>
     <div>
       <%= f.label :title %>
       <%= f.text_field :title %>
