@@ -20,10 +20,14 @@ Rails.application.routes.draw do
 
   resources :documents do
     member do
-      get 'upload_file'
       get 'document_frame', to: 'documents#document_frame'
       get 'version_history'
     end
+
+    collection do
+      get 'upload_file'
+    end
+
     resources :versions, only: [:destroy] do
        member do
          get :diff, to: 'versions#diff'

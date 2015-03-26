@@ -1,5 +1,5 @@
 class VersionsController < ApplicationController
-  before_action :require_user
+  # before_action :require_user
   before_action :set_document_and_version, only: [:diff, :rollback, :destroy]
 
   def diff
@@ -9,7 +9,7 @@ class VersionsController < ApplicationController
     # change the current document to the specified version
     # reify gives you the object of this version
     document = @version.reify
-    document.save
+    document.save if document
     redirect_to edit_document_path(document)
   end
 

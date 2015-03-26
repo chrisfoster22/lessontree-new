@@ -1,6 +1,7 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:edit, :show, :update,
-        :destroy, :document_frame, :version_history]
+        :destroy, :version_history]
+  before_action :set_lesson, only: [:show, :destroy]
   attr_accessor :title, :description
 
   def index
@@ -8,26 +9,16 @@ class DocumentsController < ApplicationController
   end
 
   def show
-    @lesson = @document.lesson
-    # respond_to do |format|
-    #   format.html
-    #   format.pdf do
-    #     pdf = WickedPdf.new.pdf_from_string("#{@document.content}")
-    #     render pdf: "pdf"
-    #   end
-    # end
   end
 
   def new
-    @document = Document.new
-    @lesson_id = Lesson.find(params[:lesson_id]).id
+    @document = Document.new(lesson_id: params[:lesson_id])
   end
 
   def create
     @document = Document.create(document_params)
-    lesson = @document.lesson
     if @document.save
-      redirect_to lesson, notice: "The document has been successfully created."
+      redirect_to @document.lesson, notice: "The document has been successfully created."
     else
       render action: "new"
     end
@@ -38,7 +29,7 @@ class DocumentsController < ApplicationController
 
   def update
     if @document.update_attributes(document_params)
-      redirect_to @document, notice: "The document has been successfully updated."
+      redirect_to @document.lesson, notice: "The document has been successfully updated."
     else
       render action: "edit"
     end
@@ -46,18 +37,13 @@ class DocumentsController < ApplicationController
 
   def upload_file
     @document = Document.new
-    @lesson_id = Lesson.find(params[:id]).id
+    @lesson_id = @lesson.id
+    render layout: false
   end
 
   def destroy
-    lesson_id = @document.lesson.id
     @document.destroy!
-    redirect_to lesson_path(lesson_id)
-  end
-
-  def document_frame
-    @lesson = Lesson.find_by(id: params[:id])
-    # render :layout => false
+    redirect_to @lesson, notice: "The document has been successfully deleted."
   end
 
   def version_history
@@ -72,5 +58,9 @@ class DocumentsController < ApplicationController
   def set_document
     @document = Document.find_by(id: params[:id])
     redirect_to root_path if @document.nil?
+  end
+
+  def set_lesson
+    @lesson = @document.lesson
   end
 end

@@ -1,5 +1,7 @@
 class Document < ActiveRecord::Base
   belongs_to :lesson
+  validates_presence_of :title
+
   has_paper_trail
 
   has_attached_file :upload
