@@ -1,5 +1,6 @@
 class DocumentsController < ApplicationController
-  before_action :set_document, only: [:edit, :show, :update, :destroy, :document_frame]
+  before_action :set_document, only: [:edit, :show, :update,
+        :destroy, :document_frame, :version_history]
   attr_accessor :title, :description
 
   def index
@@ -60,6 +61,9 @@ class DocumentsController < ApplicationController
     # render :layout => false
   end
 
+  def version_history
+  end
+
 private
 
   def document_params
@@ -67,7 +71,7 @@ private
   end
 
   def set_document
-    @document = Document.find_by(id: 111)
+    @document = Document.find_by_id(params[:id])
     redirect_to root_path if @document.nil?
   end
 

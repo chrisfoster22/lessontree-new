@@ -16,6 +16,10 @@ class User < ActiveRecord::Base
     name
   end
 
+  def self.find_version_author(version)
+    find(version.terminator)
+  end
+
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     if user
@@ -34,16 +38,4 @@ class User < ActiveRecord::Base
       end
     end
   end
-
-  # def facebook
-  #   @user = User.from_omniauth(request.env["omniauth.auth"])
-  #
-  #   if @user.persisted?
-  #     sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
-  #     set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
-  #   else
-  #     session["devise.facebook_data"] = request.env["omniauth.auth"]
-  #     redirect_to new_user_registration_url
-  #   end
-  # end
 end
