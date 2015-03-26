@@ -10,6 +10,8 @@ class Lesson < ActiveRecord::Base
 
   validates_presence_of :topic, :description, :subject_ids
 
+  acts_as_commontable
+
   def self.query(params)
     if params.slice(:search, :subject_id, :grade_level_id).values.any?(&:present?)
       lessons = joins(:lesson_subjects)

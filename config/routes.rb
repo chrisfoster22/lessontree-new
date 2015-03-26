@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  mount Commontator::Engine => '/commontator'
   mount Ckeditor::Engine => '/ckeditor'
   # devise_for :users, :controllers => { :registrations => 'users/registrations' }
   devise_for :users, :controllers => { :omniauth_callbacks => 'omniauth_callbacks' }
