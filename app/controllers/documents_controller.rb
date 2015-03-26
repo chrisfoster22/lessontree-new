@@ -1,5 +1,6 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:edit, :show, :update, :destroy, :document_frame]
+  before_action :set_lesson_id, only: [:new, :upload_file]
   attr_accessor :title, :description
 
   def index
@@ -8,18 +9,10 @@ class DocumentsController < ApplicationController
 
   def show
     @lesson = @document.lesson
-    # respond_to do |format|
-    #   format.html
-    #   format.pdf do
-    #     pdf = WickedPdf.new.pdf_from_string("#{@document.content}")
-    #     render pdf: "pdf"
-    #   end
-    # end
   end
 
   def new
     @document = Document.new
-    @lesson_id = Lesson.find(params[:lesson_id]).id
   end
 
   def create
@@ -45,7 +38,6 @@ class DocumentsController < ApplicationController
 
   def upload_file
     @document = Document.new
-    @lesson_id = Lesson.find(params[:id]).id
   end
 
   def destroy
@@ -65,4 +57,7 @@ private
     redirect_to root_path if @document.nil?
   end
 
+  def set_lesson_id
+    @lesson_id = Lesson.find(params[:id]).id
+  end
 end

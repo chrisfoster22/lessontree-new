@@ -60,7 +60,8 @@ class LessonsController < ApplicationController
 private
 
   def lesson_params
-    params.require(:lesson).permit(:upload, :topic, :description, :id, :user_id)
+    params.require(:lesson).permit(:upload, :topic, :description, :id, :user_id,
+        {subject_ids: []}, {grade_level_ids: []})
   end
 
   def lesson_owner
