@@ -44,10 +44,15 @@ $(function() {
 
 $('.fancybox').fancybox({
   type: 'iframe',
-  // href: "https://isotropic.org/papers/chicken.pdf",
-  // content: this.id,
   parent: "body"
-  // data: {document_id: this.id}
+})
+
+$('#fancybox').fancybox({
+  autoSize    : false,
+  width: '480px',
+  height: '300px',
+  type: 'iframe',
+  parent: "body"
 })
 
 $(document).ready(function () {
