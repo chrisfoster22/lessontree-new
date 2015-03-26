@@ -1,5 +1,4 @@
 class Lesson < ActiveRecord::Base
-  belongs_to :subject
   belongs_to :user
 
   has_many :stars
@@ -9,16 +8,16 @@ class Lesson < ActiveRecord::Base
   has_many :subjects, through: :lesson_subjects
   has_many :documents
 
-  def self.search(subject, grade, search)
-    if search
-      # find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-      filtered_search = []
-      lessons = where('topic ILIKE ? OR description ILIKE ?' , "%#{search}%", "%#{search}%")
-      filtered_search = lessons.select {|s| s.subjects.map(&:id).include?(subject)}
-      filtered_search
-
+  def self.query(params)
+    if params.slice(:search, :subject_id, :grade_level_id).values.any?(&:present?)
+      lessons = joins(:lesson_subjects)
+        .joins(:subjects)
+        .where('subjects.id = ?', params[:subject_id])
+        .joins(:lesson_grade_levels)
+        .joins(:grade_levels)
+        .where('grade_levels.id = ?', params[:grade_level_id])
+        .where('topic ILIKE ? OR description ILIKE ?' , "%#{params[:search]}%", "%#{params[:search]}%")
     else
-      # find(:all)
       Lesson.all
     end
   end
