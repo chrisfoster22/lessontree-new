@@ -1,5 +1,6 @@
 class DocumentsController < ApplicationController
-  before_action :set_document, only: [:edit, :show, :update, :destroy, :document_frame]
+  before_action :set_document, only: [:edit, :show, :update,
+        :destroy, :document_frame, :version_history]
   attr_accessor :title, :description
 
   def index
@@ -7,7 +8,6 @@ class DocumentsController < ApplicationController
   end
 
   def show
-    @document = Document.find_by(id: 111)
     @lesson = @document.lesson
     # respond_to do |format|
     #   format.html
@@ -56,19 +56,21 @@ class DocumentsController < ApplicationController
   end
 
   def document_frame
-    @lesson = Lesson.find_by(id: 111)
+    @lesson = Lesson.find_by(id: params[:id])
     # render :layout => false
   end
 
-private
+  def version_history
+  end
+
+  private
 
   def document_params
     params.require(:document).permit(:title, :content, :user_id, :lesson_id, :upload)
   end
 
   def set_document
-    @document = Document.find_by(id: 111)
+    @document = Document.find_by(id: params[:id])
     redirect_to root_path if @document.nil?
   end
-
 end

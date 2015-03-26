@@ -43,10 +43,11 @@ $(function() {
 });
 
 $('.fancybox').fancybox({
-  type: 'ajax',
-  content: this.id,
-  parent: "body",
-  data: {document_id: this.id}
+  type: 'iframe',
+  // href: "https://isotropic.org/papers/chicken.pdf",
+  // content: this.id,
+  parent: "body"
+  // data: {document_id: this.id}
 })
 
 $(document).ready(function () {
