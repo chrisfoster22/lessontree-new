@@ -15,7 +15,12 @@
   </aside>
 </section>
 
-<% @user.lessons.each do |l| %>
+<div class="followers_and_following"
+<br><%= render 'followers_show' %></br>
+<%= link_to "Follow Me", friendships_path(:friend_id => @user), :method => :post %>
+</div>
+
+<br><% @user.lessons.each do |l| %>
 <%= link_to l, class:"my-lessons-container-link" do %>
   <section class="my-lessons-container">
     <article class="my-lessons-preview-area">
@@ -48,6 +53,7 @@
 <br>
 <div><%= link_to "New Lesson", new_lesson_path, class: 'save-button' %></div>
 <br>
+</br>
 
 
 <!-- <section class="login-signup-container">

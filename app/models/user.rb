@@ -1,11 +1,10 @@
 class User < ActiveRecord::Base
-  # before_action :authenticate_user!
-  # user_signed_in?
-  # current_user
+  has_many :friendships
+  has_many :friends, :through => :friendships
+  has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
+  has_many :inverse_friends, :through => :inverse_friendships, :source => :user
   has_many :lessons
   has_many :grade_levels, through: :lessons
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
