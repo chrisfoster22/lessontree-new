@@ -20,7 +20,7 @@
 <% end %>
 
 <div class="edit-save-buttons-wrapper">
-  <%= link_to 'Upload Lesson Document', "/documents/#{@lesson.id}/upload_file", class: 'fancybox' %>
+  <%= link_to 'Upload Lesson Document', "/documents/#{@lesson.id}/upload_file", class: 'edit-button', id: "fancybox" %>
   <%= link_to "Create Lesson Document", '/documents/new' + "?lesson_id=#{@lesson.id}", class: 'save-button' %>
 </div>
 

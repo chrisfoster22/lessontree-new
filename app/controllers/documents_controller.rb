@@ -13,7 +13,7 @@ class DocumentsController < ApplicationController
 
   def new
     @document = Document.new
-    @lesson_id = @lesson.id
+    @lesson_id = params[:lesson_id]
   end
 
   def create
