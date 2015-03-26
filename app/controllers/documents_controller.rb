@@ -56,7 +56,7 @@ class DocumentsController < ApplicationController
   end
 
   def document_frame
-    @lesson = Lesson.find_by(id: 111)
+    @lesson = Lesson.find_by(id: params[:id])
     # render :layout => false
   end
 

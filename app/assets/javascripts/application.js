@@ -44,9 +44,9 @@ $(function() {
 
 $('.fancybox').fancybox({
   type: 'ajax',
-  content: this.id,
+  // content: this.id,
   parent: "body",
-  data: {document_id: this.id}
+  // data: {document_id: this.id}
 })
 
 $(document).ready(function () {
