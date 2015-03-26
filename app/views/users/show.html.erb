@@ -17,7 +17,7 @@
   </aside>
 </section>
 
-<p><%= button_to "Find more users to follow", all_users_users_path, :method => 'get' %></p>
+<p><%= button_to "Find other users to follow", all_users_users_path, :method => 'get' %></p>
 
 <br><% @user.lessons.each do |l| %>
 <%= link_to l, class:"my-lessons-container-link" do %>
