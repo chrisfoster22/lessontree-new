@@ -25,6 +25,7 @@ gem 'fancybox2-rails', '~> 0.2.8'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'paper_trail', '~> 4.0.0.beta'
+gem 'diffy'
 
 group :development, :test do
   gem 'byebug'
