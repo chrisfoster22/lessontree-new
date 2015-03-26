@@ -70,7 +70,7 @@ class DocumentsController < ApplicationController
   end
 
   def set_document
-    @document = Document.find_by_id(id: params[:id])
+    @document = Document.find_by(id: params[:id])
     redirect_to root_path if @document.nil?
   end
 end
