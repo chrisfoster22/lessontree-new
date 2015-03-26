@@ -1,5 +1,5 @@
 class LessonsController < ApplicationController
-  before_action :set_lesson
+  # before_action :set_lesson, only: [:edit, :show, :update, :destroy]
   before_action :lesson_owner, only: [:edit, :destroy, :update]
 
   def index
@@ -7,16 +7,22 @@ class LessonsController < ApplicationController
   end
 
   def show
+    @lesson = Lesson.find_by(id: params[:id])
     @star = Star.new
-    @documents = @lesson.documents
-    @plan = @lesson.plan
-    if @plan
-      @default = @plan.id
-    end
-    if Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
+    documents = @lesson.documents
+    if current_user && Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
       @starred = true
     else
       @starred = false
+    end
+    @uploaded_documents = []
+    @created_documents = []
+    documents.each do |d|
+      if d.upload.url != "/uploads/original/missing.png"
+        @uploaded_documents << d
+      else
+        @created_documents << d
+      end
     end
   end
 
@@ -46,10 +52,15 @@ class LessonsController < ApplicationController
     end
   end
 
+  def document_form
+    @lesson = Lesson.find_by(id: 111)
+    # render :layout => false
+  end
+
 private
 
   def lesson_params
-    params.require(:lesson).permit(:upload, :topic, :description, :id, :user_id, :plan_id)
+    params.require(:lesson).permit(:upload, :topic, :description, :id, :user_id)
   end
 
   def lesson_owner

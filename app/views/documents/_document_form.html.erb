@@ -5,26 +5,12 @@
     <% end %>
   </ul>
 <% end %>
-<div>
-  <%= form_for @document do |f| %>
-    <div>
-      <%= f.label :content %>
-      <%= f.file_field :content %>
-    </div>
-    <div>
-      <%= f.submit "Upload", class: "create-lesson" %>
-    </div>
-  <% end %>
-</div>
+
 <div>
   <%= form_for(@document, multipart: true) do |f| %>
     <div>
       <%= f.label :title %>
       <%= f.text_field :title %>
-    </div>
-    <div>
-      <%= f.label :content %>
-      <%= f.file_field :content %>
     </div>
     <%= f.hidden_field :lesson_id, value: @lesson_id %>
     <div>

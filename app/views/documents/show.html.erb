@@ -1,2 +1,4 @@
-<h1>Documents#show</h1>
-<p>Find me in app/views/documents/show.html.erb</p>
+<h2><%= @document.title %></h2>
+<div><iframe src=<%= document_frame_document_path(111) %> width="1000px" height="500px" class="fancybox"></iframe></div>
+<%= link_to "Edit Document", edit_document_path%>
+<%= link_to "Destroy Document", @document, method: :delete %>

@@ -1,0 +1,24 @@
+<% if @document.errors.any? %>
+  <ul>
+    <%= @document.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div>
+  <%= form_for(@document, multipart: true) do |f| %>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :upload %>
+      <%= f.file_field :upload %>
+    </div>
+    <%= f.hidden_field :lesson_id, value: @lesson_id %>
+    <div>
+      <%= f.submit "Create Document", :class => "create-lesson" %>
+    </div>
+  <% end %>
+</div>

@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
-  devise_for :users, :controllers => { registrations: 'users/registrations' }
+  # devise_for :users, :controllers => { :registrations => 'users/registrations' }
+  devise_for :users, :controllers => { :omniauth_callbacks => 'omniauth_callbacks' }
   resources :lessons
   resources :users
   resources :documents
-  resources :plans
   resources :stars
   get 'home/index'
   get 'home/about'
@@ -14,6 +14,19 @@ Rails.application.routes.draw do
   post 'users/sign_up'
   post 'users/sign_out'
   get 'home/style_guide'
+
+  resources :documents do
+    member do
+      get 'upload_file'
+      get 'document_frame', to: 'documents#document_frame'
+    end
+  end
+
+  resources :lessons do
+    member do
+      get 'document_form/:id' => 'lessons#document_form'
+    end
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

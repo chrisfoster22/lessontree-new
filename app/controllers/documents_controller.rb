@@ -1,12 +1,21 @@
 class DocumentsController < ApplicationController
-  before_action :set_document
+  before_action :set_document, only: [:edit, :show, :update, :destroy, :document_frame]
   attr_accessor :title, :description
+
   def index
     @documents = Document.find_by(current_user.id).order("created_at DESC")
   end
 
   def show
-    @lessons = @document.lesson
+    @document = Document.find_by(id: 111)
+    @lesson = @document.lesson
+    # respond_to do |format|
+    #   format.html
+    #   format.pdf do
+    #     pdf = WickedPdf.new.pdf_from_string("#{@document.content}")
+    #     render pdf: "pdf"
+    #   end
+    # end
   end
 
   def new
@@ -35,14 +44,30 @@ class DocumentsController < ApplicationController
     end
   end
 
+  def upload_file
+    @document = Document.new
+    @lesson_id = Lesson.find(params[:id]).id
+  end
+
+  def destroy
+    lesson_id = @document.lesson.id
+    @document.destroy!
+    redirect_to lesson_path(lesson_id)
+  end
+
+  def document_frame
+    @lesson = Lesson.find_by(id: 111)
+    # render :layout => false
+  end
+
 private
 
   def document_params
-    params.require(:document).permit(:title, :content, :user_id, :lesson_id)
+    params.require(:document).permit(:title, :content, :user_id, :lesson_id, :upload)
   end
 
   def set_document
-    @document = Document.find_by(id: params[:id])
+    @document = Document.find_by(id: 111)
     redirect_to root_path if @document.nil?
   end
 

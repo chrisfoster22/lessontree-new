@@ -7,7 +7,7 @@
   <aside class="user-profile-information-wrapper-right">
     <ul class = "user-profile-unique-information">
       <li><strong>Name:</strong>&nbsp&nbsp<%= @user.name %></li>
-      <li><strong>Grades I Teach:</strong>&nbsp&nbsp<%= @user.grade %></li>
+      <li><strong>Grades I Teach:</strong>&nbsp&nbsp<%= formatted_user_grade_levels(@user) %></li>
       <li><strong>My School Name:</strong>&nbsp&nbsp<%= @user.school %></li>
       <li><strong>School City:</strong>&nbsp&nbsp<%= @user.city %></li>
       <li><strong>School State:</strong>&nbsp&nbsp<%= @user.state %></li>
@@ -38,7 +38,7 @@
       <h3 class="my-lessons-container-title"><%= l.topic %></h3>
       <p class="my-lessons-container-description">
         <%= l.description.html_safe %>
-        <%= l.user.name %>
+        <%= l.user %>
       </p>
     </article>
   </section></a>
@@ -48,9 +48,6 @@
 <br>
 <div><%= link_to "New Lesson", new_lesson_path, class: 'save-button' %></div>
 <br>
-<div><%= link_to "New Plan", new_plan_path, class: 'save-button' %></div>
-<br>
-<div><%= link_to "My Plans", plans_path, class: 'save-button' %></div>
 
 <!-- PROFILE PAGE, LESSONS & PLANS -->
 <ul class="accordion-tabs">

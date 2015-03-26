@@ -483,6 +483,8 @@ HOMEPAGE LESSON PREVIEWS
   background: $alt-top-bg-color;
   color: #fff;
   border-radius: .25em;
+  padding: 1em .8em 1em;
+  text-decoration: none;
   padding: 1em 1.6em 1em;
 }
 
@@ -520,6 +522,8 @@ HOMEPAGE LESSON PREVIEWS
   background: $button-bg-color;
   color: #fff;
   border-radius: .25em;
+  padding: 1em;
+  text-decoration: none;
 }
 
 .edit-button:hover, .delete-button:hover {

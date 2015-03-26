@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require fancybox
 //= require jquery_ujs
 //= require ckeditor/init
 //= require_tree .
@@ -31,32 +32,22 @@ $(function() {
         data: {lesson_id: this.id}
      });
     }
-  })
+  });
 });
 
 $(function() {
   $('#inline-search-field').on("click", function() {
   var WhereToMove = $("#steady_scroll").position().top;
     $("html,body").animate({scrollTop: WhereToMove }, 300);
-    });
   });
+});
 
-  $('.plan-star-box').on("click", function() {
-    var val = $(this).prevAll(".rails-id").val();
-    if ($(this).is(':checked')) {
-      $.ajax({
-        type: "POST",
-        url: "/stars",
-        data: {plan_id: this.id}
-     });
-    } else {
-      $.ajax({
-        type: "DELETE",
-        url: "/stars/1",
-        data: {plan_id: this.id}
-     });
-    }
-  });
+$('.fancybox').fancybox({
+  type: 'ajax',
+  content: this.id,
+  parent: "body",
+  data: {document_id: this.id}
+})
 
 $(document).ready(function () {
     $('.accordion-tabs').each(function(index) {

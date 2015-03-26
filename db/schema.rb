@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150322194753) do
+ActiveRecord::Schema.define(version: 20150325174714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,8 +36,12 @@ ActiveRecord::Schema.define(version: 20150322194753) do
     t.string   "title"
     t.text     "content"
     t.integer  "lesson_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "upload_file_name"
+    t.string   "upload_content_type"
+    t.integer  "upload_file_size"
+    t.datetime "upload_updated_at"
   end
 
   create_table "grade_levels", force: :cascade do |t|
@@ -46,11 +50,26 @@ ActiveRecord::Schema.define(version: 20150322194753) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "lesson_grade_levels", force: :cascade do |t|
+    t.integer "lesson_id",      null: false
+    t.integer "grade_level_id", null: false
+  end
+
+  add_index "lesson_grade_levels", ["grade_level_id"], name: "index_lesson_grade_levels_on_grade_level_id", using: :btree
+  add_index "lesson_grade_levels", ["lesson_id"], name: "index_lesson_grade_levels_on_lesson_id", using: :btree
+
+  create_table "lesson_subjects", force: :cascade do |t|
+    t.integer "lesson_id",  null: false
+    t.integer "subject_id", null: false
+  end
+
+  add_index "lesson_subjects", ["lesson_id"], name: "index_lesson_subjects_on_lesson_id", using: :btree
+  add_index "lesson_subjects", ["subject_id"], name: "index_lesson_subjects_on_subject_id", using: :btree
+
   create_table "lessons", force: :cascade do |t|
     t.string   "topic"
     t.text     "description"
     t.integer  "user_id"
-    t.integer  "plan_id"
     t.integer  "star_count"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
@@ -60,29 +79,9 @@ ActiveRecord::Schema.define(version: 20150322194753) do
     t.datetime "upload_updated_at"
   end
 
-  create_table "lessons_grade_levels", id: false, force: :cascade do |t|
-    t.integer "lesson_id"
-    t.integer "grade_level_id"
-  end
-
-  create_table "lessons_subjects", id: false, force: :cascade do |t|
-    t.integer "lesson_id"
-    t.integer "subject_id"
-  end
-
-  create_table "plans", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.integer  "user_id"
-    t.integer  "star_count"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "stars", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "lesson_id"
-    t.integer  "plan_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -113,9 +112,22 @@ ActiveRecord::Schema.define(version: 20150322194753) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "versions", force: :cascade do |t|
+    t.string   "item_type",  null: false
+    t.integer  "item_id",    null: false
+    t.string   "event",      null: false
+    t.string   "whodunnit"
+    t.text     "object"
+    t.datetime "created_at"
+  end
+
+  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
 
 end

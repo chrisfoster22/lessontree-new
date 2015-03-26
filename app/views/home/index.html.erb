@@ -1,48 +1,39 @@
+<section class="main-container-hero">
+  <div class="hero">
+    <h1>Teacher Lesson Plans</h1>
+    <p class="key-words">find, create, share, connect</p>
+  </div>
 
-
-
-  <div class="main-container-hero">
-      <h1>Teacher Lesson Plans<h1>
-        <p class="key-words">find, create, share, connect</p>
-        <p class="third-line">all in one place</p>
-    </div>
-
-
-<!----------------------------------------------------------------------------------------
-THIS IS THE OLD SEARCH BOX. WRAP ERB WITH HTML ABOVE
--------------------------------------------------------------------------------------------->
-
-    <div class="search-container">
-      <%= form_tag root_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], class: "search-box" %>
-        <%= submit_tag "Search", name: nil, class: "btn btn-search" %>
-      <% end %>
-    </div>
 
   <a id="steady_scroll" name="steady_scroll"></a>
     <div class="search-box-wrapper">
-      <%= render :partial => 'home/search' %>
+      <%= render 'home/search', params: params %>
     </div>
   </a>
+</section>
 
-  <a id="cards_scroll" name="cards_scroll">
-  <div class="card-container">
-    <div class="cards">
-    <% @lessons.each do |l| %>
-      <div class="card">
-        <%= link_to l do %>
-          <div class="card-image">
-            <h3> <%= l.topic %></h3>
-          </div>
-          <div class="card-header">
-            <%= l.description.html_safe + "..." %>
-          </div>
-          <div class="card-copy">
-          </div>
-        <% end %>
+<a id="cards_scroll" name="cards_scroll">
+<section class="lesson-preview-section">
+  <% @lessons.each do |l| %>
+  <div class="lesson-preview-container">
+    <%= link_to l, class:"lesson-preview-link" do %>
+      <div class="lesson-preview-title-container">
+        <a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"  data-pin-color="red"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_20.png" /></a>
+        <!-- Please call pinit.js only once per page -->
+        <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
+        <h3 class="lesson-preview-title"><%= l.topic %></h3>
+        <ul>
+            <li class="lesson-preview-subject-list"><%= formatted_lesson_grade_levels(l) %></li>
+            <li class="lesson-preview-pipe">|</li>
+            <li class="lesson-preview-grade-list"><%= formatted_lesson_subjects(l) %></li>
+      </ul>
       </div>
-      <% end %>
-    </div>
+
+      <div class="lesson-preview-description-container">
+        <h6 class="icon-star"><%= star_count(l) %></h6>
+        <p class="lesson-preview-description"><%= l.description %></p>
+      </div>
+    <% end %>
   </div>
- </div>
-</a>
+  <% end %>
+</section>
