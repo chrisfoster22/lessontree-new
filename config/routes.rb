@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   # devise_for :users, :controllers => { :registrations => 'users/registrations' }
   devise_for :users, :controllers => { :omniauth_callbacks => 'omniauth_callbacks' }
-  resources :lessons
   resources :users
-  resources :documents
   resources :stars
   get 'home/index'
   get 'home/about'
@@ -24,7 +22,7 @@ Rails.application.routes.draw do
 
   resources :lessons do
     member do
-      get 'document_form/:id' => 'lessons#document_form'
+      get 'document_form'
     end
   end
 

@@ -7,7 +7,7 @@ class LessonsController < ApplicationController
   end
 
   def show
-    @lesson = Lesson.find_by(id: params[:id])
+    @lesson = Lesson.find_by(id: 102)
     @star = Star.new
     documents = @lesson.documents
     if current_user && Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
@@ -54,7 +54,7 @@ class LessonsController < ApplicationController
 
   def document_form
     @lesson = Lesson.find_by(id: 111)
-    # render :layout => false
+    render :layout => false
   end
 
 private

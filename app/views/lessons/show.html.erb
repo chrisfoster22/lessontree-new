@@ -13,7 +13,7 @@
 
 <h3>Created Documents</h3>
 <% @created_documents.each do |d| %>
-  <div><%= link_to "#{d.title}", d, class: "fancybox", id: "#{d.id}", remote: true %></div>
+  <div><%= link_to "#{d.title}", '/lessons/111/document_form', class: "fancybox", id: "#{d.id}", remote: true %></div>
 <% end %>
 
 <div class="edit-save-buttons-wrapper">
