@@ -237,13 +237,14 @@
   .comment-content {
     width: 100%;
 
-    p.comment-name {
+    a {
       font-family: $headline-font;
       font-size: 1em;
       margin: 0 0 0.5em 0;
       text-align: none;
       font-weight: bold;
       color: $alt-top-bg-color;
+      text-decoration: none;
     }
 
     span {

@@ -19,6 +19,8 @@
   <div><%= link_to "#{d.title}", "/lessons/#{d.id}/document_form", class: "fancybox", id: "#{d.id}", remote: true %></div>
 <% end %>
 
+<%= commontator_thread(@lesson) %>
+
 <div class="edit-save-buttons-wrapper">
   <%= link_to 'Upload Lesson Document', upload_file_documents_path(lesson_id: @lesson.id), id: 'fancybox', class: 'edit-button' %>
   <%= link_to "Create Lesson Document", new_document_path(lesson_id: @lesson.id), class: 'save-button' %>
