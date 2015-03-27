@@ -17,6 +17,6 @@
   </div>
 </div>
 <div class='fr'>
-  <%= link_to 'Back', edit_document_path(@document), class: 'btn btn-danger' %>
+  <%= link_to 'Back', version_history_document_path(@document.id), class: 'btn btn-danger' %>
   <%= link_to 'Rollback', rollback_document_version_path(@document, @version), class: 'btn btn-primary', method: 'PATCH' %>
 </div>

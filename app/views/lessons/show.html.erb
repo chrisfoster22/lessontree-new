@@ -11,12 +11,14 @@
 
 <h3>Uploaded Documents</h3>
 <% @uploaded_documents.each do |d| %>
-  <div><%= link_to "#{d.title}", "https://isotropic.org/papers/chicken.pdf", class: "fancybox", id: "#{d.id}", remote: true %></div>
+  <div><%= link_to "#{d.title}", "#{d.upload.url}", class: "fancybox", id: "#{d.id}", remote: true %></div>
 <% end %>
 
 <h3>Created Documents</h3>
 <% @created_documents.each do |d| %>
-  <div><%= link_to "#{d.title}", "/lessons/#{d.id}/document_form", class: "fancybox", id: "#{d.id}", remote: true %></div>
+  <div><%= link_to "#{d.title}", document_form_lesson_path(d.id), class: "fancybox", id: "#{d.id}", remote: true %></div>
+  <div><%= link_to "Edit", edit_document_path(d.id) %>
+  <div><%= link_to "Version History", version_history_document_path(d.id) %>
 <% end %>
 
 <%= commontator_thread(@lesson) %>
