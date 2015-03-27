@@ -119,7 +119,6 @@ ActiveRecord::Schema.define(version: 20150326201520) do
     t.string   "topic"
     t.text     "description"
     t.integer  "user_id"
-    t.integer  "plan_id"
     t.integer  "star_count"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false

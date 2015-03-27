@@ -19,38 +19,6 @@
   <div><%= link_to "#{d.title}", "/lessons/#{d.id}/document_form", class: "fancybox", id: "#{d.id}", remote: true %></div>
 <% end %>
 
-<% @thread.comments.each do |comment| %>
-<div id="comment_<%= comment.id.to_s %>_div" class="comment">
-  <span class="comment-image">
-    <%= image_tag @user.avatar.url, class: "user-profile-photo" %>
-  </span>
-  <div class="comment-content">
-    <p class="comment-name">
-      <span id="comment_<%= comment.id.to_s %>_commontator_span" class="comment_commontator">
-        <%= link.blank? ? name : link_to(name, link) %>
-      </span>
-      <span id="comment_<%= comment.id.to_s %>_actions_span" class="comment_actions">
-        <%= render :partial => 'commontator/comments/actions',
-                   :locals => { :comment => comment,
-                                :user => user } %>
-      </span>
-    </p>
-    <span>         <%= render :partial => 'commontator/comments/body',
-                       :locals => { :comment => comment } %></span>
-    <p class="comment-detail">
-      <%= comment.created_timestamp %>
-    </p>
-    <br/>
-    <p id="comment_<%= comment.id.to_s %>_updated_timestamp_span" class="comment-detail">
-      <% if comment.is_modified? %>
-        <%= comment.updated_timestamp %>
-      <% end %>
-    </p>
-  </div>
-</div>
-<% end %>
-
-
 <div class="edit-save-buttons-wrapper">
   <%= link_to 'Upload Lesson Document', upload_file_documents_path(lesson_id: @lesson.id), id: 'fancybox', class: 'edit-button' %>
   <%= link_to "Create Lesson Document", new_document_path(lesson_id: @lesson.id), class: 'save-button' %>
