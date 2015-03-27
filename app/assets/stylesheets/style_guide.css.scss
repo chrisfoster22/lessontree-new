@@ -502,6 +502,41 @@ HOMEPAGE LESSON PREVIEWS
 }
 
 /************************************
+            LOG IN BUTTON
+************************************/
+
+.login-button-wrapper {
+      text-align: center;
+      display: inline;
+      margin: 2em 0 2em;
+}
+
+.login-button {
+      background-color: $alt-top-bg-color;
+      border-radius: .25em;
+      color: white;
+      font-family: $headline-font;
+      font-size: .8em;
+      font-weight: bolder;
+      text-shadow: none;
+      border: none;
+      text-align: center;
+      padding: 1em 1.6em 1em;
+      text-transform: uppercase;
+}
+
+.login-button:hover {
+        background-color: $alt-top-bg-hover;
+        color: white;
+        cursor: pointer;
+        text-shadow: none;
+        border: none;
+        transition: .6s;
+        -webkit-transition: .6s;
+}
+
+
+/************************************
             EDIT BUTTON
 ************************************/
 .edit-button-wrapper, .delete-button-wrapper {
@@ -672,7 +707,7 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
       FORGOT PASSWORD BUTTON
 ************************************/
 .forgot-password-button-wrapper {
-  display: block;
+  display: inline;
   text-align: center;
   margin: 2em 0 2em;
 }
@@ -700,15 +735,17 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
 /**********************************************
   LOG IN & FORGOT PASSWORD BUTTONS SIDE BY SIDE
 **********************************************/
-.login-forgot-password-buttons-wrapper {
-  display: block;
-  text-align: center;
-  margin: 2em 0 2em;
-}
+// .login-forgot-password-buttons-wrapper {
+//   display: inline;
+//   text-align: center;
+//   margin: 2em 0 2em;
+// }
 
-.login-forgot-password-buttons-wrapper button {
-  margin: 0 .5em 0;
-}
+// .login-forgot-password-buttons-wrapper button {
+//   margin: 0 .5em 0;
+//   text-align: center;
+//   display: inline;
+// }
 /************************************
     PROFILE PAGE, LESSONS & PLANS
 ************************************/
@@ -1237,7 +1274,7 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
 /*BUTTON DESIGN*/
 .login-button-wrapper {
       text-align: center;
-      display: block;
+      display: inline;
       margin: 2em 0 2em;
 }
 
@@ -1266,7 +1303,7 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
 }
 
 .forgot-password-button-wrapper {
-  display: block;
+  display: inline;
   text-align: center;
   margin: 2em 0 2em;
 }
@@ -1292,13 +1329,14 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
 }
 
 .login-forgot-password-buttons-wrapper {
-  display: block;
+  display: inline;
   text-align: center;
   margin: 2em 0 2em;
 }
 
 .login-forgot-password-buttons-wrapper button {
   margin: 0 .5em 0;
+  text-align: center;
 }
 
 
