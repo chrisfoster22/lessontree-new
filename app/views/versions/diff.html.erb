@@ -3,11 +3,11 @@
     <h2><%= "Diff between Version #{@version.id} and Current Version" %></h2>
     <div class='well diff'>
       <p>
-        <strong>Name:</strong>
+        Name:
         <%= diff(@version.reify.title, @document.title) %>
       </p>
       <p>
-        <strong>Content:</strong>
+        Content:
         <%= diff(@version.reify.content, @document.content) %>
       </p>
     </div>
