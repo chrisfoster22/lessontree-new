@@ -374,14 +374,14 @@ HOMEPAGE LESSON PREVIEWS
 }
 
 .lesson-preview-container {
-  margin: 6em auto 3em;
+  margin: 6em auto 6em;
   width: 45%;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
 
 .lesson-preview-title-container {
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   background: #eee;
   box-shadow: 0 2px 5px rgba(0,0,0,0.18);
   padding: .7em .7em .7em .9em;
@@ -396,17 +396,17 @@ HOMEPAGE LESSON PREVIEWS
   margin-bottom: .3em;
 }
 
-.lesson-preview-subject-container {
-  padding: .5em .5em .5em 1em;
-}
-
-.lesson-preview-subject {
-  font-size: 1.5em;
-  font-family: $headline-font;
-  font-weight: 400;
-  color: #222;
-  margin: .3em .3em .5em 2em;
-}
+// .lesson-preview-subject-container {
+//   padding: .5em .5em .5em 1em;
+// }
+//
+// .lesson-preview-subject {
+//   font-size: 1.5em;
+//   font-family: $headline-font;
+//   font-weight: 400;
+//   color: #222;
+//   margin: .3em .3em .5em 2em;
+// }
 
 .lesson-preview-subject-list {
   margin-right: .75em;
@@ -435,14 +435,16 @@ HOMEPAGE LESSON PREVIEWS
   font-family: $headline-font;
   font-weight: 400;
   color: #222;
+  line-height: 1.4em;
 }
 
 .star-ranking {
   vertical-align: text-baseline;
+
 }
 
 .icon-star {
-  color: gold;
+  color: yellow;
   font-size: 1.5em;
   display: inline;
 }
@@ -453,7 +455,7 @@ HOMEPAGE LESSON PREVIEWS
     top: 50%;
     transform: translateY(-25%);
     font-family: 'Hind';
-    font-size: 1.2em;
+    font-size: 1.5em;
     margin-left: .25em;
     color: #555;
     letter-spacing: .1em;
@@ -463,6 +465,10 @@ HOMEPAGE LESSON PREVIEWS
   line-height: 1.4em;
 }
 
+// .lesson-preview-container {
+//   margin-bottom: 3em;
+//   margin-top: 3em;
+// }
 /************************************
             SAVE BUTTON
 ************************************/
@@ -892,6 +898,7 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
   font-weight: 400;
   color: $alt-top-bg-color;
   margin-bottom: .25em;
+  margin-top: 3em;
 }
 
 .page-headline-rule-first {
@@ -904,6 +911,8 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
   position: relative;
   margin: 0 auto 0;
   padding-top: .2em;
+  margin-bottom: 3em;
+
 }
 
 .page-headline-rule-first {

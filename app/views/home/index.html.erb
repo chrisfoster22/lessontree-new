@@ -2,38 +2,91 @@
   <div class="hero">
     <h1>Teacher Lesson Plans</h1>
     <p class="key-words">find, create, share, connect</p>
-  </div>
 
-
-  <a id="steady_scroll" name="steady_scroll"></a>
+    <!-- <a id="steady_scroll" name="steady_scroll"></a>
+      <div class="search-box-wrapper">
+        <%= render 'home/search', params: params %>
+      </div>
+    </a> -->
+</div>
     <div class="search-box-wrapper">
-      <%= render 'home/search', params: params %>
+       <form class="inline-search-form">
+        <input id="inline-search-field" type="text" placeholder="Find Plans" required>
+        <input class="inline-search-button" type="button" value="Search">
+      </form>
     </div>
-  </a>
+
+    <div class="expander">
+      <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander-hidden">Advanced Search</a>
+      <div id="js-expander-content" class="expander-content">
+
+        <div class="subjects-select-menu-container">
+          <select class="select-menu" name="Subjects">
+            <option class="select-menu-values" value="Subject">Subject</option>
+            <option value="art">Art</option>
+            <option value="history">History</option>
+            <option value="language-arts">Language Arts</option>
+            <option value="math">Math</option>
+            <option value="music">Music</option>
+            <option value="physical-education">Physical Education</option>
+            <option value="science">Science</option>
+            <option value="technology">Technology</option>
+          </select>
+        </div>
+
+        <div class="grades-select-menu-container">
+          <select class="select-menu" name="Grade">
+            <option class="select-menu-values" value="art">Grade</option>
+            <option value="Kindergarten">Kindergarten</option>
+            <option value="1st">1st</option>
+            <option value="2nd">2nd</option>
+            <option value="3rd">3rd</option>
+            <option value="4th">4th</option>
+            <option value="5th">5th</option>
+            <option value="6th">6th</option>
+            <option value="7th">7th</option>
+            <option value="8th">8th</option>
+          </select>
+        </div>
+      </div>
+    </div>
 </section>
 
-<a id="cards_scroll" name="cards_scroll">
-<section class="lesson-preview-section">
+
+<div class="page-headline">Lessons</div>
+
+<div class="page-headline-rule-container">
+  <div class="page-headline-rule-first"></div>
+  <div class="page-headline-triangle"></div>
+</div>
+
+
+<!-- <a id="cards_scroll" name="cards_scroll"> -->
+<section class="lesson-preview-container">
   <% @lessons.each do |l| %>
-  <div class="lesson-preview-container">
+  <div class="lesson-preview-title-container">
+    <h3 class="lesson-preview-title"><%= l.topic %></h3>
+    <ul>
+        <li class="lesson-preview-subject-list"><%= formatted_lesson_grade_levels(l) %></li>
+        <li class="lesson-preview-pipe">|</li>
+        <li class="lesson-preview-grade-list"><%= formatted_lesson_subjects(l) %></li>
+    </ul>
+  </div>
+
+  <div class="lesson-preview-description-container">
     <%= link_to l, class:"lesson-preview-link" do %>
-      <div class="lesson-preview-title-container">
         <a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"  data-pin-color="red"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_20.png" /></a>
         <!-- Please call pinit.js only once per page -->
         <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
-        <h3 class="lesson-preview-title"><%= l.topic %></h3>
-        <ul>
-            <li class="lesson-preview-subject-list"><%= formatted_lesson_grade_levels(l) %></li>
-            <li class="lesson-preview-pipe">|</li>
-            <li class="lesson-preview-grade-list"><%= formatted_lesson_subjects(l) %></li>
-      </ul>
-      </div>
 
-      <div class="lesson-preview-description-container">
-        <h6 class="icon-star"><%= star_count(l) %></h6>
+      <ul class="star-ranking">
+         <li class="icon-star"><%= star_count(l) %></li>
+         <li class="ranking"> 5</li>
+      </ul>
         <p class="lesson-preview-description"><%= l.description %></p>
       </div>
-    <% end %>
-  </div>
   <% end %>
+  <% end %>
+
+</section>
 </section>
