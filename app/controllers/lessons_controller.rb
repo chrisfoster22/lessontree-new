@@ -24,6 +24,11 @@ class LessonsController < ApplicationController
         @created_documents << d
       end
     end
+    @thread = Commontator::Thread.find_by(commontable_id: @lesson.id)
+    # creator = comment.creator
+    # name = comment.creator.name || ''
+    # link = Commontator.commontator_link(creator, main_app) || ''
+    # avatar = Commontator.commontator_avatar(creator, self) || ''
   end
 
   def new

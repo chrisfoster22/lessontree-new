@@ -26,12 +26,14 @@
     </p>
     <span>         <%= render :partial => 'commontator/comments/body',
                        :locals => { :comment => comment } %></span>
-    <p class="comment-detail">        <%= comment.created_timestamp %>
-          </p>
-          <br/>
-          <p id="comment_<%= comment.id.to_s %>_updated_timestamp_span" class="comment-detail">
-          <% if comment.is_modified? %>
-            <%= comment.updated_timestamp %>
-          <% end %></p>
+    <p class="comment-detail">
+      <%= comment.created_timestamp %>
+    </p>
+    <br/>
+    <p id="comment_<%= comment.id.to_s %>_updated_timestamp_span" class="comment-detail">
+      <% if comment.is_modified? %>
+        <%= comment.updated_timestamp %>
+      <% end %>
+    </p>
   </div>
 </div>
