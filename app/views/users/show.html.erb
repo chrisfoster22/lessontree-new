@@ -12,7 +12,12 @@
       <li><strong>School City:</strong>&nbsp&nbsp<%= @user.city %></li>
       <li><strong>School State:</strong>&nbsp&nbsp<%= @user.state %></li>
       <li><%= render 'followers_show' %></li>
+      <% unless @user == current_user %>
       <li><%= button_to "Follow", friendships_path(:friend_id => @user), :method => :post %></li>
+        <% if current_user.friends.include?(@user) %>
+      <li><%= button_to "Stop following", friendship_path, :method => :delete %></li>
+      <% end %>
+      <% end %>
     </ul>
   </aside>
 </section>
