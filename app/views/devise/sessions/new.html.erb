@@ -1,25 +1,26 @@
-<div class="signup-container">
-  <div class="signup-form-header">
-    <h2>Login</h2>
-  </div>
+
+<section class="login-container">
+  <h2 class="login-form-header">Log In</h2>
 
 
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form.minimal label">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'minimal') do |f| %>
+
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true %>
-  </div>
 
-  <div class="form.minimal label">
+
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %>
+
+    <div class="login-forgot-password-buttons-wrapper">
+  <div class="login-button-wrapper">
+    <%= f.submit "Login", :class => 'login-button' %>
   </div>
 
-  <div class="btn-minimal-container">
-    <%= f.submit "Login", :class => 'devise-login' %>
-  </div>
 <% end %>
-</div>
+
 
 <%= render "devise/shared/links" %>
+</div>
+</section>

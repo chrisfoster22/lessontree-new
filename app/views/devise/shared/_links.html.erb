@@ -1,13 +1,14 @@
 <%- if controller_name != 'sessions' %>
-  <%= button_to "Log in", new_session_path(resource_name), :method => 'get', :class => 'devise-sign-in' %><br />
-<% end -%>
-
-<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "", new_registration_path(resource_name), :method => 'get', :class => 'devise-sign-up' %><br />
+  <div class="login-button-wrapper">
+    <%= button_to "Log In", new_session_path(resource_name), :method => 'get', :class => 'login-button' %><br />
+  </div>
 <% end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= button_to "Forgot Password?", new_password_path(resource_name), :method => 'get', :class => 'forgot-pass' %><br />
+<div class="forgot-password-button-wrapper">
+  <button class="forgot-password-button" type="submit">Forgot Password?</button>
+</div>
+
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
