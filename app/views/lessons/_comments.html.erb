@@ -1,0 +1,25 @@
+<% @thread.comments.each do |comment| %>
+<div id="comment_<%= comment.id.to_s %>_div" class="comment">
+  <span class="comment-image">
+    <%= image_tag comment.creator.avatar.url, class: "user-profile-photo" %>
+  </span>
+  <div class="comment-content">
+    <p class="comment-name">
+      <span id="comment_<%= comment.id.to_s %>_commontator_span" class="comment_commontator">
+        <%= link_to comment.creator.name, comment.creator %>
+      </span>
+    </p>
+    <span>         <%= render :partial => 'commontator/comments/body',
+                       :locals => { :comment => comment } %></span>
+    <p class="comment-detail">
+      <%= comment.created_timestamp %>
+    </p>
+    <br/>
+    <p id="comment_<%= comment.id.to_s %>_updated_timestamp_span" class="comment-detail">
+      <% if comment.is_modified? %>
+        <%= comment.updated_timestamp %>
+      <% end %>
+    </p>
+  </div>
+</div>
+<% end %>

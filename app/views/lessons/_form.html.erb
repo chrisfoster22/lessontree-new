@@ -18,6 +18,14 @@
     <%= f.text_area :description %>
   </div>
   <div>
+    <%= f.label "Subjects" %>
+    <%= f.collection_check_boxes :subject_ids, Subject.all, :id, :title %>
+  </div>
+  <div>
+    <%= f.label "Grade Levels" %>
+    <%= f.collection_check_boxes :grade_level_ids, GradeLevel.all, :id, :title %>
+  </div>
+  <div>
     <%= f.submit "Create Lesson", :class => "create-lesson" %>
   </div>
 <% end %>

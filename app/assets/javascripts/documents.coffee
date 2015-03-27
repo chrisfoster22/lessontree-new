@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-  $("a.grouped_elements").fancybox({
+  $("").fancybox({
       'transitionIn'  :   'elastic',
       'transitionOut' :   'elastic',
       'speedIn'       :   600,
