@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150326201520) do
+||||||| merged common ancestors
+ActiveRecord::Schema.define(version: 20150325174714) do
+=======
+ActiveRecord::Schema.define(version: 20150326152629) do
+>>>>>>> 492ff3656fb2086c1efa712d33c1084eb43ee070
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +90,13 @@ ActiveRecord::Schema.define(version: 20150326201520) do
     t.string   "upload_content_type"
     t.integer  "upload_file_size"
     t.datetime "upload_updated_at"
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "grade_levels", force: :cascade do |t|

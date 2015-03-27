@@ -1,7 +1,7 @@
 <section class="profile-wrapper">
 
   <aside class="user-profile-photo-wrapper">
-    <%= image_tag @user.avatar.url, class: "user-profile-photo" %>
+    <%= image_tag @user.avatar.url, class: "user-profile-photo" if @user %>
   </aside>
 
   <aside class="user-profile-information-wrapper-right">
@@ -11,11 +11,15 @@
       <li><strong>My School Name:</strong>&nbsp&nbsp<%= @user.school %></li>
       <li><strong>School City:</strong>&nbsp&nbsp<%= @user.city %></li>
       <li><strong>School State:</strong>&nbsp&nbsp<%= @user.state %></li>
+      <li><%= render 'followers_show' %></li>
+      <li><%= button_to "Follow", friendships_path(:friend_id => @user), :method => :post %></li>
     </ul>
   </aside>
 </section>
 
-<% @user.lessons.each do |l| %>
+<p><%= button_to "Find other users to follow", all_users_users_path, :method => 'get' %></p>
+
+<br><% @user.lessons.each do |l| %>
 <%= link_to l, class:"my-lessons-container-link" do %>
   <section class="my-lessons-container">
     <article class="my-lessons-preview-area">
@@ -48,6 +52,7 @@
 <br>
 <div><%= link_to "New Lesson", new_lesson_path, class: 'save-button' %></div>
 <br>
+</br>
 
 <!-- PROFILE PAGE, LESSONS & PLANS -->
 <ul class="accordion-tabs">
@@ -78,52 +83,3 @@
     </div>
   </li>
 </ul>
-
-
-
-<!-- <section class="login-signup-container">
-	<h2 class="login-signup-form-header">Signup</h2>
-	<form method="post" class="minimal">
-		<label for="name">
-			Name:
-      <input type="text" name="name" id="name" placeholder="Your full name" />
-		</label>
-    <label for="grades">
-      Grades:
-      <input type="text" name="grades" id="grades" placeholder="Grades I teach" />
-    </label>
-    <label for="school">
-      My School's Name:
-      <input type="text" name="school" id="school" placeholder="Where I teach" />
-    </label>
-    <label for="school-city">
-      City:
-      <input type="text" name="school-city" id="schoo-cityl" placeholder="My school's city" />
-    </label>
-    <label for="username">
-			Username:
-      <input type="text" name="username" id="username" placeholder="Username" />
-		</label>
-    <label for="password">
-			Password:
-      <input type="password" name="password" id="password" placeholder="Password must be between 8 and 20 characters" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required">
-		</label>
-		<button type="submit" class="btn-minimal">Sign in</button>
-	</form>
-</section>
-
-
-<section class="login-signup-container">
-	<h2 class="login-signup-form-header">Login</h2>
-	<form method="post" class="minimal">
-		<label for="username">
-			Username:
-      <input type="text" name="username" id="username" placeholder="Username" />
-		</label>
-		<label for="password">
-			Password:
-      <input type="password" name="password" id="password" placeholder="Password" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required">
-		</label>
-		<button type="submit" class="btn-minimal">Sign in</button>
-	</form>
-</section> -->
