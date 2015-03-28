@@ -696,13 +696,8 @@ HOMEPAGE LESSON PREVIEWS
     position: relative;
     top: 50%;
     transform: translateY(-25%);
-<<<<<<< HEAD
     font-family: $headline-font;
     font-size: 1.2em;
-=======
-    font-family: 'Hind';
-    font-size: 1.5em;
->>>>>>> 0dbbd9fe33cee2fa62be6c3fd82daecd2ac1c28b
     margin-left: .25em;
     color: #555;
     letter-spacing: .1em;
@@ -1001,13 +996,12 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
   cursor: pointer;
 }
 
-<<<<<<< HEAD
 /***********************************************
       STAR THIS PLAN CHECKBOX
 ***********************************************/
 .star-checkbox {
   text-align: center;
-=======
+}
 /************************************
       FORGOT PASSWORD BUTTON
 ************************************/
@@ -1048,8 +1042,6 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
 
 .login-forgot-password-buttons-wrapper button {
   margin: 0 .5em 0;
-
->>>>>>> 0dbbd9fe33cee2fa62be6c3fd82daecd2ac1c28b
 }
 
 input[type="checkbox"] {
@@ -1068,6 +1060,48 @@ input[type="checkbox"] + label span {
 
 input[type="checkbox"]:checked + label span {
     background:url(check_radio_sheet.png) -19px top no-repeat;
+}
+
+/************************************
+      FORGOT PASSWORD BUTTON
+************************************/
+.forgot-password-button-wrapper {
+  display: block;
+  text-align: center;
+  margin: 5em 0 2em;
+}
+
+.forgot-password-button {
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $button-bg-color;
+  color: #fff;
+  border-radius: .25em;
+  padding: 1em 1.6em 1em;
+}
+
+.forgot-password-button:hover {
+  background: $button-bg-hover;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+/**********************************************
+  LOG IN & FORGOT PASSWORD BUTTONS SIDE BY SIDE
+**********************************************/
+.login-forgot-password-buttons-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.login-forgot-password-buttons-wrapper button {
+  margin: 0 .5em 0;
 }
 
 
@@ -1328,12 +1362,7 @@ input[type=checkbox].css-checkbox {
   font-family: $headline-font;
   font-weight: 400;
   color: $alt-top-bg-color;
-<<<<<<< HEAD
   margin: 1em 0 1.2em 0;
-=======
-  margin-bottom: .25em;
-  margin-top: 3em;
->>>>>>> 0dbbd9fe33cee2fa62be6c3fd82daecd2ac1c28b
 }
 
 .page-headline-rule-first {
@@ -1364,6 +1393,50 @@ input[type=checkbox].css-checkbox {
   height: 0;
   border-style: solid;
   border-width: 10px 5px 0 5px;
+  border-color: #ccc transparent transparent transparent;
+}
+
+/***************************************
+      CREATE LESSON PAGE HEADLINE
+***************************************/
+.create-lesson-page-headline {
+  text-align: center;
+  font-size: 2.4em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: $alt-top-bg-color;
+  margin-bottom: .25em;
+  margin-top: 3em;
+}
+
+.create-lesson-page-headline-rule-first {
+  border-bottom: 1px solid #eee;
+  width: 25%;
+  margin: 0 auto 0;
+}
+
+.create-lesson-page-headline-rule-container {
+  position: relative;
+  margin: 0 auto 0;
+  padding-top: .2em;
+  margin-bottom: 3em;
+
+}
+
+.create-lesson-page-headline-rule-first {
+  margin-bottom: 3em;
+}
+
+.create-lesson-page-headline-triangle {
+  position: absolute;
+  right: 50%;
+  transform: translate(50%);
+  top: 0;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 8px 0 8px;
   border-color: #ccc transparent transparent transparent;
 }
 
@@ -2002,8 +2075,6 @@ PROFILE PAGE LESSON VIEW
         box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
 }
 
-<<<<<<< HEAD
-=======
 /***************************************
           ABOUT PAGE
 ***************************************/

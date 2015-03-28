@@ -21,6 +21,7 @@
 <br>
 <div><%= link_to "New Lesson", new_lesson_path, class: 'save-button' %></div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <br> -->
 
 <!-- PROFILE PAGE TOP WRAPPER -->
@@ -178,6 +179,15 @@
   <li class="tab-header-and-content">
     <a href="javascript:void(0)" class="tab-link">Starred Lessons</a>
     <div class="tab-content">
+
+    <div class="tab-content">
+      <%= render partial: 'my_lessons' %>
+    </div>
+  </li>
+  <li class="tab-header-and-content">
+    <a href="javascript:void(0)" class="tab-link">Starred Lessons</a>
+    <div class="tab-content">
+
       <%= render partial: 'my_starred_lessons' %>
     </div>
   </li>
