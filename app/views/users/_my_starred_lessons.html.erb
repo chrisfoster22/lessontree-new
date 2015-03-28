@@ -1,0 +1,17 @@
+<% if @starred_lessons.empty? %>
+<%= "You have not starred any lessons. Browse for lessons from the home page!" %>
+<% else %>
+<% @starred_lessons.each do |l| %>
+  <%= link_to l, class:"my-lessons-container-link" do %>
+  <section class="my-lessons-container">
+    <article class="my-lessons-preview-area">
+      <h3 class="my-lessons-container-title"><%= l.topic %></h3>
+      <p class="my-lessons-container-description">
+        <%= l.description %>
+        <%= l.user %>
+      </p>
+    </article>
+  </section></a>
+  <% end %>
+<% end %>
+<% end %>

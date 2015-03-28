@@ -1,16 +1,24 @@
-<h2>Following:</h2>
+<div>
+<h3>Following:</h3>
   <ul>
     <% for friendship in @user.friendships %>
       <li>
-        <%=h friendship.friend.name %>
-        
+        <%= friendship.friend.name %>
+
       </li>
     <% end %>
   </ul>
 
-<h2>Followers:</h2>
+<h3>Followers:</h3>
   <ul>
     <% for user in @user.inverse_friends %>
       <li><%=h user.name %></li>
     <% end %>
   </ul>
+</div>
+<% unless @user == current_user %>
+  <li><%= button_to "Follow", friendships_path(:friend_id => @user), :method => :post %></li>
+  <% if current_user.friends.include?(@user) %>
+    <li><%= button_to "Stop following", friendship_path, :method => :delete %></li>
+  <% end %>
+<% end %>
