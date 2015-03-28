@@ -506,8 +506,8 @@ HOMEPAGE LESSON PREVIEWS
 ************************************/
 
 .login-button-wrapper {
+      display: block;
       text-align: center;
-      display: inline;
       margin: 2em 0 2em;
 }
 
@@ -523,6 +523,8 @@ HOMEPAGE LESSON PREVIEWS
       text-align: center;
       padding: 1em 1.6em 1em;
       text-transform: uppercase;
+      letter-spacing: .1em;
+
 }
 
 .login-button:hover {
@@ -531,7 +533,6 @@ HOMEPAGE LESSON PREVIEWS
         cursor: pointer;
         text-shadow: none;
         border: none;
-        transition: .6s;
         -webkit-transition: .6s;
 }
 
@@ -707,7 +708,7 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
       FORGOT PASSWORD BUTTON
 ************************************/
 .forgot-password-button-wrapper {
-  display: inline;
+  display: block;
   text-align: center;
   margin: 2em 0 2em;
 }
@@ -735,17 +736,17 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
 /**********************************************
   LOG IN & FORGOT PASSWORD BUTTONS SIDE BY SIDE
 **********************************************/
-// .login-forgot-password-buttons-wrapper {
-//   display: inline;
-//   text-align: center;
-//   margin: 2em 0 2em;
-// }
+.login-forgot-password-buttons-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
 
-// .login-forgot-password-buttons-wrapper button {
-//   margin: 0 .5em 0;
-//   text-align: center;
-//   display: inline;
-// }
+.login-forgot-password-buttons-wrapper button {
+  margin: 0 .5em 0;
+
+}
+
 /************************************
     PROFILE PAGE, LESSONS & PLANS
 ************************************/
