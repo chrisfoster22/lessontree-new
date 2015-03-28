@@ -1,33 +1,51 @@
 Rails.application.routes.draw do
 
+  mount Commontator::Engine => '/commontator'
   mount Ckeditor::Engine => '/ckeditor'
-  # devise_for :users, :controllers => { :registrations => 'users/registrations' }
   devise_for :users, :controllers => { :omniauth_callbacks => 'omniauth_callbacks' }
-  resources :lessons
-  resources :users
-  resources :documents
+  resources :friendships
   resources :stars
+
   get 'home/index'
   get 'home/about'
+  get 'home/style_guide'
   post 'home/about'
+
   get 'users/sign_up'
   post 'users/sign_up'
   post 'users/sign_out'
-  get 'home/style_guide'
+
 
   resources :documents do
     member do
-      get 'upload_file'
       get 'document_frame', to: 'documents#document_frame'
+      get 'version_history'
     end
+
+    collection do
+      get 'upload_file'
+      post 'create_from_upload'
+    end
+
+    resources :versions, only: [:destroy] do
+       member do
+         get :diff, to: 'versions#diff'
+         patch :rollback, to: 'versions#rollback'
+       end
+     end
   end
 
   resources :lessons do
     member do
-      get 'document_form/:id' => 'lessons#document_form'
+      get 'document_form'
     end
   end
 
+  resources :users do
+    collection do
+      get 'all_users'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

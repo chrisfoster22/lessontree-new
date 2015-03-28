@@ -30,21 +30,34 @@
 <%= f.check_box :lesson_id, value: @lesson.id, class: "star-box", id: "#{@lesson.id}", checked: @starred %>
 <% end %>
 
+<div><%= formatted_lesson_grade_levels(@lesson) %></div>
+<div><%= formatted_lesson_subjects(@lesson) %></div>
+
 <h3>Uploaded Documents</h3>
 <% @uploaded_documents.each do |d| %>
-  <div><%= link_to("#{d.title}", d.upload.url) %></div>
+  <div><%= link_to "#{d.title}", "#{d.upload.url}", class: "fancybox", id: "#{d.id}", remote: true %></div>
 <% end %>
 
 <h3>Created Documents</h3>
 <% @created_documents.each do |d| %>
-  <div><%= link_to "#{d.title}", d, class: "fancybox", id: "#{d.id}", remote: true %></div>
+  <div><%= link_to "#{d.title}", document_form_lesson_path(d.id), class: "fancybox", id: "#{d.id}", remote: true %></div>
+  <div><%= link_to "Edit", edit_document_path(d.id) %></div>
+  <div><%= link_to "Version History", version_history_document_path(d.id) %></div>
+  <div><%= link_to "Delete", document_path(d), method: :delete %></div>
+  <br>
 <% end %>
 
+<%= commontator_thread(@lesson) %>
+
 <div class="edit-save-buttons-wrapper">
-  <%= link_to 'Upload', "/documents/#{@lesson.id}/upload_file", class: 'edit-button' %>
-  <%= link_to "Create", '/documents/new' + "?lesson_id=#{@lesson.id}", class: 'save-button' %>
+  <%= link_to 'Upload Lesson Document', upload_file_documents_path(lesson_id: @lesson.id), id: 'fancybox', class: 'edit-button' %>
+  <%= link_to "Create Lesson Document", new_document_path(lesson_id: @lesson.id), class: 'save-button' %>
 </div>
 
 <div style="display: none">
     <div id="content-div">Some content here</div>
+</div>
+
+<div>
+  <%= link_to "Back", user_path(@lesson.user) %>
 </div>
