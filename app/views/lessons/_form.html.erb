@@ -7,15 +7,12 @@
 <% end %>
 <%= form_for(@lesson, multipart: true) do |f| %>
   <div>
-    <%= f.label :topic %>
-    <%= f.text_field :topic %>
+    <%= f.text_field :topic, placeholder: "Title of my lesson" %>
   </div>
-  <div>
-    <%= f.label :description %>
-  </div>
+
   <%= f.hidden_field :user_id, value: current_user.id %>
   <div>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, placeholder: "Description of my lesson" %>
   </div>
   <div>
     <%= f.label "Subjects" %>
@@ -25,7 +22,9 @@
     <%= f.label "Grade Levels" %>
     <%= f.collection_check_boxes :grade_level_ids, @grade_levels, :id, :title %>
   </div>
-  <div>
-    <%= f.submit "Create Lesson", :class => "create-lesson" %>
+
+  <div class="save-button-wrapper">
+    <%= f.submit "Save", class: "save-button" %>
   </div>
+
 <% end %>

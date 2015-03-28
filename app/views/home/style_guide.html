@@ -151,6 +151,11 @@
   <button class="create-button" type="button">Create Doc</button>
 </div>
 
+<!-- UPDATE DOC BUTTON -->
+<div class="update-button-wrapper">
+  <button class="update-button" type="button">Update</button>
+</div>
+
 <!-- SIGN UP BUTTON  -->
 <div class="signup-button-wrapper">
   <button class="signup-button" type="button">Sign Up</button>
@@ -177,6 +182,13 @@
 <div class="page-headline-rule-container">
   <div class="page-headline-rule-first"></div>
   <div class="page-headline-triangle"></div>
+</div>
+
+<!-- CREATE LESSON PAGE HEADLINE -->
+<div class="create-lesson-page-headline">Create Lesson</div>
+<div class="create-lesson-page-headline-rule-container">
+  <div class="create-lesson-page-headline-rule-first"></div>
+  <div class="create-lesson-page-headline-triangle"></div>
 </div>
 
 <!-- SUB-HEADLINE -->
@@ -307,7 +319,7 @@
     <div class="login-forgot-password-buttons-wrapper">
 		    <button class="login-button" type="submit">Log In</button>
 	      <button class="forgot-password-button" type="submit">Forgot Password?</button>
-	</div>
+	  </div>
   </form>
 </section>
 
@@ -325,6 +337,33 @@
   </form>
 </section>
 
+<!-- EDIT USER PROFILE FORM -->
+<section class="edit-profile-container">
+	<h2 class="edit-profile-form-header">Edit My Info</h2>
+	<form class="signup-form" method="post" class="minimal">
+		<label for="name">
+      <input type="text" name="name" id="name" placeholder="My full name" />
+		</label>
+    <label for="grades">
+      <input type="text" name="grades" id="grades" placeholder="Grades I teach" />
+    </label>
+    <label for="school">
+      <input type="text" name="school" id="school" placeholder="Where I teach" />
+    </label>
+    <label for="school-city">
+      <input type="text" name="school-city" id="school-city" placeholder="My school's city" />
+    </label>
+    <label for="username">
+      <input type="text" name="username" id="username" placeholder="Username" />
+		</label>
+    <label for="password">
+      <input type="password" name="password" id="password" placeholder="Password must be between 8 and 20 characters" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required">
+		</label>
+    <div class="signup-button-container">
+		<button class="signup-button" type="submit">Update</button>
+    </div>
+  </form>
+</section>
 
 <!-- FOOTER-->
 <footer>
