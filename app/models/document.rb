@@ -2,7 +2,7 @@ class Document < ActiveRecord::Base
   belongs_to :lesson
   validates_presence_of :title
 
-  has_paper_trail
+  has_paper_trail :only => [:title, :content]
 
   has_attached_file :upload
   validates_attachment :upload, content_type: { content_type: ["application/pdf",
