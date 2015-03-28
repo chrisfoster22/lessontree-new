@@ -8,11 +8,7 @@
 
 # user = User.create!(name: "Martha Washington", grade_level_id: 3, email: "martha@washington.edu", password: "password", city: "New York", state: "NY", school: "Washington Heights Middle School")
 
-document = Document.create!(title: "Learning the ABC's", content: "A, B, C, D, E, F, G... You know the rest of the song.", lesson_id: 1)
 
-lesson = Lesson.create!(topic: "American Revolution", description: "America fought and won...everything", user_id: 1, star_count: 1)
-
-subject = Subject.create!(title: "History")
 
 GradeLevel.create!(title: "Kindergarten")
 GradeLevel.create!(title: "1st Grade")
@@ -24,6 +20,7 @@ GradeLevel.create!(title: "6th Grade")
 GradeLevel.create!(title: "7th Grade")
 GradeLevel.create!(title: "8th Grade")
 
+Subject.create!(title: "History")
 Subject.create!(title: "Mathematics")
 Subject.create!(title: "Science")
 Subject.create!(title: "Language Arts")

@@ -506,8 +506,8 @@ HOMEPAGE LESSON PREVIEWS
 ************************************/
 
 .login-button-wrapper {
+      display: block;
       text-align: center;
-      display: inline;
       margin: 2em 0 2em;
 }
 
@@ -523,6 +523,8 @@ HOMEPAGE LESSON PREVIEWS
       text-align: center;
       padding: 1em 1.6em 1em;
       text-transform: uppercase;
+      letter-spacing: .1em;
+
 }
 
 .login-button:hover {
@@ -531,7 +533,6 @@ HOMEPAGE LESSON PREVIEWS
         cursor: pointer;
         text-shadow: none;
         border: none;
-        transition: .6s;
         -webkit-transition: .6s;
 }
 
@@ -635,6 +636,39 @@ HOMEPAGE LESSON PREVIEWS
   cursor: pointer;
 }
 
+/************************************
+          UPDATE BUTTON
+************************************/
+.update-button-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.update-button {
+  padding: 1em 2.7em 1em;
+}
+
+.update-button {
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $alt-top-bg-color;
+  color: #fff;
+  border-radius: .25em;
+}
+
+.update-button:hover {
+  background: $alt-top-bg-hover;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+
 /**********************************************
  SAVE & EDIT BUTTON SIDE BY SIDE
 **********************************************/
@@ -707,9 +741,9 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
       FORGOT PASSWORD BUTTON
 ************************************/
 .forgot-password-button-wrapper {
-  display: inline;
+  display: block;
   text-align: center;
-  margin: 2em 0 2em;
+  margin: 5em 0 2em;
 }
 
 .forgot-password-button {
@@ -735,17 +769,17 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
 /**********************************************
   LOG IN & FORGOT PASSWORD BUTTONS SIDE BY SIDE
 **********************************************/
-// .login-forgot-password-buttons-wrapper {
-//   display: inline;
-//   text-align: center;
-//   margin: 2em 0 2em;
-// }
+.login-forgot-password-buttons-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
 
-// .login-forgot-password-buttons-wrapper button {
-//   margin: 0 .5em 0;
-//   text-align: center;
-//   display: inline;
-// }
+.login-forgot-password-buttons-wrapper button {
+  margin: 0 .5em 0;
+
+}
+
 /************************************
     PROFILE PAGE, LESSONS & PLANS
 ************************************/
@@ -997,6 +1031,50 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
 }
 
 .page-headline-triangle {
+  position: absolute;
+  right: 50%;
+  transform: translate(50%);
+  top: 0;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 8px 0 8px;
+  border-color: #ccc transparent transparent transparent;
+}
+
+/***************************************
+      CREATE LESSON PAGE HEADLINE
+***************************************/
+.create-lesson-page-headline {
+  text-align: center;
+  font-size: 2.4em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: $alt-top-bg-color;
+  margin-bottom: .25em;
+  margin-top: 3em;
+}
+
+.create-lesson-page-headline-rule-first {
+  border-bottom: 1px solid #eee;
+  width: 25%;
+  margin: 0 auto 0;
+}
+
+.create-lesson-page-headline-rule-container {
+  position: relative;
+  margin: 0 auto 0;
+  padding-top: .2em;
+  margin-bottom: 3em;
+
+}
+
+.create-lesson-page-headline-rule-first {
+  margin-bottom: 3em;
+}
+
+.create-lesson-page-headline-triangle {
   position: absolute;
   right: 50%;
   transform: translate(50%);

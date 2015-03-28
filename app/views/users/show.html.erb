@@ -7,7 +7,7 @@
   <div class="user-profile-information-wrapper-right">
     <ul class = "user-profile-unique-information">
       <li><span class="profile-page-user-labels">Name:</span>&nbsp&nbsp<%= @user.name %></li>
-      <li><span class="profile-page-user-labels">Grades I Teach:</span>&nbsp&nbsp<%= formatted_user_grade_levels(@user) %></li>
+      <li><span class="profile-page-user-labels">Grade I Teach:</span>&nbsp&nbsp<%= formatted_grade_level_name(@user) %></li>
       <li><span class="profile-page-user-labels">My School Name:</span>&nbsp&nbsp<%= @user.school %></li>
       <li><span class="profile-page-user-labels">School City:</span>&nbsp&nbsp<%= @user.city %></li>
       <li><span class="profile-page-user-labels">School State:</span>&nbsp&nbsp<%= @user.state %></li>

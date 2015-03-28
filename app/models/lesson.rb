@@ -8,7 +8,7 @@ class Lesson < ActiveRecord::Base
   has_many :subjects, through: :lesson_subjects
   has_many :documents
 
-  validates_presence_of :topic, :description, :subject_ids
+  validates_presence_of :topic, :description
 
   acts_as_commontable
 
