@@ -1,3 +1,33 @@
+<!-- POSSIBLE LOGGED IN NAVIGATION-->
+<!-- <nav class="nav-logout-bar">
+  <div class="nav-logo">
+    <ul>
+      <li class="logo"><a href= "/" >LessonTree</a></li>
+    </ul>
+  </div>
+  <div class="nav-list-logged-in">
+      <a class="nav-welcome-link" href="/">
+        <li class="nav-photo"><img class="nav-user-photo" src="http://www.john-michael.net/wp-content/uploads/2011/11/Teddy-Roosevelt.jpg"></li>
+        <li class="nav-welcome">amplourde</li>
+      </a>
+
+      <a class="nav-my-lessons-link" href="users/show">
+          <li class="nav-my-lessons-icon"><i class="fa fa-file-text-o"></i><span class="nav-my-lessons">My Lessons</span></li>
+      </a>
+
+      <a class="nav-create-lessons-link" href="users/show">
+          <li class="nav-create-lessons-icon"><i class="fa fa-plus"></i></i><span class="nav-create-lessons">Create</span></li>
+      </a>
+
+      <a class="nav-logout-link" href="/">
+        <li class="nav-logout-icon"><i class="fa fa-sign-out"></i><span class="nav-logout">Log Out</span></li>
+      </a>
+
+    </ul>
+  <div>
+</nav> -->
+
+
 <!-- LOGGED OUT NAVIGATION-->
 <nav class="nav-login-bar">
   <div class="nav-logo">
@@ -14,7 +44,6 @@
   <div>
 </nav>
 
-
 <!-- LOGGED IN NAVIGATION-->
 <nav class="nav-logout-bar">
   <div class="nav-logo">
@@ -22,11 +51,20 @@
       <li class="logo"><a href= "/" >LessonTree</a></li>
     </ul>
   </div>
-  <div class="nav-list">
-    <ul>
-      <li class="nav-myProfile"><a href=" ">My Profile</a></li>
-      <li class="nav-edit-profile"><a href=" ">Edit Profile</a></li>
-      <li class="nav-logout"><a href=" ">Log Out</a></li>
+  <div class="nav-list-logged-in">
+
+      <a class="nav-my-lessons-link" href="users/show">
+          <li class="nav-my-lessons-icon"><i class="fa fa-file-text-o"></i><span class="nav-my-lessons">My Profile</span></li>
+      </a>
+
+      <a class="nav-create-lessons-link" href="users/show">
+          <li class="nav-create-lessons-icon"><i class="fa fa-plus"></i></i><span class="nav-create-lessons">Create</span></li>
+      </a>
+
+      <a class="nav-logout-link" href="/">
+        <li class="nav-logout-icon"><i class="fa fa-sign-out"></i><span class="nav-logout">Log Out</span></li>
+      </a>
+
     </ul>
   <div>
 </nav>
@@ -211,79 +249,71 @@
   </p>
 </div>
 
-    <!-- MY PROFILE PAGE / PROFILE SECTION -->
-<section class="profile-wrapper">
-
-  <div class="user-profile-photo-wrapper">
-    <img src="http://www.john-michael.net/wp-content/uploads/2011/11/Teddy-Roosevelt.jpg">
-  </div>
-
-  <div class="user-profile-information-wrapper-right">
-    <ul class = "user-profile-unique-information">
-      <li><span class="profile-page-user-labels">Name:</span>&nbsp&nbspTheodore Roosevelt</li>
-      <li><span class="profile-page-user-labels">Grades I Teach:</span>&nbsp&nbspKindergarten</li>
-      <li><span class="profile-page-user-labels">My School Name:</span>&nbsp&nbspTheodore Roosevelt Regional Awesomeness Elementary School</li>
-      <li><span class="profile-page-user-labels">School City:</span>&nbsp&nbspWalla Walla</li>
-      <li><span class="profile-page-user-labels">School State:</span>&nbsp&nbspWashington</li>
-    </ul>
-  </div>
-</section>
-
+<!-- STAR THIS PLAN CHECKBOX-->
+<div class="star-checkbox">
+  <input type="checkbox" id="checked" name="check" value="checked" />
+  <label for="checked"><span></span>Star This Lesson</label>
+</div>
 
 <!-- PROFILE PAGE, LESSONS & PLANS -->
 <ul class="accordion-tabs">
   <li class="tab-header-and-content">
-    <a href="javascript:void(0)" class="is-active tab-link">My Units</a>
+    <a href="javascript:void(0)" class="is-active tab-link">My Lessons</a>
     <div class="tab-content">
-     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tincidunt pellentesque lorem, id suscipit dolor rutrum id. Morbi facilisis porta volutpat. Fusce adipiscing, mauris quis congue tincidunt, sapien purus suscipit odio, quis dictum odio tortor in sem. Ut sit amet libero nec orci mattis fringilla. Praesent eu ipsum in sapien tincidunt molestie sed ut magna. Nam accumsan dui at orci rhoncus pharetra tincidunt elit ullamcorper. Sed ac mauris ipsum. Nullam imperdiet sapien id purus pretium id aliquam mi ullamcorper.</p>
-    </div>
+
+      <section class="pp-lesson-container">
+
+        <div class="pp-lesson-title-container">
+          <h3 class="pp-lesson-title">Example of Lesson Title</h3>
+          <ul>
+              <li class="pp-lesson-subject-list">Social Studies</li>
+              <li class="pp-lesson-pipe">|</li>
+              <li class="pp-lesson-grade-list">1st Grade</li>
+        </ul>
+        </div>
+
+        <div class="pp-lesson-description-container">
+          <ul class="star-ranking">
+          <li class="icon-star"></li>
+          <li class="ranking">12</li>
+          </ul>
+          <p class="lesson-description">In sit erroribus interpretaris, id populo scriptorem nam.
+            Ex has sale copiosae. Sit ea noster commune. Congue adversarium nam cu. Accumsan dissentias
+            duo ut, assum quaerendum ea duo. Pro et elitr deseruisse temporibus, est te pertinax intellegam dissentiunt,
+            te paulo placerat cotidieque sea. An sit dico stet omnesque, libris integre hendrerit id sit.</p>
+        </div>
+      </section>
+
   </li>
   <li class="tab-header-and-content">
-    <a href="javascript:void(0)" class="tab-link">Starred Units</a>
+    <a href="javascript:void(0)" class="tab-link">Starred Lessons</a>
     <div class="tab-content">
-      <p class="icon-star"> </p>
-      <p>Ut laoreet augue et neque pretium non sagittis nibh pulvinar. Etiam ornare tincidunt orci quis ultrices. Pellentesque ac sapien ac purus gravida ullamcorper. Duis rhoncus sodales lacus, vitae adipiscing tellus pharetra sed. Praesent bibendum lacus quis metus condimentum ac accumsan orci vulputate. Aenean fringilla massa vitae metus facilisis congue. Morbi placerat eros ac sapien semper pulvinar. Vestibulum facilisis, ligula a molestie venenatis, metus justo ullamcorper ipsum, congue aliquet dolor tortor eu neque. Sed imperdiet, nibh ut vestibulum tempor, nibh dui volutpat lacus, vel gravida magna justo sit amet quam. Quisque tincidunt ligula at nisl imperdiet sagittis. Morbi rutrum tempor arcu, non ultrices sem semper a. Aliquam quis sem mi.</p>
-    </div>
-  </li>
-  <li class="tab-header-and-content">
-    <a href="javascript:void(0)" class="tab-link">My Lesson Plans</a>
-    <div class="tab-content">
-      <p>Donec mattis mauris gravida metus laoreet non rutrum sem viverra. Aenean nibh libero, viverra vel vestibulum in, porttitor ut sapien. Phasellus tempor lorem id justo ornare tincidunt. Nulla faucibus, purus eu placerat fermentum, velit mi iaculis nunc, bibendum tincidunt ipsum justo eu mauris. Nulla facilisi. Vestibulum vel lectus ac purus tempus suscipit nec sit amet eros. Nullam fringilla, enim eu lobortis dapibus, quam magna tincidunt nibh, sit amet imperdiet dolor justo congue turpis.</p>
-    </div>
-  </li>
-  <li class="tab-header-and-content">
-    <a href="javascript:void(0)" class="tab-link">Starred Lesson Plans</a>
-    <div class="tab-content">
-      <p class="icon-star"> </p>
-      <p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus dui urna.</p>
+      <section class="pp-lesson-container">
+
+        <div class="pp-lesson-title-container">
+          <h3 class="pp-lesson-title">Example of Lesson Title</h3>
+          <ul>
+              <li class="pp-lesson-subject-list">Social Studies</li>
+              <li class="pp-lesson-pipe">|</li>
+              <li class="pp-lesson-grade-list">1st Grade</li>
+        </ul>
+        </div>
+
+        <div class="pp-lesson-description-container">
+          <ul class="star-ranking">
+          <li class="icon-star"></li>
+          <li class="ranking">12</li>
+          </ul>
+          <p class="lesson-description">In sit erroribus interpretaris, id populo scriptorem nam.
+            Ex has sale copiosae. Sit ea noster commune. Congue adversarium nam cu. Accumsan dissentias
+            duo ut, assum quaerendum ea duo. Pro et elitr deseruisse temporibus, est te pertinax intellegam dissentiunt,
+            te paulo placerat cotidieque sea. An sit dico stet omnesque, libris integre hendrerit id sit.</p>
+        </div>
+      </section>
     </div>
   </li>
 </ul>
 
-<!-- SHOWING FULL VIEW OF PLANS/LESSONS  -->
-<section class="lesson-container">
-
-  <div class="lesson-title-container">
-    <h3 class="lesson-title">Example of Lesson Title</h3>
-    <ul>
-        <li class="lesson-subject-list">Social Studies</li>
-        <li class="lesson-pipe">|</li>
-        <li class="lesson-grade-list">1st Grade</li>
-  </ul>
-  </div>
-
-  <div class="lesson-description-container">
-    <ul class="star-ranking">
-    <li class="icon-star"></li>
-    <li class="ranking">12</li>
-    </ul>
-    <p class="lesson-description">In sit erroribus interpretaris, id populo scriptorem nam.
-      Ex has sale copiosae. Sit ea noster commune. Congue adversarium nam cu. Accumsan dissentias
-      duo ut, assum quaerendum ea duo. Pro et elitr deseruisse temporibus, est te pertinax intellegam dissentiunt,
-      te paulo placerat cotidieque sea. An sit dico stet omnesque, libris integre hendrerit id sit.</p>
-  </div>
-  </a>
-</section>
 
 <!-- SIGN UP FORM -->
 <section class="signup-container">
@@ -371,6 +401,30 @@
     </div>
   </form>
 </section>
+
+<!-- NOT USING THIS RIGHT NOW
+PROFILE PAGE TOP WRAPPER -->
+<!-- <div class="profile-page-top-wrapper">
+  <ul>
+    <li>
+      <div class="expander-profile">
+          <a href="javascript:void(0)" id="js-expander-trigger" class="expander-profile-trigger expander-hidden">amplourde</a>
+          <div id="js-expander-content" class="expander-content">
+
+            <div class="user-profile-information-wrapper-right">
+              <ul class = "user-profile-unique-information">
+                <li><span class="profile-page-user-labels">Name:</span><span class=user-profile-unique-labels>&nbsp&nbspTheodore Roosevelt</span></li>
+                <li><span class="profile-page-user-labels">Grades I Teach:</span><span class=user-profile-unique-labels>&nbsp&nbspKindergarten</span></li>
+                <li><span class="profile-page-user-labels">My School Name:</span><span class=user-profile-unique-labels>&nbsp&nbspTheodore Roosevelt Regional Awesomeness Elementary School</span></li>
+                <li><span class="profile-page-user-labels">School City:</span><span class=user-profile-unique-labels>&nbsp&nbspWalla Walla</span></li>
+                <li><span class="profile-page-user-labels">School State:</span><span class=user-profile-unique-labels>&nbsp&nbspWashington</span></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+    </li> -->
+
 
 <!-- FOOTER-->
 <footer>
