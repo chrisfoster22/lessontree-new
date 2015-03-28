@@ -636,6 +636,39 @@ HOMEPAGE LESSON PREVIEWS
   cursor: pointer;
 }
 
+/************************************
+          UPDATE BUTTON
+************************************/
+.update-button-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.update-button {
+  padding: 1em 2.7em 1em;
+}
+
+.update-button {
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $alt-top-bg-color;
+  color: #fff;
+  border-radius: .25em;
+}
+
+.update-button:hover {
+  background: $alt-top-bg-hover;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+
 /**********************************************
  SAVE & EDIT BUTTON SIDE BY SIDE
 **********************************************/
