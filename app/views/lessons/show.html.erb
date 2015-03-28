@@ -17,8 +17,10 @@
 <h3>Created Documents</h3>
 <% @created_documents.each do |d| %>
   <div><%= link_to "#{d.title}", document_form_lesson_path(d.id), class: "fancybox", id: "#{d.id}", remote: true %></div>
-  <div><%= link_to "Edit", edit_document_path(d.id) %>
-  <div><%= link_to "Version History", version_history_document_path(d.id) %>
+  <div><%= link_to "Edit", edit_document_path(d.id) %></div>
+  <div><%= link_to "Version History", version_history_document_path(d.id) %></div>
+  <div><%= link_to "Delete", document_path(d), method: :delete %></div>
+  <br>
 <% end %>
 
 <%= commontator_thread(@lesson) %>
