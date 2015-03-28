@@ -33,6 +33,8 @@ class LessonsController < ApplicationController
 
   def new
     @lesson = Lesson.new
+    @subjects = Subject.all
+    @grade_levels = GradeLevel.all
   end
 
   def create
@@ -47,6 +49,8 @@ class LessonsController < ApplicationController
   end
 
   def edit
+    @subjects = Subject.all
+    @grade_levels = GradeLevel.all
   end
 
   def update

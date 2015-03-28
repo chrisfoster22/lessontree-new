@@ -1,5 +1,9 @@
 module UsersHelper
-  def formatted_user_grade_levels(user)
-    user.grade_levels.map(&:title).to_sentence
+  def formatted_grade_level_name(user)
+    GradeLevel.find_by_id(user.grade_level_id).title
+  end
+
+  def all_grades
+    GradeLevel.all
   end
 end
