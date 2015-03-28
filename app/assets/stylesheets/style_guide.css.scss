@@ -1088,6 +1088,51 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
 }
 
 /***************************************
+      EDIT MY PROFILE PAGE HEADLINE
+***************************************/
+.edit-my-profile-page-headline {
+  text-align: center;
+  font-size: 2.4em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: $alt-top-bg-color;
+  margin-bottom: .25em;
+  margin-top: 3em;
+}
+
+.edit-my-profile-page-headline-rule-first {
+  border-bottom: 1px solid #eee;
+  width: 25%;
+  margin: 0 auto 0;
+}
+
+.edit-my-profile-page-headline-rule-container {
+  position: relative;
+  margin: 0 auto 0;
+  padding-top: .2em;
+  margin-bottom: 3em;
+
+}
+
+.edit-my-profile-page-headline-rule-first {
+  margin-bottom: 3em;
+}
+
+.edit-my-profile-page-headline-triangle {
+  position: absolute;
+  right: 50%;
+  transform: translate(50%);
+  top: 0;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 8px 0 8px;
+  border-color: #ccc transparent transparent transparent;
+}
+
+
+/***************************************
           PAGE SUB HEADLINE
 ***************************************/
 .page-sub-headline {
