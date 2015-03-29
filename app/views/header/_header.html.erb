@@ -9,8 +9,8 @@
       <ul>
         <%= link_to "About", home_about_path, :class => "nav-about" %>
           <% if current_user %>
-            <%= link_to "My Profile", current_user, :method => 'get', :class => "nav-myProfile" %>
-            <%= link_to "Logout", destroy_user_session_path, :method => 'delete', :class => "nav-logout" %>
+            <%= link_to "My Profile", current_user, :class => "nav-myProfile" %>
+            <%= link_to "Log Out", destroy_user_session_path, :method => 'delete', :class => "nav-logout" %>
           <% else %>
             <%= link_to "Log In", new_user_session_path, :class => "nav-login" %>
             <%= link_to "Sign Up", users_sign_up_path, :class => "nav-signup" %>

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/about'
   get 'home/style_guide'
-  post 'home/about'
+  get 'home/about'
 
   get 'users/sign_up'
   post 'users/sign_up'
