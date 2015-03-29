@@ -2332,31 +2332,35 @@ PROFILE PAGE LESSON VIEW
   position: relative;
 }
 
-.edit-profile-grades-menu-container {
-    margin-top: .75em;
-    text-align: center;
-    display: inline-block;
-}
+// .edit-profile-grades-menu-container {
+//     margin-top: .75em;
+//     text-align: center;
+//     display: inline-block;
+// }
 
-.grade-select-menu {
-  display: block;
-  text-transform: uppercase;
-  background: $alt-top-bg-color;
-  color: #fff;
-  font-family: $headline-font;
-  font-size: .75em;
-  width: 5.75em;
-  height: 2em;
-  border-radius: none;
-  border: none;
-  padding: 2em;
+// .grade-select-menu {
+//   display: block;
+//   text-transform: uppercase;
+//   background: $alt-top-bg-color;
+//   color: #fff;
+//   font-family: $headline-font;
+//   font-size: .75em;
+//   width: 5.75em;
+//   height: 2em;
+//   border-radius: none;
+//   border: none;
+//   padding: 2em;
+// }
+.expander-trigger expander-hidden {
+  font-size: 2.4em;
 }
-
 
 .grade-menu {
   text-align: center;
   margin-top: 3em;
+  display: block;
 }
+
 
 /************************************
               FOOTER

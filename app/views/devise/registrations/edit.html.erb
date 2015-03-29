@@ -9,10 +9,6 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    Upload a photo<br />
-    <%= f.file_field :avatar %>
-  </div>
 
   <div class="field">
     <%= f.text_field :name, placeholder: "My full name" %>
@@ -54,11 +50,20 @@
   <div>
     <%= f.collection_select :grade_level_id, all_grades, :id, :title %>
   </div>
-
+  <div class="field">
+    <%= f.file_field :avatar, placeholder: "Profile Pic" %>
+  </div>
+  </div>
 
   <div class="expander">
     <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander-hidden">Choose A Grade</a>
     <div id="js-expander-content" class="expander-content">
+
+      <div class="upload-photo-container">
+        <select class="choose-file" name="Picture">
+          <option class="profile-pic" value="Pic">Profile Pic</option>
+        </select>
+      </div>
 
       <div class="edit-profile-grades-menu-container">
         <select class="grade-select-menu" name="Grades">
@@ -78,7 +83,6 @@
 
     </div>
   </div>
-</div>
 
 <div> HELLO </DIV>
 
