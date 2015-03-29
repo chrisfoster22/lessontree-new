@@ -50,14 +50,19 @@
     <%= f.password_field :current_password, autocomplete: "off", placeholder: "Current password- to confirm your changes" %>
   </div>
 
+<div class="grade-menu">
+  <div>
+    <%= f.collection_select :grade_level_id, all_grades, :id, :title, placeholder: "Choose A Grade" %>
+  </div>
+
 
   <div class="expander">
-    <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander-hidden">Choose a grade level</a>
+    <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander-hidden">Choose A Grade</a>
     <div id="js-expander-content" class="expander-content">
 
-      <div class="grades-select-menu-container">
-        <select class="select-menu" name="Grade">
-          <option class="select-menu-values" value="art">Grade</option>
+      <div class="edit-profile-grades-menu-container">
+        <select class="grade-select-menu" name="Grades">
+          <option class="select-menu-values" value="Grade">Grade</option>
           <option value="Kindergarten">Kindergarten</option>
           <option value="1st">1st</option>
           <option value="2nd">2nd</option>
@@ -72,9 +77,9 @@
 
     </div>
   </div>
+</div>
 
-
-
+<div> HELLO </DIV>
 
 
 
@@ -84,8 +89,5 @@
     </div>
   </div>
 
-  <div>
-    <%= f.label "Grade Levels" %>
-    <%= f.collection_select :grade_level_id, all_grades, :id, :title %>
-  </div>
+
 <% end %>
