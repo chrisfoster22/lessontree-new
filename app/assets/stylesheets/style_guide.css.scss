@@ -1444,9 +1444,9 @@ input[type=checkbox].css-checkbox {
 }
 
 /***************************************
-      CREATE LESSON PAGE HEADLINE
+      LOG IN PAGE HEADLINE
 ***************************************/
-.create-lesson-page-headline {
+.login-headline {
   text-align: center;
   font-size: 2.4em;
   font-family: $headline-font;
@@ -1456,13 +1456,13 @@ input[type=checkbox].css-checkbox {
   margin-top: 3em;
 }
 
-.create-lesson-page-headline-rule-first {
+.login-headline-rule-first {
   border-bottom: 1px solid #eee;
   width: 25%;
   margin: 0 auto 0;
 }
 
-.create-lesson-page-headline-rule-container {
+.login-headline-rule-container {
   position: relative;
   margin: 0 auto 0;
   padding-top: .2em;
@@ -1470,11 +1470,11 @@ input[type=checkbox].css-checkbox {
 
 }
 
-.create-lesson-page-headline-rule-first {
+.login-headline-rule-first {
   margin-bottom: 3em;
 }
 
-.create-lesson-page-headline-triangle {
+.login-headline-triangle {
   position: absolute;
   right: 50%;
   transform: translate(50%);
@@ -1819,7 +1819,7 @@ PROFILE PAGE LESSON VIEW
 /************************************
           LOG IN FORM
 ************************************/
-.login-form-header, h2 {
+.login-form-header, h2  {
       text-align: center;
       font-size: 2.4em;
       font-family: $headline-font;
@@ -1911,6 +1911,11 @@ PROFILE PAGE LESSON VIEW
 
 .login-forgot-password-buttons-wrapper button {
   margin: 0 .5em 0;
+  text-align: center;
+}
+
+.actions {
+  margin-top: 5em;
   text-align: center;
 }
 
