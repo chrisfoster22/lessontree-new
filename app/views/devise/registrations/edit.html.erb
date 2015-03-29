@@ -52,7 +52,7 @@
 
 <div class="grade-menu">
   <div>
-    <%= f.collection_select :grade_level_id, all_grades, :id, :title, placeholder: "Choose A Grade" %>
+    <%= f.collection_select :grade_level_id, all_grades, :id, :title %>
   </div>
 
 
@@ -63,6 +63,7 @@
       <div class="edit-profile-grades-menu-container">
         <select class="grade-select-menu" name="Grades">
           <option class="select-menu-values" value="Grade">Grade</option>
+          <option value="Choose A Grade">Choose A Grade</option>
           <option value="Kindergarten">Kindergarten</option>
           <option value="1st">1st</option>
           <option value="2nd">2nd</option>
