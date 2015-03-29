@@ -1,7 +1,10 @@
 class HomeController < ApplicationController
 
   def index
-    @lessons = Lesson.query(params).order(:updated_at).reverse.first(9)
+    @lessons = Lesson.query(params).page(params[:page]).per(5)
+    # @lessons = Lesson.paginate(page: params[:page],:per_page => 5).query(params)
+    @grades = GradeLevel.all
+    @subjects = Subject.all
   end
 end
       # filtered_lessons = []

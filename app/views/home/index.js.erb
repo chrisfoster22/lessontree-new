@@ -1,0 +1,2 @@
+$('.lesson-preview-container').html('<%= escape_javascript render "lessons" %>');
+$('#paginator').html('<%= escape_javascript(paginate(@lessons, :remote => true).to_s) %>');
