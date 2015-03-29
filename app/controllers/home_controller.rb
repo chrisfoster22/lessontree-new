@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @lessons = Lesson.query(params).order(:updated_at).reverse.first(9)
+    @lessons = Lesson.query(params).order(:updated_at).reverse.first(6)
   end
 end
       # filtered_lessons = []
