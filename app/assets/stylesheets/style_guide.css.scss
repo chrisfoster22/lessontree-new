@@ -618,13 +618,13 @@ HOMEPAGE LESSON PREVIEWS
 .lesson-preview-container {
   margin: 6em auto 6em;
   width: 45%;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  // border: 1px solid white;
+  // border-radius: 5px;
 }
 
 .lesson-preview-title-container {
-  margin-bottom: 0.5em;
-  background: #eee;
+  margin-bottom: 2.5em;
+  background: #fcfffe;
   box-shadow: 0 2px 5px rgba(0,0,0,0.18);
   padding: .7em .7em .7em .9em;
 
@@ -662,6 +662,9 @@ HOMEPAGE LESSON PREVIEWS
 
 .lesson-preview-description-container {
   padding: 1em;
+  margin-bottom: 2em;
+  background-color: #fcfffe;
+  border: 1px solid #eee;
 }
 
 .lesson-preview-subject-list, .lesson-preview-pipe, .lesson-preview-grade-list,  {
@@ -707,10 +710,10 @@ HOMEPAGE LESSON PREVIEWS
   line-height: 1.4em;
 }
 
-// .lesson-preview-container {
-//   margin-bottom: 3em;
-//   margin-top: 3em;
-// }
+
+
+
+
 /************************************
             SAVE BUTTON
 ************************************/
@@ -1441,9 +1444,9 @@ input[type=checkbox].css-checkbox {
 }
 
 /***************************************
-      CREATE LESSON PAGE HEADLINE
+      LOG IN PAGE HEADLINE
 ***************************************/
-.create-lesson-page-headline {
+.login-headline {
   text-align: center;
   font-size: 2.4em;
   font-family: $headline-font;
@@ -1453,13 +1456,13 @@ input[type=checkbox].css-checkbox {
   margin-top: 3em;
 }
 
-.create-lesson-page-headline-rule-first {
+.login-headline-rule-first {
   border-bottom: 1px solid #eee;
   width: 25%;
   margin: 0 auto 0;
 }
 
-.create-lesson-page-headline-rule-container {
+.login-headline-rule-container {
   position: relative;
   margin: 0 auto 0;
   padding-top: .2em;
@@ -1467,11 +1470,11 @@ input[type=checkbox].css-checkbox {
 
 }
 
-.create-lesson-page-headline-rule-first {
+.login-headline-rule-first {
   margin-bottom: 3em;
 }
 
-.create-lesson-page-headline-triangle {
+.login-headline-triangle {
   position: absolute;
   right: 50%;
   transform: translate(50%);
@@ -1483,6 +1486,51 @@ input[type=checkbox].css-checkbox {
   border-width: 13px 8px 0 8px;
   border-color: #ccc transparent transparent transparent;
 }
+
+/***************************************
+      EDIT MY PROFILE PAGE HEADLINE
+***************************************/
+.edit-my-profile-page-headline {
+  text-align: center;
+  font-size: 2.4em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: $alt-top-bg-color;
+  margin-bottom: .25em;
+  margin-top: 3em;
+}
+
+.edit-my-profile-page-headline-rule-first {
+  border-bottom: 1px solid #eee;
+  width: 25%;
+  margin: 0 auto 0;
+}
+
+.edit-my-profile-page-headline-rule-container {
+  position: relative;
+  margin: 0 auto 0;
+  padding-top: .2em;
+  margin-bottom: 3em;
+
+}
+
+.edit-my-profile-page-headline-rule-first {
+  margin-bottom: 3em;
+}
+
+.edit-my-profile-page-headline-triangle {
+  position: absolute;
+  right: 50%;
+  transform: translate(50%);
+  top: 0;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 8px 0 8px;
+  border-color: #ccc transparent transparent transparent;
+}
+
 
 /***************************************
           PAGE SUB HEADLINE
@@ -1771,7 +1819,7 @@ PROFILE PAGE LESSON VIEW
 /************************************
           LOG IN FORM
 ************************************/
-.login-form-header, h2 {
+.login-form-header, h2  {
       text-align: center;
       font-size: 2.4em;
       font-family: $headline-font;
@@ -1863,6 +1911,11 @@ PROFILE PAGE LESSON VIEW
 
 .login-forgot-password-buttons-wrapper button {
   margin: 0 .5em 0;
+  text-align: center;
+}
+
+.actions {
+  margin-top: 5em;
   text-align: center;
 }
 
@@ -2208,6 +2261,104 @@ PROFILE PAGE LESSON VIEW
   -webkit-transition: .6s;
   transition: .6s;
   cursor: pointer;
+}
+
+/****************************************
+   EDIT PROFILE SELECT DROPDOWN BUTTON
+****************************************/
+.expander {
+  ///////////////////////////////////////////////////////////////////////////////////
+  $base-font-size: 1.2em !default;
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $base-accent-color: #fff !default;
+  $base-link-color: $base-accent-color !default;
+  $dark-gray: #333 !default;
+  $light-gray: #DDD !default;
+  $base-font-color: $dark-gray !default;
+  margin: 1em auto 0;
+  font-family: $headline-font;
+  font-size: 1.3em;
+  text-align: center;
+
+  p {
+    color: $base-font-color;
+    line-height: $base-line-height;
+  }
+
+  a {
+    color: $base-link-color;
+    text-decoration: none;
+  }
+  //////////////////////////////////////////////////////////////////////////////////
+
+  $expander-arrow-width: 0.7em;
+  $expander-arrow-width: 0.7em;
+  $expander-toggle-size: 1em;
+  $expander-toggle-arrow-size: $expander-toggle-size;
+  $expander-toggle-margin: 1em;
+
+  width: 40%;
+
+  .expander-trigger {
+    @include user-select(none);
+    border-bottom: none;
+    cursor: pointer;
+    margin: 0 auto 0;
+    font-size: $expander-toggle-size;
+    margin-bottom: $expander-toggle-size;
+    padding-bottom: .5em;
+
+    &:before {
+      font-size: $expander-arrow-width;
+
+      margin-right: 0.5em;
+    }
+  }
+
+  .expander-hidden {
+    &:before {
+      font-size: $expander-arrow-width;
+      content: "\25BA";
+    }
+  }
+
+  .expander-hidden + .expander-content {
+    display: none;
+  }
+}
+
+.expander {
+  position: relative;
+}
+
+// .edit-profile-grades-menu-container {
+//     margin-top: .75em;
+//     text-align: center;
+//     display: inline-block;
+// }
+
+// .grade-select-menu {
+//   display: block;
+//   text-transform: uppercase;
+//   background: $alt-top-bg-color;
+//   color: #fff;
+//   font-family: $headline-font;
+//   font-size: .75em;
+//   width: 5.75em;
+//   height: 2em;
+//   border-radius: none;
+//   border: none;
+//   padding: 2em;
+// }
+.expander-trigger expander-hidden {
+  font-size: 2.4em;
+}
+
+.grade-menu {
+  text-align: center;
+  margin-top: 3em;
+  display: block;
 }
 
 /************************************
