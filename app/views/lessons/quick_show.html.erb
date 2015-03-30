@@ -1,9 +1,29 @@
-<section class="lesson-preview-container">
-
+<div class="quick-show"
   <div class="lesson-preview-title-container">
     <h3 class="lesson-preview-title"><%= @lesson.topic %></h3>
     <div class="lesson-preview-description"><%= @lesson.description.html_safe %></div>
   </div>
 
+  <div class="page-headline">Documents</div>
 
+  <div class="page-headline-rule-container">
+    <div class="page-headline-rule-first"></div>
+    <div class="page-headline-triangle"></div>
+  </div>
+
+<div class="quick-created-documents">
+  <% @created_documents.each do |d| %>
+  <h2><%= d.title %></h2>
+  <section class="quick-content">
+  <%= d.content.html_safe %>
 </section>
+  <% end %>
+</div>
+
+<div class="quick-uploaded-documents">
+<% @uploaded_documents.each do |d| %>
+  <%= d.title %>
+  <iframe src=<%= d.upload.url %> width="800" height="100%" class="quick-show-iframe"></iframe
+<% end %>
+</div>
+</div>
