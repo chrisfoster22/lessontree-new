@@ -27,8 +27,24 @@ class LessonsController < ApplicationController
   end
 
   def quick_show
+    @star = Star.new
+    documents = @lesson.documents
+    if current_user && Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
+      @starred = true
+    else
+      @starred = false
+    end
     @documents = @lesson.documents
-     render layout: false
+    @uploaded_documents = []
+    @created_documents = []
+    @documents.each do |d|
+      if d.upload.url != "/uploads/original/missing.png"
+        @uploaded_documents << d
+      else
+        @created_documents << d
+      end
+    end
+     render layout: 'quick_show'
   end
 
   def new

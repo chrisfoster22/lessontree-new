@@ -26,8 +26,12 @@
   <% unless @uploaded_documents.empty? %>
     <p class="list">Uploaded Documents</p>
     <% @uploaded_documents.each do |d| %>
-    <span class="document-show-button"><%= link_to "#{d.title}", "#{d.upload.url}", class: "fancybox", id: "#{d.id}", remote: true %></span>
-      <span class="document-buttons"><%= link_to " | Delete", document_path(d), method: :delete %></span>
+      <% if d.upload_content_type.include?("pdf") %>
+        <span class="document-show-button"><%= link_to "View #{d.title}", "#{d.upload.url}", class: "fancybox", id: "#{d.id}", remote: true %></span>
+      <% else %>
+        <span class="document-show-button"><%= link_to "Download #{d.title}", "#{d.upload.url}" %></span>
+      <% end %>
+        <span class="document-buttons"><%= link_to " | Delete", document_path(d), method: :delete %></span>
     <% end %>
   <% end %>
 
