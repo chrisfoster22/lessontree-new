@@ -18,8 +18,9 @@
   </div>
   <% unless @lesson.user == current_user %>
   <%= form_for @star do |f| %>
-    <%= f.label "Star this lesson?" %>
+    <%= f.label "Star" do %>
     <%= f.check_box :lesson_id, value: @lesson.id, class: "star-box", id: "#{@lesson.id}", checked: @starred %>
+  <% end %>
   <% end %>
   <% end %>
 

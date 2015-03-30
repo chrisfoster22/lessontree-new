@@ -22,8 +22,13 @@
 
 <div class="quick-uploaded-documents">
 <% @uploaded_documents.each do |d| %>
-  <%= d.title %>
-  <iframe src=<%= d.upload.url %> width="800" height="100%" class="quick-show-iframe"></iframe
+  <% if d.upload_content_type %>
+    <h2><%= d.title %></h2>
+    <iframe src=<%= d.upload.url %> width="800" height="100%" class="quick-show-iframe"></iframe>
+  <% else %>
+    <%= link_to "Download #{d.title}" %>
+  <% end %>
 <% end %>
+
 </div>
 </div>
