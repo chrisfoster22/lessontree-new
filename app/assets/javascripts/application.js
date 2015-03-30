@@ -96,3 +96,25 @@ $(document).ready(function(){
     });
   });
 });
+
+
+$(document).ready(function(){
+  $(".dropdown-button") .click(function() {
+    $(".dropdown-menu").toggleClass("show-menu");
+    $(".dropdown-menu > li") .click(function(){
+      $(".dropdown-menu").removeClass("show-menu");
+    });
+    $(".dropdown-menu.dropdown-select > li") .click(function() {
+      $(".dropdown-button").html($(this).html());
+    });
+  });
+});
+
+
+
+//this js is for the users/edit pg & it's not working//
+// <script type="text/javascript">
+// $('input [id=picbtn]').change(function(){
+//   $('#styledBtn').val($(this).val());
+// });
+// </sript>
