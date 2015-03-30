@@ -13,10 +13,15 @@
 
 <header class="sticky-nav-header">
   <nav class="sticky-nav">
-    <a href="#">Nav Link 1</a>
-    <a href="#">Nav Link 2</a>
-    <a href="#">Nav Link 3</a>
-    <a href="#">Nav Link 4</a>
+    <%= link_to "Go To Lesson", lesson_path(@lesson) %>
+    <span class="icon-star"></span>
+    <span class="ranking"><%= @lesson.stars.count %></span>
+
+    <span class="star-this-lesson"><%= form_for @star do |f| %>
+      <%= f.label "Star this lesson?" %>
+      <%= f.check_box :lesson_id, value: @lesson.id, class: "star-box", id: "#{@lesson.id}", checked: @starred %>
+    <% end %></span>
+
   </nav>
 </header>
 

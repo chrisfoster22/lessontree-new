@@ -27,6 +27,13 @@ class LessonsController < ApplicationController
   end
 
   def quick_show
+    @star = Star.new
+    documents = @lesson.documents
+    if current_user && Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
+      @starred = true
+    else
+      @starred = false
+    end
     @documents = @lesson.documents
     @uploaded_documents = []
     @created_documents = []
