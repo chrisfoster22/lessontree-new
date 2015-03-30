@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   end
 
   def self.find_version_author(version)
-    find(version.terminator)
+    # find(version.terminator)
   end
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)

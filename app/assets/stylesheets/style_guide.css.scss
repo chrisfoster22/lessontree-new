@@ -610,9 +610,15 @@ HOMEPAGE LESSON PREVIEWS
     font-family: $headline-font;
   }
   a {
+    color: $alt-top-bg-hover;
+    font-family: $headline-font;
+    text-decoration: none;
+  }
+  span.document-buttons a {
   text-decoration: none;
   font-family: $headline-font;
   color: $button-bg-hover;
+  text-align: right;
   }
   // border: 1px solid white;
   // border-radius: 5px;
