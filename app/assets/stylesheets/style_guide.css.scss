@@ -1043,23 +1043,8 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
   margin: 0 .5em 0;
 }
 
-input[type="checkbox"] {
-    display:none;
-}
 
-input[type="checkbox"] + label span {
-    display:inline-block;
-    width:19px;
-    height:19px;
-    margin:-1px 4px 0 0;
-    vertical-align:middle;
-    background:url(check_radio_sheet.png) left top no-repeat;
-    cursor:pointer;
-}
 
-input[type="checkbox"]:checked + label span {
-    background:url(check_radio_sheet.png) -19px top no-repeat;
-}
 
 /************************************
       FORGOT PASSWORD BUTTON
@@ -2526,7 +2511,7 @@ PROFILE PAGE LESSON VIEW
 }
 
 
->>>>>>> 5e4a0c73fd18c1c73fea591d3d702f9e6e35f971
+
 /************************************
               FOOTER
 ************************************/
