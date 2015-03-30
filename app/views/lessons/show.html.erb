@@ -23,20 +23,26 @@
     <%= f.check_box :lesson_id, value: @lesson.id, class: "star-box", id: "#{@lesson.id}", checked: @starred %>
   <% end %>
 
-  <p class="list">Uploaded Documents</p>
-  <% @uploaded_documents.each do |d| %>
-    <div><%= link_to "#{d.title}", "#{d.upload.url}", class: "fancybox", id: "#{d.id}", remote: true %></div>
+  <% unless @uploaded_documents.empty? %>
+    <p class="list">Uploaded Documents</p>
+    <% @uploaded_documents.each do |d| %>
+      <div><%= link_to "#{d.title}", "#{d.upload.url}", class: "fancybox", id: "#{d.id}", remote: true %></div>
+    <% end %>
   <% end %>
 
-  <p class="list">Created Documents</p>
-  <% @created_documents.each do |d| %>
-    <div><%= link_to "#{d.title}", document_form_lesson_path(d.id), class: "fancybox", id: "#{d.id}", remote: true %></div>
-    <div><%= link_to "Edit", edit_document_path(d.id) %></div>
-    <div><%= link_to "Version History", version_history_document_path(d.id) %></div>
-    <div><%= link_to "Delete", document_path(d), method: :delete %></div>
-    <br>
+  <% unless @created_documents.empty? %>
+    <p class="list">Created Documents</p>
+    <% @created_documents.each do |d| %>
+      <span class="document-show-button"><%= link_to "#{d.title}:", document_form_lesson_path(d.id), class: "fancybox", id: "#{d.id}", remote: true %></span>
+      <span class="document-buttons"><%= link_to "Version History", version_history_document_path(d.id) %></span>
+      <% if @lesson.user == current_user %>
+        <span class="document-buttons"><%= link_to " | Edit", edit_document_path(d.id) %></span>
+        <span class="document-buttons"><%= link_to " | Delete", document_path(d), method: :delete %></span>
+      <% end %>
+      <br>
+    <% end %>
   <% end %>
-
+<br>
   <%= commontator_thread(@lesson) %>
 </section>
 <div class="edit-save-buttons-wrapper">
