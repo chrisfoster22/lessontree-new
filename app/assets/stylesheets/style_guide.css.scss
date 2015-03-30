@@ -2703,6 +2703,96 @@ PROFILE PAGE LESSON VIEW
 }
 
 /************************************
+         VERSIONS TABLE
+************************************/
+.versions-table {
+  font-family: $headline-font;
+  font-size: 1em;
+  line-height: 1.4em;
+  color: #111;
+  margin: 3em auto 4em;
+}
+
+.versions-table a {
+  text-decoration: none;
+}
+
+.versions-table th {
+  text-align: left;
+  font-size: 1.1em;
+  font-weight: bolder;
+  padding-bottom: .7em;
+  border-bottom: 1px solid #ddd;
+}
+
+.versions-table tr {
+  line-height: .5em;
+}
+
+.versions-index-heading{
+  padding-right: 2em;
+}
+
+.versions-date-heading{
+  padding-right: 13em;
+}
+
+.versions-author-heading {
+  padding-right: 2.5em;
+}
+
+.versions-event-heading {
+  padding-right: 2.5em;
+}
+
+.verisons-index-data {
+  padding-left: 2em;
+  padding-top: 1em;
+}
+
+.verisons-changes-link {
+padding-right: 2em;
+}
+
+.verisons-changes-link a {
+  color: $button-bg-color;
+}
+
+.verisons-rollback-link a {
+  color: $button-bg-color;
+}
+
+.back-to-lesson-link-container {
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.back-to-lesson-link {
+  font-family: $headline-font;
+  font-size: .85em;
+  font-weight: bolder;
+  background: $alt-top-bg-color;
+  text-transform: uppercase;
+  padding: .55em .45em .55em;
+  border-radius: .25em;
+  letter-spacing: .1em;
+}
+
+.back-to-lesson-link:hover {
+  background: $alt-top-bg-hover;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+
+.back-to-lesson-link a {
+  text-decoration: none;
+  color: #fff;
+}
+
+
+/************************************
               FOOTER
 ************************************/
 footer {
