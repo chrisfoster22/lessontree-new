@@ -1,12 +1,12 @@
 <h2>Previous Versions</h2>
 
-<table class='table'>
+<table class="versions-table">
   <thead>
-    <tr>
-      <th>Index</th>
-      <th>Date</th>
-      <th>Author</th>
-      <th>Event</th>
+    <tr class="versions-labels-row">
+      <th class="versions-index-heading">Versions</th>
+      <th class="versions-date-heading">Date</th>
+      <th class="versions-author-heading">Author</th>
+      <th class="versions-event-heading">Event</th>
       <th></th>
       <th></th>
       <th></th>
@@ -15,16 +15,18 @@
 
   <tbody>
     <%- document.versions.reverse.each do |version| %>
-      <tr>
-        <td><%= version.index %></td>
-        <td><%= version.created_at.strftime("%A, %B %d at %I:%M%p") %></td>
-        <td><%= find_version_author_name(version) %></td>
-        <td><%= version.event.humanize %></td>
-        <td><%= link_to 'Diff', diff_document_version_path(document, version) if document.versions.count > 1 %></td>
-        <td><%= link_to 'Rollback', rollback_document_version_path(document, version), method: 'PATCH' %></td>
+      <tr class="versions-data-row">
+        <td class="verisons-index-data"><%= version.index %></td>
+        <td class="verisons-created-data"><%= version.created_at.strftime("%A, %B %d at %I:%M%p") %></td>
+        <td class="verisons-author-data"><%= find_version_author_name(version) %></td>
+        <td class="verisons-event-data"><%= version.event.humanize %></td>
+        <td class="verisons-changes-link"><%= link_to 'Changes', diff_document_version_path(document, version) if document.versions.count > 1 %></td>
+        <td class="verisons-rollback-link"><%= link_to 'Rollback', rollback_document_version_path(document, version), method: 'PATCH' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<div><%= link_to 'Back to Lesson', lesson_path(document.lesson) %></div>
+<div class="back-to-lesson-link-container">
+  <span class="back-to-lesson-link"><%= link_to '<< Back', lesson_path(document.lesson) %></span>
+</div>
