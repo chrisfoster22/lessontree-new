@@ -1,8 +1,17 @@
   <%= form_tag '/' + '#steady_scroll', class: "inline-search-form", :method => 'get' do %>
-    <span>Grade Level:</span>
-    <%= select_tag "grade_level_id", options_from_collection_for_select(GradeLevel.all, "id", "title", params[:grade_level_id]) %>
-    <span>Subject:</span>
-    <%= select_tag "subject_id", options_from_collection_for_select(Subject.all, "id", "title", params[:subject_id]) %>
-    <%= text_field_tag :search, params[:search], :id => 'inline-search-field' %>
-    <%= submit_tag "Search", :name => nil, class: 'inline-search-button' %>
+  <%= text_field_tag :search, params[:search], id:'inline-search-field' %>
+  <%= submit_tag "Search", name: nil, class: 'inline-search-button' %>
+  <div class="expander">
+    <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander-hidden">Advanced Search</a>
+    <div id="js-expander-content" class="expander-content">
+    <div class="grades-select-menu-container">
+    <%= select_tag :grade_level_id, options_from_collection_for_select(@grades,
+              :id, :title, params[:grade_level_id]), prompt: "Grade", class: "select-menu" %>
+    </div>
+    <div class='subjects-select-menu-container'>
+    <%= select_tag :subject_id, options_from_collection_for_select(@subjects,
+              :id, :title, params[:subject_id]), {prompt: "Subject", selected: nil, class: "select-menu"} %>
+    </div>
+  </div>
+  </div>
 <% end %>
