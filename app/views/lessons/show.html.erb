@@ -26,7 +26,11 @@
   <% unless @uploaded_documents.empty? %>
     <p class="list">Uploaded Documents</p>
     <% @uploaded_documents.each do |d| %>
-      <div><%= link_to "#{d.title}", "#{d.upload.url}", class: "fancybox", id: "#{d.id}", remote: true %></div>
+      <% if d.upload_content_type.include?("pdf") %>
+        <div><%= link_to "View #{d.title}", "#{d.upload.url}", class: "fancybox", id: "#{d.id}", remote: true %></div>
+      <% else %>
+        <%= link_to "Download #{d.title}", "#{d.upload.url}" %>
+      <% end %>
     <% end %>
   <% end %>
 
