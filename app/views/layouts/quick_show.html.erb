@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LessonTree</title>
+  <link href='http://fonts.googleapis.com/css?family=Merriweather|Hind:400,600|Dancing+Script' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="https://fontastic.s3.amazonaws.com/SVrEZX6mMSGxN8iWYCeYrJ/icons.css" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  </head>
+<body>
+
+<header class="sticky-nav-header">
+  <nav class="sticky-nav">
+    <a href="#">Nav Link 1</a>
+    <a href="#">Nav Link 2</a>
+    <a href="#">Nav Link 3</a>
+    <a href="#">Nav Link 4</a>
+  </nav>
+</header>
+
+<%= yield %>
+<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+</body>
+</html>

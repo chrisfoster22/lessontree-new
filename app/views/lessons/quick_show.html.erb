@@ -1,9 +1,16 @@
-<section class="lesson-preview-container">
-
+<div class="quick-show"
   <div class="lesson-preview-title-container">
     <h3 class="lesson-preview-title"><%= @lesson.topic %></h3>
     <div class="lesson-preview-description"><%= @lesson.description.html_safe %></div>
   </div>
 
+  <% @created_documents.each do |d| %>
+  <%= d.title %>
+  <%= d.description %>
+  <% end %>
 
-</section>
+<% @uploaded_documents.each do |d| %>
+  <%= d.title %>
+  <iframe src=<%= d.upload.url %> width="800"></iframe
+<% end %>
+</div>

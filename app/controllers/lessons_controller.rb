@@ -28,7 +28,16 @@ class LessonsController < ApplicationController
 
   def quick_show
     @documents = @lesson.documents
-     render layout: false
+    @uploaded_documents = []
+    @created_documents = []
+    @documents.each do |d|
+      if d.upload.url != "/uploads/original/missing.png"
+        @uploaded_documents << d
+      else
+        @created_documents << d
+      end
+    end
+     render layout: 'quick_show'
   end
 
   def new
