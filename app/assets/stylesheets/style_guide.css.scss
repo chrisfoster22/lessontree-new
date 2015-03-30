@@ -966,6 +966,84 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
   margin: 0 .5em 0;
 }
 
+/**********************************************
+EDIT PROFILE & NEW LESSON BUTTONS SIDE BY SIDE
+**********************************************/
+.edit-profile-new-lesson-buttons-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.edit-profile-new-lesson-buttons-wrapper button {
+  margin: 0 .5em 0;
+}
+
+/************************************
+          EDIT PROFILE BUTTON
+************************************/
+.edit-profile-button-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.edit-profile-button {
+  margin: 0 .5em 0;
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $alt-top-bg-color;
+  color: #fff;
+  border-radius: .25em;
+  padding: 1em .8em 1em;
+  text-decoration: none;
+  padding: 1em 1.6em 1em;
+}
+
+.edit-profile-button:hover {
+  background: $alt-top-bg-hover;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+/************************************
+          NEW LESSON BUTTON
+************************************/
+.new-lesson-button-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.new-lesson-button {
+  margin: 0 .5em 0;
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $alt-top-bg-color;
+  color: #fff;
+  border-radius: .25em;
+  padding: 1em .8em 1em;
+  text-decoration: none;
+  padding: 1em 1.6em 1em;
+}
+
+.new-lesson-button:hover {
+  background: $alt-top-bg-hover;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+
 /************************************
             HOME BUTTON
 ************************************/
@@ -1043,23 +1121,7 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
   margin: 0 .5em 0;
 }
 
-// input[type="checkbox"] {
-//     display:none;
-// }
 
-input[type="checkbox"] + label span {
-    display:inline-block;
-    width:19px;
-    height:19px;
-    margin:-1px 4px 0 0;
-    vertical-align:middle;
-    background:url(check_radio_sheet.png) left top no-repeat;
-    cursor:pointer;
-}
-
-// input[type="checkbox"]:checked + label span {
-//     background:url(check_radio_sheet.png) -19px top no-repeat;
-// }
 
 /************************************
       FORGOT PASSWORD BUTTON
@@ -1720,6 +1782,91 @@ PROFILE PAGE LESSON VIEW
   color: #555;
   letter-spacing: .1em;
 }
+
+
+.edit-profile-button-wrapper {
+  display: block;
+  // text-align: center;
+  margin: 2em 0 2em;
+}
+
+.edit-profile-button {
+  margin: 0 .5em 0;
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $alt-top-bg-color;
+  color: #fff;
+  border-radius: .25em;
+  padding: 1em .8em 1em;
+  text-decoration: none;
+  padding: 1em 1.6em 1em;
+}
+
+.edit-profile-button:hover {
+  background: $alt-top-bg-hover;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+.new-lesson-button-wrapper {
+  display: inline-block;
+  // text-align: center;
+  margin: 2em 0 2em;
+}
+
+.new-lesson-button {
+  margin: 0 .5em 0;
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $alt-top-bg-color;
+  color: #fff;
+  border-radius: .25em;
+  padding: 1em .8em 1em;
+  text-decoration: none;
+  padding: 1em 1.6em 1em;
+}
+
+.new-lesson-button:hover {
+  background: $alt-top-bg-hover;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+.edit-profile-new-lesson-buttons-wrapper {
+  display: inline-block;
+  text-align: center;
+  // margin: 12em 12em 12em;
+}
+
+.edit-profile-new-lesson-buttons-wrapper button {
+  margin: 0 .5em 0;
+  display: inline-block;
+
+}
+
+.center {
+  margin: 12em auto 12em;
+  display: inline-block;
+  margin-top: 5em;
+  text-align: center;
+
+}
+
+
+
+// .nl {
+//   margin: 1em;
+// }
 
 /************************************
               SIGN UP FORM
@@ -2654,7 +2801,10 @@ footer {
   margin: .5em 0 .5em;
  }
 }
+/**************************************
+                  FB
 
+**************************************/
 .fb-root {
   text-align: center;
   padding-top: 1em;
