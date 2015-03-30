@@ -10,6 +10,10 @@
           <li class="pp-lesson-pipe">|</li>
           <li class="pp-lesson-grade-list"><%= formatted_lesson_subjects(l) %></li>
       </ul>
+      <ul>
+        <li class="icon-star"></li>
+        <li class="pp-ranking"><%= star_count(l) %></li>
+      </ul>
     </div>
     <% end %>
   <% end %>

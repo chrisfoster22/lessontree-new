@@ -44,26 +44,7 @@
   <div class="expander-profile">
       <a href="javascript:void(0)" id="js-expander-trigger" class="expander-profile-trigger expander-hidden">Following</a>
       <div id="js-expander-content" class="expander-content">
-
-      <div class="user-followers-wrapper-top">
-        <h4 class="followers-title">Followers</h4>
-        <ul class = "user-followers-containter">
-          <li class="followers-name">Joseph Stalin</li>
-          <li class="followers-name">Cher</li>
-          <li class="followers-name">Taylor Swift</li>
-        </ul>
-      </div>
-
-
-      <div class="user-followers-wrapper-bottom">
-        <h4 class="following-title">Following</h4>
-        <ul class ="user-followers-containter">
-          <li class="following-name">Joseph Stalin</li>
-          <li class="following-name">Cher</li>
-          <li class="following-name">Taylor Swift</li>
-        </ul>
-      </div>
-
+        <%= render 'followers_show' %>
       </div>
     </div>
   </div>
@@ -87,24 +68,6 @@
     </div>
   </li>
 </ul>
-
-  <!-- <li class="tab-header-and-content">
-    <a href="javascript:void(0)" class="tab-link">Starred Lessons</a>
-    <div class="tab-content">
-
-    <div class="tab-content">
-      <%= render partial: 'my_lessons' %>
-    </div>
-  </li>
-  <li class="tab-header-and-content">
-    <a href="javascript:void(0)" class="tab-link">Starred Lessons</a>
-    <div class="tab-content">
-
-      <%= render partial: 'my_starred_lessons' %>
-    </div>
-  </li>
-</ul> -->
-
 
 <div><%= link_to "Edit Profile", edit_user_registration_path, class: 'save-button' %></div>
 <br>
