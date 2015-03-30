@@ -27,6 +27,7 @@ gem 'omniauth-facebook'
 gem 'paper_trail', '~> 4.0.0.beta'
 gem 'diffy'
 gem 'commontator', '~> 4.10.0'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug'

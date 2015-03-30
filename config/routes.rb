@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'home/about'
   get 'home/style_guide'
   get 'home/about'
+  get '/home', to: 'home#index'
 
   get 'users/sign_up'
   post 'users/sign_up'

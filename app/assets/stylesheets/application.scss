@@ -260,3 +260,30 @@
     }
   }
 }
+
+#paginator {
+  color: $button-bg-hover;
+  font-family: $headline-font;
+  text-align: right;
+  position: relative;
+  right: 30px;
+  a {
+  text-decoration: none;
+  font-family: $headline-font;
+  color: $alt-top-bg-hover;
+  }
+}
+
+#paginator-nested {
+  color: $button-bg-hover;
+  font-family: $headline-font;
+  text-align: right;
+  position: relative;
+  top: 50px;
+  left: 320px;
+  a {
+  text-decoration: none;
+  font-family: $headline-font;
+  color: $alt-top-bg-hover;
+  }
+}
