@@ -1,54 +1,44 @@
 <section class="lesson-preview-container">
 
   <div class="lesson-preview-title-container">
-    <h3 class="lesson-preview-title">Example of Lesson Title</h3>
+    <h3 class="lesson-preview-title"><%= @lesson.topic %></h3>
     <ul>
-        <li class="lesson-preview-subject-list">Social Studies</li>
+        <li class="lesson-preview-subject-list"><%= formatted_lesson_subjects(@lesson) %></li>
         <li class="lesson-preview-pipe">|</li>
-        <li class="lesson-preview-grade-list">1st Grade</li>
+        <li class="lesson-preview-grade-list"><%= formatted_lesson_grade_levels(@lesson) %></li>
   </ul>
   </div>
 
   <div class="lesson-preview-description-container">
     <ul class="star-ranking">
     <li class="icon-star"></li>
-    <li class="ranking">12</li>
+    <li class="ranking"><%= @lesson.stars.count %></li>
+
     </ul>
-    <p class="lesson-preview-description">In sit erroribus interpretaris, id populo scriptorem nam.
-      Ex has sale copiosae. Sit ea noster commune. Congue adversarium nam cu. Accumsan dissentias
-      duo ut, assum quaerendum ea duo. Pro et elitr deseruisse temporibus, est te pertinax intellegam dissentiunt,
-      te paulo placerat cotidieque sea. An sit dico stet omnesque, libris integre hendrerit id sit.</p>
+    <p class="lesson-preview-description"><%= @lesson.description.html_safe %></p>
   </div>
+
+  <%= form_for @star do |f| %>
+    <%= f.label "Star this lesson?" %>
+    <%= f.check_box :lesson_id, value: @lesson.id, class: "star-box", id: "#{@lesson.id}", checked: @starred %>
+  <% end %>
+
+  <p class="list">Uploaded Documents</p>
+  <% @uploaded_documents.each do |d| %>
+    <div><%= link_to "#{d.title}", "#{d.upload.url}", class: "fancybox", id: "#{d.id}", remote: true %></div>
+  <% end %>
+
+  <p class="list">Created Documents</p>
+  <% @created_documents.each do |d| %>
+    <div><%= link_to "#{d.title}", document_form_lesson_path(d.id), class: "fancybox", id: "#{d.id}", remote: true %></div>
+    <div><%= link_to "Edit", edit_document_path(d.id) %></div>
+    <div><%= link_to "Version History", version_history_document_path(d.id) %></div>
+    <div><%= link_to "Delete", document_path(d), method: :delete %></div>
+    <br>
+  <% end %>
+
+  <%= commontator_thread(@lesson) %>
 </section>
-
-
-<div><h3><%= @lesson.topic %></h3></div>
-<div id="lesson-show"><%= @lesson.description.html_safe %></div>
-
-<%= form_for @star do |f| %>
-<%= f.label "Star this lesson?" %>
-<%= f.check_box :lesson_id, value: @lesson.id, class: "star-box", id: "#{@lesson.id}", checked: @starred %>
-<% end %>
-
-<div><%= formatted_lesson_grade_levels(@lesson) %></div>
-<div><%= formatted_lesson_subjects(@lesson) %></div>
-
-<h3>Uploaded Documents</h3>
-<% @uploaded_documents.each do |d| %>
-  <div><%= link_to "#{d.title}", "#{d.upload.url}", class: "fancybox", id: "#{d.id}", remote: true %></div>
-<% end %>
-
-<h3>Created Documents</h3>
-<% @created_documents.each do |d| %>
-  <div><%= link_to "#{d.title}", document_form_lesson_path(d.id), class: "fancybox", id: "#{d.id}", remote: true %></div>
-  <div><%= link_to "Edit", edit_document_path(d.id) %></div>
-  <div><%= link_to "Version History", version_history_document_path(d.id) %></div>
-  <div><%= link_to "Delete", document_path(d), method: :delete %></div>
-  <br>
-<% end %>
-
-<%= commontator_thread(@lesson) %>
-
 <div class="edit-save-buttons-wrapper">
   <%= link_to 'Upload Lesson Document', upload_file_documents_path(lesson_id: @lesson.id), id: 'fancybox', class: 'edit-button' %>
   <%= link_to "Create Lesson Document", new_document_path(lesson_id: @lesson.id), class: 'save-button' %>
@@ -59,5 +49,5 @@
 </div>
 
 <div>
-  <%= link_to "Back", user_path(@lesson.user) %>
+  <%= link_to "Back", user_path(@lesson.user), class: 'save-button' %>
 </div>
