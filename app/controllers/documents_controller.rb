@@ -1,5 +1,7 @@
 class DocumentsController < ApplicationController
-  before_action :set_document, only: [:edit, :show, :update, :destroy]
+  before_action :set_document, only: [:edit, :show, :update,
+        :destroy, :version_history]
+  before_action :set_lesson, only: [:show, :destroy]
   attr_accessor :title, :description
 
   def index
@@ -7,21 +9,27 @@ class DocumentsController < ApplicationController
   end
 
   def show
-    @lessons = @document.lesson
   end
 
   def new
-    @document = Document.new
-    @lesson_id = Lesson.find(params[:lesson_id]).id
+    @document = Document.new(lesson_id: params[:lesson_id])
   end
 
   def create
     @document = Document.create(document_params)
-    lesson = @document.lesson
     if @document.save
-      redirect_to lesson, notice: "The document has been successfully created."
+      redirect_to @document.lesson, notice: "The document has been successfully created."
     else
       render action: "new"
+    end
+  end
+
+  def create_from_upload
+    @document = Document.create(document_params)
+    if @document.save
+      redirect_to @document.lesson, notice: "The document has been successfully created."
+    else
+      render action: "upload_file"
     end
   end
 
@@ -30,7 +38,7 @@ class DocumentsController < ApplicationController
 
   def update
     if @document.update_attributes(document_params)
-      redirect_to @document, notice: "The document has been successfully updated."
+      redirect_to @document.lesson, notice: "The document has been successfully updated."
     else
       render action: "edit"
     end
@@ -38,10 +46,19 @@ class DocumentsController < ApplicationController
 
   def upload_file
     @document = Document.new
-    @lesson_id = Lesson.find(params[:id]).id
+    @lesson_id = params[:lesson_id]
+    render layout: false
   end
 
-private
+  def destroy
+    @document.destroy!
+    redirect_to @lesson, notice: "The document has been successfully deleted."
+  end
+
+  def version_history
+  end
+
+  private
 
   def document_params
     params.require(:document).permit(:title, :content, :user_id, :lesson_id, :upload)
@@ -52,4 +69,7 @@ private
     redirect_to root_path if @document.nil?
   end
 
+  def set_lesson
+    @lesson = @document.lesson
+  end
 end

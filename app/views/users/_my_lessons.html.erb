@@ -1,0 +1,12 @@
+<% @user.lessons.each do |l| %>
+  <%= link_to l, class:"pp-lesson-link" do %>
+    <div class="pp-lesson-title-container">
+      <h3 class="pp-lesson-title"><%= l.topic %></h3>
+      <ul>
+          <li class="pp-lesson-subject-list"><%= formatted_lesson_grade_levels(l) %></li>
+          <li class="pp-lesson-pipe">|</li>
+          <li class="pp-lesson-grade-list"><%= formatted_lesson_subjects(l) %></li>
+      </ul>
+    </div>
+    <% end %>
+<% end %>

@@ -1,0 +1,39 @@
+<% # Clients of this partial must supply the following variables:
+   # comment
+   # user
+%>
+
+<% creator = comment.creator
+   name = comment.creator.name || ''
+   link = Commontator.commontator_link(creator, main_app) || ''
+   avatar = Commontator.commontator_avatar(creator, self) || ''
+%>
+
+<div id="comment_<%= comment.id.to_s %>_div" class="comment">
+  <span class="comment-image">
+    <%= image_tag @user.avatar.url, class: "user-profile-photo" %>
+  </span>
+  <div class="comment-content">
+    <p class="comment-name">
+      <span id="comment_<%= comment.id.to_s %>_commontator_span" class="comment_commontator">
+        <%= link_to name, link, class: "user-link" %>
+      </span>
+      <span id="comment_<%= comment.id.to_s %>_actions_span" class="comment_actions">
+        <%= render :partial => 'commontator/comments/actions',
+                   :locals => { :comment => comment,
+                                :user => user } %>
+      </span>
+    </p>
+    <span>         <%= render :partial => 'commontator/comments/body',
+                       :locals => { :comment => comment } %></span>
+    <p class="comment-detail">
+      <%= comment.created_timestamp %>
+    </p>
+    <br/>
+    <p id="comment_<%= comment.id.to_s %>_updated_timestamp_span" class="comment-detail">
+      <% if comment.is_modified? %>
+        <%= comment.updated_timestamp %>
+      <% end %>
+    </p>
+  </div>
+</div>

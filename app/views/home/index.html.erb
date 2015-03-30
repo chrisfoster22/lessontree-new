@@ -2,35 +2,29 @@
   <div class="hero">
     <h1>Teacher Lesson Plans</h1>
     <p class="key-words">find, create, share, connect</p>
-  </div>
 
-
-  <a id="steady_scroll" name="steady_scroll"></a>
-    <div class="search-box-wrapper">
-      <%= render :partial => 'home/search' %>
-    </div>
-  </a>
+    <a id="steady_scroll" name="steady_scroll"></a>
+      <div class="search-box-wrapper">
+        <%= render 'home/search', params: params %>
+      </div>
+    </a>
+</div>
 </section>
 
-<a id="cards_scroll" name="cards_scroll">
-<section class="lesson-preview-section">
-  <% @lessons.each do |l| %>
-  <div class="lesson-preview-container">
-    <%= link_to l, class:"lesson-preview-link" do %>
-      <div class="lesson-preview-title-container">
-        <h3 class="lesson-preview-title"><%= l.topic %></h3>
-        <ul>
-            <li class="lesson-preview-subject-list"><%= formatted_lesson_grade_levels(l) %></li>
-            <li class="lesson-preview-pipe">|</li>
-            <li class="lesson-preview-grade-list"><%= formatted_lesson_subjects(l) %></li>
-      </ul>
-      </div>
 
-      <div class="lesson-preview-description-container">
-        <h6 class="icon-star"><%= star_count(l) %></h6>
-        <p class="lesson-preview-description"><%= l.description %></p>
-      </div>
-    <% end %>
-  </div>
-  <% end %>
+<div class="page-headline">Lessons</div>
+
+<div id="paginator">
+<%= paginate @lessons, :remote => true %>
+</div>
+
+<div class="page-headline-rule-container">
+  <div class="page-headline-rule-first"></div>
+  <div class="page-headline-triangle"></div>
+</div>
+
+
+<!-- <a id="cards_scroll" name="cards_scroll"> -->
+<section class="lesson-preview-container">
+<%= render 'lessons' %>
 </section>

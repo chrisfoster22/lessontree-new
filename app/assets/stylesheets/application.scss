@@ -1,0 +1,298 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ *= require fancybox
+ *= require fancybox_styles
+ */
+ @import "bourbon";
+ @import "neat";
+ @import "style_guide";
+ @import "jquery.fancybox";
+ @import "jquery.fancybox-buttons";
+ @import "jquery.fancybox-thumbs";
+ @import "diffy";
+//  @import "fonts";
+//  @import "colors";
+//  @import "elisha_style_guide";
+//  @import "home";
+//  @import "lessons";
+//  @import "users";
+//  @import "about";
+//  @import "login";
+//  @import "signup";
+//  @import "header";
+//  @import "footer";
+//  @import "aaron_style_guide";
+//
+// #new_lesson.new_lesson {
+//   display: center;
+//   padding: 20px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   width: auto;
+// }
+//
+// #lesson-show:after {
+//
+//   content: ".";
+//   display: block;
+//   height: 0;
+//   overflow:hidden;
+//   clear: both;
+//   visibility:hidden;
+// }
+//
+// table {
+//   display: block;
+//   border: none;
+// }
+//
+// .cards:after {
+//   content: ".";
+//   display: block;
+//   height: 0;
+//   overflow:hidden;
+//   clear: both;
+//   visibility:hidden;
+// }
+//
+//
+// // ### I WAS MESSING WITH THE STYLING BELOW HERE FOR YOUR INFO.. -parker ####
+//
+// .button_to {
+//   display: inline;
+// }
+//
+// .devise-login {
+//   font-family: $headline-font, sans-serif;
+//   padding: 0.75em 1.75em;
+//   border-radius: 7.5px;
+//   background-color: $button-bg-color;
+//   font-size: 22px;
+//   color: $header-texts-color;
+//   display: inline;
+// }
+//
+// .devise-login:active {
+//   background-color: #d95353;
+//   color: #e8e3e6;
+// }
+//
+// .devise-login:hover {
+//   background-color: white;
+//   color: #d95353;
+//   .logos {
+//     font-family: 'Dancing Script', cursive;
+//     font-size: 3.7em;
+//     font-weight: bold;
+//     // margin-left: 20px;
+//     // margin-top: 12px;
+//     color: $header-texts-color;
+//   }
+// }
+//
+// .forgot-pass {
+//   font-family: $headline-font, sans-serif;
+//   padding: 0.75em 1.75em;
+//   border-radius: 7.5px;
+//   background-color: $button-bg-color;
+//   font-size: 22px;
+//   color: $header-texts-color;
+//   display: inline;
+// }
+//
+// .forgot-pass:active {
+//   background-color: #d95353;
+//   color: #e8e3e6;
+// }
+//
+// .forgot-pass:hover {
+//   background-color: white;
+//   color: #d95353;
+//   .logos {
+//     font-family: 'Dancing Script', cursive;
+//     font-size: 3.7em;
+//     font-weight: bold;
+//     // margin-left: 20px;
+//     // margin-top: 12px;
+//     color: $header-texts-color;
+//   }
+// }
+//
+// .devise-sign-in {
+//   font-family: $headline-font, sans-serif;
+//   padding: 0.75em 1.75em;
+//   border-radius: 7.5px;
+//   background-color: $button-bg-color;
+//   font-size: 22px;
+//   color: $header-texts-color;
+//   display: inline;
+// }
+//
+// .devise-sign-in:active {
+//   background-color: #d95353;
+//   color: #e8e3e6;
+// }
+//
+// .devise-sign-in:hover {
+//   background-color: white;
+//   color: #d95353;
+//   .logos {
+//     font-family: 'Dancing Script', cursive;
+//     font-size: 3.7em;
+//     font-weight: bold;
+//     // margin-left: 20px;
+//     // margin-top: 12px;
+//     color: $header-texts-color;
+//   }
+// }
+//
+// .devise-update {
+//   font-family: $headline-font, sans-serif;
+//   padding: 0.75em 1.75em;
+//   border-radius: 7.5px;
+//   background-color: $button-bg-color;
+//   font-size: 22px;
+//   color: $header-texts-color;
+//   display: inline;
+// }
+//
+// .devise-update:active {
+//   background-color: #d95353;
+//   color: #e8e3e6;
+// }
+//
+// .devise-update:hover {
+//   background-color: white;
+//   color: #d95353;
+//   .logos {
+//     font-family: 'Dancing Script', cursive;
+//     font-size: 3.7em;
+//     font-weight: bold;
+//     // margin-left: 20px;
+//     // margin-top: 12px;
+//     color: $header-texts-color;
+//   }
+// }
+.thread {
+}
+.comment {
+  ///////////////////////////////////////////////////////////////////////////////////
+  $base-border-radius: 3px !default;
+  $base-spacing: 1.5em !default;
+  $base-accent-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  //////////////////////////////////////////////////////////////////////////////////
+
+  $comment-gutter: 1.4em;
+  $comment-image-padding: 0.7em;
+  $comment-image-width: 4em;
+  $comment-color: $base-font-color;
+  $comment-background: lighten($base-accent-color, 15%);
+  $comment-detail-color: transparentize($comment-color, 0.5);
+  $comment-image-vert-alignment: top;
+
+  border: 1px solid transparentize($comment-color, 0.9);
+  display: table;
+  margin-bottom: $base-spacing;
+  padding: 10em;
+  width: 100%;
+
+  .comment-image,
+  .comment-content {
+    display: table-cell;
+    vertical-align: $comment-image-vert-alignment;
+  }
+
+  .comment-image {
+    padding-right: $comment-gutter;
+
+    > img {
+      // background: $comment-background;
+      border-radius: 50%;
+      display: block;
+      height: auto;
+      max-width: none;
+      // padding: $comment-image-padding;
+      width: $comment-image-width;
+    }
+
+    .comment-reverse-order & {
+      padding-right: 0;
+      padding-left: 10px;
+    }
+  }
+
+  .comment-content {
+    width: 100%;
+
+    a {
+      font-family: $headline-font;
+      font-size: 1em;
+      margin: 0 0 0.5em 0;
+      text-align: none;
+      font-weight: bold;
+      color: $alt-top-bg-color;
+      text-decoration: none;
+    }
+
+    span {
+      // font-family: $maintext-font;
+      line-height: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    p.comment-detail {
+      color: $comment-detail-color;
+      font-size: 0.9em;
+      font-style: italic;
+    }
+  }
+}
+
+#paginator {
+  color: $button-bg-hover;
+  font-family: $headline-font;
+  text-align: right;
+  position: relative;
+  right: 30px;
+  a {
+  text-decoration: none;
+  font-family: $headline-font;
+  color: $alt-top-bg-hover;
+  }
+}
+
+#paginator-nested {
+  color: $button-bg-hover;
+  font-family: $headline-font;
+  text-align: right;
+  position: relative;
+  top: 50px;
+  left: 320px;
+  a {
+  text-decoration: none;
+  font-family: $headline-font;
+  color: $alt-top-bg-hover;
+  }
+}
+
+.checkbox-wrapper {
+  color: $alt-top-bg-hover;
+  font-family: $headline-font;
+  text-align: center;
+  div.checkbox-header {
+    color: $button-bg-hover;
+  }
+}

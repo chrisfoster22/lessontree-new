@@ -1,7 +1,0 @@
-<div><%= @plan.title %></div>
-<div><%= @plan.description %></div>
-
-<%= form_for @star do |f| %>
-<%= f.label "Star this plan?" %>
-<%= f.check_box :plan_id, value: @plan.id, class: "plan-star-box", id: "#{@plan.id}", checked: @starred %>
-<% end %>

@@ -12,16 +12,12 @@
       <%= f.label :title %>
       <%= f.text_field :title %>
     </div>
-    <div>
-      <%= f.label :content %>
-      <%= f.file_field :content %>
-    </div>
-    <%= f.hidden_field :lesson_id, value: @lesson_id %>
+    <%= f.hidden_field :lesson_id %>
     <div>
       <%= f.cktext_area :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'simple'} } %>
     </div>
     <div>
-      <%= f.submit "Create Document", :class => "create-lesson" %>
+      <%= f.submit "Save Document", :class => "save-button" %>
     </div>
   <% end %>
 </div>

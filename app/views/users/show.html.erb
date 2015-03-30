@@ -1,101 +1,74 @@
-<section class="profile-wrapper">
+<!-- <section class="profile-wrapper">
 
-  <aside class="user-profile-photo-wrapper">
-    <%= image_tag @user.avatar.url, class: "user-profile-photo" %>
-  </aside>
+  <div class="user-profile-photo-wrapper">
+    <%= image_tag @user.avatar.url, class: "user-profile-photo" if @user %>
+  </div>
 
-  <aside class="user-profile-information-wrapper-right">
+  <div class="user-profile-information-wrapper-right">
     <ul class = "user-profile-unique-information">
-      <li><strong>Name:</strong>&nbsp&nbsp<%= @user.name %></li>
-      <li><strong>Grades I Teach:</strong>&nbsp&nbsp<%= formatted_user_grade_levels(@user) %></li>
-      <li><strong>My School Name:</strong>&nbsp&nbsp<%= @user.school %></li>
-      <li><strong>School City:</strong>&nbsp&nbsp<%= @user.city %></li>
-      <li><strong>School State:</strong>&nbsp&nbsp<%= @user.state %></li>
+      <li><span class="profile-page-user-labels">Name:</span>&nbsp&nbsp<%= @user.name %></li>
+      <li><span class="profile-page-user-labels">Grade I Teach:</span>&nbsp&nbsp<%= formatted_grade_level_name(@user) %></li>
+      <li><span class="profile-page-user-labels">My School Name:</span>&nbsp&nbsp<%= @user.school %></li>
+      <li><span class="profile-page-user-labels">School City:</span>&nbsp&nbsp<%= @user.city %></li>
+      <li><span class="profile-page-user-labels">School State:</span>&nbsp&nbsp<%= @user.state %></li>
     </ul>
-  </aside>
+    <span><%= render 'followers_show' %></span>
+
+  </div>
 </section>
 
-<% @user.lessons.each do |l| %>
-<%= link_to l, class:"my-lessons-container-link" do %>
-  <section class="my-lessons-container">
-    <article class="my-lessons-preview-area">
-      <h3 class="my-lessons-container-title"><%= l.topic %></h3>
-      <p class="my-lessons-container-description">
-        <%= l.description.html_safe %>
-      </p>
-      <div class="my-lesson-edit-button-container">
-        <%= link_to "Edit", "/lessons/#{l.id}/edit", class:"my-lesson-edit-button" %>
-      </div>
-    </article>
-  </section></a>
-<% end %>
-<% end %>
-<h3>Starred Lessons</h3>
-<% @starred_lessons.each do |l| %>
-  <%= link_to l, class:"my-lessons-container-link" do %>
-  <section class="my-lessons-container">
-    <article class="my-lessons-preview-area">
-      <h3 class="my-lessons-container-title"><%= l.topic %></h3>
-      <p class="my-lessons-container-description">
-        <%= l.description.html_safe %>
-        <%= l.username %>
-      </p>
-    </article>
-  </section></a>
-  <% end %>
-<% end %>
 <div><%= link_to "Edit Profile", edit_user_registration_path, class: 'save-button' %></div>
 <br>
 <div><%= link_to "New Lesson", new_lesson_path, class: 'save-button' %></div>
-<br>
-<div><%= link_to "New Plan", new_plan_path, class: 'save-button' %></div>
-<br>
-<div><%= link_to "My Plans", plans_path, class: 'save-button' %></div>
 
+<br> -->
 
-<!-- <section class="login-signup-container">
-	<h2 class="login-signup-form-header">Signup</h2>
-	<form method="post" class="minimal">
-		<label for="name">
-			Name:
-      <input type="text" name="name" id="name" placeholder="Your full name" />
-		</label>
-    <label for="grades">
-      Grades:
-      <input type="text" name="grades" id="grades" placeholder="Grades I teach" />
-    </label>
-    <label for="school">
-      My School's Name:
-      <input type="text" name="school" id="school" placeholder="Where I teach" />
-    </label>
-    <label for="school-city">
-      City:
-      <input type="text" name="school-city" id="schoo-cityl" placeholder="My school's city" />
-    </label>
-    <label for="username">
-			Username:
-      <input type="text" name="username" id="username" placeholder="Username" />
-		</label>
-    <label for="password">
-			Password:
-      <input type="password" name="password" id="password" placeholder="Password must be between 8 and 20 characters" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required">
-		</label>
-		<button type="submit" class="btn-minimal">Sign in</button>
-	</form>
+<!-- PROFILE PAGE TOP WRAPPER -->
+<section class="profile-page-main-wrapper">
+  <div class="profile-page-user-photo-wrapper">
+    <ul>
+      <li class="profile-page-user-photo-list"><%= image_tag @user.avatar.url, class: "profile-page-user-photo" if @user %></li>
+    </ul>
+  </div>
+  <div class="user-profile-information-wrapper">
+    <ul class = "user-profile-information">
+      <li class="profile-page-user-name"><span class="profile-page-user-label">Name:</span><span class="user-profile-unique-label">&nbsp&nbsp<%= @user.name %></span></li>
+      <li class="profile-page-user-grades"><span class="profile-page-user-label">Grades I Teach:</span><span class="user-profile-unique-label">&nbsp&nbsp<%= formatted_grade_level_name(@user) %></span></li>
+      <li class="profile-page-user-school"><span class="profile-page-user-label">My School Name:</span><span class="user-profile-unique-label">&nbsp&nbsp<%= @user.school %></span></li>
+      <li class="profile-page-user-city"><span class="profile-page-user-label">School City:</span><span class="user-profile-unique-label">&nbsp&nbsp<%= @user.city %></span></li>
+      <li class="profile-page-user-state"><span class="profile-page-user-label">School State:</span><span class="user-profile-unique-label">&nbsp&nbsp<%= @user.state %></span></li>
+    </ul>
+  </div>
+
+  <div class="profile-page-top-wrapper">
+  <div class="expander-profile">
+      <a href="javascript:void(0)" id="js-expander-trigger" class="expander-profile-trigger expander-hidden">Following</a>
+      <div id="js-expander-content" class="expander-content">
+        <%= render 'followers_show' %>
+      </div>
+    </div>
+  </div>
 </section>
 
+<ul class="accordion-tabs">
+  <li class="tab-header-and-content">
+    <a href="javascript:void(0)" class="is-active tab-link">My Lessons</a>
+    <div class="tab-content">
 
-<section class="login-signup-container">
-	<h2 class="login-signup-form-header">Login</h2>
-	<form method="post" class="minimal">
-		<label for="username">
-			Username:
-      <input type="text" name="username" id="username" placeholder="Username" />
-		</label>
-		<label for="password">
-			Password:
-      <input type="password" name="password" id="password" placeholder="Password" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required="required">
-		</label>
-		<button type="submit" class="btn-minimal">Sign in</button>
-	</form>
-</section> -->
+      <section class="pp-lesson-container">
+        <%= render partial: 'my_lessons' %>
+      </section>
+      <div class="pp-lesson-shim"></div>
+
+  <li class="tab-header-and-content">
+    <a href="javascript:void(0)" class="tab-link">Starred Lessons</a>
+      <div class="tab-content">
+        <%= render partial: 'my_starred_lessons' %>
+      <div class="pp-lesson-shim"></div>
+    </div>
+  </li>
+</ul>
+
+<span><%= link_to "Edit Profile", edit_user_registration_path, class: 'save-button' %></span>
+
+<span><%= link_to "New Lesson", new_lesson_path, class: 'save-button' %></span>

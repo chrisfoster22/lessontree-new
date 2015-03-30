@@ -1,2 +1,4 @@
-<div><h3><%= @document.title %></h3></div>
-<div><%= link_to("Download Document", @document.upload.url) %></div>
+<h2><%= @document.title %></h2>
+<div><iframe src=<%= document_frame_document_path(111) %> width="1000px" height="500px" class="fancybox"></iframe></div>
+<%= link_to "Edit Document", edit_document_path%>
+<%= link_to "Destroy Document", @document, method: :delete %>
