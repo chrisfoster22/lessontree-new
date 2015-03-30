@@ -22,9 +22,7 @@ class Lesson < ActiveRecord::Base
                 .where('grade_levels.id = ?', params[:grade_level_id])
                 .where('topic ILIKE ? OR description ILIKE ?',
                        "%#{params[:search]}%", "%#{params[:search]}%")
-      # lessons.paginate :per_page => 5,
-      #                  :page => page,
-      #                  :order => 'updated_at DESC'
+      lessons.uniq
     else
       Lesson.all
     end
