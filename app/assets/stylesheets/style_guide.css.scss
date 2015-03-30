@@ -1778,7 +1778,7 @@ PROFILE PAGE LESSON VIEW
 
 .edit-profile-button-wrapper {
   display: block;
-  text-align: center;
+  // text-align: center;
   margin: 2em 0 2em;
 }
 
@@ -1806,8 +1806,8 @@ PROFILE PAGE LESSON VIEW
 }
 
 .new-lesson-button-wrapper {
-  display: block;
-  text-align: center;
+  display: inline-block;
+  // text-align: center;
   margin: 2em 0 2em;
 }
 
@@ -1835,19 +1835,30 @@ PROFILE PAGE LESSON VIEW
 }
 
 .edit-profile-new-lesson-buttons-wrapper {
-  display: block;
+  display: inline-block;
   text-align: center;
-  margin: 2em 0 2em;
+  // margin: 12em 12em 12em;
 }
 
 .edit-profile-new-lesson-buttons-wrapper button {
   margin: 0 .5em 0;
+  display: inline-block;
+
 }
 
 .center {
+  margin: 12em auto 12em;
+  display: inline-block;
   margin-top: 5em;
   text-align: center;
+
 }
+
+
+
+// .nl {
+//   margin: 1em;
+// }
 
 /************************************
               SIGN UP FORM
