@@ -13,7 +13,6 @@
     <ul class="star-ranking">
     <li class="icon-star"></li>
     <li class="ranking"><%= @lesson.stars.count %></li>
-
     </ul>
     <p class="lesson-preview-description"><%= @lesson.description.html_safe %></p>
   </div>
@@ -53,8 +52,4 @@
 
 <div style="display: none">
     <div id="content-div">Some content here</div>
-</div>
-
-<div>
-  <%= link_to "Back", user_path(@lesson.user), class: 'save-button' %>
 </div>
