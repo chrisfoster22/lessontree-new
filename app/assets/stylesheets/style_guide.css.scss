@@ -426,7 +426,7 @@ SELECT DROPDOWN BUTTON
   PROFILE PAGE MAIN WRAPPER
 *****************************************/
 .profile-page-main-wrapper {
-    margin: 3em 0 10em;
+    margin: 3em 0 8em;
 }
 
 .profile-page-user-photo-wrapper {
@@ -1200,6 +1200,9 @@ input[type=checkbox].css-checkbox {
   PROFILE PAGE, LESSONS & PLANS
 ***********************************************/
 .accordion-tabs {
+
+    width: 60%;
+    margin: 0 auto 0;
   ///////////////////////////////////////////////////////////////////////////////////
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
@@ -1279,7 +1282,6 @@ input[type=checkbox].css-checkbox {
       border-top: 0;
     }
 
-
     &:hover {
       color: $alt-top-bg-color;
     }
@@ -1309,7 +1311,7 @@ input[type=checkbox].css-checkbox {
     width: 100%;
     font-family: $headline-font;
     font-size: 1.1em;
-    padding: 2em 13em 2em 13em;
+    padding: 1em 1em 1em 1em;
 
 
     @include media($tab-mode) {

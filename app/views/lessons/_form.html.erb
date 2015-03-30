@@ -5,6 +5,7 @@
     <% end %>
   </ul>
 <% end %>
+
 <%= form_for(@lesson, multipart: true) do |f| %>
   <div>
     <%= f.text_field :topic, placeholder: "Title of my lesson" %>
@@ -24,7 +25,6 @@
       <div class="checkbox-header"><%= f.label "Grade Levels" %></div>
       <%= f.collection_check_boxes :grade_level_ids, @grade_levels, :id, :title, :item_wrapper_class => 'checkbox_container' %>
     </div>
-  </div>
 
   <div class="save-button-wrapper">
     <%= f.submit "Save", class: "save-button" %>
