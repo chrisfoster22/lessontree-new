@@ -69,6 +69,16 @@
   </li>
 </ul>
 
-<span><%= link_to "Edit Profile", edit_user_registration_path, class: 'save-button' %></span>
+<div class="edit-save-buttons-wrapper">
+  <%= link_to "New Lesson", new_lesson_path, class: 'save-button' %>
+  <%= link_to "Edit Profile", edit_user_registration_path, class: 'edit-button' %>
+</div>
 
-<span><%= link_to "New Lesson", new_lesson_path, class: 'save-button' %></span>
+  <div class="edit-save-buttons-wrapper">
+    <div class="nl">
+        <div></div>
+    </div>
+    <div class="edit-save-buttons-wrapper">
+        <div></div>
+    </div>
+  </div>
