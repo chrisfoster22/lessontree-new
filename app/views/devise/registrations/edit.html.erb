@@ -46,45 +46,42 @@
     <%= f.password_field :current_password, autocomplete: "off", placeholder: "Current password- to confirm your changes" %>
   </div>
 
-<div class="grade-menu">
-  <div>
-    <%= f.collection_select :grade_level_id, all_grades, :id, :title %>
-  </div>
-  <div class="field">
-    <%= f.file_field :avatar, placeholder: "Profile Pic" %>
-  </div>
-  </div>
-
   <div class="expander">
-    <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander-hidden">Choose A Grade</a>
+    <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander-hidden">Grade I Teach</a>
     <div id="js-expander-content" class="expander-content">
 
-      <div class="upload-photo-container">
-        <select class="choose-file" name="Picture">
-          <option class="profile-pic" value="Pic">Profile Pic</option>
-        </select>
-      </div>
-
       <div class="edit-profile-grades-menu-container">
-        <select class="grade-select-menu" name="Grades">
-          <option class="select-menu-values" value="Grade">Grade</option>
-          <option value="Choose A Grade">Choose A Grade</option>
-          <option value="Kindergarten">Kindergarten</option>
-          <option value="1st">1st</option>
-          <option value="2nd">2nd</option>
-          <option value="3rd">3rd</option>
-          <option value="4th">4th</option>
-          <option value="5th">5th</option>
-          <option value="6th">6th</option>
-          <option value="7th">7th</option>
-          <option value="8th">8th</option>
-        </select>
+
+
+<div class="dropdown">
+  <div class="dropdown-container">
+
+    <p class="dropdown-description">Choose a file</p>
+    <p class="dropdown-button">pick a pic!</p>
+    
+    <ul class="dropdown-menu dropdown-select">
+      <div>
+        <%= f.file_field :avatar, placeholder: "Profile Pic", class: "field-pic"  %>
+      </div>
+      <li>choose a file</li>
+    </ul>
+  </div>
+</div>
+
+
+        <div>
+          <%= f.collection_select :grade_level_id, all_grades, :id, :title, {},
+              {class: "grade-select-menu"} %>
+        </div>
+
       </div>
 
-    </div>
+
+
+  </div>
   </div>
 
-<div> HELLO </DIV>
+
 
 
 
@@ -93,6 +90,4 @@
     <%= f.submit "Update", :class => "update-button" %>
     </div>
   </div>
-
-
 <% end %>
