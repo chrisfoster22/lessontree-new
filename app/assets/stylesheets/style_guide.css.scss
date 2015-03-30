@@ -623,7 +623,7 @@ HOMEPAGE LESSON PREVIEWS
 }
 
 .lesson-preview-title-container {
-  margin-bottom: 2.5em;
+  // margin-bottom: 2.5em;
   background: #fcfffe;
   box-shadow: 0 2px 5px rgba(0,0,0,0.18);
   padding: .7em .7em .7em .9em;
@@ -665,6 +665,7 @@ HOMEPAGE LESSON PREVIEWS
   margin-bottom: 2em;
   background-color: #fcfffe;
   border: 1px solid #eee;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.18);
 }
 
 .lesson-preview-subject-list, .lesson-preview-pipe, .lesson-preview-grade-list,  {
