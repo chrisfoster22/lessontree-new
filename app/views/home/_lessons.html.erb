@@ -1,4 +1,5 @@
   <% @lessons.each do |l| %>
+  <%= link_to l, class:"lesson-preview-link" do %>
   <div class="lesson-preview-title-container">
     <h3 class="lesson-preview-title"><%= l.topic %></h3>
     <ul>
@@ -9,7 +10,6 @@
   </div>
 
   <div class="lesson-preview-description-container">
-    <%= link_to l, class:"lesson-preview-link" do %>
         <a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"  data-pin-color="red"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_20.png" /></a>
         <!-- Please call pinit.js only once per page -->
         <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
@@ -20,7 +20,7 @@
       </ul>
         <p class="lesson-preview-description"><%= l.description %></p>
       </div>
-  <% end %>
+    <% end %>
   <% end %>
 
 <div id="paginator-nested">

@@ -1,17 +1,38 @@
 <% if @starred_lessons.empty? %>
-<%= "You have not starred any lessons. Browse for lessons from the home page!" %>
+  <%= "You have not starred any lessons. Browse for lessons from the home page!" %>
 <% else %>
-<% @starred_lessons.each do |l| %>
-  <%= link_to l, class:"my-lessons-container-link" do %>
-  <section class="my-lessons-container">
-    <article class="my-lessons-preview-area">
-      <h3 class="my-lessons-container-title"><%= l.topic %></h3>
-      <p class="my-lessons-container-description">
-        <%= l.description %>
-        <%= l.user %>
-      </p>
-    </article>
-  </section></a>
+  <% @starred_lessons.each do |l| %>
+    <%= link_to l, class:"pp-lesson-link" do %>
+    <div class="pp-lesson-title-container">
+      <h3 class="pp-lesson-title"><%= l.topic %></h3>
+      <ul>
+          <li class="pp-lesson-subject-list"><%= formatted_lesson_grade_levels(l) %></li>
+          <li class="pp-lesson-pipe">|</li>
+          <li class="pp-lesson-grade-list"><%= formatted_lesson_subjects(l) %></li>
+      </ul>
+      <ul>
+        <li class="icon-star"></li>
+        <li class="pp-ranking"><%= star_count(l) %></li>
+      </ul>
+    </div>
+    <% end %>
   <% end %>
 <% end %>
-<% end %>
+
+
+
+<!-- <section class="pp-lesson-container">
+  <a class="pp-lesson-link" href="www.google.com">
+  <div class="pp-lesson-title-container">
+    <h3 class="pp-lesson-title">Whatever Title Goes Here Blahblahblah</h3>
+    <ul class="pp-star-rankings-container">
+        <li class="pp-lesson-subject-list">Social Studies</li>
+        <li class="pp-lesson-pipe">|</li>
+        <li class="pp-lesson-grade-list">1st Grade</li>
+        <li class="pp-lesson-pipe">|</li>
+        <li class="icon-star"></li>
+        <li class="pp-ranking">12</li>
+  </ul>
+  </div>
+  </a>
+</section> -->

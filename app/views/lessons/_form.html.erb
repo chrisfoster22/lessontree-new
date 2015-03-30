@@ -14,14 +14,16 @@
   <div>
     <%= f.text_area :description, placeholder: "Description of my lesson" %>
   </div>
+  <div class="checkbox-wrapper">
   <div>
-    <%= f.label "Subjects" %>
-    <%= f.collection_check_boxes :subject_ids, @subjects, :id, :title %>
+    <div class="checkbox-header"> <%= f.label "Subjects" %></div>
+    <%= f.collection_check_boxes :subject_ids, @subjects, :id, :title, :item_wrapper_class => 'checkbox_container' %>
   </div>
   <div>
-    <%= f.label "Grade Levels" %>
-    <%= f.collection_check_boxes :grade_level_ids, @grade_levels, :id, :title %>
+    <div class="checkbox-header"><%= f.label "Grade Levels" %></div>
+    <%= f.collection_check_boxes :grade_level_ids, @grade_levels, :id, :title, :item_wrapper_class => 'checkbox_container' %>
   </div>
+</div>
 
   <div class="save-button-wrapper">
     <%= f.submit "Save", class: "save-button" %>
