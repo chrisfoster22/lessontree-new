@@ -1,19 +1,21 @@
-<h2>Edit My Profile</h2>
+
+<div class="edit-my-profile-page-headline">Edit My Profile</div>
+<div class="edit-my-profile-page-headline-rule-container">
+  <div class="edit-my-profile-page-headline-rule-first"></div>
+  <div class="edit-my-profile-page-headline-triangle"></div>
+</div>
+
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
+
   <div class="field">
-    Upload a photo<br />
-    <%= f.file_field :avatar %>
+    <%= f.text_field :name, placeholder: "My full name" %>
   </div>
 
   <div class="field">
-    <%= f.text_field :name, placeholder: "Name" %>
-  </div>
-
-  <div class="field">
-    <%= f.email_field :email, autofocus: true, placeholder: "Your e-mail" %>
+    <%= f.email_field :email, autofocus: true, placeholder: "My e-mail" %>
   </div>
 
   <div class="field">
@@ -44,14 +46,53 @@
     <%= f.password_field :current_password, autocomplete: "off", placeholder: "Current password- to confirm your changes" %>
   </div>
 
+<div class="grade-menu">
+  <div>
+    <%= f.collection_select :grade_level_id, all_grades, :id, :title %>
+  </div>
+  <div class="field">
+    <%= f.file_field :avatar, placeholder: "Profile Pic" %>
+  </div>
+  </div>
+
+  <div class="expander">
+    <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander-hidden">Choose A Grade</a>
+    <div id="js-expander-content" class="expander-content">
+
+      <div class="upload-photo-container">
+        <select class="choose-file" name="Picture">
+          <option class="profile-pic" value="Pic">Profile Pic</option>
+        </select>
+      </div>
+
+      <div class="edit-profile-grades-menu-container">
+        <select class="grade-select-menu" name="Grades">
+          <option class="select-menu-values" value="Grade">Grade</option>
+          <option value="Choose A Grade">Choose A Grade</option>
+          <option value="Kindergarten">Kindergarten</option>
+          <option value="1st">1st</option>
+          <option value="2nd">2nd</option>
+          <option value="3rd">3rd</option>
+          <option value="4th">4th</option>
+          <option value="5th">5th</option>
+          <option value="6th">6th</option>
+          <option value="7th">7th</option>
+          <option value="8th">8th</option>
+        </select>
+      </div>
+
+    </div>
+  </div>
+
+<div> HELLO </DIV>
+
+
+
   <div class="actions">
     <div class="update-button-wrapper">
     <%= f.submit "Update", :class => "update-button" %>
     </div>
   </div>
 
-  <div>
-    <%= f.label "Grade Levels" %>
-    <%= f.collection_select :grade_level_id, all_grades, :id, :title %>
-  </div>
+
 <% end %>
