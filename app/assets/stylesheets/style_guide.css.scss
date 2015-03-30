@@ -56,7 +56,9 @@ $green-hover-color: #6fbaab;
   float: left;
   font-size: 3em;
   font-family: $cursive-font;
-  padding: 0.2em 0 0 2.5em;
+  // padding: 0.2em 0 0 2.5em;
+  padding: 0.2em 0 0 1.5em;
+
 }
 
 .logo {
@@ -76,7 +78,9 @@ $green-hover-color: #6fbaab;
 .nav-list {
   display: inline;
   float: right;
-  padding: 1.7em 5em 0 0;
+  // padding: 1.7em 5em 0 0;
+  padding: 1.7em 4em 0 0;
+
 }
 
 .nav-list-logged-in {
