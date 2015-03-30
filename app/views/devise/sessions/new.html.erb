@@ -1,6 +1,11 @@
 
 <section class="login-container">
-  <h2 class="login-form-header">Log In</h2>
+
+  <div class="login-headline">Log In</div>
+  <div class="login-headline-rule-container">
+    <div class="login-headline-rule-first"></div>
+    <div class="login-headline-triangle"></div>
+  </div>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'minimal') do |f| %>
 
@@ -11,7 +16,7 @@
     <div class="actions">
     <div class="login-forgot-password-buttons-wrapper">
       <%= f.submit "Log In", :class => "login-button" %>
-      <%= f.submit "Forgot Password ?", :class => "forgot-password-button" %>
+      <%= f.submit "Forgot Password?", :class => "forgot-password-button" %>
     </div>
     </div>
 
@@ -21,13 +26,3 @@
 <!-- <%= render "devise/shared/links" %> -->
 
 </section>
-
-<!-- <div class="login-forgot-password-buttons-wrapper">
-    <button class="login-button" type="submit">Log In</button>
-    <button class="forgot-password-button" type="submit">Forgot Password?</button>
-</div>
-
-<div class="create-upload-buttons-wrapper">
-  <button class="upload-button" type="button">Upload</button>
-  <button class="create-button" type="button">Create Doc</button>
-</div> -->
