@@ -29,40 +29,40 @@ Subject.create!(title: "Music")
 Subject.create!(title: "Art")
 Subject.create!(title: "Technology Lessons")
 
-@all_grades = GradeLevel.pluck(:id)
-
-100.times do
-  User.create!(name: Faker::Name.name,
-              email: Faker::Internet.email,
-              password: "password",
-              city: Faker::Address.city,
-              state: Faker::Address.state_abbr,
-              school: Faker::Company.name,
-              # avatar: Faker::Avatar.image("Profile-Picture", "150x150"),
-              grade_level_id: @all_grades.sample)
-end
-
-@all_users = User.pluck(:id)
-
-100.times do
-  lesson = Lesson.create!(topic: Faker::Company.bs,
-                 description: Faker::Lorem.sentences,
-                 user_id: @all_users.sample,
-                 star_count: Faker::Number.digit)
-  grade_level_ids = GradeLevel.pluck(:id).sample((1..3).to_a.sample)
-  grade_level_ids.each do |id|
-    lesson.lesson_grade_levels.create!(grade_level_id: id)
-  end
-  subject_ids = Subject.pluck(:id).sample((1..3).to_a.sample)
-  subject_ids.each do |id|
-    lesson.lesson_subjects.create!(subject_id: id)
-  end
-end
-
-@all_lessons = Lesson.pluck(:id)
-
-100.times do
-  Document.create!(title: Faker::Company.catch_phrase,
-                  content: Faker::Lorem.sentences(1),
-                  lesson_id: @all_lessons.sample)
-end
+# @all_grades = GradeLevel.pluck(:id)
+#
+# 100.times do
+#   User.create!(name: Faker::Name.name,
+#               email: Faker::Internet.email,
+#               password: "password",
+#               city: Faker::Address.city,
+#               state: Faker::Address.state_abbr,
+#               school: Faker::Company.name,
+#               # avatar: Faker::Avatar.image("Profile-Picture", "150x150"),
+#               grade_level_id: @all_grades.sample)
+# end
+#
+# @all_users = User.pluck(:id)
+#
+# 100.times do
+#   lesson = Lesson.create!(topic: Faker::Company.bs,
+#                  description: Faker::Lorem.sentences,
+#                  user_id: @all_users.sample,
+#                  star_count: Faker::Number.digit)
+#   grade_level_ids = GradeLevel.pluck(:id).sample((1..3).to_a.sample)
+#   grade_level_ids.each do |id|
+#     lesson.lesson_grade_levels.create!(grade_level_id: id)
+#   end
+#   subject_ids = Subject.pluck(:id).sample((1..3).to_a.sample)
+#   subject_ids.each do |id|
+#     lesson.lesson_subjects.create!(subject_id: id)
+#   end
+# end
+#
+# @all_lessons = Lesson.pluck(:id)
+#
+# 100.times do
+#   Document.create!(title: Faker::Company.catch_phrase,
+#                   content: Faker::Lorem.sentences(1),
+#                   lesson_id: @all_lessons.sample)
+# end

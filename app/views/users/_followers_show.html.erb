@@ -2,7 +2,7 @@
   <h4 class="followers-title">Followers</h4>
   <ul class = "user-followers-containter">
     <% for user in @user.inverse_friends %>
-      <li class="followers-name"><%=h user.name %></li>
+      <li class="followers-name"><%=link_to user.name, user_path(user.id) %></li>
     <% end %>
   </ul>
 </div>
@@ -11,7 +11,7 @@
   <h4 class="following-title">Following</h4>
   <ul class ="user-followers-containter">
     <% for friendship in @user.friendships %>
-      <li class="following-name"><%= friendship.friend.name %></li>
+      <li class="following-name"><%= link_to friendship.friend.name, user_path(friendship.friend.id) %></li>
     <% end %>
   </ul>
 </div>
