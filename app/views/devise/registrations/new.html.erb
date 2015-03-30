@@ -37,7 +37,6 @@
 
   <div class="field">
     <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
   </div>
@@ -53,3 +52,5 @@
 
 <%= render "devise/shared/links" %>
 </section>
+
+<!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
