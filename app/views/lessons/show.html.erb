@@ -16,13 +16,16 @@
     </ul>
     <p class="lesson-preview-description"><%= @lesson.description.html_safe %></p>
   </div>
-  <% unless @lesson.user == current_user %>
-  <%= form_for @star do |f| %>
-    <%= f.label "Star" do %>
-    <%= f.check_box :lesson_id, value: @lesson.id, class: "star-box", id: "#{@lesson.id}", checked: @starred %>
-  <% end %>
-  <% end %>
-  <% end %>
+  
+  <div class="star-container">
+    <% unless @lesson.user == current_user %>
+      <%= form_for @star do |f| %>
+        <%= f.label "Star" do %>
+          <%= f.check_box :lesson_id, value: @lesson.id, class: "star-box", id: "#{@lesson.id}", checked: @starred %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 
   <% unless @uploaded_documents.empty? %>
     <p class="list">Uploaded Documents</p>

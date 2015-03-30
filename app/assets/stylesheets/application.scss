@@ -34,156 +34,7 @@
 //  @import "footer";
 //  @import "aaron_style_guide";
 //
-// #new_lesson.new_lesson {
-//   display: center;
-//   padding: 20px;
-//   margin-left: auto;
-//   margin-right: auto;
-//   width: auto;
-// }
-//
-// #lesson-show:after {
-//
-//   content: ".";
-//   display: block;
-//   height: 0;
-//   overflow:hidden;
-//   clear: both;
-//   visibility:hidden;
-// }
-//
-// table {
-//   display: block;
-//   border: none;
-// }
-//
-// .cards:after {
-//   content: ".";
-//   display: block;
-//   height: 0;
-//   overflow:hidden;
-//   clear: both;
-//   visibility:hidden;
-// }
-//
-//
-// // ### I WAS MESSING WITH THE STYLING BELOW HERE FOR YOUR INFO.. -parker ####
-//
-// .button_to {
-//   display: inline;
-// }
-//
-// .devise-login {
-//   font-family: $headline-font, sans-serif;
-//   padding: 0.75em 1.75em;
-//   border-radius: 7.5px;
-//   background-color: $button-bg-color;
-//   font-size: 22px;
-//   color: $header-texts-color;
-//   display: inline;
-// }
-//
-// .devise-login:active {
-//   background-color: #d95353;
-//   color: #e8e3e6;
-// }
-//
-// .devise-login:hover {
-//   background-color: white;
-//   color: #d95353;
-//   .logos {
-//     font-family: 'Dancing Script', cursive;
-//     font-size: 3.7em;
-//     font-weight: bold;
-//     // margin-left: 20px;
-//     // margin-top: 12px;
-//     color: $header-texts-color;
-//   }
-// }
-//
-// .forgot-pass {
-//   font-family: $headline-font, sans-serif;
-//   padding: 0.75em 1.75em;
-//   border-radius: 7.5px;
-//   background-color: $button-bg-color;
-//   font-size: 22px;
-//   color: $header-texts-color;
-//   display: inline;
-// }
-//
-// .forgot-pass:active {
-//   background-color: #d95353;
-//   color: #e8e3e6;
-// }
-//
-// .forgot-pass:hover {
-//   background-color: white;
-//   color: #d95353;
-//   .logos {
-//     font-family: 'Dancing Script', cursive;
-//     font-size: 3.7em;
-//     font-weight: bold;
-//     // margin-left: 20px;
-//     // margin-top: 12px;
-//     color: $header-texts-color;
-//   }
-// }
-//
-// .devise-sign-in {
-//   font-family: $headline-font, sans-serif;
-//   padding: 0.75em 1.75em;
-//   border-radius: 7.5px;
-//   background-color: $button-bg-color;
-//   font-size: 22px;
-//   color: $header-texts-color;
-//   display: inline;
-// }
-//
-// .devise-sign-in:active {
-//   background-color: #d95353;
-//   color: #e8e3e6;
-// }
-//
-// .devise-sign-in:hover {
-//   background-color: white;
-//   color: #d95353;
-//   .logos {
-//     font-family: 'Dancing Script', cursive;
-//     font-size: 3.7em;
-//     font-weight: bold;
-//     // margin-left: 20px;
-//     // margin-top: 12px;
-//     color: $header-texts-color;
-//   }
-// }
-//
-// .devise-update {
-//   font-family: $headline-font, sans-serif;
-//   padding: 0.75em 1.75em;
-//   border-radius: 7.5px;
-//   background-color: $button-bg-color;
-//   font-size: 22px;
-//   color: $header-texts-color;
-//   display: inline;
-// }
-//
-// .devise-update:active {
-//   background-color: #d95353;
-//   color: #e8e3e6;
-// }
-//
-// .devise-update:hover {
-//   background-color: white;
-//   color: #d95353;
-//   .logos {
-//     font-family: 'Dancing Script', cursive;
-//     font-size: 3.7em;
-//     font-weight: bold;
-//     // margin-left: 20px;
-//     // margin-top: 12px;
-//     color: $header-texts-color;
-//   }
-// }
+
 .thread {
 }
 .comment {
@@ -290,8 +141,15 @@
   color: $alt-top-bg-hover;
   font-family: $headline-font;
   text-align: center;
-  div.checkbox-header {
-    color: $button-bg-hover;
+  padding: 0, 500px, 0, 500px;
+  .checkbox-header {
+    font-size: 1.5em;
+    color: $logo-color;
+  }
+  .checkbox-list {
+    padding-left: 38em;
+    padding-right: 38em;
+    display: inline-block;
   }
 }
 
@@ -305,29 +163,19 @@ header.sticky-nav-header {
   background: $dark-header-color;
   z-index: 1000;
 }
-.sticky-nav,
-.main {
+.sticky-nav {
   position: relative;
   top: -30px;
-}
-.main-nav {
-  background: #fff;
-  height: 80px;
-  z-index: 150;
-  margin-bottom: -80px;
-  box-shadow: 0 2px 3px rgba(0,0,0,.4);
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }
 header.sticky-nav-header,
 .main-nav-scrolled {
   position: fixed;
   width: 100%;
   top: 0;
-}
-.main {
-  background: #f2f2e8;
-  padding: 110px 50px 50px;
-  column-count: 2;
-  column-gap: 40px;
 }
 
 .quick-show {

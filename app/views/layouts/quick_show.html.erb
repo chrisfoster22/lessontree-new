@@ -13,7 +13,7 @@
 
 <header class="sticky-nav-header">
   <nav class="sticky-nav">
-    <%= link_to "Go To Lesson", lesson_path(@lesson), class:"save-button" %>
+    <%= link_to "Go To Lesson", lesson_path(@lesson), id: "quick-view-link", target: "_parent" %>
     <span class="icon-star"></span>
     <span class="ranking"><%= @lesson.stars.count %></span>
 
