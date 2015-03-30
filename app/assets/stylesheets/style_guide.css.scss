@@ -380,8 +380,8 @@ SELECT DROPDOWN BUTTON
 
     &:before {
       font-size: $expander-arrow-width;
-
       margin-right: 0.5em;
+      content: "\25BC";
     }
   }
 
@@ -426,12 +426,13 @@ SELECT DROPDOWN BUTTON
   PROFILE PAGE MAIN WRAPPER
 *****************************************/
 .profile-page-main-wrapper {
-    margin: 3em 0 6em 0;
+    margin: 3em 0 10em;
 }
 
 .profile-page-user-photo-wrapper {
-  display: inline-block;
-  margin-left: 23em;
+  display: inline;
+  float: left;
+  margin-left: 19em;
 }
 
 .profile-page-user-photo-list {
@@ -439,17 +440,18 @@ SELECT DROPDOWN BUTTON
 }
 
 .profile-page-user-photo {
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   display: inline;
   vertical-align: bottom;
 }
 
 .user-profile-information-wrapper {
-  display: inline-block;
+  display: inline;
   float: right;
-  margin-right: 18em;
+  width: 50%;
+  margin-right: 14em;
 }
 
 .user-profile-information {
@@ -480,50 +482,15 @@ SELECT DROPDOWN BUTTON
   font-weight: bolder;
 }
 
+.profile-page-top-wrapper {
+  margin-left: 26em
+}
 
+.user-profile-unique-information {
+  margin-top: .5em;
+  line-height: 1.3em;
+}
 
-
-
-
-/*********************************************************
- DROPDOWN PROFILE PAGE MAIN WRAPPER
-*********************************************************/
-// .profile-page-top-wrapper {
-//   margin: 2em 0 8.5em 0
-// }
-//
-// .my-profile-page-headline {
-//   display: inline-block;
-//   font-size: 2em;
-//   font-family: $headline-font;
-//   font-weight: 400;
-//   color: #65a397;
-//   margin: 1em 0 0 0;
-// }
-//
-// .user-profile-information-wrapper-right {
-//   text-align: left;
-//   display: inline-block;
-//   width: 80%;
-// }
-//
-// .profile-page-user-labels {
-//   font-family: $headline-font;
-//   font-weight: bolder;
-//   color: #666;
-//   font-size: .8em;
-// }
-//
-// .user-profile-unique-labels {
-//   font-family: $headline-font;
-//   color: #666;
-//   font-size: .8em;
-// }
-//
-// .user-profile-unique-information li {
-//   margin-bottom: .3em;
-// }
-//
 /****************************************
     PROFILE PAGE DROPDOWN
 ****************************************/
@@ -538,12 +505,10 @@ SELECT DROPDOWN BUTTON
   $dark-gray: #333 !default;
   $light-gray: #DDD !default;
   $base-font-color: $dark-gray !default;
-  margin: 1em 0 0 4em;
   font-family: $headline-font;
-  font-size: 1.3em;
-  float: left;
+  font-size: 1em;
   display: inline-block;
-  padding-top: 1em;
+  padding-top: .5em;
   width: 38%;
 
   p {
@@ -569,7 +534,6 @@ SELECT DROPDOWN BUTTON
     @include user-select(none);
     border-bottom: none;
     cursor: pointer;
-    margin: 0 auto 0;
     font-size: 1em;
     margin-bottom: .25em;
     padding-bottom: .25em;
@@ -593,20 +557,42 @@ SELECT DROPDOWN BUTTON
   }
 }
 
+.expander-content {
+  margin-top: 1em;
+}
+
 .expander {
   position: relative;
 }
 
-.user-profile-information-wrapper-right {
+.user-followers-wrapper-top, .user-followers-wrapper-bottom {
   text-align: left;
   display: inline-block;
+}
+
+.user-followers-wrapper-top {
+  margin-right: 4em;
+}
+
+.followers-title, .following-title {
+  padding: .5em 0 .5em;
+  text-decoration: underline;
+  color: #999;
+  font-family: $headline-font;
+  font-size: 1em;
+}
+
+.user-followers-containter {
+  font-family: $headline-font;
+  font-size: 1em;
+  color: #222;
+  line-height: 1.3em;
 }
 
 .expander-profile a:hover {
   color: $alt-top-bg-color;
   text-decoration: none;
 }
-
 
 /****************************************
 HOMEPAGE LESSON PREVIEWS
@@ -627,7 +613,6 @@ HOMEPAGE LESSON PREVIEWS
   background: #eee;
   box-shadow: 0 2px 5px rgba(0,0,0,0.18);
   padding: .7em .7em .7em .9em;
-
 }
 
 .lesson-preview-title {
@@ -682,7 +667,6 @@ HOMEPAGE LESSON PREVIEWS
 
 .star-ranking {
   vertical-align: text-baseline;
-
 }
 
 .icon-star {
@@ -766,7 +750,6 @@ HOMEPAGE LESSON PREVIEWS
       padding: 1em 1.6em 1em;
       text-transform: uppercase;
       letter-spacing: .1em;
-
 }
 
 .login-button:hover {
@@ -1630,7 +1613,7 @@ PROFILE PAGE LESSON VIEW
   font-family: $headline-font;
   font-weight: 400;
   color: #111;
-  padding-left: .75em;
+  padding: 0 .75em 0 .75em;
 }
 
 .pp-lesson-shim {
@@ -1649,6 +1632,30 @@ PROFILE PAGE LESSON VIEW
   font-family: $headline-font;
   font-weight: 400;
   color: #2e2e40;
+}
+
+.pp-star-rankings-container {
+  vertical-align: text-baseline;
+}
+
+.pp-star-rankings-container:nth-child(5){
+  padding-left: .5em;
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translateY(15%);
+}
+
+.pp-ranking {
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-25%);
+  font-family: "Hind", sans-serif;
+  font-size: 1.2em;
+  margin-left: .25em;
+  color: #555;
+  letter-spacing: .1em;
 }
 
 /************************************
@@ -2210,8 +2217,6 @@ PROFILE PAGE LESSON VIEW
   cursor: pointer;
 }
 
-
->>>>>>> 0dbbd9fe33cee2fa62be6c3fd82daecd2ac1c28b
 /************************************
               FOOTER
 ************************************/
@@ -2305,7 +2310,6 @@ footer {
   transition: .4s;
   cursor: pointer;
 }
-
 
 /************************************
     FOOTER MEDIA QUERY
