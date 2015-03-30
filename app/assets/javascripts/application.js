@@ -109,12 +109,3 @@ $(document).ready(function(){
     });
   });
 });
-
-
-
-//this js is for the users/edit pg & it's not working//
-// <script type="text/javascript">
-// $('input [id=picbtn]').change(function(){
-//   $('#styledBtn').val($(this).val());
-// });
-// </sript>

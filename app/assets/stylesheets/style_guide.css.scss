@@ -960,6 +960,84 @@ CREATE & UPLOAD BUTTON SIDE BY SIDE
   margin: 0 .5em 0;
 }
 
+/**********************************************
+EDIT PROFILE & NEW LESSON BUTTONS SIDE BY SIDE
+**********************************************/
+.edit-profile-new-lesson-buttons-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.edit-profile-new-lesson-buttons-wrapper button {
+  margin: 0 .5em 0;
+}
+
+/************************************
+          EDIT PROFILE BUTTON
+************************************/
+.edit-profile-button-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.edit-profile-button {
+  margin: 0 .5em 0;
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $alt-top-bg-color;
+  color: #fff;
+  border-radius: .25em;
+  padding: 1em .8em 1em;
+  text-decoration: none;
+  padding: 1em 1.6em 1em;
+}
+
+.edit-profile-button:hover {
+  background: $alt-top-bg-hover;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+/************************************
+          NEW LESSON BUTTON
+************************************/
+.new-lesson-button-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.new-lesson-button {
+  margin: 0 .5em 0;
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $alt-top-bg-color;
+  color: #fff;
+  border-radius: .25em;
+  padding: 1em .8em 1em;
+  text-decoration: none;
+  padding: 1em 1.6em 1em;
+}
+
+.new-lesson-button:hover {
+  background: $alt-top-bg-hover;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+
 /************************************
             HOME BUTTON
 ************************************/
@@ -1695,6 +1773,80 @@ PROFILE PAGE LESSON VIEW
   margin-left: .25em;
   color: #555;
   letter-spacing: .1em;
+}
+
+
+.edit-profile-button-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.edit-profile-button {
+  margin: 0 .5em 0;
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $alt-top-bg-color;
+  color: #fff;
+  border-radius: .25em;
+  padding: 1em .8em 1em;
+  text-decoration: none;
+  padding: 1em 1.6em 1em;
+}
+
+.edit-profile-button:hover {
+  background: $alt-top-bg-hover;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+.new-lesson-button-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.new-lesson-button {
+  margin: 0 .5em 0;
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $alt-top-bg-color;
+  color: #fff;
+  border-radius: .25em;
+  padding: 1em .8em 1em;
+  text-decoration: none;
+  padding: 1em 1.6em 1em;
+}
+
+.new-lesson-button:hover {
+  background: $alt-top-bg-hover;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+.edit-profile-new-lesson-buttons-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
+
+.edit-profile-new-lesson-buttons-wrapper button {
+  margin: 0 .5em 0;
+}
+
+.center {
+  margin-top: 5em;
+  text-align: center;
 }
 
 /************************************
@@ -2527,11 +2679,6 @@ PROFILE PAGE LESSON VIEW
   font-size: 2.4em;
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 368eaf6de312cdcd6df1438af0819a1ca9d8dd99
 /************************************
               FOOTER
 ************************************/
@@ -2635,7 +2782,10 @@ footer {
   margin: .5em 0 .5em;
  }
 }
+/**************************************
+                  FB
 
+**************************************/
 .fb-root {
   text-align: center;
   padding-top: 1em;
