@@ -50,6 +50,7 @@
   <%= link_to 'Upload Lesson Document', upload_file_documents_path(lesson_id: @lesson.id), id: 'fancybox', class: 'edit-button' %>
   <%= link_to "Create Lesson Document", new_document_path(lesson_id: @lesson.id), class: 'save-button' %>
 </div>
+<% end %>
 
 <div style="display: none">
     <div id="content-div">Some content here</div>
