@@ -45,7 +45,7 @@
 <br>
   <%= commontator_thread(@lesson) %>
 </section>
-<% unless @lesson.user == current_user %>
+<% if @lesson.user == current_user %>
 <div class="edit-save-buttons-wrapper">
   <%= link_to 'Upload Lesson Document', upload_file_documents_path(lesson_id: @lesson.id), id: 'fancybox', class: 'edit-button' %>
   <%= link_to "Create Lesson Document", new_document_path(lesson_id: @lesson.id), class: 'save-button' %>
