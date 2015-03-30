@@ -16,11 +16,11 @@
   </div>
   <div>
     <%= f.label "Subjects" %>
-    <%= f.collection_check_boxes :subject_ids, @subjects, :id, :title %>
+    <%= f.collection_check_boxes :subject_ids, @subjects, :id, :title, :item_wrapper_class => 'checkbox_container' %>
   </div>
   <div>
     <%= f.label "Grade Levels" %>
-    <%= f.collection_check_boxes :grade_level_ids, @grade_levels, :id, :title %>
+    <%= f.collection_check_boxes :grade_level_ids, @grade_levels, :id, :title, :item_wrapper_class => 'checkbox_container' %>
   </div>
 
   <div class="save-button-wrapper">
