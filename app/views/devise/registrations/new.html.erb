@@ -1,5 +1,5 @@
 
-<section class="signup-container">
+<!-- <section class="signup-container">
 	<h2 class="signup-form-header">Sign Up</h2>
 	<form class="signup-form" method="post" class="minimal">
 		<label for="name">
@@ -24,9 +24,7 @@
 		<button class="signup-button" type="submit">Sign Up</button>
     </div>
   </form>
-</section>
-
-
+</section> -->
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "signup-form") do |f| %>
   <%= devise_error_messages! %>
@@ -39,9 +37,8 @@
 
   <div class="field">
     <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" placeholder: "Password" %>
+    <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
   </div>
 
   <div class="field">
@@ -49,9 +46,11 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign Up", :class => 'devise-sign-up' %>
+    <%= f.submit "Sign Up", :class => "signup-button" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
 </section>
+
+<!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->

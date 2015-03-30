@@ -20,74 +20,34 @@
 <div><%= link_to "Edit Profile", edit_user_registration_path, class: 'save-button' %></div>
 <br>
 <div><%= link_to "New Lesson", new_lesson_path, class: 'save-button' %></div>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 <br> -->
 
 <!-- PROFILE PAGE TOP WRAPPER -->
 <section class="profile-page-main-wrapper">
   <div class="profile-page-user-photo-wrapper">
     <ul>
-      <li class="profile-page-user-photo-list"><img class="profile-page-user-photo" src="http://www.john-michael.net/wp-content/uploads/2011/11/Teddy-Roosevelt.jpg"></li>
+      <li class="profile-page-user-photo-list"><%= image_tag @user.avatar.url, class: "profile-page-user-photo" if @user %></li>
     </ul>
   </div>
   <div class="user-profile-information-wrapper">
     <ul class = "user-profile-information">
-      <li class="profile-page-user-name"><span class="profile-page-user-label">Name:</span><span class="user-profile-unique-label">&nbsp&nbspTheodore Roosevelt</span></li>
-      <li class="profile-page-user-grades"><span class="profile-page-user-label">Grades I Teach:</span><span class="user-profile-unique-label">&nbsp&nbspKindergarten</span></li>
-      <li class="profile-page-user-school"><span class="profile-page-user-label">My School Name:</span><span class="user-profile-unique-label">&nbsp&nbspTheodore Roosevelt Regional Awesomeness Elementary School</span></li>
-      <li class="profile-page-user-city"><span class="profile-page-user-label">School City:</span><span class="user-profile-unique-label">&nbsp&nbspWalla Walla</span></li>
-      <li class="profile-page-user-state"><span class="profile-page-user-label">School State:</span><span class="user-profile-unique-label">&nbsp&nbspWashington</span></li>
+      <li class="profile-page-user-name"><span class="profile-page-user-label">Name:</span><span class="user-profile-unique-label">&nbsp&nbsp<%= @user.name %></span></li>
+      <li class="profile-page-user-grades"><span class="profile-page-user-label">Grades I Teach:</span><span class="user-profile-unique-label">&nbsp&nbsp<%= formatted_grade_level_name(@user) %></span></li>
+      <li class="profile-page-user-school"><span class="profile-page-user-label">My School Name:</span><span class="user-profile-unique-label">&nbsp&nbsp<%= @user.school %></span></li>
+      <li class="profile-page-user-city"><span class="profile-page-user-label">School City:</span><span class="user-profile-unique-label">&nbsp&nbsp<%= @user.city %></span></li>
+      <li class="profile-page-user-state"><span class="profile-page-user-label">School State:</span><span class="user-profile-unique-label">&nbsp&nbsp<%= @user.state %></span></li>
     </ul>
   </div>
-</section>
 
-
-<!-- PROFILE DROPDOWN -->
-<section class="following-dropdown-container">
-<div class="profile-page-top-wrapper">
-  <ul>
-    <li>
-      <div class="expander-profile">
-          <a href="javascript:void(0)" id="js-expander-trigger" class="expander-profile-trigger expander-hidden">Following</a>
-          <div id="js-expander-content" class="expander-content">
-
-            <div class="user-profile-information-wrapper-right">
-              <ul class = "user-profile-unique-information">
-                <li><span class="profile-page-user-labels">Name:</span><span class=user-profile-unique-labels>&nbsp&nbspTheodore Roosevelt</span></li>
-                <li><span class="profile-page-user-labels">Grades I Teach:</span><span class=user-profile-unique-labels>&nbsp&nbspKindergarten</span></li>
-                <li><span class="profile-page-user-labels">My School Name:</span><span class=user-profile-unique-labels>&nbsp&nbspTheodore Roosevelt Regional Awesomeness Elementary School</span></li>
-                <li><span class="profile-page-user-labels">School City:</span><span class=user-profile-unique-labels>&nbsp&nbspWalla Walla</span></li>
-                <li><span class="profile-page-user-labels">School State:</span><span class=user-profile-unique-labels>&nbsp&nbspWashington</span></li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-    </li>
-  </ul>
-
-<div class="profile-page-top-wrapper">
-  <ul>
-    <li>
-      <div class="expander-profile">
-          <a href="javascript:void(0)" id="js-expander-trigger" class="expander-profile-trigger expander-hidden">Followers</a>
-          <div id="js-expander-content" class="expander-content">
-
-            <div class="user-profile-information-wrapper-right">
-              <ul class = "user-profile-unique-information">
-                <li><span class="profile-page-user-labels">Name:</span><span class=user-profile-unique-labels>&nbsp&nbspTheodore Roosevelt</span></li>
-                <li><span class="profile-page-user-labels">Grades I Teach:</span><span class=user-profile-unique-labels>&nbsp&nbspKindergarten</span></li>
-                <li><span class="profile-page-user-labels">My School Name:</span><span class=user-profile-unique-labels>&nbsp&nbspTheodore Roosevelt Regional Awesomeness Elementary School</span></li>
-                <li><span class="profile-page-user-labels">School City:</span><span class=user-profile-unique-labels>&nbsp&nbspWalla Walla</span></li>
-                <li><span class="profile-page-user-labels">School State:</span><span class=user-profile-unique-labels>&nbsp&nbspWashington</span></li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-    </li>
-  </ul>
+  <div class="profile-page-top-wrapper">
+  <div class="expander-profile">
+      <a href="javascript:void(0)" id="js-expander-trigger" class="expander-profile-trigger expander-hidden">Following</a>
+      <div id="js-expander-content" class="expander-content">
+        <%= render 'followers_show' %>
+      </div>
+    </div>
+  </div>
 </section>
 
 <ul class="accordion-tabs">
@@ -96,99 +56,19 @@
     <div class="tab-content">
 
       <section class="pp-lesson-container">
-        <a class="pp-lesson-link" href="www.google.com">
-        <div class="pp-lesson-title-container">
-          <h3 class="pp-lesson-title">Example of Lesson Title</h3>
-          <ul>
-              <li class="pp-lesson-subject-list">Social Studies</li>
-              <li class="pp-lesson-pipe">|</li>
-              <li class="pp-lesson-grade-list">1st Grade</li>
-        </ul>
-        </div>
-        </a>
+        <%= render partial: 'my_lessons' %>
       </section>
       <div class="pp-lesson-shim"></div>
-
-      <section class="pp-lesson-container">
-        <a class="pp-lesson-link" href="www.google.com">
-        <div class="pp-lesson-title-container">
-          <h3 class="pp-lesson-title">Some Kind Of Title Goes Here Blahblahblah</h3>
-          <ul>
-              <li class="pp-lesson-subject-list">Social Studies</li>
-              <li class="pp-lesson-pipe">|</li>
-              <li class="pp-lesson-grade-list">1st Grade</li>
-        </ul>
-        </div>
-        </a>
-      </section>
-      <div class="pp-lesson-shim"></div>
-
-      <section class="pp-lesson-container">
-        <a class="pp-lesson-link" href="www.google.com">
-        <div class="pp-lesson-title-container">
-          <h3 class="pp-lesson-title">Whatever Title Goes Here Blahblahblah</h3>
-          <ul>
-              <li class="pp-lesson-subject-list">Social Studies</li>
-              <li class="pp-lesson-pipe">|</li>
-              <li class="pp-lesson-grade-list">1st Grade</li>
-        </ul>
-        </div>
-        </a>
-      </section>
-      <div class="pp-lesson-shim"></div>
-  </li>
 
   <li class="tab-header-and-content">
     <a href="javascript:void(0)" class="tab-link">Starred Lessons</a>
-    <div class="tab-content">
-      <section class="pp-lesson-container">
-        <a class="pp-lesson-link" href="www.google.com">
-        <div class="pp-lesson-title-container">
-          <h3 class="pp-lesson-title">Whatever Title Goes Here Blahblahblah</h3>
-          <ul>
-              <li class="pp-lesson-subject-list">Social Studies</li>
-              <li class="pp-lesson-pipe">|</li>
-              <li class="pp-lesson-grade-list">1st Grade</li>
-        </ul>
-        </div>
-        </a>
-      </section>
-      <div class="pp-lesson-shim"></div>
-
-      <section class="pp-lesson-container">
-        <a class="pp-lesson-link" href="www.google.com">
-        <div class="pp-lesson-title-container">
-          <h3 class="pp-lesson-title">Whatever Title Goes Here Blahblahblah</h3>
-          <ul>
-              <li class="pp-lesson-subject-list">Social Studies</li>
-              <li class="pp-lesson-pipe">|</li>
-              <li class="pp-lesson-grade-list">1st Grade</li>
-        </ul>
-        </div>
-        </a>
-      </section>
+      <div class="tab-content">
+        <%= render partial: 'my_starred_lessons' %>
       <div class="pp-lesson-shim"></div>
     </div>
   </li>
 </ul>
 
-    <div class="tab-content">
-      <%= render partial: 'my_lessons' %>
-    </div>
-  </li>
-  <li class="tab-header-and-content">
-    <a href="javascript:void(0)" class="tab-link">Starred Lessons</a>
-    <div class="tab-content">
-
-    <div class="tab-content">
-      <%= render partial: 'my_lessons' %>
-    </div>
-  </li>
-  <li class="tab-header-and-content">
-    <a href="javascript:void(0)" class="tab-link">Starred Lessons</a>
-    <div class="tab-content">
-
-      <%= render partial: 'my_starred_lessons' %>
-    </div>
-  </li>
-</ul>
+<div><%= link_to "Edit Profile", edit_user_registration_path, class: 'save-button' %></div>
+<br>
+<div><%= link_to "New Lesson", new_lesson_path, class: 'save-button' %></div>
