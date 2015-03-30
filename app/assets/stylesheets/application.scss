@@ -287,3 +287,12 @@
   color: $alt-top-bg-hover;
   }
 }
+
+.checkbox-wrapper {
+  color: $alt-top-bg-hover;
+  font-family: $headline-font;
+  text-align: center;
+  div.checkbox-header {
+    color: $button-bg-hover;
+  }
+}
