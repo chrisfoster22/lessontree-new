@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   resources :lessons do
     member do
       get 'document_form'
+      get 'quick_show'
     end
   end
 

@@ -13,14 +13,14 @@
     <ul class="star-ranking">
     <li class="icon-star"></li>
     <li class="ranking"><%= @lesson.stars.count %></li>
-
     </ul>
     <p class="lesson-preview-description"><%= @lesson.description.html_safe %></p>
   </div>
-
+  <% unless @lesson.user == current_user %>
   <%= form_for @star do |f| %>
     <%= f.label "Star this lesson?" %>
     <%= f.check_box :lesson_id, value: @lesson.id, class: "star-box", id: "#{@lesson.id}", checked: @starred %>
+  <% end %>
   <% end %>
 
   <% unless @uploaded_documents.empty? %>
@@ -45,15 +45,14 @@
 <br>
   <%= commontator_thread(@lesson) %>
 </section>
+<% if @lesson.user == current_user %>
 <div class="edit-save-buttons-wrapper">
   <%= link_to 'Upload Lesson Document', upload_file_documents_path(lesson_id: @lesson.id), id: 'fancybox', class: 'edit-button' %>
   <%= link_to "Create Lesson Document", new_document_path(lesson_id: @lesson.id), class: 'save-button' %>
 </div>
+<% end %>
 
 <div style="display: none">
     <div id="content-div">Some content here</div>
 </div>
-
-<div>
-  <%= link_to "Back", user_path(@lesson.user), class: 'save-button' %>
-</div>
+<% end %>
