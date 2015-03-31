@@ -21,7 +21,18 @@
   </div>
 </div>
 
-<div class="diffy-page-buttons">
-  <span class="diffy-back-link"><%= link_to 'Back', version_history_document_path(@document.id), class: 'btn btn-danger' %></span>
-  <span class="diffy-rollback-link"><%= link_to 'Rollback', rollback_document_version_path(@document, @version), class: 'btn btn-primary', method: 'PATCH' %></span>
+<div class="edit-save-buttons-wrapper">
+  <%= link_to 'Back', version_history_document_path(@document.id), class: 'back-button' %></span>
+  <span class="diffy-rollback-link"><%= link_to 'Rollback', rollback_document_version_path(@document, @version), class: 'edit-button', method: 'PATCH' %></span>
 </div>
+
+  <div class="edit-save-buttons-wrapper">
+    <div class="nl">
+        <div></div>
+    </div>
+    <div class="edit-save-buttons-wrapper">
+        <div></div>
+    </div>
+  </div>
+
+  <div class="diffy-page-spacer"></div>

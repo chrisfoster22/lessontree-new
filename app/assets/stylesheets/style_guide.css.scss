@@ -1141,6 +1141,32 @@ EDIT PROFILE & NEW LESSON BUTTONS SIDE BY SIDE
   cursor: pointer;
 }
 
+/*************************
+      BACK BUTTON
+*************************/
+
+.back-button {
+  margin: 0 .5em 0;
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $alt-top-bg-color;
+  color: #fff;
+  border-radius: .25em;
+  text-decoration: none;
+  padding: 1em 3.3em 1em 3.3em;
+}
+
+.back-button:hover {
+  background: $alt-top-bg-hover;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
 /***********************************************
       STAR THIS PLAN CHECKBOX
 ***********************************************/
@@ -1148,7 +1174,7 @@ EDIT PROFILE & NEW LESSON BUTTONS SIDE BY SIDE
   text-align: center;
 }
 /************************************
-      FORGOT PASSWORD BUTTON
+FORGOT PASSWORD BUTTON
 ************************************/
 .forgot-password-button-wrapper {
   display: block;
