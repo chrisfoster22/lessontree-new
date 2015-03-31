@@ -1,6 +1,8 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:edit, :show, :update, :destroy, :quick_show]
   before_action :lesson_owner, only: [:edit, :destroy, :update]
+  before_action :authenticate_user!, only: [:create, :new, :create_from_upload,
+                :edit, :update, :destroy]
 
   def index
     @lessons = Lesson.order("created_at DESC")

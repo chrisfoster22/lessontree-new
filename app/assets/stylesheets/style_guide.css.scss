@@ -1621,7 +1621,7 @@ input[type=checkbox].css-checkbox {
   font-family: $headline-font;
   font-weight: 400;
   color: $alt-top-bg-color;
-  margin-bottom: .25em;
+  margin-bottom: 1.55em;
   margin-top: 1.5em;
 }
 
@@ -2001,7 +2001,7 @@ PROFILE PAGE LESSON VIEW
 .signup-form-error {
   color: $button-bg-color;
   font-size: 1em;
-  font-family: $maintext-font;
+  font-family: $headline-font;
   margin: 0 0 24px 0;
   text-shadow: none;
   text-align: center;
@@ -2120,7 +2120,7 @@ PROFILE PAGE LESSON VIEW
 .login-form-error {
       color: $button-bg-color;
       font-size: 1em;
-      font-family: $maintext-font;
+      font-family: $headline-font;
       margin: 0 0 24px 0;
       text-shadow: none;
       text-align: center;
@@ -2130,7 +2130,7 @@ PROFILE PAGE LESSON VIEW
 #error_explanation {
   color: $button-bg-color;
   font-size: 1em;
-  font-family: $maintext-font;
+  font-family: $headline-font;
   margin: 0 0 24px 0;
   text-shadow: none;
   text-align: center;
@@ -2139,7 +2139,7 @@ PROFILE PAGE LESSON VIEW
 .alert-auth-msg {
   color: $button-bg-color;
   font-size: 1em;
-  font-family: $maintext-font;
+  font-family: $headline-font;
   margin: 0 0 24px 0;
   text-shadow: none;
   text-align: center;
@@ -2301,7 +2301,7 @@ PROFILE PAGE LESSON VIEW
 .new-upload-error {
       color: $button-bg-color;
       font-size: 1em;
-      font-family: $maintext-font;
+      font-family: $headline-font;
       margin: 0 0 24px 0;
       text-shadow: none;
       text-align: center;
@@ -2432,15 +2432,6 @@ PROFILE PAGE LESSON VIEW
 /***************************************
           ABOUT PAGE
 ***************************************/
-.about-headline {
-  text-align: center;
-  font-size: 2.4em;
-  font-family: $headline-font;
-  font-weight: 400;
-  color: $alt-top-bg-color;
-  margin-bottom: .25em;
-  margin-top: 1.5em;
-}
 
 .about-page-headline-rule-first {
   border-bottom: 1px solid #eee;
@@ -2488,14 +2479,24 @@ PROFILE PAGE LESSON VIEW
   margin: 1em auto 2em;
 }
 
+.about-headline-first {
+  text-align: center;
+  font-size: 2.4em;
+  font-family: $headline-font;
+  font-weight: 400;
+  color: $alt-top-bg-color;
+  margin-bottom: 1em;
+  margin-top: 1.5em;
+}
+
 .about-headline {
   text-align: center;
   font-size: 2.4em;
   font-family: $headline-font;
   font-weight: 400;
   color: $alt-top-bg-color;
-  margin-bottom: .25em;
-  margin-top: 1.5em;
+  margin-bottom: 1em;
+  margin-top: 2.5em;
 }
 
 .about-page-headline-rule-first {
