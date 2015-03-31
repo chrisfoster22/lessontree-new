@@ -1497,8 +1497,8 @@ input[type=checkbox].css-checkbox {
   font-family: $headline-font;
   font-weight: 400;
   color: $alt-top-bg-color;
-  margin-bottom: .25em;
-  margin-top: 3em;
+  margin-bottom: 1.5em;
+  margin-top: 1.5em;
 }
 
 .create-lesson-page-headline-rule-first {
@@ -1584,7 +1584,7 @@ input[type=checkbox].css-checkbox {
   font-family: $headline-font;
   font-weight: 400;
   color: $alt-top-bg-color;
-  margin-bottom: .25em;
+  margin-bottom: 1.5em;
   margin-top: 1.5em;
 }
 
@@ -2844,6 +2844,31 @@ padding-right: 2em;
 .back-to-lesson-link a {
   text-decoration: none;
   color: #fff;
+}
+
+/************************************
+    CREATE LESSON PAGE
+************************************/
+.checkbox-wrapper {
+  margin: 2em auto 1em;
+  width: 500px;
+}
+
+.checkbox-header {
+  padding: 1em 0 0;
+  margin-bottom: .5em;
+}
+
+.checkbox-header label {
+  font-size: 1.2em;
+  font-weight: bolder;
+  font-family: $headline-font;
+  color: #666;
+}
+
+.checkbox-wrapper label {
+  padding-right: .5em;
+  color: #666;
 }
 
 /************************************
