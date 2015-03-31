@@ -3168,6 +3168,30 @@ footer {
             LESSON PG COUNT
 **************************************/
 .first-pg-count {
-  font-size: 13.5em;
+   font-size: 1.1em;
+   text-align: right;
+}
+
+.pg-gap-counter {
+   margin: 5px;
+}
+
+.last-pg-count {
+  font-size: 1.1em;
+  text-align: right;
+}
+
+.next-pg-count {
+  font-size: 1.1em;
+  text-align: right;
+}
+
+.prev-pg-count {
+  font-size: 1.1em;
+  text-align: right;
+}
+
+.pagination {
+  font-size: 1.1em;
   text-align: right;
 }
