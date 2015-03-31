@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       lesson = Lesson.find_by(id: s.lesson_id)
       @starred_lessons << lesson
     end
-    @starred_lessons = [Lesson.find(104)]
+    @starred_lessons
   end
 
   def index
