@@ -2001,7 +2001,7 @@ PROFILE PAGE LESSON VIEW
 .signup-form-error {
   color: $button-bg-color;
   font-size: 1em;
-  font-family: $maintext-font;
+  font-family: $headline-font;
   margin: 0 0 24px 0;
   text-shadow: none;
   text-align: center;
@@ -2120,7 +2120,7 @@ PROFILE PAGE LESSON VIEW
 .login-form-error {
       color: $button-bg-color;
       font-size: 1em;
-      font-family: $maintext-font;
+      font-family: $headline-font;
       margin: 0 0 24px 0;
       text-shadow: none;
       text-align: center;
@@ -2130,12 +2130,22 @@ PROFILE PAGE LESSON VIEW
 #error_explanation {
   color: $button-bg-color;
   font-size: 1em;
-  font-family: $maintext-font;
+  font-family: $headline-font;
   margin: 0 0 24px 0;
   text-shadow: none;
   text-align: center;
   margin-top: 1em;
 }
+.alert-auth-msg {
+  color: $button-bg-color;
+  font-size: 1em;
+  font-family: $headline-font;
+  margin: 0 0 24px 0;
+  text-shadow: none;
+  text-align: center;
+  margin-top: 1em;
+}
+
 
 /*BUTTON DESIGN*/
 .login-button-wrapper {
@@ -2291,7 +2301,7 @@ PROFILE PAGE LESSON VIEW
 .new-upload-error {
       color: $button-bg-color;
       font-size: 1em;
-      font-family: $maintext-font;
+      font-family: $headline-font;
       margin: 0 0 24px 0;
       text-shadow: none;
       text-align: center;
@@ -2983,8 +2993,7 @@ padding-right: 2em;
 .document-page-top-toolbar-list {
   list-style-type: none;
   font-family: $headline-font;
-
-
+  display: inline;
 }
 
 .document-page-top-toolbar-list li {
@@ -3006,13 +3015,13 @@ padding-right: 2em;
   margin-top: 2.0em;
   width: 20%;
   float: left;
-  // border: #eee 1px solid;
-  border-radius: 3px;
-  // box-shadow: 0 2px 5px rgba(0,0,0,0.26);
-  // border: #eee 1px solid;
-
   font-family: $headline-font;
+  max-width: 170px;
 }
+// 
+// .document-page-doc-list-containter li {
+//   max-width: 170px;
+// }
 
 .document-page-doc-list-headline {
   font-size: 1.2em;
@@ -3041,12 +3050,25 @@ padding-right: 2em;
 }
 
 .document-page-full-document {
-
   margin-left: 10em;
   margin-bottom: 2em;
   width: 82%;
-  // border-left: #eee solid 1px;
   padding: 0 1em 1em 2em;
+}
+
+.document-page-headline-list {
+  text-align: left;
+  display: inline;
+}
+
+.document-page-headline {
+  font-family: $headline-font;
+  display: inline;
+}
+
+.headline-container {
+  float: left;
+  max-width: 300px;
 }
 
 
