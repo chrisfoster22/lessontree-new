@@ -217,50 +217,6 @@ list-style: none;
 */
 
 /************************************
-   NAV BAR FOR LESSON PG MODAL
-************************************/
-.sticky-nav {
-  position: relative;
-  top: -30px;
-  color: #fff;
-}
-
-.go-to-lesson {
-  text-decoration: none;
-  color: white;
-  font-family: $headline-font;
-  padding: .1em .5em .4em .6em;
-
-}
-
-.go-to-lesson:hover {
-  color: $alt-top-bg-hover;
-}
-
-.icon-star-ranking {
-  text-align: right;
-  position: relative;
-  top: -30px;
-  left: -20px;
-}
-
-.ranking {
-  color: white;
-}
-
-header.sticky-nav-header,
-.main-nav-scrolled {
-  width: 100%;
-  top: 0;
-  // position: relative;
-  position: fixed;
-  height: 50px;
-  padding-top: 50px;
-  background: $dark-header-color;
-  z-index: 1000;
-}
-
-/************************************
    QUICK SHOW LESSONS
 ************************************/
 .quick-show {
@@ -1371,6 +1327,7 @@ input[type=checkbox].css-checkbox {
     &:first-child .tab-link {
       border-top-left-radius: $base-border-radius;
       border-top-right-radius: $base-border-radius;
+      color: $dark-header-color;
 
       @include media(max-width $tab-mode) {
         border-top: 0;
