@@ -16,44 +16,31 @@
     </ul>
     <p class="lesson-preview-description"><%= @lesson.description.html_safe %></p>
   </div>
-  <% unless @lesson.user == current_user %>
-  <%= form_for @star do |f| %>
-    <%= f.label "Star this lesson?" %>
-    <%= f.check_box :lesson_id, value: @lesson.id, class: "star-box", id: "#{@lesson.id}", checked: @starred %>
-  <% end %>
-  <% end %>
 
-  <% unless @uploaded_documents.empty? %>
-    <p class="list">Uploaded Documents</p>
-    <% @uploaded_documents.each do |d| %>
-      <% if d.upload_content_type.include?("pdf") %>
-        <span class="document-show-button"><%= link_to "View #{d.title}", "#{d.upload.url}", class: "fancybox", id: "#{d.id}", remote: true %></span>
-      <% else %>
-        <span class="document-show-button"><%= link_to "Download #{d.title}", "#{d.upload.url}" %></span>
-      <% end %>
-        <span class="document-buttons"><%= link_to " | Delete", document_path(d), method: :delete %></span>
-    <% end %>
-  <% end %>
+  <div id="paginator">
+    <%= paginate @documents %>
+  </div>
 
-  <% unless @created_documents.empty? %>
-    <p class="list">Created Documents</p>
-    <% @created_documents.each do |d| %>
-      <span class="document-show-button"><%= link_to "#{d.title}:", document_form_lesson_path(d.id), class: "fancybox", id: "#{d.id}", remote: true %></span>
-      <span class="document-buttons"><%= link_to "Version History", version_history_document_path(d.id) %></span>
-      <% if @lesson.user == current_user %>
-        <span class="document-buttons"><%= link_to " | Edit", edit_document_path(d.id) %></span>
-        <span class="document-buttons"><%= link_to " | Delete", document_path(d), method: :delete %></span>
-      <% end %>
-      <br>
-    <% end %>
-  <% end %>
-<br>
+  <%= render 'document_show' %>
+
+
+    <div class="star-container">
+        <%= form_for @star do |f| %>
+        <%= f.hidden_field :lesson_id, value: @lesson.id %>
+        <button type="submit" class="icon-star"></button>
+          <% end %>
+    </div>
+
   <%= commontator_thread(@lesson) %>
 </section>
 <% if @lesson.user == current_user %>
 <div class="edit-save-buttons-wrapper">
   <%= link_to 'Upload Lesson Document', upload_file_documents_path(lesson_id: @lesson.id), id: 'fancybox', class: 'edit-button' %>
   <%= link_to "Create Lesson Document", new_document_path(lesson_id: @lesson.id), class: 'save-button' %>
+  <div class="delete-lesson-button-wrapper">
+  <div class="delete-lesson-button"
   <%= link_to "Delete Lesson", lesson_path(@lesson), method: :delete %>
+</div>
+</div>
 </div>
 <% end %>

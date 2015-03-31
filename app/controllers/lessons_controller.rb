@@ -8,21 +8,20 @@ class LessonsController < ApplicationController
 
   def show
     @star = Star.new
-    documents = @lesson.documents
-    if current_user && Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
-      @starred = true
-    else
-      @starred = false
-    end
-    @uploaded_documents = []
-    @created_documents = []
-    documents.each do |d|
-      if d.upload.url != "/uploads/original/missing.png"
-        @uploaded_documents << d
-      else
-        @created_documents << d
-      end
-    end
+    @created_documents = Document.where("lesson_id = #{@lesson.id} AND content IS NOT NULL").page(params[:page]).per(1)
+    @uploaded_documents = Document.where("lesson_id = #{@lesson.id} ANDcontent IS NULL").page(params[:page]).per(1)
+    @documents = @lesson.documents.page(params[:page]).per(1)
+    # documents = @lesson.documents
+    # @uploaded_documents = []
+    # @created_documents = []
+    # documents.each do |d|
+    #   if d.upload.url != "/uploads/original/missing.png"
+    #     @uploaded_documents << d
+    #   else
+    #     @created_documents << d
+    #   end
+    # end
+    # @created_documents = Kaminari.paginate_array(@created_documents).page(params[:page]).per(1)
     @thread = Commontator::Thread.find_by(commontable_id: @lesson.id)
   end
 

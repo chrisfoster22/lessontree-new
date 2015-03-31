@@ -18,20 +18,18 @@
 
 $(function() {
   $('.star-box').on("click", function() {
-    var val = $(this).prevAll(".rails-id").val();
-    if ($(this).is(':checked')) {
       $.ajax({
         type: "POST",
         url: "/stars",
         data: {lesson_id: this.id}
      });
-    } else {
-      $.ajax({
-        type: "DELETE",
-        url: "/stars/1",
-        data: {lesson_id: this.id}
-     });
-    }
+     // else {
+    //   $.ajax({
+    //     type: "DELETE",
+    //     url: "/stars/1",
+    //     data: {lesson_id: this.id}
+    //  });
+    // }
   });
 });
 

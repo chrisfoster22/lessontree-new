@@ -34,156 +34,7 @@
 //  @import "footer";
 //  @import "aaron_style_guide";
 //
-// #new_lesson.new_lesson {
-//   display: center;
-//   padding: 20px;
-//   margin-left: auto;
-//   margin-right: auto;
-//   width: auto;
-// }
-//
-// #lesson-show:after {
-//
-//   content: ".";
-//   display: block;
-//   height: 0;
-//   overflow:hidden;
-//   clear: both;
-//   visibility:hidden;
-// }
-//
-// table {
-//   display: block;
-//   border: none;
-// }
-//
-// .cards:after {
-//   content: ".";
-//   display: block;
-//   height: 0;
-//   overflow:hidden;
-//   clear: both;
-//   visibility:hidden;
-// }
-//
-//
-// // ### I WAS MESSING WITH THE STYLING BELOW HERE FOR YOUR INFO.. -parker ####
-//
-// .button_to {
-//   display: inline;
-// }
-//
-// .devise-login {
-//   font-family: $headline-font, sans-serif;
-//   padding: 0.75em 1.75em;
-//   border-radius: 7.5px;
-//   background-color: $button-bg-color;
-//   font-size: 22px;
-//   color: $header-texts-color;
-//   display: inline;
-// }
-//
-// .devise-login:active {
-//   background-color: #d95353;
-//   color: #e8e3e6;
-// }
-//
-// .devise-login:hover {
-//   background-color: white;
-//   color: #d95353;
-//   .logos {
-//     font-family: 'Dancing Script', cursive;
-//     font-size: 3.7em;
-//     font-weight: bold;
-//     // margin-left: 20px;
-//     // margin-top: 12px;
-//     color: $header-texts-color;
-//   }
-// }
-//
-// .forgot-pass {
-//   font-family: $headline-font, sans-serif;
-//   padding: 0.75em 1.75em;
-//   border-radius: 7.5px;
-//   background-color: $button-bg-color;
-//   font-size: 22px;
-//   color: $header-texts-color;
-//   display: inline;
-// }
-//
-// .forgot-pass:active {
-//   background-color: #d95353;
-//   color: #e8e3e6;
-// }
-//
-// .forgot-pass:hover {
-//   background-color: white;
-//   color: #d95353;
-//   .logos {
-//     font-family: 'Dancing Script', cursive;
-//     font-size: 3.7em;
-//     font-weight: bold;
-//     // margin-left: 20px;
-//     // margin-top: 12px;
-//     color: $header-texts-color;
-//   }
-// }
-//
-// .devise-sign-in {
-//   font-family: $headline-font, sans-serif;
-//   padding: 0.75em 1.75em;
-//   border-radius: 7.5px;
-//   background-color: $button-bg-color;
-//   font-size: 22px;
-//   color: $header-texts-color;
-//   display: inline;
-// }
-//
-// .devise-sign-in:active {
-//   background-color: #d95353;
-//   color: #e8e3e6;
-// }
-//
-// .devise-sign-in:hover {
-//   background-color: white;
-//   color: #d95353;
-//   .logos {
-//     font-family: 'Dancing Script', cursive;
-//     font-size: 3.7em;
-//     font-weight: bold;
-//     // margin-left: 20px;
-//     // margin-top: 12px;
-//     color: $header-texts-color;
-//   }
-// }
-//
-// .devise-update {
-//   font-family: $headline-font, sans-serif;
-//   padding: 0.75em 1.75em;
-//   border-radius: 7.5px;
-//   background-color: $button-bg-color;
-//   font-size: 22px;
-//   color: $header-texts-color;
-//   display: inline;
-// }
-//
-// .devise-update:active {
-//   background-color: #d95353;
-//   color: #e8e3e6;
-// }
-//
-// .devise-update:hover {
-//   background-color: white;
-//   color: #d95353;
-//   .logos {
-//     font-family: 'Dancing Script', cursive;
-//     font-size: 3.7em;
-//     font-weight: bold;
-//     // margin-left: 20px;
-//     // margin-top: 12px;
-//     color: $header-texts-color;
-//   }
-// }
+
 .thread {
 }
 .comment {
@@ -290,44 +141,16 @@
   color: $alt-top-bg-hover;
   font-family: $headline-font;
   text-align: center;
-  div.checkbox-header {
-    color: $button-bg-hover;
+  padding: 0, 500px, 0, 500px;
+  .checkbox-header {
+    font-size: 1.5em;
+    color: $logo-color;
   }
-}
-
-
-header.sticky-nav-header {
-  height: 50px;
-  padding-top: 50px;
-  background: $dark-header-color;
-  z-index: 1000;
-}
-.sticky-nav {
-  position: relative;
-  top: -30px;
-}
-
-header.sticky-nav-header,
-.main-nav-scrolled {
-  position: fixed;
-  width: 100%;
-  top: 0;
-}
-
-.quick-show {
-  padding-top: 60px;
-  position: relative;
-}
-
-header.sticky-nav-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-}
-
-.quick-show {
-  padding-top: 60px;
-  position: relative;
+  .checkbox-list {
+    padding-left: 38em;
+    padding-right: 38em;
+    display: inline-block;
+  }
 }
 
 .star-this-lesson {
@@ -348,4 +171,16 @@ header.sticky-nav-header {
 
 .quick-content {
   border: 1px solid black;
+  padding: 100px;
+}
+
+.star-box {
+  color: yellow;
+  font-size: 1.5em;
+  display: inline;
+}
+
+.document-preview {
+  border: 1px solid black;
+  padding: 100px;
 }
