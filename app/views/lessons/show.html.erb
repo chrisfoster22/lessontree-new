@@ -37,7 +37,15 @@
   </section>
 
     <section class="document-page-full-document" id="full-document-show">
-      <%= render 'document_show' %>
+      <% if @document %>
+        <%= render 'document_show' %>
+      <% else %>
+      <section>
+        <br>
+        <br>
+        <br>
+      </section>
+      <% end %>
     </section>
 
   <%= commontator_thread(@lesson) %>
