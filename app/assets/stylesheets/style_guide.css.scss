@@ -2136,6 +2136,16 @@ PROFILE PAGE LESSON VIEW
   text-align: center;
   margin-top: 1em;
 }
+.alert-auth-msg {
+  color: $button-bg-color;
+  font-size: 1em;
+  font-family: $maintext-font;
+  margin: 0 0 24px 0;
+  text-shadow: none;
+  text-align: center;
+  margin-top: 1em;
+}
+
 
 /*BUTTON DESIGN*/
 .login-button-wrapper {
