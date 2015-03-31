@@ -21,6 +21,7 @@
 
 </div> -->
 
+
 <% @documents.each do |d| %>
 <% if d.content.nil? %>
   <%= d.title %>
@@ -39,9 +40,8 @@
   <% end %>
 
 </div>
-
 <div class="document-preview">
-
+  
   <div class="document-viewer">
     <%= d.content.html_safe %>
     <% end %>

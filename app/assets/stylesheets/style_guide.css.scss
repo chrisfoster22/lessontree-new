@@ -124,7 +124,7 @@ vertical-align: middle;
   line-height: 2;
 }
 
-.nav-welcome:hover, .nav-my-lessons:hover, .nav-create-lessons:hover, .nav-logout:hover {
+.nav-welcome:hover, .nav-myProfile:hover, .nav-about:hover, .nav-create-lessons:hover, .nav-logout:hover {
   color: $top-bg-color;
   transition: .3s;
 }
@@ -393,6 +393,7 @@ SELECT DROPDOWN BUTTON
   $expander-toggle-arrow-size: $expander-toggle-size;
   $expander-toggle-margin: 1em;
 
+
   width: 40%;
 
   .expander-trigger {
@@ -478,12 +479,16 @@ SELECT DROPDOWN BUTTON
   float: right;
   width: 50%;
   margin-right: 12em;
+  color: #807d7f;
+
 }
 
 .user-profile-information {
   line-height: 1.5em;
   font-family: $headline-font;
   font-size: .95em;
+  color: #b9bdbd;
+
 }
 
 .profile-page-user-name {
@@ -532,6 +537,7 @@ SELECT DROPDOWN BUTTON
   $light-gray: #DDD !default;
   $base-font-color: $dark-gray !default;
   font-family: $headline-font;
+
   font-size: 1em;
   display: inline-block;
   padding-top: .5em;
@@ -655,13 +661,15 @@ HOMEPAGE LESSON PREVIEWS
   background: #fcfffe;
   box-shadow: 0 2px 5px rgba(0,0,0,0.18);
   padding: .7em .7em .7em .9em;
+  color: #b9bdbd;
+
 }
 
 .lesson-preview-title {
   font-size: 1.75em;
   font-family: $headline-font;
   font-weight: 400;
-  color: #222;
+  color: #807d7f;
   margin-bottom: .3em;
 }
 
@@ -680,11 +688,13 @@ HOMEPAGE LESSON PREVIEWS
 .lesson-preview-subject-list {
   margin-right: .75em;
   font-size: 1.1em;
+  color: #b9bdbd;
 }
 
 .lesson-preview-grade-list {
   padding-left: .75em;
   font-size: 1.1em;
+  color: #b9bdbd;
 }
 
 .lesson-preview-description-container {
@@ -693,6 +703,8 @@ HOMEPAGE LESSON PREVIEWS
   background-color: #fcfffe;
   border: 1px solid #eee;
   box-shadow: 0 2px 5px rgba(0,0,0,0.18);
+
+
 }
 
 .lesson-preview-subject-list, .lesson-preview-pipe, .lesson-preview-grade-list,  {
@@ -700,19 +712,23 @@ HOMEPAGE LESSON PREVIEWS
   font-size: 1em;
   font-family: $headline-font;
   font-weight: 400;
-  color: #222;
+  color: #b9bdbd;
+
 }
 
 .lesson-preview-description {
   font-size: 1.1em;
   font-family: $headline-font;
   font-weight: 400;
-  color: #222;
+  color: #807d7f;
   line-height: 1.4em;
 }
 
 .star-ranking {
-  vertical-align: text-baseline;
+  text-align: right;
+  margin-top: -33px;
+  position: relative;
+  top: -7px;
 }
 
 .icon-star {
@@ -729,7 +745,7 @@ HOMEPAGE LESSON PREVIEWS
     font-family: $headline-font;
     font-size: 1.2em;
     margin-left: .25em;
-    color: #555;
+    color: #807d7f;
     letter-spacing: .1em;
 }
 
@@ -1286,6 +1302,8 @@ input[type=checkbox].css-checkbox {
     width: 65%;
     margin: 0 auto 0;
     margin-bottom: 4em;
+    color: #807d7f;
+
   ///////////////////////////////////////////////////////////////////////////////////
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
@@ -1318,6 +1336,7 @@ input[type=checkbox].css-checkbox {
 
   .tab-header-and-content {
     list-style: none;
+    color: #807d7f;
 
 
     @include media($tab-mode) {
@@ -1475,7 +1494,11 @@ input[type=checkbox].css-checkbox {
 }
 
 .star-ranking {
-  vertical-align: text-baseline;
+  // vertical-align: text-baseline;
+  text-align: right;
+  margin-top: -33px;
+  position: relative;
+  top: -7px;
 }
 
 .icon-star {
@@ -1492,7 +1515,7 @@ input[type=checkbox].css-checkbox {
   font-family: $headline-font;
   font-size: 1.2em;
   margin-left: .25em;
-  color: #555;
+  color: #807d7f;
   letter-spacing: .1em;
 }
 
@@ -1796,7 +1819,7 @@ PROFILE PAGE LESSON VIEW
   font-size: 1.3em;
   font-family: $headline-font;
   font-weight: 400;
-  color: #111;
+  color: #807d7f;
 }
 
 .pp-lesson-subject-list {
@@ -1804,7 +1827,7 @@ PROFILE PAGE LESSON VIEW
   font-size: .85em;
   font-family: $headline-font;
   font-weight: 400;
-  color: #111;
+  color: #b9bdbd;
   padding-right: .75em;
 }
 
@@ -1813,7 +1836,7 @@ PROFILE PAGE LESSON VIEW
   font-size: .85em;
   font-family: $headline-font;
   font-weight: 400;
-  color: #111;
+  color: #b9bdbd;
 }
 
 .pp-lesson-grade-list {
@@ -1821,7 +1844,7 @@ PROFILE PAGE LESSON VIEW
   font-size: .85em;
   font-family: $headline-font;
   font-weight: 400;
-  color: #111;
+  color: #b9bdbd;
   padding: 0 .75em 0 .75em;
 }
 
@@ -1840,11 +1863,15 @@ PROFILE PAGE LESSON VIEW
   font-size: .95em;
   font-family: $headline-font;
   font-weight: 400;
-  color: #2e2e40;
+  color: #807d7f;
 }
 
 .pp-star-rankings-container {
-  vertical-align: text-baseline;
+  // vertical-align: text-baseline;
+  text-align: right;
+  margin-top: -33px;
+  position: relative;
+  top: -7px;
 }
 
 .pp-star-rankings-container:nth-child(5){
@@ -1863,7 +1890,7 @@ PROFILE PAGE LESSON VIEW
   font-family: "Hind", sans-serif;
   font-size: 1.2em;
   margin-left: .25em;
-  color: #555;
+  color: #807d7f;
   letter-spacing: .1em;
 }
 
@@ -2905,9 +2932,11 @@ padding-right: 2em;
 /************************************
     CREATE LESSON PAGE
 ************************************/
+
 .checkbox-wrapper {
   margin: 2em auto 1em;
   width: 500px;
+  text-align: center;
 }
 
 .checkbox-header {

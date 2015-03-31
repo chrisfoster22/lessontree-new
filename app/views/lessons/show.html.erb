@@ -7,18 +7,12 @@
         <li class="lesson-preview-pipe">|</li>
         <li class="lesson-preview-grade-list"><%= formatted_lesson_grade_levels(@lesson) %></li>
   </ul>
-  </div>
 
-  <div class="lesson-preview-description-container">
     <ul class="star-ranking">
-    <li class="icon-star"></li>
-    <li class="ranking"><%= @lesson.stars.count %></li>
+        <li class="icon-star"></li>
+        <li class="ranking"><%= @lesson.stars.count %></li>
     </ul>
-    <p class="lesson-preview-description"><%= @lesson.description.html_safe %></p>
-  </div>
 
-  <div id="paginator">
-    <%= paginate @documents %>
   </div>
 
   <%= render 'document_show' %>
