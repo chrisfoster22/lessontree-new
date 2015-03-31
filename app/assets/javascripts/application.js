@@ -119,3 +119,11 @@ $(window).scroll(function() {
     mn.removeClass(mns);
   }
 });
+
+CKEDITOR.on('instanceReady', function (e) {
+  $('.cke_top').css('background','#b6ded4');
+});
+
+CKEDITOR.on('instanceReady', function (e) {
+  $('.cke_bottom').css('background','#b6ded4');
+});
