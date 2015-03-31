@@ -4,15 +4,15 @@
   <% @starred_lessons.each do |l| %>
     <%= link_to l, class:"pp-lesson-link" do %>
     <div class="pp-lesson-title-container">
-      <h3 class="pp-lesson-title"><%= l.topic %></h3>
+      <h3 class="pp-lesson-title"><%= l.topic if l %></h3>
       <ul>
-          <li class="pp-lesson-subject-list"><%= formatted_lesson_grade_levels(l) %></li>
+          <li class="pp-lesson-subject-list"><%= formatted_lesson_grade_levels(l) if l %></li>
           <li class="pp-lesson-pipe">|</li>
-          <li class="pp-lesson-grade-list"><%= formatted_lesson_subjects(l) %></li>
+          <li class="pp-lesson-grade-list"><%= formatted_lesson_subjects(l) if l %></li>
       </ul>
       <ul>
         <li class="icon-star"></li>
-        <li class="pp-ranking"><%= star_count(l) %></li>
+        <li class="pp-ranking"><%= star_count(l) if l %></li>
       </ul>
     </div>
     <% end %>
