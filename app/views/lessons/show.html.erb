@@ -15,7 +15,9 @@
 
   </div>
 
-  <%= render 'document_show' %>
+  <% if @documents %>
+    <%= render 'document_show' %>
+  <% end %>
 
   <section class="document-page-top-toolbar-container">
     <div class="document-page-top-toolbar">

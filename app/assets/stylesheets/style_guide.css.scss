@@ -479,7 +479,7 @@ SELECT DROPDOWN BUTTON
   float: right;
   width: 50%;
   margin-right: 12em;
-  color: #807d7f;
+  color: $dark-header-color;
 
 }
 
@@ -487,8 +487,8 @@ SELECT DROPDOWN BUTTON
   line-height: 1.5em;
   font-family: $headline-font;
   font-size: .95em;
-  color: #b9bdbd;
-
+  // color: #b9bdbd;
+  color: $dark-header-color;
 }
 
 .profile-page-user-name {
