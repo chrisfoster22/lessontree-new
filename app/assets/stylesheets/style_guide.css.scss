@@ -2001,7 +2001,7 @@ PROFILE PAGE LESSON VIEW
 .signup-form-error {
   color: $button-bg-color;
   font-size: 1em;
-  font-family: $maintext-font;
+  font-family: $headline-font;
   margin: 0 0 24px 0;
   text-shadow: none;
   text-align: center;
@@ -2120,7 +2120,7 @@ PROFILE PAGE LESSON VIEW
 .login-form-error {
       color: $button-bg-color;
       font-size: 1em;
-      font-family: $maintext-font;
+      font-family: $headline-font;
       margin: 0 0 24px 0;
       text-shadow: none;
       text-align: center;
@@ -2130,12 +2130,22 @@ PROFILE PAGE LESSON VIEW
 #error_explanation {
   color: $button-bg-color;
   font-size: 1em;
-  font-family: $maintext-font;
+  font-family: $headline-font;
   margin: 0 0 24px 0;
   text-shadow: none;
   text-align: center;
   margin-top: 1em;
 }
+.alert-auth-msg {
+  color: $button-bg-color;
+  font-size: 1em;
+  font-family: $headline-font;
+  margin: 0 0 24px 0;
+  text-shadow: none;
+  text-align: center;
+  margin-top: 1em;
+}
+
 
 /*BUTTON DESIGN*/
 .login-button-wrapper {
@@ -2291,7 +2301,7 @@ PROFILE PAGE LESSON VIEW
 .new-upload-error {
       color: $button-bg-color;
       font-size: 1em;
-      font-family: $maintext-font;
+      font-family: $headline-font;
       margin: 0 0 24px 0;
       text-shadow: none;
       text-align: center;
@@ -3204,6 +3214,11 @@ footer {
 }
 
 .pagination {
+  font-size: 1.1em;
+  text-align: right;
+}
+
+.pg-number-counter {
   font-size: 1.1em;
   text-align: right;
 }
