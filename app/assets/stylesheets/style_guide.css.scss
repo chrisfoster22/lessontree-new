@@ -78,8 +78,7 @@ $green-hover-color: #6fbaab;
 .nav-list {
   display: inline;
   float: right;
-  padding: 1.7em 4em 0 0;
-
+  padding: 1.8em 5em 0 0;
 }
 
 .nav-list-logged-in {
@@ -429,13 +428,13 @@ SELECT DROPDOWN BUTTON
   PROFILE PAGE MAIN WRAPPER
 *****************************************/
 .profile-page-main-wrapper {
-    margin: 3em 0 8em;
+    margin: 3em 0 7em;
 }
 
 .profile-page-user-photo-wrapper {
   display: inline;
   float: left;
-  margin-left: 19em;
+  margin-left: 20em;
 }
 
 .profile-page-user-photo-list {
@@ -454,7 +453,7 @@ SELECT DROPDOWN BUTTON
   display: inline;
   float: right;
   width: 50%;
-  margin-right: 14em;
+  margin-right: 12em;
 }
 
 .user-profile-information {
@@ -486,7 +485,7 @@ SELECT DROPDOWN BUTTON
 }
 
 .profile-page-top-wrapper {
-  margin-left: 26em
+  margin-left: 28em
 }
 
 .user-profile-unique-information {
@@ -1229,7 +1228,7 @@ input[type=checkbox].css-checkbox {
   PROFILE PAGE, LESSONS & PLANS
 ***********************************************/
 .accordion-tabs {
-    width: 60%;
+    width: 65%;
     margin: 0 auto 0;
     margin-bottom: 4em;
   ///////////////////////////////////////////////////////////////////////////////////
@@ -1450,11 +1449,12 @@ input[type=checkbox].css-checkbox {
 ***************************************/
 .page-headline {
   text-align: center;
-  font-size: 2em;
-  font-family: $headline-font;
+  font-size: 2.4em;
+  font-family: "Hind", sans-serif;
   font-weight: 400;
-  color: $alt-top-bg-color;
-  margin: 1em 0 1.2em 0;
+  color: #65a397;
+  margin-bottom: 2em;
+  margin-top: 1.5em;
 }
 
 .page-headline-rule-first {
@@ -2469,6 +2469,21 @@ PROFILE PAGE LESSON VIEW
   -webkit-transition: .6s;
   transition: .6s;
   cursor: pointer;
+}
+
+.edit-document-title-field-container {
+  margin: 2em 0 3em;
+  width: 100%;
+}
+
+.edit-document-wysiwyg-containter {
+  width: 65%;
+  margin: 0 auto 0;
+}
+
+.edit-document-save-container {
+  text-align: center;
+  margin: 3em 0 2em 0;
 }
 
 /****************************************

@@ -8,15 +8,15 @@
 
 <div>
   <%= form_for(@document, multipart: true) do |f| %>
-    <div>
+    <div class="edit-document-title-field-container">
 
-      <%= f.text_field :title, placeholder: "Title" %>
+      <%= f.text_field :title, placeholder: "Document Title" %>
     </div>
     <%= f.hidden_field :lesson_id %>
     <div>
       <%= f.cktext_area :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'simple'} } %>
     </div>
-    <div>
+    <div class="edit-document-save-container">
       <%= f.submit "Save Document", :class => "save-button" %>
     </div>
   <% end %>
