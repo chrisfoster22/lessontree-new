@@ -24,6 +24,7 @@
     <h3 class="document-page-doc-list-headline">Lesson Documents</h3>
     <div class="document-page-doc-headline-border"></div>
     <ul class= "document-page-doc-list">
+
       <% @lesson.documents.each do |d| %>
         <li class="document-page-doc"><%= link_to "#{d.title}", d, class: "doc-link", remote: true %></li>
       <% end %>
@@ -37,7 +38,9 @@
   </section>
 
     <section class="document-page-full-document" id="full-document-show">
+    <% if @documents %>
       <%= render 'document_show' %>
+      <% end %>
     </section>
 
   <%= commontator_thread(@lesson) %>
