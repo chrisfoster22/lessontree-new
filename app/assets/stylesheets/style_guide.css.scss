@@ -1542,7 +1542,7 @@ input[type=checkbox].css-checkbox {
   font-weight: 400;
   color: $alt-top-bg-color;
   margin-bottom: .25em;
-  margin-top: 3em;
+  margin-top: 1.5em;
 }
 
 .login-headline-rule-first {
@@ -1556,7 +1556,6 @@ input[type=checkbox].css-checkbox {
   margin: 0 auto 0;
   padding-top: .2em;
   margin-bottom: 3em;
-
 }
 
 .login-headline-rule-first {
@@ -1586,7 +1585,7 @@ input[type=checkbox].css-checkbox {
   font-weight: 400;
   color: $alt-top-bg-color;
   margin-bottom: .25em;
-  margin-top: 3em;
+  margin-top: 1.5em;
 }
 
 .edit-my-profile-page-headline-rule-first {
@@ -2346,7 +2345,7 @@ PROFILE PAGE LESSON VIEW
   font-weight: 400;
   color: $alt-top-bg-color;
   margin-bottom: .25em;
-  margin-top: 3em;
+  margin-top: 1.5em;
 }
 
 .about-page-headline-rule-first {
@@ -2402,7 +2401,7 @@ PROFILE PAGE LESSON VIEW
   font-weight: 400;
   color: $alt-top-bg-color;
   margin-bottom: .25em;
-  margin-top: 3em;
+  margin-top: 1.5em;
 }
 
 .about-page-headline-rule-first {
@@ -2452,15 +2451,18 @@ PROFILE PAGE LESSON VIEW
 }
 
 .home-button {
-  font-family: $headline-font;
+  margin: 0 .5em 0;
+  font-family: "Hind", sans-serif;
   font-size: .8em;
   font-weight: bolder;
   letter-spacing: .1em;
   text-transform: uppercase;
   border: none;
-  background: $alt-top-bg-color;
+  background: #65a397;
   color: #fff;
   border-radius: .25em;
+  padding: 1em .8em 1em;
+  text-decoration: none;
   padding: 1em 1.6em 1em;
 }
 
@@ -2471,6 +2473,9 @@ PROFILE PAGE LESSON VIEW
   cursor: pointer;
 }
 
+/*******************************
+   EDIT DOCUMENT PAGE
+******************************/
 .edit-document-title-field-container {
   margin: 2em 0 3em;
   width: 100%;
@@ -2486,9 +2491,9 @@ PROFILE PAGE LESSON VIEW
   margin: 3em 0 2em 0;
 }
 
-/****************************************
+/**********************************************************
    EDIT PROFILE SELECT DROPDOWN BUTTON
-****************************************/
+**********************************************************/
 
 .expander {
   ///////////////////////////////////////////////////////////////////////////////////
