@@ -217,6 +217,74 @@ list-style: none;
 */
 
 /************************************
+   NAV BAR FOR LESSON PG MODAL
+************************************/
+.sticky-nav {
+  position: relative;
+  top: -30px;
+  color: #fff;
+}
+
+.go-to-lesson {
+  text-decoration: none;
+  color: white;
+  font-family: $headline-font;
+  padding: .1em .5em .4em .6em;
+
+}
+
+.go-to-lesson:hover {
+  color: $alt-top-bg-hover;
+}
+
+.icon-star-ranking {
+  text-align: right;
+  position: relative;
+  top: -30px;
+  left: -20px;
+}
+
+.ranking {
+  color: white;
+}
+
+header.sticky-nav-header,
+.main-nav-scrolled {
+  width: 100%;
+  top: 0;
+  // position: relative;
+  position: fixed;
+  height: 50px;
+  padding-top: 50px;
+  background: $dark-header-color;
+  z-index: 1000;
+}
+
+/************************************
+   QUICK SHOW LESSONS
+************************************/
+.quick-show {
+  padding-top: 60px;
+  position: relative;
+}
+
+.quick-show-iframe {
+  width: 800px;
+  height: 800px;
+  display: block;
+  overflow: hidden;
+}
+
+.quick-created-documents {
+}
+
+.quick-content {
+  border: 1px solid black;
+}
+
+
+
+/************************************
          HERO HOMEPAGE
 ************************************/
 .main-container-hero {
@@ -813,6 +881,11 @@ HOMEPAGE LESSON PREVIEWS
 /************************************
       DELETE  BUTTON
 ************************************/
+.delete-lesson-button-wrapper {
+  display: block;
+  text-align: center;
+  margin: 2em 0 2em;
+}
 
 .delete-button {
   font-family: $headline-font;
@@ -834,6 +907,32 @@ HOMEPAGE LESSON PREVIEWS
   transition: .6s;
   cursor: pointer;
 }
+
+/************************************
+      DELETE LESSON BUTTON
+************************************/
+
+.delete-lesson-button {
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $button-bg-color;
+  color: #fff;
+  border-radius: .25em;
+  padding: 1em;
+  text-decoration: none;
+}
+
+.delete-lesson-button:hover {
+  background: $button-bg-hover;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
 
 /************************************
       CREATE DOC BUTTON
