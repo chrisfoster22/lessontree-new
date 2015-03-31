@@ -17,43 +17,16 @@
     <p class="lesson-preview-description"><%= @lesson.description.html_safe %></p>
   </div>
 
-  <div id="paginator">
-    <%= paginate @documents %>
-  </div>
-
-<<<<<<< HEAD
-    <%= render 'document_show' %>
-
-    <div class="star-container">
-        <%= form_for @star do |f| %>
-        <%= f.hidden_field :lesson_id, value: @lesson.id %>
-        <button type="submit" class="icon-star"></button>
-          <% end %>
-
-  <%= render 'document_show' %>
-
-  <section class="document-page-top-toolbar-container">
-    <div class="document-page-top-toolbar">
-      <ul class="document-page-top-toolbar-list">
-        <a href="www.google.com">
-          <li class="document-page-top-toolbar-edit"><i class="fa fa-pencil-square-o"></i><span class="document-page-edit">Edit</span></li>
-        </a>
-        <a href="www.google.com">
-          <li class="document-page-top-toolbar-history"><i class="fa fa-history"></i><span class="document-page-history">History</span></li>
-        </a>
-        <a href="www.google.com">
-          <li class="document-page-top-toolbar-delete"><i class="fa fa-trash-o"></i><span class="document-page-delete">Delete</span></li>
-        </a>
-      </ul>
-
-    </div>
+  <section>
   </section>
 
   <section class="document-page-doc-list-containter">
     <h3 class="document-page-doc-list-headline">Lesson Documents</h3>
     <div class="document-page-doc-headline-border"></div>
     <ul class= "document-page-doc-list">
-      <li class="document-page-doc">My Fake Doc</li>
+      <% @lesson.documents.each do |d| %>
+        <li class="document-page-doc"><%= link_to "#{d.title}", d, class: "doc-link", remote: true %></li>
+      <% end %>
     </ul>
 
     <ul class="document-page-doc-list-create">
@@ -61,10 +34,10 @@
     </ul>
   </section>
 
-  <section class="document-page-full-document">
-    <p>laksdjflaksdjflaksdjflkasjdflkasdjf</p>
-  </section>
 
+    <section class="document-page-full-document" id="full-document-show">
+      <%= render 'document_show' %>
+    </section>
 
   <%= commontator_thread(@lesson) %>
 </section>

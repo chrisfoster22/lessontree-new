@@ -1,52 +1,31 @@
-<!-- <div class="document-preview">
-  <% @created_documents.each do |d| %>
-  <div class="document-meta-data">
-    <div class="document-show-button">
-      <%= link_to "#{d.title}:", document_form_lesson_path(d.id), class: "fancybox", id: "#{d.id}", remote: true %>
-    </div>
-    <div class="document-buttons">
-      <%= link_to "Version History", version_history_document_path(d.id) %>
-    </div>
-    <% if @lesson.user == current_user %>
-      <span class="document-buttons"><%= link_to "Edit", edit_document_path(d.id) %></span>
-      <span class="document-buttons"><%= link_to " | Delete", document_path(d), method: :delete %></span>
-    <% end %>
+
+<section class="document-page-top-toolbar-container">
+  <div class="document-page-top-toolbar">
+    <ul class="document-page-top-toolbar-list">
+      <li class-"document-page-top-toolbar-edit"><%= @document.title %></li>
+      <a href="www.google.com">
+        <li class="document-page-top-toolbar-edit"><i class="fa fa-pencil-square-o"></i><span class="document-page-edit">Edit</span></li>
+      </a>
+      <a href="www.google.com">
+        <li class="document-page-top-toolbar-history"><i class="fa fa-history"></i><span class="document-page-history">History</span></li>
+      </a>
+      <a href="www.google.com">
+        <li class="document-page-top-toolbar-delete"><i class="fa fa-trash-o"></i><span class="document-page-delete">Delete</span></li>
+      </a>
+    </ul>
 
   </div>
-  <div class="document-viewer">
-    <%= d.content.html_safe %>
-  </div >
-
-  <% end %>
-
-</div> -->
-
-
-<% @documents.each do |d| %>
-<% if d.content.nil? %>
-  <%= d.title %>
-  <iframe src=<%= d.upload.url %> width="100%" height="800px"></iframe>
+</section>
+<% if @document.content.nil? %>
+  <iframe src=<%= @document.upload.url %> class="doc-show-iframe"></iframe>
 <% else %>
-<div class="document-meta-data">
-  <div class="document-show-button">
-    <%= link_to "#{d.title}:", document_form_lesson_path(d.id), class: "fancybox", id: "#{d.id}", remote: true %>
+
+  <div class="document-preview">
+
+    <div class="document-viewer">
+      <%= @document.content.html_safe %>
+    </div>
+
   </div>
-  <div class="document-buttons">
-    <%= link_to "Version History", version_history_document_path(d.id) %>
-  </div>
-  <% if @lesson.user == current_user %>
-    <span class="document-buttons"><%= link_to "Edit", edit_document_path(d.id) %></span>
-    <span class="document-buttons"><%= link_to " | Delete", document_path(d), method: :delete %></span>
-  <% end %>
 
-</div>
-<div class="document-preview">
-  
-  <div class="document-viewer">
-    <%= d.content.html_safe %>
-    <% end %>
-  </div >
-
-  <% end %>
-
-</div>
+<% end %>

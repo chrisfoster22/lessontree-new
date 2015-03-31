@@ -3004,11 +3004,12 @@ padding-right: 2em;
 }
 
 .document-page-doc-list-containter {
-  width: 22%;
+  width: 19%;
   float: left;
   border: #eee 1px solid;
   border-radius: 3px;
-  padding: 1em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+  padding: .5em;
   font-family: $headline-font;
 }
 
@@ -3036,12 +3037,11 @@ padding-right: 2em;
 }
 
 .document-page-full-document {
-  margin-left: 13em;
-  height: 3em;
-  width: 75%;
+  margin-left: 11em;
+  width: 81%;
   border: 1px solid #eee;
   border-radius: 3px;
-  padding: 1em;
+  padding: .5em;
 }
 
 
