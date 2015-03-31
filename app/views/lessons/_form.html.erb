@@ -16,39 +16,6 @@
     <%= f.text_area :description, placeholder: "Description of my lesson" %>
   </div>
 
-  <div class="checkbox-wrapper">
-      <div class="checkbox-header"> <%= f.label "Subjects" %></div>
-      <div class="checkbox-list">
-        <div class="subjects-select-menu-container">
-          <select class="select-menu" name="Subjects">
-            <option class="select-menu-values" value="Subject">Subject</option>
-            <option value="art">Art</option>
-            <option value="history">History</option>
-            <option value="language-arts">Language Arts</option>
-            <option value="math">Math</option>
-            <option value="music">Music</option>
-            <option value="physical-education">Physical Education</option>
-            <option value="science">Science</option>
-            <option value="technology">Technology</option>
-          </select>
-        </div>
-
-        <div class="grades-select-menu-container">
-          <select class="select-menu" name="Grade">
-            <option class="select-menu-values" value="art">Grade</option>
-            <option value="Kindergarten">Kindergarten</option>
-            <option value="1st">1st</option>
-            <option value="2nd">2nd</option>
-            <option value="3rd">3rd</option>
-            <option value="4th">4th</option>
-            <option value="5th">5th</option>
-            <option value="6th">6th</option>
-            <option value="7th">7th</option>
-            <option value="8th">8th</option>
-          </select>
-        </div>
-    </div>
-
       <div class="checkbox-header"><%= f.label "Grade Levels" %></div>
       <div class="checkbox-list">
       <%= f.collection_check_boxes :grade_level_ids, @grade_levels, :id, :title, :item_wrapper_class => 'checkbox_container' %>

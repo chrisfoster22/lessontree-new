@@ -4,6 +4,10 @@ class StarsController < ApplicationController
     @star = Star.new
   end
 
+  def show
+    redirect_to 'show#create'
+  end
+
   def create
     @star = Star.create
     @star.lesson_id = params[:lesson_id]
