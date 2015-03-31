@@ -1,0 +1,51 @@
+<section class="lesson-preview-container">
+
+  <div class="lesson-preview-title-container">
+    <h3 class="lesson-preview-title"><%= @lesson.topic %></h3>
+    <ul>
+        <li class="lesson-preview-subject-list"><%= formatted_lesson_subjects(@lesson) %></li>
+        <li class="lesson-preview-pipe">|</li>
+        <li class="lesson-preview-grade-list"><%= formatted_lesson_grade_levels(@lesson) %></li>
+  </ul>
+  </div>
+
+  <div class="lesson-preview-description-container">
+    <ul class="star-ranking">
+    <li class="icon-star"></li>
+    <li class="ranking"><%= @lesson.stars.count %></li>
+    </ul>
+    <p class="lesson-preview-description"><%= @lesson.description.html_safe %></p>
+  </div>
+
+  <section>
+  </section>
+
+  <section class="document-page-doc-list-containter">
+    <h3 class="document-page-doc-list-headline">Lesson Documents</h3>
+    <div class="document-page-doc-headline-border"></div>
+    <ul class= "document-page-doc-list">
+      <% @lesson.documents.each do |d| %>
+        <li class="document-page-doc"><%= link_to "#{d.title}", d, class: "doc-link", remote: true %></li>
+      <% end %>
+    </ul>
+
+    <ul class="document-page-doc-list-create">
+      <a href=<%= "#{new_document_path(lesson_id: @lesson.id)}" %>>
+        <li class="document-page-doc-create"><i class="fa fa-plus"></i><span class="document-page-create">Create</span></li>
+      </a>
+    </ul>
+  </section>
+
+    <section class="document-page-full-document" id="full-document-show">
+      <%= render 'document_show' %>
+    </section>
+
+  <%= commontator_thread(@lesson) %>
+</section>
+
+<% if @lesson.user == current_user %>
+  <div class="delete-lesson-button-wrapper">
+
+    <%= link_to "Delete Lesson", lesson_path(@lesson), class: "delete-lesson-button", method: :delete %>
+  </div>
+<% end %>
