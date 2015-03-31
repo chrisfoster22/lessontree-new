@@ -1,3 +1,22 @@
+<section class="lesson-preview-container">
+  <div class="lesson-preview-title-container">
+    <h3 class="lesson-preview-title"><%= @document.lesson.topic %></h3>
+    <ul>
+      <li class="lesson-preview-subject-list"><%= formatted_lesson_subjects(@document.lesson) %></li>
+      <li class="lesson-preview-pipe">|</li>
+      <li class="lesson-preview-grade-list"><%= formatted_lesson_grade_levels(@document.lesson) %></li>
+    </ul>
+  </div>
+
+  <div class="lesson-preview-description-container">
+    <ul class="star-ranking">
+    <li class="icon-star"></li>
+    <li class="ranking"><%= @document.lesson.stars.count %></li>
+    </ul>
+    <p class="lesson-preview-description"><%= @document.lesson.description.html_safe %></p>
+  </div>
+</section>
+
 <div class='row mt'>
   <div class='col-sm-12'>
     <h2><%= "Difference between Version #{@version.id} and Current Version" %></h2>
