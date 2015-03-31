@@ -18,14 +18,10 @@
   </div>
 
     <div class="star-container">
-      <% unless @lesson.user == current_user %>
         <%= form_for @star do |f| %>
         <%= f.hidden_field :lesson_id, value: @lesson.id %>
-          <%= f.submit "Star", class: "star-box", id: "#{@lesson.id}" do %>
-            <i class="icon-star"></i>
+        <button type="submit" class="icon-star"></button>
           <% end %>
-          <% end %>
-      <% end %>
     </div>
 
   <% unless @uploaded_documents.empty? %>
