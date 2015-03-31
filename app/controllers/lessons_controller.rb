@@ -10,7 +10,7 @@ class LessonsController < ApplicationController
     @star = Star.new
     @created_documents = Document.where("lesson_id = #{@lesson.id} AND content IS NOT NULL").page(params[:page]).per(1)
     @uploaded_documents = Document.where("lesson_id = #{@lesson.id} ANDcontent IS NULL").page(params[:page]).per(1)
-    @documents = @lesson.documents.page(params[:page]).per(1)
+    @document = @lesson.documents.first
     # documents = @lesson.documents
     # @uploaded_documents = []
     # @created_documents = []
