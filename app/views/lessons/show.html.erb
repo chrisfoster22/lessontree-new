@@ -20,9 +20,9 @@
   <div id="paginator">
     <%= paginate @documents %>
   </div>
-
-  <%= render 'document_show' %>
-
+  <div class="document-show-container"
+    <%= render 'document_show' %>
+  </div>
 
     <div class="star-container">
         <%= form_for @star do |f| %>

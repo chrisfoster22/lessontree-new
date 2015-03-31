@@ -136,22 +136,22 @@
   color: $alt-top-bg-hover;
   }
 }
-
-.checkbox-wrapper {
-  color: $alt-top-bg-hover;
-  font-family: $headline-font;
-  text-align: center;
-  padding: 0, 500px, 0, 500px;
-  .checkbox-header {
-    font-size: 1.5em;
-    color: $logo-color;
-  }
-  .checkbox-list {
-    padding-left: 38em;
-    padding-right: 38em;
-    display: inline-block;
-  }
-}
+// 
+// .checkbox-wrapper {
+//   color: $alt-top-bg-hover;
+//   font-family: $headline-font;
+//   text-align: center;
+//   padding: 0, 500px, 0, 500px;
+//   .checkbox-header {
+//     font-size: 1.5em;
+//     color: $logo-color;
+//   }
+//   .checkbox-list {
+//     padding-left: 38em;
+//     padding-right: 38em;
+//     display: inline-block;
+//   }
+// }
 
 .star-this-lesson {
   position: relative;
@@ -180,7 +180,17 @@
   display: inline;
 }
 
+.document-show-container {
+  display: inline;
+  width: 80%;
+  align: right;
+}
 .document-preview {
   border: 1px solid black;
   padding: 100px;
+  display: inline;
+}
+
+.document-meta-data {
+
 }
