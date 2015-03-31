@@ -64,6 +64,7 @@
   .comment-content {
     display: table-cell;
     vertical-align: $comment-image-vert-alignment;
+    font-family: $maintext-font;
   }
 
   .comment-image {
@@ -192,4 +193,13 @@
 .my-profile-footer {
   padding-right: 100px;
   font-family: $headline-font;
+}
+
+.doc-show-iframe {
+  width: 100%;
+  height: 600px;
+}
+
+.doc-link {
+  
 }

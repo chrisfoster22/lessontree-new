@@ -2,6 +2,7 @@ class DocumentsController < ApplicationController
   before_action :set_document, only: [:edit, :show, :update,
         :destroy, :version_history]
   before_action :set_lesson, only: [:show, :destroy]
+  before_action :authenticate_user!, only: [:create, :create_from_upload, :update, :destroy]
   attr_accessor :title, :description
 
   def index

@@ -19,11 +19,21 @@
  <div class="checkbox-wrapper">
    <div>
      <div class="checkbox-header"> <%= f.label "Subjects" %></div>
-     <%= f.collection_check_boxes :subject_ids, @subjects, :id, :title, :item_wrapper_class => 'checkbox_container' %>
+     <%= f.collection_check_boxes :subject_ids, @subjects, :id, :title do |b| %>
+       <div class="checkbox-container">
+         <%= b.check_box %>
+         <%= b.label %>
+       </div>
+     <% end %>
    </div>
    <div>
      <div class="checkbox-header"><%= f.label "Grade Levels" %></div>
-     <%= f.collection_check_boxes :grade_level_ids, @grade_levels, :id, :title, :item_wrapper_class => 'checkbox_container' %>
+     <%= f.collection_check_boxes :grade_level_ids, @grade_levels, :id, :title do |b| %>
+       <div class="checkbox-container">
+         <%= b.check_box %>
+         <%= b.label %>
+       </div>
+     <% end %>
    </div>
  </div>
 
