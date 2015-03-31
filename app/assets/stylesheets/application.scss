@@ -153,9 +153,6 @@
   }
 }
 
-* {
-  box-sizing: border-box;
-}
 
 header.sticky-nav-header {
   height: 50px;
@@ -171,6 +168,7 @@ header.sticky-nav-header {
     text-decoration: none;
   }
 }
+
 header.sticky-nav-header,
 .main-nav-scrolled {
   position: fixed;

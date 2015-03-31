@@ -72,6 +72,11 @@ class LessonsController < ApplicationController
     end
   end
 
+  def destroy
+    @lesson.destroy!
+    redirect_to user_path(current_user), notice: "The document has been successfully deleted."
+  end
+
   def document_form
     @document = Document.find_by(id: params[:id])
     render :layout => false

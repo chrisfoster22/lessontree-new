@@ -78,7 +78,6 @@ $green-hover-color: #6fbaab;
 .nav-list {
   display: inline;
   float: right;
-  // padding: 1.7em 5em 0 0;
   padding: 1.7em 4em 0 0;
 
 }
@@ -140,7 +139,7 @@ vertical-align: middle;
   display: inline;
   font-family: $headline-font;
   font-size: 1em;
-  padding-right: 3em;
+  padding-right: 1.4em;
   text-decoration: none;
   letter-spacing: .01em;
 }
@@ -1077,6 +1076,32 @@ EDIT PROFILE & NEW LESSON BUTTONS SIDE BY SIDE
   cursor: pointer;
 }
 
+/*************************
+      BACK BUTTON
+*************************/
+
+.back-button {
+  margin: 0 .5em 0;
+  font-family: $headline-font;
+  font-size: .8em;
+  font-weight: bolder;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: none;
+  background: $alt-top-bg-color;
+  color: #fff;
+  border-radius: .25em;
+  text-decoration: none;
+  padding: 1em 3.3em 1em 3.3em;
+}
+
+.back-button:hover {
+  background: $alt-top-bg-hover;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
 /***********************************************
       STAR THIS PLAN CHECKBOX
 ***********************************************/
@@ -1084,7 +1109,7 @@ EDIT PROFILE & NEW LESSON BUTTONS SIDE BY SIDE
   text-align: center;
 }
 /************************************
-      FORGOT PASSWORD BUTTON
+FORGOT PASSWORD BUTTON
 ************************************/
 .forgot-password-button-wrapper {
   display: block;
@@ -1204,9 +1229,9 @@ input[type=checkbox].css-checkbox {
   PROFILE PAGE, LESSONS & PLANS
 ***********************************************/
 .accordion-tabs {
-
     width: 60%;
     margin: 0 auto 0;
+    margin-bottom: 4em;
   ///////////////////////////////////////////////////////////////////////////////////
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
@@ -1229,7 +1254,7 @@ input[type=checkbox].css-checkbox {
 
   @include clearfix;
   line-height: 1.4;
-  margin-bottom: $base-spacing;
+  margin-bottom: 4em;
   padding: 0;
 
   @include media(max-width $tab-mode) {
@@ -2710,6 +2735,95 @@ PROFILE PAGE LESSON VIEW
 }
 .expander-trigger expander-hidden {
   font-size: 2.4em;
+}
+
+/************************************
+         VERSIONS TABLE
+************************************/
+.versions-table {
+  font-family: $headline-font;
+  font-size: 1em;
+  line-height: 1.4em;
+  color: #111;
+  margin: 3em auto 4em;
+}
+
+.versions-table a {
+  text-decoration: none;
+}
+
+.versions-table th {
+  text-align: left;
+  font-size: 1.1em;
+  font-weight: bolder;
+  padding-bottom: .7em;
+  border-bottom: 1px solid #ddd;
+}
+
+.versions-table tr {
+  line-height: .5em;
+}
+
+.versions-index-heading{
+  padding-right: 2em;
+}
+
+.versions-date-heading{
+  padding-right: 13em;
+}
+
+.versions-author-heading {
+  padding-right: 2.5em;
+}
+
+.versions-event-heading {
+  padding-right: 2.5em;
+}
+
+.verisons-index-data {
+  padding-left: 2em;
+  padding-top: 1em;
+}
+
+.verisons-changes-link {
+padding-right: 2em;
+}
+
+.verisons-changes-link a {
+  color: $button-bg-color;
+}
+
+.verisons-rollback-link a {
+  color: $button-bg-color;
+}
+
+.back-to-lesson-link-container {
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.back-to-lesson-link {
+  font-family: $headline-font;
+  font-size: .85em;
+  font-weight: bolder;
+  background: $alt-top-bg-color;
+  text-transform: uppercase;
+  padding: .55em .45em .55em;
+  border-radius: .25em;
+  letter-spacing: .1em;
+}
+
+.back-to-lesson-link:hover {
+  background: $alt-top-bg-hover;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+
+.back-to-lesson-link a {
+  text-decoration: none;
+  color: #fff;
 }
 
 /************************************

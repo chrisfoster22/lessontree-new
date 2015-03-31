@@ -32,10 +32,11 @@
     <p class="list">Uploaded Documents</p>
     <% @uploaded_documents.each do |d| %>
       <% if d.upload_content_type.include?("pdf") %>
-        <div><%= link_to "View #{d.title}", "#{d.upload.url}", class: "fancybox", id: "#{d.id}", remote: true %></div>
+        <span class="document-show-button"><%= link_to "View #{d.title}", "#{d.upload.url}", class: "fancybox", id: "#{d.id}", remote: true %></span>
       <% else %>
-        <%= link_to "Download #{d.title}", "#{d.upload.url}" %>
+        <span class="document-show-button"><%= link_to "Download #{d.title}", "#{d.upload.url}" %></span>
       <% end %>
+        <span class="document-buttons"><%= link_to " | Delete", document_path(d), method: :delete %></span>
     <% end %>
   <% end %>
 
@@ -58,5 +59,6 @@
 <div class="edit-save-buttons-wrapper">
   <%= link_to 'Upload Lesson Document', upload_file_documents_path(lesson_id: @lesson.id), id: 'fancybox', class: 'edit-button' %>
   <%= link_to "Create Lesson Document", new_document_path(lesson_id: @lesson.id), class: 'save-button' %>
+  <%= link_to "Delete Lesson", lesson_path(@lesson), method: :delete %>
 </div>
 <% end %>
