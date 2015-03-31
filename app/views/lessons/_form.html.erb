@@ -17,19 +17,19 @@
  </div>
 
  <div class="checkbox-wrapper">
-   <div>
-     <div class="checkbox-header"> <%= f.label "Subjects" %></div>
+   <div class="checkbox-subject-container">
+     <div class="checkbox-header"><%= f.label "Subjects" %></div>
      <%= f.collection_check_boxes :subject_ids, @subjects, :id, :title do |b| %>
-       <div class="checkbox-container">
+       <div class="checkbox-subjects">
          <%= b.check_box %>
          <%= b.label %>
        </div>
      <% end %>
    </div>
-   <div>
+   <div class="checkbox-grade-container">
      <div class="checkbox-header"><%= f.label "Grade Levels" %></div>
      <%= f.collection_check_boxes :grade_level_ids, @grade_levels, :id, :title do |b| %>
-       <div class="checkbox-container">
+       <div class="checkbox-grades">
          <%= b.check_box %>
          <%= b.label %>
        </div>
