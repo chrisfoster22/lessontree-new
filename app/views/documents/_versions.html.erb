@@ -20,7 +20,8 @@
         <td class="verisons-created-data"><%= version.created_at.strftime("%A, %B %d at %I:%M%p") %></td>
         <td class="verisons-author-data"><%= find_version_author_name(version) %></td>
         <td class="verisons-event-data"><%= version.event.humanize %></td>
-        <td class="verisons-changes-link"><%= link_to 'Changes', diff_document_version_path(document, version) if document.versions.count > 1 %></td>
+        <td class="verisons-changes-link"><%= link_to 'Changes',
+            diff_document_version_path(document, version) if document.versions.count > 1 && version.index > 0 %></td>
         <td class="verisons-rollback-link"><%= link_to 'Rollback', rollback_document_version_path(document, version), method: 'PATCH' %></td>
       </tr>
     <% end %>
