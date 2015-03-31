@@ -480,7 +480,7 @@ SELECT DROPDOWN BUTTON
   float: right;
   width: 50%;
   margin-right: 12em;
-  color: #807d7f;
+  color: $dark-header-color;
 
 }
 
@@ -488,8 +488,8 @@ SELECT DROPDOWN BUTTON
   line-height: 1.5em;
   font-family: $headline-font;
   font-size: .95em;
-  color: #b9bdbd;
-
+  // color: #b9bdbd;
+  color: $dark-header-color;
 }
 
 .profile-page-user-name {
@@ -2937,26 +2937,30 @@ padding-right: 2em;
 
 .checkbox-wrapper {
   margin: 2em auto 1em;
-  width: 500px;
+  width: 250px;
   text-align: center;
 }
 
-.checkbox-header {
-  padding: 1em 0 0;
-  margin-bottom: .5em;
+.checkbox-grade-container {
+  margin-top: 1em;
 }
 
-.checkbox-header label {
-  font-size: 1.2em;
-  font-weight: bolder;
+.checkbox-subjects, .checkbox-grades {
+  text-align: left;
+  margin-left: 5em;
+  line-height: 1.4em;
   font-family: $headline-font;
   color: #666;
 }
 
-.checkbox-wrapper label {
-  padding-right: .5em;
-  color: #666;
+.checkbox-header {
+  font-family: $headline-font;
+  color: $alt-top-bg-color;
+  text-align: left;
+  margin-left: 5em;
+  font-weight: bolder;
 }
+
 
 /************************************
     DOCUMENT SHOW PAGE
@@ -3005,9 +3009,8 @@ padding-right: 2em;
   // border: #eee 1px solid;
   border-radius: 3px;
   // box-shadow: 0 2px 5px rgba(0,0,0,0.26);
-  padding: .5em;
   // border: #eee 1px solid;
-  padding: 0 2em 1em 1em;
+
   font-family: $headline-font;
 }
 
@@ -3159,4 +3162,36 @@ footer {
   text-align: center;
   padding-top: 1em;
   color: $alt-top-bg-color;
+}
+
+/*************************************
+            LESSON PG COUNT
+**************************************/
+.first-pg-count {
+   font-size: 1.1em;
+   text-align: right;
+}
+
+.pg-gap-counter {
+   margin: 5px;
+}
+
+.last-pg-count {
+  font-size: 1.1em;
+  text-align: right;
+}
+
+.next-pg-count {
+  font-size: 1.1em;
+  text-align: right;
+}
+
+.prev-pg-count {
+  font-size: 1.1em;
+  text-align: right;
+}
+
+.pagination {
+  font-size: 1.1em;
+  text-align: right;
 }

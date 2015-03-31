@@ -2,16 +2,23 @@
 <section class="document-page-top-toolbar-container">
   <div class="document-page-top-toolbar">
     <ul class="document-page-top-toolbar-list">
-      <li class="document-page-top-toolbar-edit" id="doc-title-toolbar"><%= @document.title %></li>
+      <li class="document-toolbar-title"><%= @document.title %></li>
+      <% if @document.lesson.user == current_user %>
       <a href=<%= "#{edit_document_path(@document)}" %>>
         <li class="document-page-top-toolbar-edit"><i class="fa fa-pencil-square-o"></i><span class="document-page-edit">Edit</span></li>
       </a>
+      <% end %>
       <a href=<%= "#{version_history_document_path(@document)}" %>>
         <li class="document-page-top-toolbar-history"><i class="fa fa-history"></i><span class="document-page-history">History</span></li>
       </a>
+      <% unless @document.lesson.user == current_user%>
+        <li></li>
+        <% end %>
+      <% if @document.lesson.user == current_user %>
       <a href=<%= "#{document_path(@document)}" %> data-method="delete">
         <li class="document-page-top-toolbar-delete"><i class="fa fa-trash-o"></i><span class="document-page-delete">Delete</span></li>
       </a>
+      <% end %>
     </ul>
 
   </div>

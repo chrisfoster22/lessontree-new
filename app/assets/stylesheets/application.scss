@@ -117,8 +117,8 @@
   color: $button-bg-hover;
   font-family: $headline-font;
   text-align: right;
-  position: relative;
-  right: 30px;
+  // position: relative;
+  // right: 30px;
   a {
   text-decoration: none;
   font-family: $headline-font;
@@ -129,8 +129,8 @@
 #paginator-nested {
   color: $button-bg-hover;
   font-family: $headline-font;
-  text-align: center;
-  position: relative;
+  // text-align: center;
+  // position: relative;
   a {
   text-decoration: none;
   font-family: $headline-font;
@@ -182,8 +182,8 @@
 }
 
 .document-preview {
-  border: 1px solid black;
-  padding: 80px;
+  border: 1px solid $text-button-color;
+  padding: 65px;
 }
 
 .document-meta-data {
@@ -192,6 +192,7 @@
 
 .my-profile-footer {
   padding-right: 100px;
+  font-family: $headline-font;
 }
 
 .doc-show-iframe {
@@ -207,6 +208,8 @@
   align: center;
 }
 
-.alert-alert-danger {
-  color: red;
+.document-toolbar-title {
+  align: left;
+  position: relative;
+  right: 350px;
 }
