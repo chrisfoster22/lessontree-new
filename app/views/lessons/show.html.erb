@@ -23,13 +23,38 @@
 
   <%= render 'document_show' %>
 
-
-    <div class="star-container">
-        <%= form_for @star do |f| %>
-        <%= f.hidden_field :lesson_id, value: @lesson.id %>
-        <button type="submit" class="icon-star"></button>
-          <% end %>
+  <section class="document-page-top-toolbar-container">
+    <div class="document-page-top-toolbar">
+      <ul class="document-page-top-toolbar-list">
+        <a href="www.google.com">
+          <li class="document-page-top-toolbar-edit"><i class="fa fa-pencil-square-o"></i><span class="document-page-edit">Edit</span></li>
+        </a>
+        <a href="www.google.com">
+          <li class="document-page-top-toolbar-history"><i class="fa fa-history"></i><span class="document-page-history">History</span></li>
+        </a>
+        <a href="www.google.com">
+          <li class="document-page-top-toolbar-delete"><i class="fa fa-trash-o"></i><span class="document-page-delete">Delete</span></li>
+        </a>
+      </ul>
     </div>
+  </section>
+
+  <section class="document-page-doc-list-containter">
+    <h3 class="document-page-doc-list-headline">Lesson Documents</h3>
+    <div class="document-page-doc-headline-border"></div>
+    <ul class= "document-page-doc-list">
+      <li class="document-page-doc">My Fake Doc</li>
+    </ul>
+
+    <ul class="document-page-doc-list-create">
+      <li class="document-page-doc-create"><i class="fa fa-plus"></i><span class="document-page-doc-create">Create</span></li>
+    </ul>
+  </section>
+
+  <section class="document-page-full-document">
+    <p>laksdjflaksdjflaksdjflkasjdflkasdjf</p>
+  </section>
+
 
   <%= commontator_thread(@lesson) %>
 </section>

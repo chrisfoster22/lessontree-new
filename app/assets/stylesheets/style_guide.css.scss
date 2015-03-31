@@ -672,7 +672,7 @@ HOMEPAGE LESSON PREVIEWS
 }
 
 .lesson-preview-container {
-  margin: 6em auto 6em;
+  margin: 2em auto 6em;
   width: 65%;
   text-align: left;
   label, p.list {
@@ -2969,6 +2969,78 @@ padding-right: 2em;
   padding-right: .5em;
   color: #666;
 }
+
+/************************************
+    DOCUMENT SHOW PAGE
+************************************/
+.document-page-top-toolbar-container {
+  margin: 3em 0 .5em;
+}
+
+.document-page-top-toolbar {
+  text-align: right;
+}
+
+.document-page-top-toolbar-list {
+  list-style-type: none;
+}
+
+.document-page-top-toolbar-list li {
+  display: inline;
+  padding-left: 1.5em;
+}
+
+.document-page-top-toolbar-list a {
+  color: red;
+}
+
+.document-page-edit, .document-page-history, .document-page-delete {
+  margin-left: .3em;
+  font-family: $headline-font;
+  font-size: 1em;
+}
+
+.document-page-doc-list-containter {
+  width: 22%;
+  float: left;
+  border: #eee 1px solid;
+  border-radius: 3px;
+  padding: 1em;
+  font-family: $headline-font;
+}
+
+.document-page-doc-list-headline {
+  font-size: 1.2em;
+  font-weight: bolder;
+  color: #999;
+}
+
+.document-page-doc-headline-border {
+  margin-top: .25em;
+  border-bottom: #eee 1px solid;
+}
+
+.document-page-doc-list {
+  margin-top: 1em;
+}
+
+.document-page-doc {
+
+}
+
+.document-page-doc-list-create {
+  margin: 1em 0 0;
+}
+
+.document-page-full-document {
+  margin-left: 13em;
+  height: 3em;
+  width: 75%;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  padding: 1em;
+}
+
 
 /************************************
               FOOTER
