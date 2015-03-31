@@ -21,6 +21,19 @@
  @import "jquery.fancybox-buttons";
  @import "jquery.fancybox-thumbs";
  @import "diffy";
+//  @import "fonts";
+//  @import "colors";
+//  @import "elisha_style_guide";
+//  @import "home";
+//  @import "lessons";
+//  @import "users";
+//  @import "about";
+//  @import "login";
+//  @import "signup";
+//  @import "header";
+//  @import "footer";
+//  @import "aaron_style_guide";
+//
 
 .thread {
 }
@@ -128,7 +141,46 @@
   color: $alt-top-bg-hover;
   font-family: $headline-font;
   text-align: center;
-  div.checkbox-header {
-    color: $button-bg-hover;
+  padding: 0, 500px, 0, 500px;
+  .checkbox-header {
+    font-size: 1.5em;
+    color: $logo-color;
   }
+  .checkbox-list {
+    padding-left: 38em;
+    padding-right: 38em;
+    display: inline-block;
+  }
+}
+
+.star-this-lesson {
+  position: relative;
+  top: -20px;
+  left: 150px;
+}
+
+.quick-show-iframe {
+  width: 800px;
+  height: 800px;
+  display: block;
+  overflow: hidden;
+}
+
+.quick-created-documents {
+}
+
+.quick-content {
+  border: 1px solid black;
+  padding: 100px;
+}
+
+.star-box {
+  color: yellow;
+  font-size: 1.5em;
+  display: inline;
+}
+
+.document-preview {
+  border: 1px solid black;
+  padding: 100px;
 }

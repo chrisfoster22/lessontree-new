@@ -1,5 +1,5 @@
   <% @lessons.each do |l| %>
-  <%= link_to  quick_show_lesson_path(l), class:"fancybox", remote: true do %>
+  <%= link_to l do %>
   <div class="lesson-preview-title-container">
     <h3 class="lesson-preview-title"><%= l.topic %></h3>
     <ul>
