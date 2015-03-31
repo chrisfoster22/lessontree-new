@@ -2983,6 +2983,7 @@ padding-right: 2em;
 .document-page-top-toolbar-list {
   list-style-type: none;
   font-family: $headline-font;
+  display: inline;
 }
 
 .document-page-top-toolbar-list li {
@@ -3005,7 +3006,12 @@ padding-right: 2em;
   width: 20%;
   float: left;
   font-family: $headline-font;
+  max-width: 170px;
 }
+// 
+// .document-page-doc-list-containter li {
+//   max-width: 170px;
+// }
 
 .document-page-doc-list-headline {
   font-size: 1.2em;
@@ -3041,11 +3047,18 @@ padding-right: 2em;
 }
 
 .document-page-headline-list {
-  text-align: right;
+  text-align: left;
+  display: inline;
 }
 
 .document-page-headline {
   font-family: $headline-font;
+  display: inline;
+}
+
+.headline-container {
+  float: left;
+  max-width: 300px;
 }
 
 
