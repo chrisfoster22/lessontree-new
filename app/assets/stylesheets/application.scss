@@ -64,6 +64,7 @@
   .comment-content {
     display: table-cell;
     vertical-align: $comment-image-vert-alignment;
+    font-family: $maintext-font;
   }
 
   .comment-image {
