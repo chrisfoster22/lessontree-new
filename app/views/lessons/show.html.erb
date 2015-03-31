@@ -7,72 +7,45 @@
         <li class="lesson-preview-pipe">|</li>
         <li class="lesson-preview-grade-list"><%= formatted_lesson_grade_levels(@lesson) %></li>
   </ul>
-
-    <ul class="star-ranking">
-        <li class="icon-star"></li>
-        <li class="ranking"><%= @lesson.stars.count %></li>
-    </ul>
-
   </div>
 
-  <%= render 'document_show' %>
+  <div class="lesson-preview-description-container">
+    <ul class="star-ranking">
+    <li class="icon-star"></li>
+    <li class="ranking"><%= @lesson.stars.count %></li>
+    </ul>
+    <p class="lesson-preview-description"><%= @lesson.description.html_safe %></p>
+  </div>
 
-  <section class="document-page-top-toolbar-container">
-    <div class="document-page-top-toolbar">
-      <ul class="document-page-top-toolbar-list">
-        <a href="www.google.com">
-          <li class="document-page-top-toolbar-edit"><i class="fa fa-pencil-square-o"></i><span class="document-page-edit">Edit</span></li>
-        </a>
-        <a href="www.google.com">
-          <li class="document-page-top-toolbar-history"><i class="fa fa-history"></i><span class="document-page-history">History</span></li>
-        </a>
-        <a href="www.google.com">
-          <li class="document-page-top-toolbar-delete"><i class="fa fa-trash-o"></i><span class="document-page-delete">Delete</span></li>
-        </a>
-      </ul>
-    </div>
+  <section>
   </section>
 
   <section class="document-page-doc-list-containter">
     <h3 class="document-page-doc-list-headline">Lesson Documents</h3>
     <div class="document-page-doc-headline-border"></div>
     <ul class= "document-page-doc-list">
-      <a href="www.google.com">
-        <li class="document-page-doc">My Fake Doc</li>
-      </a>
-      <a href="www.google.com">
-        <li class="document-page-doc">Another Thing</li>
-      </a>
-      <a href="www.google.com">
-        <li class="document-page-doc">Something Here Too</li>
-      </a>
+      <% @lesson.documents.each do |d| %>
+        <li class="document-page-doc"><%= link_to "#{d.title}", d, class: "doc-link", remote: true %></li>
+      <% end %>
     </ul>
 
     <ul class="document-page-doc-list-create">
-      <a href="www.google.com">
+      <a href=<%= "#{new_document_path(lesson_id: @lesson.id)}" %>>
         <li class="document-page-doc-create"><i class="fa fa-plus"></i><span class="document-page-create">Create</span></li>
       </a>
     </ul>
   </section>
 
-  <section class="document-page-full-document">
-    <p>Lorem ipsum dolor sit amet, eu nullam molestie id metus, cursus in imperdiet ipsum. Ac eleifend mollis congue tortor ut wisi. Amet sed ultrices et, sed eget a, id odio magna massa lobortis nulla nunc, consequat orci donec. Nibh quam, nostra nec magnis quis iure, quis neque, nunc luctus ullamcorper. In dolor.
-Nulla sem, placerat amet dictumst vehicula. Vitae mauris at nam quam, euismod vehicula ligula odio pulvinar, maecenas volutpat sed. Quis mi mollis venenatis lectus egestas penatibus, neque vitae ultricies tortor leo id porro, integer id nunc, elit voluptatem sit molestie potenti nulla, vestibulum ipsum et. Diam sed sit vel maecenas mauris, sit donec pulvinar. Nec integer orci at ut, phasellus maecenas sodales vestibulum at, vivamus rutrum quisque magnis ac. Imperdiet ut libero, dictum fusce id vulputate magna, tellus unde leo libero sociis, nec cras. Hendrerit nulla eros hymenaeos, ipsum est et blandit sed, sodales dictum dignissim ornare sit suscipit, quis feugiat, eget ut sed. Mauris pulvinar, massa elit, eum explicabo nisl ipsum mauris placerat, gravida iaculis proin praesent donec tincidunt aliquet, duis feugiat non pede magna iaculis mauris. Occaecati ut tincidunt et. Ligula cras, nunc dignissim amet nunc. Felis massa semper, arcu dignissim mi a porta libero, eu suscipit aenean netus consectetuer ac tempus, urna molestie ac rutrum. Pretium sed, velit tempus vestibulum tellus, pede mi pede maecenas eget nullam morbi.
-</p>
-  </section>
-
+    <section class="document-page-full-document" id="full-document-show">
+      <%= render 'document_show' %>
+    </section>
 
   <%= commontator_thread(@lesson) %>
 </section>
-<!--
+
 <% if @lesson.user == current_user %>
-<div class="edit-save-buttons-wrapper">
-  <%= link_to 'Upload Lesson Document', upload_file_documents_path(lesson_id: @lesson.id), id: 'fancybox', class: 'edit-button' %>
-  <%= link_to "Create Lesson Document", new_document_path(lesson_id: @lesson.id), class: 'save-button' %>
   <div class="delete-lesson-button-wrapper">
-  <div class="delete-lesson-button"
-  <%= link_to "Delete Lesson", lesson_path(@lesson), method: :delete %>
-</div>
-</div>
-</div>
-<% end %> -->
+
+    <%= link_to "Delete Lesson", lesson_path(@lesson), class: "delete-lesson-button", method: :delete %>
+  </div>
+<% end %>

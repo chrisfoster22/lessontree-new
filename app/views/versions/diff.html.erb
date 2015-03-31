@@ -19,18 +19,22 @@
 
 <div class='row mt'>
   <div class='col-sm-12'>
-    <h2><%= "Difference between Version #{@version.id} and Current Version" %></h2>
+    <h2><%= "#{@document.title}" %></h2>
     <div class='well diff'>
-      <p class="changes-to-title">
-        Changes to Title:
-        <%= diff(@version.reify.title, @document.title) %>
-      </p>
+      <% if @version.reify.title != @document.title %>
+        <p class="changes-to-title">
+          Changes to Title:
+          <%= diff(@version.reify.title, @document.title) %>
+        </p>
+      <% end %>
       <br>
       <br>
-      <p class="changes-to-content">
-        Changes to Content:
-        <%= diff(@version.reify.content, @document.content) %>
-      </p>
+      <% if @version.reify.content != @document.content %>
+        <p class="changes-to-content">
+          Changes to Content:
+          <%= diff(@version.reify.content, @document.content) %>
+        </p>
+      <% end %>
     </div>
     <p class="version-author-information">
     <%= "Version authored by #{find_version_author_name(@version)} on
