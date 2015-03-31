@@ -3035,7 +3035,7 @@ padding-right: 2em;
 .document-page-doc-list-containter {
   width: 25%;
   float: left;
-  padding: 1em 2em 1em 1em;
+  padding: 0 2em 1em 1em;
   font-family: $headline-font;
 }
 
@@ -3047,11 +3047,10 @@ padding-right: 2em;
 
 .document-page-doc-headline-border {
   margin-top: .25em;
-  border-bottom: #eee 1px solid;
 }
 
 .document-page-doc-list {
-  margin-top: 1em;
+  margin-top: .5em;
   color: $button-bg-color;
   text-decoration: underline;
   line-height: 1.7em;
