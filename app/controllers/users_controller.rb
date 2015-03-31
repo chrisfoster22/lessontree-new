@@ -11,7 +11,6 @@ class UsersController < ApplicationController
       @starred_lessons << lesson
     end
     @starred_lessons
-    @starred_lessons = [Lesson.find(params[:id])]
   end
 
   def index
