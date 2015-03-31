@@ -10,7 +10,19 @@ class UsersController < ApplicationController
       lesson = Lesson.find_by(id: s.lesson_id)
       @starred_lessons << lesson
     end
+<<<<<<< HEAD
 
+||||||| merged common ancestors
+<<<<<<< Temporary merge branch 1
+    @starred_lessons
+||||||| merged common ancestors
+    @starred_lessons = [Lesson.find(104)]
+=======
+    @starred_lessons = [Lesson.find(params[:id])]
+>>>>>>> Temporary merge branch 2
+=======
+    @starred_lessons
+>>>>>>> 0c586bc3f152f2952a252baf5b97ce818e491290
   end
 
   def index
