@@ -13,7 +13,7 @@
       <%= f.text_field :title, placeholder: "Document Title" %>
     </div>
     <%= f.hidden_field :lesson_id %>
-    <div>
+    <div class="editor-container">
       <%= f.cktext_area :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'simple'} } %>
     </div>
     <div class="edit-document-save-container">

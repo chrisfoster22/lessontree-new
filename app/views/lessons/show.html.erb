@@ -29,17 +29,25 @@
         <li class="document-page-doc"><%= link_to "#{d.title}", d, class: "doc-link", remote: true %></li>
       <% end %>
     </ul>
-
-    <ul class="document-page-doc-list-create">
-      <a href=<%= "#{new_document_path(lesson_id: @lesson.id)}" %>>
-        <li class="document-page-doc-create"><i class="fa fa-plus"></i><span class="document-page-create">Create</span></li>
-      </a>
-    </ul>
+    <% unless @lesson.documents %>
+      <ul class="document-page-doc-list-create">
+        <a href=<%= "#{new_document_path(lesson_id: @lesson.id)}" %>>
+          <li class="document-page-doc-create"><i class="fa fa-plus"></i><span class="document-page-create">Create</span></li>
+        </a>
+      </ul>
+    <% end %>
   </section>
 
     <section class="document-page-full-document" id="full-document-show">
-    <% if @documents %>
-      <%= render 'document_show' %>
+
+      <% if @document %>
+        <%= render 'document_show' %>
+      <% else %>
+      <section>
+        <br>
+        <br>
+        <br>
+      </section>
       <% end %>
     </section>
 
