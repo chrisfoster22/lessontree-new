@@ -2833,7 +2833,7 @@ PROFILE PAGE LESSON VIEW
   margin-bottom: 1em;
 
 }
-.grade-select-menu  {
+.grade-select-menu, .grade-select-menu-edit-profile  {
   display: block;
   // text-transform: uppercase;
   background: $alt-top-bg-color;
@@ -2845,7 +2845,16 @@ PROFILE PAGE LESSON VIEW
   border-radius: none;
   border: none;
   padding: 2em;
+}
 
+.grade-select-menu-edit-profile {
+  margin: 0 auto 0;
+}
+
+.grade-select-menu-edit-profile:hover {
+  background: $alt-top-bg-hover;
+  transition: .3s;
+  cursor: pointer;
 }
 .expander-trigger expander-hidden {
   font-size: 2.4em;
@@ -3097,8 +3106,37 @@ padding-right: 2em;
   height: 6em;
 }
 
-.modal-upload-document-container {
-  line-height: 3em;
+.photo-upload-label {
+  overflow: hidden;
+  position: relative;
+
+    input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      top: 0;
+      left: 0;
+      visibility: hidden;
+    }
+      span {
+        display: block;
+        color: #fff;
+        // text-transform: uppercase;
+        background: $dark-header-color;
+        font-family: $headline-font;
+        font-size: .75em;
+        width: 8.75em;
+        padding: .5em;
+        margin: 1em 0 .75em;
+        vertical-align: middle;
+        border-radius: 5px;
+      }
+
+      span:hover {
+        cursor: pointer;
+        background: $dark-header-hover;
+        transition: .3s;
+      }
 }
 
 /************************************
