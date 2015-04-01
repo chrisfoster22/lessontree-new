@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
     collection do
       get 'upload_file'
+      get 'branch'
       post 'create_from_upload'
     end
 

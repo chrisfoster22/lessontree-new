@@ -1,0 +1,28 @@
+<% if @document.errors.any? %>
+  <ul>
+    <%= @document.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div class="edit-document-wysiwyg-containter">
+  <div>
+    <%= form_for(@document, multipart: true) do |f| %>
+      <div class="edit-document-title-field-container">
+
+        <%= f.text_field :title, placeholder: "Document Title" %>
+        <div>Add document to Lesson
+          <%= f.select :lesson_id, options_from_collection_for_select(@lessons,
+             :id, :topic, params[:lesson_id]), {}, {class: "select-menu"} %>
+        </div>
+      </div>
+      <div class="editor-container">
+        <%= f.cktext_area :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'simple'} } %>
+      </div>
+      <div class="edit-document-save-container">
+        <%= f.submit "Save Document", :class => "save-button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -21,6 +21,7 @@
  @import "jquery.fancybox-buttons";
  @import "jquery.fancybox-thumbs";
  @import "diffy";
+ @import "fancybox_styles";
  @import "font";
 //  @import "fonts";
 //  @import "colors";
@@ -203,6 +204,7 @@
 .doc-show-iframe {
   width: 100%;
   height: 600px;
+  padding: 10px;
 }
 
 .doc-link {

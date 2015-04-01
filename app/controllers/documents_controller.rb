@@ -19,6 +19,14 @@ class DocumentsController < ApplicationController
     #     title: Document.find_by_id(params[:document_id]).title)
   end
 
+  def branch
+    @document = Document.new(
+        title: Document.find_by_id(params[:document_id]).title,
+        content: Document.find_by_id(params[:document_id]).content,
+        lesson_id: params[:lesson_id])
+    @lessons = Lesson.where(user_id: current_user.id)
+  end
+
   def create
     @document = Document.create(document_params)
     if @document.save

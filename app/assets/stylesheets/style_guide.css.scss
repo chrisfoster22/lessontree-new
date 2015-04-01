@@ -253,7 +253,7 @@ list-style: none;
   margin-left: 0px;
   padding-bottom: 6em;
   overflow: hidden;
-  height: 1164px 523px;
+  max-height: 1164px 523px;
 }
 
 h1 {
@@ -456,6 +456,7 @@ SELECT DROPDOWN BUTTON
   border-radius: none;
   border: none;
   padding: 2em;
+  position: absolute;
 }
 
 
@@ -490,7 +491,6 @@ SELECT DROPDOWN BUTTON
   width: 50%;
   margin-right: 12em;
   color: $dark-header-color;
-
 }
 
 .user-profile-information {
@@ -647,6 +647,7 @@ HOMEPAGE LESSON PREVIEWS
   margin: 2em auto 6em;
   width: 65%;
   text-align: left;
+  position: relative;
   label, p.list {
     color: $alt-top-bg-hover;
     font-family: $headline-font;
@@ -3090,6 +3091,7 @@ padding-right: 2em;
   font-size: 1.2em;
   font-weight: bolder;
   color: $dark-header-color;
+  position: absolute;
 }
 
 .document-viewer {
@@ -3105,6 +3107,10 @@ padding-right: 2em;
 .show-lesson-page-shim {
   width: 100%;
   height: 6em;
+}
+
+.modal-upload-document-container {
+  line-height: 3em;
 }
 
 /************************************
