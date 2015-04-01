@@ -41,7 +41,7 @@
 // }
 @font-face {
 font-family: 'whatever it takes bold';
-src: url('/assets/whatever it takes bold.ttf') format("truetype");
+src: asset-url('/assets/whatever it takes bold.ttf') format("truetype");
 }
 .thread {
 }
