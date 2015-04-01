@@ -2946,18 +2946,22 @@ padding-right: 2em;
 ************************************/
 
 .checkbox-wrapper {
-  margin: 2em auto 1em;
-  width: 250px;
   text-align: center;
+  margin: 2em auto 18em;
+  width: 350px;
 }
 
 .checkbox-grade-container {
-  margin-top: 1em;
+  float: right;
+  display: inline-block;
 }
 
+.checkbox-subject-container {
+    float:left;
+    display: inline-block;
+}
 .checkbox-subjects, .checkbox-grades {
   text-align: left;
-  margin-left: 5em;
   line-height: 1.4em;
   font-family: $headline-font;
   color: #666;
@@ -2967,7 +2971,6 @@ padding-right: 2em;
   font-family: $headline-font;
   color: $alt-top-bg-color;
   text-align: left;
-  margin-left: 5em;
   font-weight: bolder;
 }
 
