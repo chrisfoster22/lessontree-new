@@ -48,11 +48,14 @@
       <div class="edit-profile-grades-menu-container">
         <p>Choose a file</p>
         <div class="upload-photo-wrapper">
-          <%= f.file_field :avatar, placeholder: "Profile Pic", class: "upload-photo-menu"%>
+          <label class="photo-upload-label">
+            <span>Upload Photo</span>
+            <%= f.file_field :avatar, placeholder: "Profile Pic", class: "upload-photo-menu"%>
+          </label>
         </div>
         <div>
           <%= f.collection_select :grade_level_id, all_grades, :id, :title, {},
-              {class: "grade-select-menu"} %>
+              {class: "grade-select-menu-edit-profile"} %>
         </div>
       </div>
     </div>
