@@ -22,6 +22,7 @@
  @import "jquery.fancybox-thumbs";
  @import "diffy";
  @import "fancybox_styles";
+ @import "font";
 //  @import "fonts";
 //  @import "colors";
 //  @import "elisha_style_guide";
@@ -35,6 +36,11 @@
 //  @import "footer";
 //  @import "aaron_style_guide";
 //
+
+// @font-face {
+//   font-family: 'REIS-Regular';
+//   src: url('/assets/REIS-Regular.otf') format("truetype");
+// }
 
 .thread {
 }
@@ -184,7 +190,6 @@
 
 .document-preview {
   border: 1px solid $text-button-color;
-  padding: 65px;
 }
 
 .document-meta-data {
@@ -213,4 +218,15 @@
   align: left;
   position: relative;
   right: 350px;
+}
+
+.diff {
+  width: 80%;
+}
+
+
+.star-box-link {
+  a {
+    text-decoration: none;
+  }
 }
