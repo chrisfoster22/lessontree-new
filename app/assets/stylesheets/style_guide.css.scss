@@ -454,7 +454,7 @@ SELECT DROPDOWN BUTTON
   PROFILE PAGE MAIN WRAPPER
 *****************************************/
 .profile-page-main-wrapper {
-    margin: 3em 0 7em;
+    margin: 3em 0 14em;
 }
 
 .profile-page-user-photo-wrapper {
@@ -468,8 +468,8 @@ SELECT DROPDOWN BUTTON
 }
 
 .profile-page-user-photo {
-  width: 90px;
-  height: 90px;
+  width: 85px;
+  height: 85px;
   border-radius: 50%;
   display: inline;
   vertical-align: bottom;
@@ -485,7 +485,7 @@ SELECT DROPDOWN BUTTON
 }
 
 .user-profile-information {
-  line-height: 1.5em;
+  line-height: 2em;
   font-family: $headline-font;
   font-size: .95em;
   // color: #b9bdbd;
