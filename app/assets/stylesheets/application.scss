@@ -183,7 +183,6 @@
 
 .document-preview {
   border: 1px solid $text-button-color;
-  padding: 65px;
 }
 
 .document-meta-data {
@@ -212,4 +211,8 @@
   align: left;
   position: relative;
   right: 350px;
+}
+
+.diff {
+  width: 80%;
 }

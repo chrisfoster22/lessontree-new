@@ -34,7 +34,7 @@
   <div class="document-preview">
 
     <div class="document-viewer">
-      <%= @document.content.html_safe %>
+      <iframe src=<%= "#{document_frame_document_path(@document)}" %> class="doc-show-iframe"></iframe>
     </div>
 
   </div>
