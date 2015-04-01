@@ -7,7 +7,7 @@
     </ul>
   </div>
     <ul class="document-page-top-toolbar-list">
-      <% if @document.upload.url == "/uploads/original/missing.png" && current_user.lessons.count > 0 %>
+      <% if @document.upload.url == "/uploads/original/missing.png" && current_user.lessons.count > 0 if current_user %>
       <a href=<%= "#{branch_documents_path(document_id: @document.id)}" %>>
         <li class="document-page-top-toolbar-edit"><i class="fa fa-code-fork"></i><span class="document-page-edit">Branch</span></li>
       </a>
