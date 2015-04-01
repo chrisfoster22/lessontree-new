@@ -11,9 +11,9 @@
       <a href=<%= "#{version_history_document_path(@document)}" %>>
         <li class="document-page-top-toolbar-history"><i class="fa fa-history"></i><span class="document-page-history">History</span></li>
       </a>
-    <a href=<%= "#{rollback_document_version_path(@document, @version)}" %>>
-      <li class="document-page-top-toolbar-history"><i class="fa fa-fast-backward"></i><span class="document-page-history">Rollback</span></li>
-    </a>
+
+      <li class="document-page-top-toolbar-history"><i class="fa fa-fast-backward"></i><span class="document-page-history"><%= link_to 'Rollback', rollback_document_version_path(@document, @version), method: 'PATCH' %></span></li>
+
   </div>
 </section>
 

@@ -237,3 +237,7 @@
 
 .empty {
 }
+
+.fa-fast-backward::before {
+  color: $button-bg-color;
+}
