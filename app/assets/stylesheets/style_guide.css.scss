@@ -3018,7 +3018,7 @@ padding-right: 2em;
   font-family: $headline-font;
   max-width: 170px;
 }
-// 
+//
 // .document-page-doc-list-containter li {
 //   max-width: 170px;
 // }
@@ -3037,14 +3037,19 @@ padding-right: 2em;
   margin-top: .5em;
   color: $button-bg-color;
   text-decoration: underline;
-  line-height: 1.7em;
+  line-height: 1.1em;
+}
+
+.document-page-doc {
+  margin-bottom: 1em;
 }
 
 .document-page-doc-list-create {
-  margin: 1.5em 0 0;
+  margin: 2em 0 0;
 }
 
 .document-page-create {
+  margin-top: 2em;
   padding-left: .5em;
   font-size: 1.1em;
 }
@@ -3064,14 +3069,27 @@ padding-right: 2em;
 .document-page-headline {
   font-family: $headline-font;
   display: inline;
+  color: #807d7f;
 }
 
 .headline-container {
   float: left;
+  text-align: left;
   max-width: 300px;
+  font-size: 1.2em;
+  font-weight: bolder;
+  color: $dark-header-color;
 }
 
+.document-viewer {
+  font-family: $headline-font;
+  margin: 0;
+  color: #666;
+}
 
+.document-page-doc-upload {
+  margin-top: 1em;
+}
 
 /************************************
               FOOTER
