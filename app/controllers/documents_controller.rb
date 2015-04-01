@@ -14,6 +14,9 @@ class DocumentsController < ApplicationController
 
   def new
     @document = Document.new(lesson_id: params[:lesson_id])
+    # @document = Document.new(
+    #     content: Document.find_by_id(params[:document_id]).content,
+    #     title: Document.find_by_id(params[:document_id]).title)
   end
 
   def create
