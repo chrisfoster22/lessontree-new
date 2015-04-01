@@ -253,7 +253,8 @@ list-style: none;
   margin-left: 0px;
   padding-bottom: 6em;
   overflow: hidden;
-  height: 1164px 523px;
+  max-height: 523px;
+    background-repeat: no-repeat;
   .expander a{
     color: white;
   }
@@ -275,6 +276,7 @@ h1 {
   text-align: center;
   text-shadow: -1px -1px $alt-gray-color;
   font-size: 1.25em;
+  margin-top: 2em;
   position: relative;
   right: 13px;
 }
@@ -416,11 +418,13 @@ SELECT DROPDOWN BUTTON
     font-size: $expander-toggle-size;
     margin-bottom: $expander-toggle-size;
     padding-bottom: .5em;
+    color: white;
 
     &:before {
       font-size: $expander-arrow-width;
       margin-right: 0.5em;
       content: "\25BC";
+      color: white;
     }
   }
 
@@ -428,23 +432,29 @@ SELECT DROPDOWN BUTTON
     &:before {
       font-size: $expander-arrow-width;
       content: "\25BA";
+      color: white;
 
     }
   }
 
   .expander-hidden + .expander-content {
     display: none;
+    color: white;
   }
 }
 
 .expander {
   position: relative;
+  // background-color: white;
 }
 
 .grades-select-menu-container, .subjects-select-menu-container {
     margin-top: .75em;
     text-align: center;
     display: inline-block;
+    color: red;
+    background-color: white;
+
 }
 
 .select-menu {
@@ -459,7 +469,9 @@ SELECT DROPDOWN BUTTON
   border-radius: none;
   border: none;
   padding: 2em;
-  position: absolute;
+  // position: absolute;
+  background-color: white;
+  color: $alt-top-bg-color;
 }
 
 
@@ -599,11 +611,13 @@ SELECT DROPDOWN BUTTON
 
   .expander-hidden + .expander-content {
     display: none;
+    color: white;
   }
 }
 
 .expander-content {
   margin-top: 1em;
+  color: white;
 }
 
 .expander {
@@ -717,8 +731,6 @@ HOMEPAGE LESSON PREVIEWS
   background-color: #fcfffe;
   border: 1px solid #eee;
   box-shadow: 0 2px 5px rgba(0,0,0,0.18);
-
-
 }
 
 .lesson-preview-subject-list, .lesson-preview-pipe, .lesson-preview-grade-list,  {
@@ -2847,7 +2859,7 @@ PROFILE PAGE LESSON VIEW
   margin-bottom: 1em;
 
 }
-.grade-select-menu  {
+.grade-select-menu, .grade-select-menu-edit-profile  {
   display: block;
   // text-transform: uppercase;
   background: $alt-top-bg-color;
@@ -2859,7 +2871,16 @@ PROFILE PAGE LESSON VIEW
   border-radius: none;
   border: none;
   padding: 2em;
+}
 
+.grade-select-menu-edit-profile {
+  margin: 0 auto 0;
+}
+
+.grade-select-menu-edit-profile:hover {
+  background: $alt-top-bg-hover;
+  transition: .3s;
+  cursor: pointer;
 }
 .expander-trigger expander-hidden {
   font-size: 2.4em;
@@ -3022,7 +3043,7 @@ padding-right: 2em;
 }
 
 .document-page-edit, .document-page-history, .document-page-delete {
-  margin-left: 1em;
+  margin-left: .4em;
   font-family: $headline-font;
   font-size: 1em;
 }
@@ -3112,8 +3133,37 @@ padding-right: 2em;
   height: 6em;
 }
 
-.modal-upload-document-container {
-  line-height: 3em;
+.photo-upload-label {
+  overflow: hidden;
+  position: relative;
+
+    input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      top: 0;
+      left: 0;
+      visibility: hidden;
+    }
+      span {
+        display: block;
+        color: #fff;
+        // text-transform: uppercase;
+        background: $dark-header-color;
+        font-family: $headline-font;
+        font-size: .75em;
+        width: 8.75em;
+        padding: .5em;
+        margin: 1em 0 .75em;
+        vertical-align: middle;
+        border-radius: 5px;
+      }
+
+      span:hover {
+        cursor: pointer;
+        background: $dark-header-hover;
+        transition: .3s;
+      }
 }
 
 /************************************
