@@ -254,6 +254,9 @@ list-style: none;
   padding-bottom: 6em;
   overflow: hidden;
   height: 1164px 523px;
+  .expander a{
+    color: white;
+  }
 }
 
 h1 {
@@ -3263,7 +3266,4 @@ footer {
 .expander {
   font-size: 1.05em;
   overflow: hidden;
-  a {
-    color: white;
-  }
 }
