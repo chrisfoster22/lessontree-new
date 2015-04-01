@@ -9,10 +9,11 @@
           <li class="pp-lesson-subject-list"><%= formatted_lesson_grade_levels(l) if l %></li>
           <li class="pp-lesson-pipe">|</li>
           <li class="pp-lesson-grade-list"><%= formatted_lesson_subjects(l) if l %></li>
+          <li class="pp-lesson-pipe">| </li>
+          <li class="pp-lesson-grade-list star-space"> <%= star_count(l) if l %><%= " " %><%= (icon('star')) %></li>
       </ul>
       <ul>
-        <li class="icon-star"></li>
-        <li class="pp-ranking"><%= star_count(l) if l %></li>
+
       </ul>
     </div>
     <% end %>

@@ -10,6 +10,11 @@ class DocumentsController < ApplicationController
   end
 
   def show
+    if current_user && Star.find_by(lesson_id: @document.lesson.id, user_id: current_user.id)
+      @starred = true
+    else
+      @starred = false
+    end
   end
 
   def new
@@ -61,6 +66,11 @@ class DocumentsController < ApplicationController
   end
 
   def version_history
+    if current_user && Star.find_by(lesson_id: @document.lesson.id, user_id: current_user.id)
+      @starred = true
+    else
+      @starred = false
+    end
   end
 
   private

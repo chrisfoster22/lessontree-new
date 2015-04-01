@@ -127,3 +127,39 @@ CKEDITOR.on('instanceReady', function (e) {
 CKEDITOR.on('instanceReady', function (e) {
   $('.cke_bottom').css('background','#b6ded4');
 });
+
+$(function() {
+
+
+    $('.star-ranking').click(function () {
+      var clicked = $(this);
+      $('.icon-star').addClass('liked');
+      var ranking = $('.ranking');
+      ranking.text(Number(ranking.text()) + 1);
+      $.ajax({
+        type: "POST",
+        url: "/stars",
+        data: { lesson_id: this.id }
+      })//.done(function () {
+      //   var parent = clicked.closest('ul');
+      //   $('.icon-star').addClass('liked');
+      //   var ranking = $('.ranking', parent);
+      //   ranking.text(Number(ranking.text()) + 1);
+      // });
+    });
+
+
+
+  $('.favorite').on("click", function() {
+    var clickedItem = $(this);
+
+    $.ajax({
+      type: "POST",
+      url: "/stars",
+      data: { lesson_id: this.id }
+    }).done(function () {
+      // TODO: update the UI...
+
+    });
+  });
+});
