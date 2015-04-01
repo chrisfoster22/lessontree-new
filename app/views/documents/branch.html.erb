@@ -12,8 +12,10 @@
       <div class="edit-document-title-field-container">
 
         <%= f.text_field :title, placeholder: "Document Title" %>
-        <%= f.select :lesson_id, options_from_collection_for_select(@lessons,
-             :id, :topic, params[:lesson_id]), {include_blank: "Add to Lesson"}, {class: "select-menu"} %>
+        <div>Add document to Lesson
+          <%= f.select :lesson_id, options_from_collection_for_select(@lessons,
+             :id, :topic, params[:lesson_id]), {}, {class: "select-menu"} %>
+        </div>
       </div>
       <div class="editor-container">
         <%= f.cktext_area :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'simple'} } %>
