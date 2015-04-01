@@ -16,34 +16,17 @@
     <p class="lesson-preview-description"><%= @document.lesson.description.html_safe %></p>
   </div>
 
+  <section class="document-page-full-document" id="full-document-show">
 
-<section class="document-page-full-document" id="full-document-show">
-
-  <% if @document %>
-    <%= render 'document_version_changes' %>
-  <% else %>
-  <section>
-    <br>
-    <br>
-    <br>
+    <% if @document %>
+      <%= render 'document_version_changes' %>
+    <% else %>
+    <section>
+      <br>
+      <br>
+      <br>
+    </section>
+    <% end %>
   </section>
-  <% end %>
-</section>
-
-<div class="edit-save-buttons-wrapper">
-  <%= link_to 'Back', version_history_document_path(@document.id), class: 'back-button' %></span>
-  <span class="diffy-rollback-link"><%= link_to 'Rollback', rollback_document_version_path(@document, @version), class: 'edit-button', method: 'PATCH' %></span>
-</div>
-
-  <div class="edit-save-buttons-wrapper">
-    <div class="nl">
-        <div></div>
-    </div>
-    <div class="edit-save-buttons-wrapper">
-        <div></div>
-    </div>
-  </div>
-
-  <div class="diffy-page-spacer"></div>
 
 </section>
