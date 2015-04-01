@@ -9,8 +9,12 @@
   </div>
 
   <div class="lesson-preview-description-container">
-    <ul class="star-ranking">
-    <li class="icon-star"></li>
+    <ul class="star-ranking" id=<%="#{@document.lesson.id}"%>>
+      <% if @starred == false %>
+        <li class="icon-star"></li>
+      <% else %>
+        <li class="icon-star liked"></li>
+      <% end %>
     <li class="ranking"><%= @document.lesson.stars.count %></li>
     </ul>
     <p class="lesson-preview-description"><%= @document.lesson.description.html_safe %></p>

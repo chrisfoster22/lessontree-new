@@ -3,6 +3,11 @@ class VersionsController < ApplicationController
   before_action :set_document_and_version, only: [:diff, :rollback, :destroy]
 
   def diff
+    if current_user && Star.find_by(lesson_id: @document.lesson.id, user_id: current_user.id)
+      @starred = true
+    else
+      @starred = false
+    end
   end
 
   def rollback

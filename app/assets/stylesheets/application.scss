@@ -23,7 +23,9 @@
  @import "jquery.fancybox-thumbs";
  @import "diffy";
  @import "fancybox_styles";
-
+ @import "font";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
 //  @import "fonts";
 //  @import "colors";
 //  @import "elisha_style_guide";
@@ -231,4 +233,7 @@
   a {
     text-decoration: none;
   }
+}
+
+.empty {
 }

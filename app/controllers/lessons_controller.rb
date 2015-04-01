@@ -9,10 +9,15 @@ class LessonsController < ApplicationController
   end
 
   def show
-    @star = Star.new
+    @star = Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
     @created_documents = Document.where("lesson_id = #{@lesson.id} AND content IS NOT NULL").page(params[:page]).per(1)
     @uploaded_documents = Document.where("lesson_id = #{@lesson.id} ANDcontent IS NULL").page(params[:page]).per(1)
     @document = @lesson.documents.first
+    if current_user && Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
+      @starred = true
+    else
+      @starred = false
+    end
     # documents = @lesson.documents
     # @uploaded_documents = []
     # @created_documents = []
