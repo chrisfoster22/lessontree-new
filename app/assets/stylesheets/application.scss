@@ -21,6 +21,7 @@
  @import "jquery.fancybox-buttons";
  @import "jquery.fancybox-thumbs";
  @import "diffy";
+ @import "font";
 //  @import "fonts";
 //  @import "colors";
 //  @import "elisha_style_guide";
@@ -39,10 +40,7 @@
 //   font-family: 'REIS-Regular';
 //   src: url('/assets/REIS-Regular.otf') format("truetype");
 // }
-@font-face {
-font-family: 'whatever it takes bold';
-src: asset-url('/assets/whatever it takes bold') format("truetype");
-}
+
 .thread {
 }
 .comment {
