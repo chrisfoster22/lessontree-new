@@ -16,17 +16,19 @@
     <p class="lesson-preview-description"><%= @document.lesson.description.html_safe %></p>
   </div>
 
-  <section class="document-page-full-document" id="full-document-show">
+<section class="document-page-full-document-history" id="full-document-show-history">
 
-    <% if @document %>
-      <%= render 'document_version_changes' %>
-    <% else %>
-    <section>
-      <br>
-      <br>
-      <br>
+  <% if @document %>
+    <%= render 'document_version_changes' %>
+  <% else %>
+  <section>
+    <br>
+    <br>
+    <br>
+
     </section>
     <% end %>
+
   </section>
 
 </section>

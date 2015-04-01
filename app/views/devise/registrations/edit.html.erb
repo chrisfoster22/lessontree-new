@@ -47,8 +47,8 @@
     <div id="js-expander-content" class="expander-content">
       <div class="edit-profile-grades-menu-container">
         <p>Choose a file</p>
-        <div>
-          <%= f.file_field :avatar, placeholder: "Profile Pic" %>
+        <div class="upload-photo-wrapper">
+          <%= f.file_field :avatar, placeholder: "Profile Pic", class: "upload-photo-menu"%>
         </div>
         <div>
           <%= f.collection_select :grade_level_id, all_grades, :id, :title, {},
