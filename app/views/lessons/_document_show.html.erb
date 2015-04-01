@@ -7,6 +7,9 @@
     </ul>
   </div>
     <ul class="document-page-top-toolbar-list">
+      <a href=<%= "#{branch_documents_path(document_id: @document.id)}" %>>
+        <li class="document-page-top-toolbar-edit"><i class="fa fa-code-fork"></i><span class="document-page-edit">Branch</span></li>
+      </a>
       <% if @document.lesson.user == current_user %>
       <a href=<%= "#{edit_document_path(@document)}" %>>
         <li class="document-page-top-toolbar-edit"><i class="fa fa-pencil-square-o"></i><span class="document-page-edit">Edit</span></li>
