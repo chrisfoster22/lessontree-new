@@ -1,6 +1,7 @@
 class Document < ActiveRecord::Base
   belongs_to :lesson
   validates_presence_of :title
+  validates_presence_of :lesson_id
 
   has_paper_trail :only => [:title, :content]
 
