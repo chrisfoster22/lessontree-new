@@ -253,8 +253,10 @@ list-style: none;
   margin-left: 0px;
   padding-bottom: 6em;
   overflow: hidden;
+  max-height: 867px;
   max-height: 1164px 523px;
   height: 1164px 523px;
+    background-repeat: no-repeat;
   .expander a{
     color: white;
   }
@@ -276,6 +278,7 @@ h1 {
   text-align: center;
   text-shadow: -1px -1px $alt-gray-color;
   font-size: 1.25em;
+  margin-top: 2em;
   position: relative;
   right: 13px;
 }
@@ -417,11 +420,13 @@ SELECT DROPDOWN BUTTON
     font-size: $expander-toggle-size;
     margin-bottom: $expander-toggle-size;
     padding-bottom: .5em;
+    color: white;
 
     &:before {
       font-size: $expander-arrow-width;
       margin-right: 0.5em;
       content: "\25BC";
+      color: white;
     }
   }
 
@@ -429,23 +434,29 @@ SELECT DROPDOWN BUTTON
     &:before {
       font-size: $expander-arrow-width;
       content: "\25BA";
+      color: white;
 
     }
   }
 
   .expander-hidden + .expander-content {
     display: none;
+    color: white;
   }
 }
 
 .expander {
   position: relative;
+  // background-color: white;
 }
 
 .grades-select-menu-container, .subjects-select-menu-container {
     margin-top: .75em;
     text-align: center;
     display: inline-block;
+    color: red;
+    background-color: white;
+
 }
 
 .select-menu {
@@ -460,7 +471,9 @@ SELECT DROPDOWN BUTTON
   border-radius: none;
   border: none;
   padding: 2em;
-  position: absolute;
+  // position: absolute;
+  background-color: white;
+  color: $alt-top-bg-color;
 }
 
 
@@ -600,11 +613,13 @@ SELECT DROPDOWN BUTTON
 
   .expander-hidden + .expander-content {
     display: none;
+    color: white;
   }
 }
 
 .expander-content {
   margin-top: 1em;
+  color: white;
 }
 
 .expander {
