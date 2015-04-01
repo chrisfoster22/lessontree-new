@@ -35,6 +35,14 @@
 //  @import "aaron_style_guide";
 //
 
+// @font-face {
+//   font-family: 'REIS-Regular';
+//   src: url('/assets/REIS-Regular.otf') format("truetype");
+// }
+@font-face {
+font-family: 'whatever it takes bold';
+src: url('/assets/whatever it takes bold.ttf') format("truetype");
+}
 .thread {
 }
 .comment {
@@ -212,4 +220,10 @@
   align: left;
   position: relative;
   right: 350px;
+}
+
+.star-box-link {
+  a {
+    text-decoration: none;
+  }
 }

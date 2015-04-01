@@ -51,7 +51,11 @@
 
   <%= commontator_thread(@lesson) %>
 </section>
-
+<span class="star-box-link">
+<a href=<%= "#{edit_document_path(@document)}" %>>
+  <li class="document-page-top-toolbar-edit"><li class="icon-star"></li><span class="document-page-edit"></span></li>
+</a>
+</span>
 <% if @lesson.user == current_user %>
   <div class="delete-lesson-button-wrapper">
 
