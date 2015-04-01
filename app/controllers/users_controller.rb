@@ -3,14 +3,16 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_id(params[:id])
-    stars = Star.where(user_id: current_user.id)
-    @starred_lessons = []
-    stars.each do |s|
-      lesson = Lesson.find_by(id: s.lesson_id)
-      @starred_lessons << lesson
+    if current_user
+      @user = User.find_by_id(params[:id])
+      stars = Star.where(user_id: current_user.id)
+      @starred_lessons = []
+      stars.each do |s|
+        lesson = Lesson.find_by(id: s.lesson_id)
+        @starred_lessons << lesson
+      end
+      @starred_lessons
     end
-    @starred_lessons
   end
 
   def index

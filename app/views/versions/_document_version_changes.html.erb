@@ -1,0 +1,42 @@
+
+<section class="document-page-top-toolbar-container">
+  <div class="document-page-top-toolbar">
+    <div class="headline-container">
+    <ul class="document-page-headline-list">
+      <li class="document-page-headline"><%= @document.title %></li>
+    </ul>
+  </div>
+  <div>
+    <ul class="document-page-top-toolbar-list">
+      <a href=<%= "#{version_history_document_path(@document)}" %>>
+        <li class="document-page-top-toolbar-history"><i class="fa fa-history"></i><span class="document-page-history">History</span></li>
+      </a>
+    <a href=<%= "#{rollback_document_version_path(@document, @version)}" %>>
+      <li class="document-page-top-toolbar-history"><i class="fa fa-fast-backward"></i><span class="document-page-history">Rollback</span></li>
+    </a>
+  </div>
+</section>
+
+  <div class="document-preview">
+    <div class='well diff'>
+      <% if @version.reify.title != @document.title %>
+        <p class="changes-to-title">
+          Changes to Title:
+          <%= diff(@version.reify.title, @document.title) %>
+        </p>
+      <% end %>
+      <br>
+      <br>
+      <% if @version.reify.content != @document.content %>
+        <p class="changes-to-content">
+          Changes to Content:
+          <%= diff(@version.reify.content, @document.content) %>
+        </p>
+      <% end %>
+    </div>
+    <p class="version-author-information">
+    <%= "Version authored by #{find_version_author_name(@version)} on
+        #{@version.created_at.strftime("%A, %B %d at %I:%M%p") } event:
+        '#{@version.event.humanize}'." %>
+    </p>
+  </div>
