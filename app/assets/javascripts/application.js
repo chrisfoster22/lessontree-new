@@ -148,18 +148,4 @@ $(function() {
       // });
     });
 
-
-
-  $('.star-ranking').on("click", function() {
-    var clickedItem = $(this);
-
-    $.ajax({
-      type: "POST",
-      url: "/stars",
-      data: { lesson_id: this.id }
-    }).done(function () {
-      // TODO: update the UI...
-
-    });
   });
-});
