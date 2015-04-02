@@ -140,12 +140,10 @@ $(function() {
         type: "POST",
         url: "/stars",
         data: { lesson_id: this.id }
-      })//.done(function () {
+      }) //.done(function () {
       //   var parent = clicked.closest('ul');
       //   $('.icon-star').addClass('liked');
       //   var ranking = $('.ranking', parent);
       //   ranking.text(Number(ranking.text()) + 1);
-      // });
+      });
     });
-
-  });
