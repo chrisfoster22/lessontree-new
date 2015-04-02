@@ -249,11 +249,12 @@ list-style: none;
   color: white;
   background-image: url("http://test.nextstepscholars.com/wp-content/uploads/2014/06/apple-Chalkboard.jpg");
   background-size: 100%;
-  // background-attachment: fixed;
+  background-attachment: fixed;
   margin-left: 0px;
   padding-bottom: 6em;
   overflow: hidden;
-  max-height: 553px;
+  // max-height: 553px;
+  max-height: 7293px;
     background-repeat: no-repeat;
   .expander a{
     color: white;
@@ -750,14 +751,6 @@ HOMEPAGE LESSON PREVIEWS
   line-height: 1.4em;
 }
 
-.star-ranking {
-  text-align: right;
-  margin-top: -33px;
-  width: 100px;
-  margin-left: 720px;
-  position: relative;
-  top: -7px;
-}
 
 .icon-star {
   color: #b9bdbd;
@@ -1520,16 +1513,22 @@ input[type=checkbox].css-checkbox {
   font-weight: 400;
   color: $dark-header-color;
 }
-
 .star-ranking {
-  // vertical-align: text-baseline;
-  text-align: left;
-  margin-top: -33px;
-  position: relative;
-  width: 100px;
-  padding-left: 20px;
-  top: -7px;
+vertical-align: text-baseline;
+text-align: right;
+margin-top: -33px;
+position: relative
 }
+// .star-ranking {
+//   vertical-align: text-baseline;
+//   text-align: left;
+//   margin-top: -33px;
+//   position: relative;
+//   width: 100px;
+//   padding-left: 20px;
+//   top: -7px;
+//   margin-left: 720px;
+// }
 
 .icon-star {
   color: #b9bdbd;

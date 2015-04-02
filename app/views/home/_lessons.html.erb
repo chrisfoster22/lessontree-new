@@ -1,4 +1,5 @@
 <% @lessons.each do |l| %>
+<section class="lesson-preview-container">
   <div class="lesson-preview-title-container">
 
     <%= link_to l do %>
@@ -25,6 +26,7 @@
     <div class="lesson-preview-description-container">
       <p class="lesson-preview-description"><%= l.description %></p>
     </div>
+  </section>
 <% end %>
 
 <div id="paginator-nested">
