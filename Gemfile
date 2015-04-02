@@ -29,7 +29,7 @@ gem 'diffy'
 gem 'commontator', '~> 4.10.0'
 gem 'kaminari'
 gem 'font-awesome-sass'
-gem 'font-assets'
+gem 'font_assets'
 
 group :development, :test do
   gem 'byebug'
