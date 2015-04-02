@@ -150,7 +150,7 @@ $(function() {
 
 
 
-  $('.favorite').on("click", function() {
+  $('.star-ranking').on("click", function() {
     var clickedItem = $(this);
 
     $.ajax({
