@@ -6,9 +6,9 @@
       <% if current_user %>
         <li class="about-footer"><a href=<%= user_path(current_user.id) %>>My Profile</a></li>
       <% else %>
-        <li class="my-profile-footer"><a href="/users/sign_up">Sign Up</a></li>
+        <li class="about-footer"><a href="/users/sign_up">Sign Up</a></li>
       <% end %>
-      <li class="terms-footer"><a href="#">Terms</a></li>
+        <li class="terms-footer"><a href="#">Terms</a></li>
     </ul>
     <div class="footer-ruler">
   </div>
