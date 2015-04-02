@@ -753,7 +753,7 @@ HOMEPAGE LESSON PREVIEWS
 .star-ranking {
   text-align: right;
   margin-top: -33px;
-  width: 50px;
+  width: 100px;
   margin-left: 720px;
   position: relative;
   top: -7px;
@@ -772,7 +772,7 @@ HOMEPAGE LESSON PREVIEWS
     transform: translateY(-25%);
     font-family: $headline-font;
     font-size: 1.2em;
-    margin-left: .25em;
+    // margin-left: .25em;
     color: #807d7f;
     letter-spacing: .1em;
 }
@@ -1526,6 +1526,7 @@ input[type=checkbox].css-checkbox {
   text-align: right;
   margin-top: -33px;
   position: relative;
+  width: 80px;
   top: -7px;
 }
 
@@ -1539,6 +1540,7 @@ input[type=checkbox].css-checkbox {
   display: inline-block;
   position: relative;
   top: 50%;
+  align: left;
   transform: translateY(-25%);
   font-family: $headline-font;
   font-size: 1.2em;
@@ -3329,6 +3331,7 @@ footer {
 
 .liked {
   color: gold;
+  align:left;
   font-size: 1.5em;
   display: inline;
 }

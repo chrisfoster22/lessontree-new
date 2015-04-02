@@ -6,9 +6,7 @@
       <li class="lesson-preview-pipe">|</li>
       <li class="lesson-preview-grade-list"><%= formatted_lesson_grade_levels(@document.lesson) %></li>
     </ul>
-  </div>
 
-  <div class="lesson-preview-description-container">
     <ul class="star-ranking">
       <% if @starred == false %>
         <li class="icon-star"></li>
@@ -17,6 +15,8 @@
       <% end %>
     <li class="ranking"><%= @document.lesson.stars.count %></li>
     </ul>
+  </div>
+  <div class="lesson-preview-description-container">
     <p class="lesson-preview-description"><%= @document.lesson.description.html_safe %></p>
   </div>
 </section>

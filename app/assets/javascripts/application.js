@@ -133,8 +133,8 @@ $(function() {
 
     $('.star-ranking').click(function () {
       var clicked = $(this);
-      $('.icon-star').addClass('liked');
-      var ranking = $('.ranking');
+      clicked.find('.icon-star').addClass('liked');
+      var ranking = clicked.find('.ranking');
       ranking.text(Number(ranking.text()) + 1);
       $.ajax({
         type: "POST",
