@@ -1,6 +1,13 @@
 <% @lessons.each do |l| %>
   <div class="lesson-preview-title-container">
-
+    <ul class="star-ranking" id=<%= "#{l.id}" %>>
+      <% if l.starred?(current_user, l)%>
+        <li class="icon-star liked"></li>
+      <% else %>
+        <li class="icon-star"></li>
+      <% end %>
+       <li class="ranking"><%= star_count(l) %></li>
+    </ul>
     <%= link_to l do %>
     <div>
       <h3 class="lesson-preview-title"><%= l.topic %></h3>
@@ -12,14 +19,6 @@
     </div>
     <% end %>
 
-    <ul class="star-ranking" id=<%= "#{l.id}" %>>
-      <% if l.starred?(current_user, l)%>
-        <li class="icon-star liked"></li>
-      <% else %>
-        <li class="icon-star"></li>
-      <% end %>
-       <li class="ranking"><%= star_count(l) %></li>
-    </ul>
     </div>
 
     <div class="lesson-preview-description-container">

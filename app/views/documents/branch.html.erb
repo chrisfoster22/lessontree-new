@@ -9,12 +9,13 @@
 <div class="edit-document-wysiwyg-containter">
   <div>
     <%= form_for(@document, multipart: true) do |f| %>
-      <div class="edit-document-title-field-container">
-
-        <%= f.text_field :title, placeholder: "Document Title" %>
-        <div>Add document to Lesson
+      <div class="edit-document-title-field-container" id="branch-edit">
+        <span class="doc-title"><%= f.text_field :title, placeholder: "Document Title", class: "doc-title" %></span>
+        <div class="add-doc-lesson">Add document to Lesson
+          <label class= "select-label">
           <%= f.select :lesson_id, options_from_collection_for_select(@lessons,
-             :id, :topic, params[:lesson_id]), {}, {class: "select-menu"} %>
+             :id, :topic, params[:lesson_id]), {}, {class: "select-menu-branch-pg"} %>
+        </label>
         </div>
       </div>
       <div class="editor-container">
