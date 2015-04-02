@@ -1,6 +1,6 @@
 # LessonTree
 
-(lessontree.org)
+[Visit the live site!](lessontree.org)
 
 ##Our Mission
 LessonTree is a collaborative community of educators that seeks to promote the creation & distribution of high-quality educational materials.
