@@ -747,12 +747,13 @@ HOMEPAGE LESSON PREVIEWS
 }
 
 .star-ranking {
-  text-align: right;
-  margin-top: -33px;
-  width: 100px;
-  margin-left: 720px;
-  position: relative;
-  top: -7px;
+  float: right;
+//   text-align: right;
+//   margin-top: -33px;
+//   width: 100px;
+//   margin-left: 720px;
+//   position: relative;
+//   top: -7px;
 }
 
 .icon-star {
@@ -1516,13 +1517,13 @@ input[type=checkbox].css-checkbox {
   font-weight: 400;
   color: $dark-header-color;
 }
-.star-ranking {
-
-vertical-align: text-baseline;
-text-align: right;
-margin-top: -33px;
-position: relative
-}
+// .star-ranking {
+//
+// vertical-align: text-baseline;
+// text-align: right;
+// margin-top: -33px;
+// position: relative
+// }
 // .star-ranking {
 //   vertical-align: text-baseline;
 //   text-align: left;
@@ -1912,13 +1913,13 @@ PROFILE PAGE LESSON VIEW
   top: -7px;
 }
 
-.pp-star-rankings-container:nth-child(5){
-  padding-left: .5em;
-  display: inline-block;
-  position: relative;
-  top: 50%;
-  transform: translateY(15%);
-}
+// .pp-star-rankings-container:nth-child(5){
+//   padding-left: .5em;
+//   display: inline-block;
+//   position: relative;
+//   top: 50%;
+//   transform: translateY(15%);
+// }
 
 .pp-ranking {
   display: inline-block;
