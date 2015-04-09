@@ -61,6 +61,8 @@ class LessonsController < ApplicationController
 
   def create
     @lesson = Lesson.create(lesson_params)
+    @subjects = Subject.all
+    @grade_levels = GradeLevel.all
     if @lesson.save
       @lesson.user_id = current_user.id
       @lesson.save!

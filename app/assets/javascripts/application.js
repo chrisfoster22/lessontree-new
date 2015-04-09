@@ -131,11 +131,13 @@ CKEDITOR.on('instanceReady', function (e) {
 $(function() {
 
 
-    $('.star-ranking').click(function () {
+    $('.star-ranking').one('click', function () {
       var clicked = $(this);
       clicked.find('.icon-star').addClass('liked');
+      clicked.find('.icon-star').removeClass('icon-star');
       var ranking = clicked.find('.ranking');
       ranking.text(Number(ranking.text()) + 1);
+      clicked.click=null;
       $.ajax({
         type: "POST",
         url: "/stars",
