@@ -1,0 +1,48 @@
+
+<section class="document-page-top-toolbar-container">
+  <div class="document-page-top-toolbar">
+    <div class="headline-container">
+    <ul class="document-page-headline-list">
+      <li class="document-page-headline"><%= @document.title %></li>
+    </ul>
+  </div>
+    <ul class="document-page-top-toolbar-list">
+      <% if @document.upload.url == "/uploads/original/missing.png" && current_user && current_user.lessons.count > 0 %>
+      <a href=<%= "#{branch_documents_path(document_id: @document.id)}" %>>
+        <li class="document-page-top-toolbar-edit"><i class="fa fa-code-fork"></i><span class="document-page-edit">Branch</span></li>
+      </a>
+      <% end %>
+
+      <% if @document.lesson.user == current_user %>
+      <a href=<%= "#{edit_document_path(@document)}" %>>
+        <li class="document-page-top-toolbar-edit"><i class="fa fa-pencil-square-o"></i><span class="document-page-edit">Edit</span></li>
+      </a>
+      <% end %>
+      <a href=<%= "#{version_history_document_path(@document)}" %>>
+        <li class="document-page-top-toolbar-history"><i class="fa fa-history"></i><span class="document-page-history">History</span></li>
+      </a>
+      <% unless @document.lesson.user == current_user%>
+        <li></li>
+        <% end %>
+      <% if @document.lesson.user == current_user %>
+      <a href=<%= "#{document_path(@document)}" %> data-method="delete">
+        <li class="document-page-top-toolbar-delete"><i class="fa fa-trash-o"></i><span class="document-page-delete">Delete</span></li>
+      </a>
+      <% end %>
+    </ul>
+
+  </div>
+</section>
+<% if @document.content.nil? %>
+  <iframe src=<%= @document.upload.url %> class="doc-show-iframe"></iframe>
+<% else %>
+
+  <div class="document-preview">
+
+    <div class="document-viewer">
+      <iframe src=<%= "#{document_frame_document_path(@document)}" %> class="doc-show-iframe"></iframe>
+    </div>
+
+  </div>
+
+<% end %>

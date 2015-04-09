@@ -1,28 +1,34 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:edit, :show, :update, :destroy, :quick_show]
   before_action :lesson_owner, only: [:edit, :destroy, :update]
+  before_action :authenticate_user!, only: [:create, :new, :create_from_upload,
+                :edit, :update, :destroy]
 
   def index
     @lessons = Lesson.order("created_at DESC")
   end
 
   def show
-    @star = Star.new
-    documents = @lesson.documents
+    @star = Star.find_by(lesson_id: @lesson.id, user_id: current_user.id) if current_user
+    @created_documents = Document.where("lesson_id = #{@lesson.id} AND content IS NOT NULL").page(params[:page]).per(1)
+    @uploaded_documents = Document.where("lesson_id = #{@lesson.id} ANDcontent IS NULL").page(params[:page]).per(1)
+    @document = @lesson.documents.first
     if current_user && Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
       @starred = true
     else
       @starred = false
     end
-    @uploaded_documents = []
-    @created_documents = []
-    documents.each do |d|
-      if d.upload.url != "/uploads/original/missing.png"
-        @uploaded_documents << d
-      else
-        @created_documents << d
-      end
-    end
+    # documents = @lesson.documents
+    # @uploaded_documents = []
+    # @created_documents = []
+    # documents.each do |d|
+    #   if d.upload.url != "/uploads/original/missing.png"
+    #     @uploaded_documents << d
+    #   else
+    #     @created_documents << d
+    #   end
+    # end
+    # @created_documents = Kaminari.paginate_array(@created_documents).page(params[:page]).per(1)
     @thread = Commontator::Thread.find_by(commontable_id: @lesson.id)
   end
 

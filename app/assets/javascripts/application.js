@@ -18,20 +18,18 @@
 
 $(function() {
   $('.star-box').on("click", function() {
-    var val = $(this).prevAll(".rails-id").val();
-    if ($(this).is(':checked')) {
       $.ajax({
         type: "POST",
         url: "/stars",
         data: {lesson_id: this.id}
      });
-    } else {
-      $.ajax({
-        type: "DELETE",
-        url: "/stars/1",
-        data: {lesson_id: this.id}
-     });
-    }
+     // else {
+    //   $.ajax({
+    //     type: "DELETE",
+    //     url: "/stars/1",
+    //     data: {lesson_id: this.id}
+    //  });
+    // }
   });
 });
 
@@ -121,3 +119,31 @@ $(window).scroll(function() {
     mn.removeClass(mns);
   }
 });
+
+CKEDITOR.on('instanceReady', function (e) {
+  $('.cke_top').css('background','#b6ded4');
+});
+
+CKEDITOR.on('instanceReady', function (e) {
+  $('.cke_bottom').css('background','#b6ded4');
+});
+
+$(function() {
+
+
+    $('.star-ranking').click(function () {
+      var clicked = $(this);
+      clicked.find('.icon-star').addClass('liked');
+      var ranking = clicked.find('.ranking');
+      ranking.text(Number(ranking.text()) + 1);
+      $.ajax({
+        type: "POST",
+        url: "/stars",
+        data: { lesson_id: this.id }
+      }) //.done(function () {
+      //   var parent = clicked.closest('ul');
+      //   $('.icon-star').addClass('liked');
+      //   var ranking = $('.ranking', parent);
+      //   ranking.text(Number(ranking.text()) + 1);
+      });
+    });

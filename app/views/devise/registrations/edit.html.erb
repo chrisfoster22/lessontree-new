@@ -1,9 +1,5 @@
 
 <div class="edit-my-profile-page-headline">Edit My Profile</div>
-<div class="edit-my-profile-page-headline-rule-container">
-  <div class="edit-my-profile-page-headline-rule-first"></div>
-  <div class="edit-my-profile-page-headline-triangle"></div>
-</div>
 
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -49,37 +45,20 @@
   <div class="expander">
     <a href="javascript:void(0)" id="js-expander-trigger" class="expander-trigger expander-hidden">Grade I Teach &amp; Upload profile pic</a>
     <div id="js-expander-content" class="expander-content">
-
       <div class="edit-profile-grades-menu-container">
-
-
-<div class="dropdown">
-  <div class="dropdown-container">
-    <p class="dropdown-description">Choose a file</p>
-    <!-- <p class="dropdown-button">pick a pic!</p> -->
-    <ul class="dropdown-menu dropdown-select">
-      <div>
-        <%= f.file_field :avatar, placeholder: "Profile Pic", class: "field-pic"  %>
-      </div>
-      <!-- <li>choose a file</li>
-      <li>or another file</li> -->
-    </ul>
-  </div>
-</div>
-
-
-
-
+        <p>Choose a file</p>
+        <div class="upload-photo-wrapper">
+          <label class="photo-upload-label">
+            <span>Upload Photo</span>
+            <%= f.file_field :avatar, placeholder: "Profile Pic", class: "upload-photo-menu"%>
+          </label>
+        </div>
         <div>
           <%= f.collection_select :grade_level_id, all_grades, :id, :title, {},
-              {class: "grade-select-menu"} %>
+              {class: "grade-select-menu-edit-profile"} %>
         </div>
-
       </div>
-
-
-
-  </div>
+    </div>
   </div>
 
 

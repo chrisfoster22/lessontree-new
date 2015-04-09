@@ -2,9 +2,13 @@
   <div class="footer">
     <h1 class="footer-head"><a href="/">LessonTree</a></h1>
     <ul class="footer-subheads">
-      <li class="about-footer"><a href="/home/about">About</a></li>
-      <li class="signup-footer"><a href="/users/sign_up">Sign Up</a></li>
-      <li class="terms-footer"><a href="#">Terms &#38; Conditions</a></li>
+      <li class="signup-footer"><a href="/home/about">About</a></li>
+      <% if current_user %>
+        <li class="about-footer"><a href=<%= user_path(current_user.id) %>>My Profile</a></li>
+      <% else %>
+        <li class="about-footer"><a href="/users/sign_up">Sign Up</a></li>
+      <% end %>
+        <li class="terms-footer"><a href="#">Terms</a></li>
     </ul>
     <div class="footer-ruler">
   </div>

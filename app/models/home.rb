@@ -2,11 +2,7 @@ class Home < ActiveRecord::Base
   has_many :lessons
   has_many :documents
 
-
-
-  # def self.search(search)
-  #   search_condition = "%" + search + "%"
-  #   find(:all, :conditions => ['title LIKE ? OR description LIKE ?', search_condition, search_condition])
-  # end
-
+  def starred?(user, lesson)
+    user && Star.find_by(lesson_id: @lesson.id, user_id: user.id)
+  end
 end

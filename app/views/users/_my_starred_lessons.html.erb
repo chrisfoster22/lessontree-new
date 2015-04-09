@@ -4,35 +4,18 @@
   <% @starred_lessons.each do |l| %>
     <%= link_to l, class:"pp-lesson-link" do %>
     <div class="pp-lesson-title-container">
-      <h3 class="pp-lesson-title"><%= l.topic %></h3>
+      <h3 class="pp-lesson-title"><%= l.topic if l %></h3>
       <ul>
-          <li class="pp-lesson-subject-list"><%= formatted_lesson_grade_levels(l) %></li>
+          <li class="pp-lesson-subject-list"><%= formatted_lesson_grade_levels(l) if l %></li>
           <li class="pp-lesson-pipe">|</li>
-          <li class="pp-lesson-grade-list"><%= formatted_lesson_subjects(l) %></li>
+          <li class="pp-lesson-grade-list"><%= formatted_lesson_subjects(l) if l %></li>
+          <li class="pp-lesson-pipe">| </li>
+          <li class="pp-lesson-grade-list star-space"> <%= star_count(l) if l %><%= " " %><%= (icon('star')) %></li>
       </ul>
       <ul>
-        <li class="icon-star"></li>
-        <li class="pp-ranking"><%= star_count(l) %></li>
+
       </ul>
     </div>
     <% end %>
   <% end %>
 <% end %>
-
-
-
-<!-- <section class="pp-lesson-container">
-  <a class="pp-lesson-link" href="www.google.com">
-  <div class="pp-lesson-title-container">
-    <h3 class="pp-lesson-title">Whatever Title Goes Here Blahblahblah</h3>
-    <ul class="pp-star-rankings-container">
-        <li class="pp-lesson-subject-list">Social Studies</li>
-        <li class="pp-lesson-pipe">|</li>
-        <li class="pp-lesson-grade-list">1st Grade</li>
-        <li class="pp-lesson-pipe">|</li>
-        <li class="icon-star"></li>
-        <li class="pp-ranking">12</li>
-  </ul>
-  </div>
-  </a>
-</section> -->

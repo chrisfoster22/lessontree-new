@@ -4,12 +4,20 @@ class StarsController < ApplicationController
     @star = Star.new
   end
 
+  def show
+    @star = Star.create
+    @star.lesson_id = params[:id]
+    @star.user_id = current_user.id
+    @star.save!
+    redirect_to lesson_path
+  end
+
   def create
     @star = Star.create
     @star.lesson_id = params[:lesson_id]
     @star.user_id = current_user.id
     @star.save!
-    redirect_to @star, notice: "You have starred a lesson!"
+    redirect_to lesson_path
   end
 
   def update

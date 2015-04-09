@@ -12,6 +12,10 @@ class Lesson < ActiveRecord::Base
 
   acts_as_commontable
 
+  def starred?(user, lesson)
+    user && Star.find_by(lesson_id: lesson.id, user_id: user.id)
+  end
+
   def self.query(params)
     if params.slice(:search, :subject_id, :grade_level_id).values.any?(&:present?)
       lessons = joins(:lesson_subjects)

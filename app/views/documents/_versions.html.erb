@@ -1,4 +1,27 @@
-<h2>Previous Versions</h2>
+<section class="lesson-preview-container">
+  <div class="lesson-preview-title-container">
+    <ul class="star-ranking">
+      <% if @starred == false %>
+        <li class="icon-star"></li>
+      <% else %>
+        <li class="icon-star liked"></li>
+      <% end %>
+      <li class="ranking"><%= @document.lesson.stars.count %></li>
+    </ul>
+    <h3 class="lesson-preview-title"><%= @document.lesson.topic %></h3>
+    <ul>
+      <li class="lesson-preview-subject-list"><%= formatted_lesson_subjects(@document.lesson) %></li>
+      <li class="lesson-preview-pipe">|</li>
+      <li class="lesson-preview-grade-list"><%= formatted_lesson_grade_levels(@document.lesson) %></li>
+    </ul>
+  </div>
+  <div class="lesson-preview-description-container">
+    <p class="lesson-preview-description"><%= @document.lesson.description.html_safe %></p>
+  </div>
+</section>
+
+
+<h2>Previous Versions of <%= @document.title %></h2>
 
 <table class="versions-table">
   <thead>
@@ -29,5 +52,5 @@
 </table>
 
 <div class="back-to-lesson-link-container">
-  <span class="back-to-lesson-link"><%= link_to '<< Back', lesson_path(document.lesson) %></span>
+  <span class="back-to-lesson-link"><%= link_to 'Back', lesson_path(document.lesson) %></span>
 </div>

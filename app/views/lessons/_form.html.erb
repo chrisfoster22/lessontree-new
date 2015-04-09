@@ -1,33 +1,44 @@
 <% if @lesson.errors.any? %>
-  <ul>
-    <%= @lesson.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-    <% end %>
-  </ul>
+ <ul>
+   <%= @lesson.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+   <% end %>
+ </ul>
 <% end %>
 
 <%= form_for(@lesson, multipart: true) do |f| %>
-  <div>
-    <%= f.text_field :topic, placeholder: "Title of my lesson" %>
-  </div>
+ <div>
+   <%= f.text_field :topic, placeholder: "Title of my lesson" %>
+ </div>
 
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <div>
-    <%= f.text_area :description, placeholder: "Description of my lesson" %>
-  </div>
+ <%= f.hidden_field :user_id, value: current_user.id %>
+ <div>
+   <%= f.text_area :description, placeholder: "Description of my lesson" %>
+ </div>
 
-  <div class="checkbox-wrapper">
-    <div>
-      <div class="checkbox-header"> <%= f.label "Subjects" %></div>
-      <%= f.collection_check_boxes :subject_ids, @subjects, :id, :title, :item_wrapper_class => 'checkbox_container' %>
-    </div>
-    <div>
-      <div class="checkbox-header"><%= f.label "Grade Levels" %></div>
-      <%= f.collection_check_boxes :grade_level_ids, @grade_levels, :id, :title, :item_wrapper_class => 'checkbox_container' %>
-    </div>
+ <div class="checkbox-wrapper">
+   <div class="checkbox-subject-container">
+     <div class="checkbox-header"><%= f.label "Subjects" %></div>
+     <%= f.collection_check_boxes :subject_ids, @subjects, :id, :title do |b| %>
+       <div class="checkbox-subjects">
+         <%= b.check_box %>
+         <%= b.label %>
+       </div>
+     <% end %>
+   </div>
+   <div class="checkbox-grade-container">
+     <div class="checkbox-header"><%= f.label "Grade Levels" %></div>
+     <%= f.collection_check_boxes :grade_level_ids, @grade_levels, :id, :title do |b| %>
+       <div class="checkbox-grades">
+         <%= b.check_box %>
+         <%= b.label %>
+       </div>
+     <% end %>
+   </div>
+ </div>
 
-  <div class="save-button-wrapper">
-    <%= f.submit "Save", class: "save-button" %>
-  </div>
+ <div class="save-button-wrapper">
+   <%= f.submit "Save", class: "save-button" %>
+ </div>
 
 <% end %>

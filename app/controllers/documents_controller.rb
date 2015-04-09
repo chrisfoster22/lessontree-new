@@ -1,7 +1,8 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:edit, :show, :update,
-        :destroy, :version_history]
+        :destroy, :version_history, :document_frame]
   before_action :set_lesson, only: [:show, :destroy]
+  before_action :authenticate_user!, only: [:create, :new, :create_from_upload, :edit, :update, :destroy]
   attr_accessor :title, :description
 
   def index
@@ -9,10 +10,26 @@ class DocumentsController < ApplicationController
   end
 
   def show
+    if current_user && Star.find_by(lesson_id: @document.lesson.id, user_id: current_user.id)
+      @starred = true
+    else
+      @starred = false
+    end
   end
 
   def new
     @document = Document.new(lesson_id: params[:lesson_id])
+    # @document = Document.new(
+    #     content: Document.find_by_id(params[:document_id]).content,
+    #     title: Document.find_by_id(params[:document_id]).title)
+  end
+
+  def branch
+    @document = Document.new(
+        title: Document.find_by_id(params[:document_id]).title,
+        content: Document.find_by_id(params[:document_id]).content,
+        lesson_id: params[:lesson_id])
+    @lessons = Lesson.where(user_id: current_user.id)
   end
 
   def create
@@ -22,6 +39,10 @@ class DocumentsController < ApplicationController
     else
       render action: "new"
     end
+  end
+
+  def document_frame
+    render layout: false
   end
 
   def create_from_upload
@@ -56,6 +77,11 @@ class DocumentsController < ApplicationController
   end
 
   def version_history
+    if current_user && Star.find_by(lesson_id: @document.lesson.id, user_id: current_user.id)
+      @starred = true
+    else
+      @starred = false
+    end
   end
 
   private

@@ -16,11 +16,16 @@
  */
  @import "bourbon";
  @import "neat";
+ @import "font";
  @import "style_guide";
  @import "jquery.fancybox";
  @import "jquery.fancybox-buttons";
  @import "jquery.fancybox-thumbs";
  @import "diffy";
+ @import "fancybox_styles";
+ @import "font";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
 //  @import "fonts";
 //  @import "colors";
 //  @import "elisha_style_guide";
@@ -34,156 +39,12 @@
 //  @import "footer";
 //  @import "aaron_style_guide";
 //
-// #new_lesson.new_lesson {
-//   display: center;
-//   padding: 20px;
-//   margin-left: auto;
-//   margin-right: auto;
-//   width: auto;
+
+// @font-face {
+//   font-family: 'REIS-Regular';
+//   src: url('/assets/REIS-Regular.otf') format("truetype");
 // }
-//
-// #lesson-show:after {
-//
-//   content: ".";
-//   display: block;
-//   height: 0;
-//   overflow:hidden;
-//   clear: both;
-//   visibility:hidden;
-// }
-//
-// table {
-//   display: block;
-//   border: none;
-// }
-//
-// .cards:after {
-//   content: ".";
-//   display: block;
-//   height: 0;
-//   overflow:hidden;
-//   clear: both;
-//   visibility:hidden;
-// }
-//
-//
-// // ### I WAS MESSING WITH THE STYLING BELOW HERE FOR YOUR INFO.. -parker ####
-//
-// .button_to {
-//   display: inline;
-// }
-//
-// .devise-login {
-//   font-family: $headline-font, sans-serif;
-//   padding: 0.75em 1.75em;
-//   border-radius: 7.5px;
-//   background-color: $button-bg-color;
-//   font-size: 22px;
-//   color: $header-texts-color;
-//   display: inline;
-// }
-//
-// .devise-login:active {
-//   background-color: #d95353;
-//   color: #e8e3e6;
-// }
-//
-// .devise-login:hover {
-//   background-color: white;
-//   color: #d95353;
-//   .logos {
-//     font-family: 'Dancing Script', cursive;
-//     font-size: 3.7em;
-//     font-weight: bold;
-//     // margin-left: 20px;
-//     // margin-top: 12px;
-//     color: $header-texts-color;
-//   }
-// }
-//
-// .forgot-pass {
-//   font-family: $headline-font, sans-serif;
-//   padding: 0.75em 1.75em;
-//   border-radius: 7.5px;
-//   background-color: $button-bg-color;
-//   font-size: 22px;
-//   color: $header-texts-color;
-//   display: inline;
-// }
-//
-// .forgot-pass:active {
-//   background-color: #d95353;
-//   color: #e8e3e6;
-// }
-//
-// .forgot-pass:hover {
-//   background-color: white;
-//   color: #d95353;
-//   .logos {
-//     font-family: 'Dancing Script', cursive;
-//     font-size: 3.7em;
-//     font-weight: bold;
-//     // margin-left: 20px;
-//     // margin-top: 12px;
-//     color: $header-texts-color;
-//   }
-// }
-//
-// .devise-sign-in {
-//   font-family: $headline-font, sans-serif;
-//   padding: 0.75em 1.75em;
-//   border-radius: 7.5px;
-//   background-color: $button-bg-color;
-//   font-size: 22px;
-//   color: $header-texts-color;
-//   display: inline;
-// }
-//
-// .devise-sign-in:active {
-//   background-color: #d95353;
-//   color: #e8e3e6;
-// }
-//
-// .devise-sign-in:hover {
-//   background-color: white;
-//   color: #d95353;
-//   .logos {
-//     font-family: 'Dancing Script', cursive;
-//     font-size: 3.7em;
-//     font-weight: bold;
-//     // margin-left: 20px;
-//     // margin-top: 12px;
-//     color: $header-texts-color;
-//   }
-// }
-//
-// .devise-update {
-//   font-family: $headline-font, sans-serif;
-//   padding: 0.75em 1.75em;
-//   border-radius: 7.5px;
-//   background-color: $button-bg-color;
-//   font-size: 22px;
-//   color: $header-texts-color;
-//   display: inline;
-// }
-//
-// .devise-update:active {
-//   background-color: #d95353;
-//   color: #e8e3e6;
-// }
-//
-// .devise-update:hover {
-//   background-color: white;
-//   color: #d95353;
-//   .logos {
-//     font-family: 'Dancing Script', cursive;
-//     font-size: 3.7em;
-//     font-weight: bold;
-//     // margin-left: 20px;
-//     // margin-top: 12px;
-//     color: $header-texts-color;
-//   }
-// }
+
 .thread {
 }
 .comment {
@@ -213,6 +74,7 @@
   .comment-content {
     display: table-cell;
     vertical-align: $comment-image-vert-alignment;
+    font-family: $maintext-font;
   }
 
   .comment-image {
@@ -265,8 +127,8 @@
   color: $button-bg-hover;
   font-family: $headline-font;
   text-align: right;
-  position: relative;
-  right: 30px;
+  // position: relative;
+  // right: 30px;
   a {
   text-decoration: none;
   font-family: $headline-font;
@@ -277,58 +139,30 @@
 #paginator-nested {
   color: $button-bg-hover;
   font-family: $headline-font;
-  text-align: center;
-  position: relative;
+  // text-align: center;
+  // position: relative;
   a {
   text-decoration: none;
   font-family: $headline-font;
   color: $alt-top-bg-hover;
   }
 }
-
-.checkbox-wrapper {
-  color: $alt-top-bg-hover;
-  font-family: $headline-font;
-  text-align: center;
-  div.checkbox-header {
-    color: $button-bg-hover;
-  }
-}
-
-
-header.sticky-nav-header {
-  height: 50px;
-  padding-top: 50px;
-  background: $dark-header-color;
-  z-index: 1000;
-}
-.sticky-nav {
-  position: relative;
-  top: -30px;
-}
-
-header.sticky-nav-header,
-.main-nav-scrolled {
-  position: fixed;
-  width: 100%;
-  top: 0;
-}
-
-.quick-show {
-  padding-top: 60px;
-  position: relative;
-}
-
-header.sticky-nav-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-}
-
-.quick-show {
-  padding-top: 60px;
-  position: relative;
-}
+//
+// .checkbox-wrapper {
+//   color: $alt-top-bg-hover;
+//   font-family: $headline-font;
+//   text-align: center;
+//   padding: 0, 500px, 0, 500px;
+//   .checkbox-header {
+//     font-size: 1.5em;
+//     color: $logo-color;
+//   }
+//   .checkbox-list {
+//     padding-left: 38em;
+//     padding-right: 38em;
+//     display: inline-block;
+//   }
+// }
 
 .star-this-lesson {
   position: relative;
@@ -348,4 +182,77 @@ header.sticky-nav-header {
 
 .quick-content {
   border: 1px solid black;
+  padding: 100px;
+}
+
+.star-box {
+  color: yellow;
+  font-size: 1.5em;
+  display: inline;
+}
+
+.document-preview {
+  border: 1px solid $text-button-color;
+}
+
+.document-meta-data {
+
+}
+
+.my-profile-footer {
+  padding-right: 100px;
+  font-family: $headline-font;
+}
+
+.doc-show-iframe {
+  width: 100%;
+  height: 600px;
+  padding: 10px;
+}
+
+.doc-link {
+
+}
+
+.editor-container {
+  align: center;
+}
+
+.document-toolbar-title {
+  align: left;
+  position: relative;
+  right: 350px;
+}
+
+.diff {
+  width: 80%;
+}
+
+
+.star-box-link {
+  a {
+    text-decoration: none;
+  }
+}
+
+.empty {
+}
+
+.fa-fast-backward::before {
+  color: $button-bg-color;
+}
+
+.add-doc-lesson {
+  font-family: $headline-font;
+  color: $logo-color;
+}
+
+.doc-title {
+  text-align: left;
+  margin: 0;
+}
+
+.edit-document-wysiwyg-container {
+  text-align: left;
+
 }

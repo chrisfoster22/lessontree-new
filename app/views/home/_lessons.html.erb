@@ -1,27 +1,30 @@
-  <% @lessons.each do |l| %>
-  <%= link_to  quick_show_lesson_path(l), class:"fancybox", remote: true do %>
+<% @lessons.each do |l| %>
   <div class="lesson-preview-title-container">
-    <h3 class="lesson-preview-title"><%= l.topic %></h3>
-    <ul>
-        <li class="lesson-preview-subject-list"><%= formatted_lesson_grade_levels(l) %></li>
-        <li class="lesson-preview-pipe">|</li>
-        <li class="lesson-preview-grade-list"><%= formatted_lesson_subjects(l) %></li>
+    <ul class="star-ranking" id=<%= "#{l.id}" %>>
+      <% if l.starred?(current_user, l)%>
+        <li class="icon-star liked"></li>
+      <% else %>
+        <li class="icon-star"></li>
+      <% end %>
+       <li class="ranking"><%= star_count(l) %></li>
     </ul>
-  </div>
-
-  <div class="lesson-preview-description-container">
-        <a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"  data-pin-color="red"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_20.png" /></a>
-        <!-- Please call pinit.js only once per page -->
-        <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
-
-      <ul class="star-ranking">
-         <li class="icon-star"></li>
-         <li class="ranking"><%= star_count(l) %></li>
+    <%= link_to l do %>
+    <div>
+      <h3 class="lesson-preview-title"><%= l.topic %></h3>
+      <ul>
+          <li class="lesson-preview-subject-list"><%= formatted_lesson_grade_levels(l) %></li>
+          <li class="lesson-preview-pipe">|</li>
+          <li class="lesson-preview-grade-list"><%= formatted_lesson_subjects(l) %></li>
       </ul>
-        <p class="lesson-preview-description"><%= l.description %></p>
-      </div>
+    </div>
     <% end %>
-  <% end %>
+
+    </div>
+
+    <div class="lesson-preview-description-container">
+      <p class="lesson-preview-description"><%= l.description %></p>
+    </div>
+<% end %>
 
 <div id="paginator-nested">
   <%= paginate @lessons, :remote => true %>
