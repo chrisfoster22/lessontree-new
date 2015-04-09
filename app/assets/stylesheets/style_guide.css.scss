@@ -419,13 +419,11 @@ SELECT DROPDOWN BUTTON
     font-size: $expander-toggle-size;
     margin-bottom: $expander-toggle-size;
     padding-bottom: .5em;
-    color: white;
 
     &:before {
       font-size: $expander-arrow-width;
       margin-right: 0.5em;
       content: "\25BC";
-      color: white;
     }
   }
 
@@ -433,14 +431,11 @@ SELECT DROPDOWN BUTTON
     &:before {
       font-size: $expander-arrow-width;
       content: "\25BA";
-      color: white;
-
     }
   }
 
   .expander-hidden + .expander-content {
     display: none;
-    color: white;
   }
 }
 
@@ -751,6 +746,14 @@ HOMEPAGE LESSON PREVIEWS
   line-height: 1.4em;
 }
 
+.star-ranking {
+  text-align: right;
+  margin-top: -33px;
+  width: 100px;
+  margin-left: 720px;
+  position: relative;
+  top: -7px;
+}
 
 .icon-star {
   color: #b9bdbd;
@@ -1514,6 +1517,7 @@ input[type=checkbox].css-checkbox {
   color: $dark-header-color;
 }
 .star-ranking {
+
 vertical-align: text-baseline;
 text-align: right;
 margin-top: -33px;
@@ -2085,6 +2089,7 @@ PROFILE PAGE LESSON VIEW
   input[type="number"],
   input[type="search"],
   input[type="password"],
+  select,
   textarea {
 
     background: white;
@@ -2105,6 +2110,10 @@ PROFILE PAGE LESSON VIEW
     -moz-transition: all 0.1s linear;
     -o-transition: all 0.1s linear;
       transition: all 0.1s linear;
+  }
+
+  select {
+    box-shadow: none;
   }
 
   input[type="text"]:focus,
@@ -2612,12 +2621,66 @@ PROFILE PAGE LESSON VIEW
 .edit-document-wysiwyg-containter {
   width: 65%;
   margin: 0 auto 0;
+  text-align: left;
+
 }
 
 .edit-document-save-container {
   text-align: center;
   margin: 3em 0 2em 0;
 }
+
+.add-doc-lesson {
+  font-family: $headline-font;
+  color: $logo-color;
+  width: 40%;
+  margin: 1em auto;
+  font-size: 1.2em;
+  select {
+    width: 100%;
+  }
+}
+
+.doc-title {
+  text-align: left;
+  margin: 0;
+
+}
+
+
+.select-label {
+  border: 1px solid $logo-color;
+  padding: 1em;
+  display: block;
+  position: relative;
+  min-height: 3em;
+}
+
+.select-label select {
+  display: block;
+  position: absolute;
+  background: none;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  border: 0;
+}
+
+  // border: 1px solid red;
+  // border-radius: 5px;
+  // padding: 0.5em 0.25em;
+  // font-size: 1.3em;
+
+
+// .select-label select {
+//   font-size: 1em;
+//   border: 0;
+//   display: inline-block;
+//   background: transparent;
+//   outline: none;
+// }
 
 /**********************************************************
    EDIT PROFILE SELECT DROPDOWN BUTTON
@@ -2889,9 +2952,6 @@ PROFILE PAGE LESSON VIEW
   background: $alt-top-bg-hover;
   transition: .3s;
   cursor: pointer;
-}
-.expander-trigger expander-hidden {
-  font-size: 2.4em;
 }
 
 /************************************
@@ -3339,4 +3399,10 @@ footer {
 #inline {
   font-size: .85em;
   color: #b9bdbd;
+}
+
+#branch-edit {
+  textarea {
+  margin: 0px;
+}
 }

@@ -241,3 +241,18 @@
 .fa-fast-backward::before {
   color: $button-bg-color;
 }
+
+.add-doc-lesson {
+  font-family: $headline-font;
+  color: $logo-color;
+}
+
+.doc-title {
+  text-align: left;
+  margin: 0;
+}
+
+.edit-document-wysiwyg-container {
+  text-align: left;
+
+}
