@@ -40,11 +40,6 @@
 //  @import "aaron_style_guide";
 //
 
-// @font-face {
-//   font-family: 'REIS-Regular';
-//   src: url('/assets/REIS-Regular.otf') format("truetype");
-// }
-
 .thread {
 }
 .comment {
@@ -255,4 +250,9 @@
 .edit-document-wysiwyg-container {
   text-align: left;
 
+}
+
+.clicked-star {
+  float: right;
+  
 }
