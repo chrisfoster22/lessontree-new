@@ -17,7 +17,8 @@ class LessonsController < ApplicationController
     @uploaded_documents = Document.where("lesson_id = #{@lesson.id} ANDcontent
         IS NULL").page(params[:page]).per(1)
     @document = @lesson.documents.first
-    if current_user && Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
+    if current_user && Star.find_by(lesson_id: @lesson.id,
+                                    user_id: current_user.id)
       @starred = true
     else
       @starred = false
@@ -27,7 +28,8 @@ class LessonsController < ApplicationController
 
   def quick_show
     @star = Star.new
-    if current_user && Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
+    if current_user && Star.find_by(lesson_id: @lesson.id,
+                                    user_id: current_user.id)
       @starred = true
     else
       @starred = false
