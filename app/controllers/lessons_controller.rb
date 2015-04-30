@@ -1,41 +1,35 @@
 class LessonsController < ApplicationController
-  before_action :set_lesson, only: [:edit, :show, :update, :destroy, :quick_show]
+  before_action :set_lesson, only: [:edit, :show, :update,
+                                    :destroy, :quick_show]
   before_action :lesson_owner, only: [:edit, :destroy, :update]
   before_action :authenticate_user!, only: [:create, :new, :create_from_upload,
-                :edit, :update, :destroy]
+                                            :edit, :update, :destroy]
 
   def index
-    @lessons = Lesson.order("created_at DESC")
+    @lessons = Lesson.order('created_at DESC')
   end
 
   def show
-    @star = Star.find_by(lesson_id: @lesson.id, user_id: current_user.id) if current_user
-    @created_documents = Document.where("lesson_id = #{@lesson.id} AND content IS NOT NULL").page(params[:page]).per(1)
-    @uploaded_documents = Document.where("lesson_id = #{@lesson.id} ANDcontent IS NULL").page(params[:page]).per(1)
+    @star = Star.find_by(lesson_id: @lesson.id,
+                         user_id: current_user.id) if current_user
+    @created_documents = Document.where("lesson_id = #{@lesson.id} AND content
+        IS NOT NULL").page(params[:page]).per(1)
+    @uploaded_documents = Document.where("lesson_id = #{@lesson.id} ANDcontent
+        IS NULL").page(params[:page]).per(1)
     @document = @lesson.documents.first
-    if current_user && Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
+    if current_user && Star.find_by(lesson_id: @lesson.id,
+                                    user_id: current_user.id)
       @starred = true
     else
       @starred = false
     end
-    # documents = @lesson.documents
-    # @uploaded_documents = []
-    # @created_documents = []
-    # documents.each do |d|
-    #   if d.upload.url != "/uploads/original/missing.png"
-    #     @uploaded_documents << d
-    #   else
-    #     @created_documents << d
-    #   end
-    # end
-    # @created_documents = Kaminari.paginate_array(@created_documents).page(params[:page]).per(1)
     @thread = Commontator::Thread.find_by(commontable_id: @lesson.id)
   end
 
   def quick_show
     @star = Star.new
-    documents = @lesson.documents
-    if current_user && Star.find_by(lesson_id: @lesson.id, user_id: current_user.id)
+    if current_user && Star.find_by(lesson_id: @lesson.id,
+                                    user_id: current_user.id)
       @starred = true
     else
       @starred = false
@@ -44,13 +38,13 @@ class LessonsController < ApplicationController
     @uploaded_documents = []
     @created_documents = []
     @documents.each do |d|
-      if d.upload.url != "/uploads/original/missing.png"
+      if d.upload.url != '/uploads/original/missing.png'
         @uploaded_documents << d
       else
         @created_documents << d
       end
     end
-     render layout: 'quick_show'
+    render layout: 'quick_show'
   end
 
   def new
@@ -66,9 +60,9 @@ class LessonsController < ApplicationController
     if @lesson.save
       @lesson.user_id = current_user.id
       @lesson.save!
-      redirect_to @lesson, notice: "The lesson has been successfully created."
+      redirect_to @lesson, notice: 'The lesson has been successfully created.'
     else
-      render action: "new"
+      render action: 'new'
     end
   end
 
@@ -79,27 +73,28 @@ class LessonsController < ApplicationController
 
   def update
     if @lesson.update_attributes(lesson_params)
-      redirect_to @lesson, notice: "The lesson has been successfully updated."
+      redirect_to @lesson, notice: 'The lesson has been successfully updated.'
     else
-      render action: "edit"
+      render action: 'edit'
     end
   end
 
   def destroy
     @lesson.destroy!
-    redirect_to user_path(current_user), notice: "The document has been successfully deleted."
+    redirect_to user_path(current_user), notice:
+        'The document has been successfully deleted.'
   end
 
   def document_form
     @document = Document.find_by(id: params[:id])
-    render :layout => false
+    render layout: false
   end
 
-private
+  private
 
   def lesson_params
     params.require(:lesson).permit(:upload, :topic, :description, :id, :user_id,
-        {subject_ids: []}, {grade_level_ids: []})
+        { subject_ids: [] }, { grade_level_ids: [] })
   end
 
   def lesson_owner
@@ -110,5 +105,4 @@ private
     @lesson = Lesson.find_by(id: params[:id])
     redirect_to root_path if @lesson.nil?
   end
-
 end
